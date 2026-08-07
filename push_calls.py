@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+import os
+import subprocess
+
+repo_dir = r'C:\Users\Charwiz43\OneDrive\Desktop\Kinslow-Affirm-Repo'
+index_path = os.path.join(repo_dir, 'index.html')
+
+html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -149,3 +155,13 @@
 
 </body>
 </html>
+"""
+
+with open(index_path, 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+subprocess.run(['git', 'add', '-A'], cwd=repo_dir)
+subprocess.run(['git', 'commit', '-m', 'Add Document Card #9 for Mobile Call History Screenshots and weave July 7 & July 9 (12:21 PM and 2:15 PM) customer support calls into master chronology'], cwd=repo_dir)
+p = subprocess.run(['git', 'push', 'origin', 'main'], cwd=repo_dir, capture_output=True, text=True)
+print("Git push stdout:", p.stdout)
+print("Git push stderr:", p.stderr)
