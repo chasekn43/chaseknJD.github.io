@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
+import os
+import subprocess
+
+repo_dir = r'C:\Users\Charwiz43\OneDrive\Desktop\Kinslow-Affirm-Repo'
+s_path = os.path.join(repo_dir, 'sitemap.xml')
+nojekyll_path = os.path.join(repo_dir, '.nojekyll')
+
+# 1. Create .nojekyll file to bypass GitHub Pages Jekyll processing
+with open(nojekyll_path, 'w', encoding='utf-8') as f:
+    f.write('')
+
+print("Created .nojekyll file!")
+
+# 2. Re-create sitemap.xml with 100% correct W3C namespace (sitemaps.org)
+valid_sitemap = """<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chasekn43.github.io/Kinslow-Affirm-Dispute-Case-Study/</loc>
@@ -60,4 +74,15 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
+</urlset>"""
+
+with open(s_path, 'w', encoding='utf-8') as f:
+    f.write(valid_sitemap)
+
+print("Updated sitemap.xml with valid sitemaps.org XML schema!")
+
+subprocess.run(['git', 'add', '-A'], cwd=repo_dir)
+subprocess.run(['git', 'commit', '-m', 'Fix sitemap.xml XML namespace to sitemaps.org and add .nojekyll file for GitHub Pages'], cwd=repo_dir)
+p = subprocess.run(['git', 'push', 'origin', 'main'], cwd=repo_dir, capture_output=True, text=True)
+print("Git push stdout:", p.stdout)
+print("Git push stderr:", p.stderr)
