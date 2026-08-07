@@ -1,4 +1,10 @@
-# Public Record & Chronological Breakdown: Kinslow v. Affirm, Inc. (NYSE: AFRM)
+# Kinslow v. Affirm, Inc. (NYSE: AFRM) | Public Evidentiary Record
+
+> 🌐 **LIVE INTERACTIVE WEBSITE & EVIDENCE VAULT:**  
+> **[https://chasekn43.github.io/Kinslow-Affirm-Dispute-Case-Study/](https://chasekn43.github.io/Kinslow-Affirm-Dispute-Case-Study/)**
+
+---
+
 
 ## **Overview & Case History**
 This repository documents the public regulatory record, legal correspondence, and operational breakdown surrounding **CFPB Complaint #260717-35668593** involving Affirm, Inc. and its outside counsel Morgan Lewis & Bockius LLP.
