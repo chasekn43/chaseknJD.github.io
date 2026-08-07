@@ -10,8 +10,8 @@ This repository documents the public regulatory record, legal correspondence, an
 Click any document link below to directly view or download the original primary evidence PDF:
 
 * 📋 **[Doc #1]** [Monroe Police Department Incident Report #26-29572 (July 10, 2026)](https://chasekn43.github.io/Kinslow-Affirm-Dispute-Case-Study/documents/Monroe_Police_Report_26-29572.pdf)
-* 📞 **[Doc #2]** [Mobile Call History Screenshots — July 7 (20 min) & July 9 (56 min total)](https://chasekn43.github.io/Kinslow-Affirm-Dispute-Case-Study/documents/Mobile_Call_History_Screenshots.pdf)
-* 🚚 **[Doc #3]** [Merchant Fulfillment & OnTrac Carrier Tracking Evidence (#1LSDCR10011QF38)](https://chasekn43.github.io/Kinslow-Affirm-Dispute-Case-Study/documents/Fraudulent_Vendor_Emails_and_Tracking.pdf)
+* 🚚 **[Doc #2]** [Merchant Fulfillment & OnTrac Carrier Tracking Evidence (#1LSDCR10011QF38)](https://chasekn43.github.io/Kinslow-Affirm-Dispute-Case-Study/documents/Fraudulent_Vendor_Emails_and_Tracking.pdf)
+* 📞 **[Doc #3]** [Mobile Call History Screenshots — July 7 (20 min) & July 9 (56 min total)](https://chasekn43.github.io/Kinslow-Affirm-Dispute-Case-Study/documents/Mobile_Call_History_Screenshots.pdf)
 * ✅ **[Doc #4]** [Affirm Written Liability Clearance Resolution (July 16, 2026)](https://chasekn43.github.io/Kinslow-Affirm-Dispute-Case-Study/documents/Affirm_Liability_Clearance_July16.pdf)
 * 🔒 **[Doc #5]** [Affirm Managing Counsel Andy Chen C&D Orders & UI Lock Compilation](https://chasekn43.github.io/Kinslow-Affirm-Dispute-Case-Study/documents/Affirm_Managing_Counsel_Directive_July17.pdf)
 * ⚖️ **[Doc #6]** [CFPB Master Regulatory Complaint Compilation (Initial, Reply, Feedback & Follow-up)](https://chasekn43.github.io/Kinslow-Affirm-Dispute-Case-Study/documents/CFPB_Complaint_and_Affirm_False_Response.pdf)
