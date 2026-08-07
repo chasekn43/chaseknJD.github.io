@@ -55,7 +55,6 @@ This repository documents the public regulatory record, legal correspondence, an
 
 ### **Official Verified Public Records**
 
-* **CFPB Public Record:** [consumerfinance.gov](https://www.consumerfinance.gov) (Search Complaint #260717-35668593)
 * **Monroe Police Department:** Case #26-29572 (Filed July 9, 2026)
 * **California Attorney General Notification:** Transmitted July 31, 2026
 * **LinkedIn Updates & Case Analysis:** [linkedin.com/in/chasekn](https://www.linkedin.com/in/chasekn/)
