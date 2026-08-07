@@ -53,8 +53,7 @@ This repository documents the public regulatory record, legal correspondence, an
 
 ---
 
-### **Official Verified Public Records**
+### **Official Primary Evidence Vault**
 
-* **Monroe Police Department:** Case #26-29572 (Filed July 9, 2026)
-* **California Attorney General Notification:** Transmitted July 31, 2026
-* **LinkedIn Updates & Case Analysis:** [linkedin.com/in/chasekn](https://www.linkedin.com/in/chasekn/)
+All primary evidence documents, police reports, state AG complaints, call logs, and legal correspondence are hosted live in the Primary Evidence Vault:
+👉 [View Live Evidence Vault & Case Study](https://chasekn43.github.io/Kinslow-Affirm-Dispute-Case-Study/)
