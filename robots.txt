@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chasekn43.github.io/Kinslow-Affirm-Dispute-Case-Study/sitemap.xml
+Sitemap: https://chasekn43.github.io/regulatory-archive-2026/sitemap.xml
