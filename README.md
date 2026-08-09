@@ -1,7 +1,7 @@
 # Kinslow v. Affirm, Inc. (NYSE: AFRM) | Public Evidentiary Record
 
 > 🌐 **LIVE INTERACTIVE WEBSITE & EVIDENCE VAULT:**  
-> **[https://regulatory-archive.kinslow.co/](https://regulatory-archive.kinslow.co/)**
+> **[https://chasekn43.github.io/regulatory-archive-2026/](https://chasekn43.github.io/regulatory-archive-2026/)**
 
 ---
 
@@ -14,14 +14,14 @@ This repository documents the public regulatory record, legal correspondence, an
 
 Click any document link below to directly view or download the original primary evidence PDF:
 
-* 📋 **[Doc #1]** [Monroe Police Department Incident Report #26-29572 (July 10, 2026)](https://regulatory-archive.kinslow.co/documents/monroe-police-report-26-29572.pdf)
-* 🚚 **[Doc #2]** [Merchant Fulfillment & OnTrac Carrier Tracking Evidence (#1LSDCR10011QF38)](https://regulatory-archive.kinslow.co/documents/fraudulent-vendor-emails-and-tracking.pdf)
-* 📞 **[Doc #3]** [Mobile Call History Screenshots — July 7 (20 min) & July 9 (56 min total)](https://regulatory-archive.kinslow.co/documents/mobile-call-history-screenshots.pdf)
-* ✅ **[Doc #4]** [Affirm Written Liability Clearance Resolution (July 16, 2026)](https://regulatory-archive.kinslow.co/documents/affirm-liability-clearance-july16.pdf)
-* 🔒 **[Doc #5]** [Affirm Managing Counsel Andy Chen C&D Orders & UI Lock Compilation](https://regulatory-archive.kinslow.co/documents/affirm-managing-counsel-directive-july17.pdf)
-* ⚖️ **[Doc #6]** [CFPB Master Regulatory Complaint Compilation (Initial, Reply, Feedback & Follow-up)](https://regulatory-archive.kinslow.co/documents/cfpb-complaint-and-affirm-false-response.pdf)
-* ✉️ **[Doc #7]** [Morgan Lewis Correspondence & Aug 6 Rule 4.2 Ethics Notice](https://regulatory-archive.kinslow.co/documents/morgan-lewis-correspondence.pdf)
-* 🏛️ **[Doc #8]** [Louisiana AG Master Dispute Filing & Executive Email to AG Liz Murrill](https://regulatory-archive.kinslow.co/documents/louisiana-ag-dispute-submission.pdf)
+* 📋 **[Doc #1]** [Monroe Police Department Incident Report #26-29572 (July 10, 2026)](https://chasekn43.github.io/regulatory-archive-2026/documents/monroe-police-report-26-29572.pdf)
+* 🚚 **[Doc #2]** [Merchant Fulfillment & OnTrac Carrier Tracking Evidence (#1LSDCR10011QF38)](https://chasekn43.github.io/regulatory-archive-2026/documents/fraudulent-vendor-emails-and-tracking.pdf)
+* 📞 **[Doc #3]** [Mobile Call History Screenshots — July 7 (20 min) & July 9 (56 min total)](https://chasekn43.github.io/regulatory-archive-2026/documents/mobile-call-history-screenshots.pdf)
+* ✅ **[Doc #4]** [Affirm Written Liability Clearance Resolution (July 16, 2026)](https://chasekn43.github.io/regulatory-archive-2026/documents/affirm-liability-clearance-july16.pdf)
+* 🔒 **[Doc #5]** [Affirm Managing Counsel Andy Chen C&D Orders & UI Lock Compilation](https://chasekn43.github.io/regulatory-archive-2026/documents/affirm-managing-counsel-directive-july17.pdf)
+* ⚖️ **[Doc #6]** [CFPB Master Regulatory Complaint Compilation (Initial, Reply, Feedback & Follow-up)](https://chasekn43.github.io/regulatory-archive-2026/documents/cfpb-complaint-and-affirm-false-response.pdf)
+* ✉️ **[Doc #7]** [Morgan Lewis Correspondence & Aug 6 Rule 4.2 Ethics Notice](https://chasekn43.github.io/regulatory-archive-2026/documents/morgan-lewis-correspondence.pdf)
+* 🏛️ **[Doc #8]** [Louisiana AG Master Dispute Filing & Executive Email to AG Liz Murrill](https://chasekn43.github.io/regulatory-archive-2026/documents/louisiana-ag-dispute-submission.pdf)
 * 🏛️ **[Doc #9]** [California AG Master Dispute Filing & Rob Bonta Notice](https://regulatory-archive.kinslow.co/documents/california-ag-dispute-notice.pdf)
 
 ---
@@ -82,4 +82,4 @@ This repository documents the public regulatory record, legal correspondence, an
 ### **Official Primary Evidence Vault**
 
 All primary evidence documents, police reports, state AG complaints, call logs, and legal correspondence are hosted live in the Primary Evidence Vault:
-👉 [View Live Evidence Vault & Case Study](https://regulatory-archive.kinslow.co/)
+👉 [View Live Evidence Vault & Case Study](https://chasekn43.github.io/regulatory-archive-2026/)
