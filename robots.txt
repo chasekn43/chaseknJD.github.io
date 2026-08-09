@@ -15,4 +15,4 @@ User-agent: MJ12bot
 User-agent: Rogerbot
 Disallow: /
 
-Sitemap: https://chasekn43.github.io/regulatory-archive-2026/sitemap.xml
+Sitemap: https://regulatory-archive.kinslow.co/sitemap.xml
