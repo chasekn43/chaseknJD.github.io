@@ -25,20 +25,202 @@
   <meta name="twitter:title" content="Official Dispute Archive & Document Record">
   <meta name="twitter:description" content="Finalized public evidence archive and regulatory filing record regarding the Affirm dispute matter.">
 
-  <!-- Structured JSON-LD Schema -->
+  <!-- Structured JSON-LD Schema (Enterprise-Grade Multi-Type Graph) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "DigitalDocument",
-    "name": "Official Dispute Archive & Document Record",
-    "description": "Finalized public evidence archive and regulatory filing record regarding the Affirm dispute matter.",
-    "url": "https://chasekn43.github.io/regulatory-archive-2026/",
-    "encodingFormat": "text/html",
-    "author": {
-      "@type": "Person",
-      "name": "Charles W. Kinslow IV"
-    },
-    "archivedAt": "https://chasekn43.github.io/regulatory-archive-2026/"
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://chasekn43.github.io/regulatory-archive-2026/#webpage",
+        "url": "https://chasekn43.github.io/regulatory-archive-2026/",
+        "name": "Official Dispute Archive & Document Record",
+        "description": "Finalized public evidence archive, legal correspondence, and federal regulatory filings regarding the 2026 consumer dispute matter involving Affirm, Inc. and outside counsel Morgan Lewis & Bockius LLP.",
+        "inLanguage": "en-US",
+        "publisher": {
+          "@type": "Person",
+          "name": "Charles W. Kinslow IV, J.D., C.P.A.",
+          "jobTitle": "Attorney & CPA",
+          "sameAs": "https://www.linkedin.com/in/chasekn/"
+        },
+        "about": [
+          {
+            "@type": "Organization",
+            "name": "Affirm, Inc.",
+            "tickerSymbol": "AFRM"
+          },
+          {
+            "@type": "Organization",
+            "name": "Morgan, Lewis & Bockius LLP"
+          },
+          {
+            "@type": "GovernmentOrganization",
+            "name": "Consumer Financial Protection Bureau",
+            "alternateName": "CFPB"
+          }
+        ],
+        "mainEntity": {
+          "@type": "ItemList",
+          "name": "Dispute Archival Records",
+          "numberOfItems": 9,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": ["DigitalDocument", "ArchiveComponent"],
+                "name": "Monroe Police Department Incident Report #26-29572",
+                "description": "Official criminal incident report filed regarding unauthorized identity theft and fraudulent loan creation.",
+                "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/monroe-police-report-26-29572.pdf",
+                "encodingFormat": "application/pdf",
+                "dateCreated": "2026-07-10",
+                "holdingArchive": {
+                  "@type": "ArchiveOrganization",
+                  "name": "Charles Kinslow Public Dispute Archive"
+                },
+                "itemLocation": "Doc #1"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": ["DigitalDocument", "ArchiveComponent"],
+                "name": "OnTrac Carrier Tracking & Vendor Logs",
+                "description": "Proof of physical delivery to unauthorized address in California, contradicting loan originator records.",
+                "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/fraudulent-vendor-emails-and-tracking.pdf",
+                "encodingFormat": "application/pdf",
+                "dateCreated": "2026-07-07",
+                "holdingArchive": {
+                  "@type": "ArchiveOrganization",
+                  "name": "Charles Kinslow Public Dispute Archive"
+                },
+                "itemLocation": "Doc #2"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": ["DigitalDocument", "ArchiveComponent"],
+                "name": "Mobile Call History Logs",
+                "description": "Timestamps and screenshots verifying timely dispute notifications to customer operations.",
+                "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/mobile-call-history-screenshots.pdf",
+                "encodingFormat": "application/pdf",
+                "dateCreated": "2026-07-09",
+                "holdingArchive": {
+                  "@type": "ArchiveOrganization",
+                  "name": "Charles Kinslow Public Dispute Archive"
+                },
+                "itemLocation": "Doc #3"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": ["DigitalDocument", "ArchiveComponent"],
+                "name": "Affirm Written Liability Clearance Notice",
+                "description": "Written resolution confirming zero consumer liability and balance clearance on July 16, 2026.",
+                "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/affirm-liability-clearance-july16.pdf",
+                "encodingFormat": "application/pdf",
+                "dateCreated": "2026-07-16",
+                "holdingArchive": {
+                  "@type": "ArchiveOrganization",
+                  "name": "Charles Kinslow Public Dispute Archive"
+                },
+                "itemLocation": "Doc #4"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": ["DigitalDocument", "ArchiveComponent"],
+                "name": "Affirm Managing Counsel Directives & UI Lock Compilation",
+                "description": "Formal legal cease-and-desist correspondence from Affirm Managing Counsel Andy Y. Chen alongside account freeze proofs.",
+                "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/affirm-managing-counsel-directive-july17.pdf",
+                "encodingFormat": "application/pdf",
+                "dateCreated": "2026-07-17",
+                "holdingArchive": {
+                  "@type": "ArchiveOrganization",
+                  "name": "Charles Kinslow Public Dispute Archive"
+                },
+                "itemLocation": "Doc #5"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": ["DigitalDocument", "ArchiveComponent"],
+                "name": "CFPB Master Regulatory Complaint Compilation",
+                "description": "Formal submission records and responses to the Consumer Financial Protection Bureau detailing false dispute disclosures.",
+                "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/cfpb-complaint-and-affirm-false-response.pdf",
+                "encodingFormat": "application/pdf",
+                "dateCreated": "2026-07-31",
+                "holdingArchive": {
+                  "@type": "ArchiveOrganization",
+                  "name": "Charles Kinslow Public Dispute Archive"
+                },
+                "itemLocation": "Doc #6"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "item": {
+                "@type": ["DigitalDocument", "ArchiveComponent"],
+                "name": "Morgan Lewis & Bockius Correspondence & Ethics Notice",
+                "description": "Official representation communications involving outside counsel Morgan Lewis & Bockius LLP.",
+                "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/morgan-lewis-correspondence.pdf",
+                "encodingFormat": "application/pdf",
+                "dateCreated": "2026-08-06",
+                "holdingArchive": {
+                  "@type": "ArchiveOrganization",
+                  "name": "Charles Kinslow Public Dispute Archive"
+                },
+                "itemLocation": "Doc #7"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "item": {
+                "@type": ["DigitalDocument", "ArchiveComponent"],
+                "name": "Louisiana AG Dispute Submission & Executive Email Notice",
+                "description": "Formal consumer protection complaint lodged with Louisiana Attorney General Liz Murrill.",
+                "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/louisiana-ag-dispute-submission.pdf",
+                "encodingFormat": "application/pdf",
+                "dateCreated": "2026-07-31",
+                "holdingArchive": {
+                  "@type": "ArchiveOrganization",
+                  "name": "Charles Kinslow Public Dispute Archive"
+                },
+                "itemLocation": "Doc #8"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "item": {
+                "@type": ["DigitalDocument", "ArchiveComponent"],
+                "name": "California AG Dispute Notice & Rob Bonta Filing",
+                "description": "Formal notice and dispute catalog lodged with California Attorney General Rob Bonta.",
+                "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/california-ag-dispute-notice.pdf",
+                "encodingFormat": "application/pdf",
+                "dateCreated": "2026-07-31",
+                "holdingArchive": {
+                  "@type": "ArchiveOrganization",
+                  "name": "Charles Kinslow Public Dispute Archive"
+                },
+                "itemLocation": "Doc #9"
+              }
+            }
+          ]
+        }
+      }
+    ]
   }
   </script>
   
@@ -212,106 +394,157 @@
 </head>
 <body>
 
-  <header>
-    <span class="badge">Official Archive Record</span>
-    <h1>Finalized Dispute Document Vault</h1>
-    <p class="notice">
-      This public repository serves as the complete, finalized evidence archive regarding the 2026 Affirm dispute matter. All primary documentation, carrier tracking, police incident reports, and regulatory submissions have been formally cataloged and lodged with appropriate supervisory authorities. This archive remains permanently accessible for regulatory and judicial reference.
-    </p>
-  </header>
+  <main role="main">
 
-  <div class="meta-bar">
-    <div><strong>Record Status:</strong> Finalized & Lodged</div>
-    <div><strong>Primary Claimant:</strong> Charles W. Kinslow IV, J.D., C.P.A.</div>
-    <div><strong>Jurisdictions:</strong> Louisiana / California / CFPB</div>
-  </div>
+    <header>
+      <span class="badge">Official Archive Record</span>
+      <h1>Finalized Dispute Document Vault</h1>
+      <p class="notice">
+        This public repository serves as the complete, finalized evidence archive regarding the 2026 Affirm dispute matter. All primary documentation, carrier tracking, police incident reports, and regulatory submissions have been formally cataloged and lodged with appropriate supervisory authorities. This archive remains permanently accessible for regulatory and judicial reference.
+      </p>
+    </header>
 
-  <h2>Primary Evidence Documents</h2>
-
-  <div class="doc-grid">
-
-    <div class="doc-card">
-      <div>
-        <div class="doc-type">Law Enforcement Record</div>
-        <div class="doc-title">Monroe Police Department Incident Report</div>
-        <div class="doc-desc">Official criminal incident report #26-29572 filed regarding unauthorized identity theft and fraudulent loan creation.</div>
-      </div>
-      <a href="documents/Monroe_Police_Report_26-29572.pdf" class="btn-doc" target="_blank">View PDF Document</a>
+    <div class="meta-bar">
+      <div><strong>Record Status:</strong> Finalized & Lodged</div>
+      <div><strong>Primary Claimant:</strong> Charles W. Kinslow IV, J.D., C.P.A.</div>
+      <div><strong>Jurisdictions:</strong> Louisiana / California / CFPB</div>
     </div>
 
-    <div class="doc-card">
-      <div>
-        <div class="doc-type">Carrier Logistics Evidence</div>
-        <div class="doc-title">OnTrac Carrier Tracking & Vendor Logs</div>
-        <div class="doc-desc">Proof of physical delivery to unauthorized address in California, contradicting loan originator records.</div>
-      </div>
-      <a href="documents/Fraudulent_Vendor_Emails_and_Tracking.pdf" class="btn-doc" target="_blank">View PDF Document</a>
-    </div>
+    <section aria-labelledby="primary-evidence-heading">
+      <h2 id="primary-evidence-heading">Primary Evidence Documents</h2>
 
-    <div class="doc-card">
-      <div>
-        <div class="doc-type">Telecommunications Record</div>
-        <div class="doc-title">Mobile Call History Logs</div>
-        <div class="doc-desc">Timestamps and screenshots verifying timely dispute notifications to customer operations.</div>
-      </div>
-      <a href="documents/Mobile_Call_History_Screenshots.pdf" class="btn-doc" target="_blank">View PDF Document</a>
-    </div>
+      <div class="doc-grid" role="list">
 
-    <div class="doc-card">
-      <div>
-        <div class="doc-type">Originator Resolution</div>
-        <div class="doc-title">Affirm Written Clearance Notice</div>
-        <div class="doc-desc">Written resolution confirming zero consumer liability and balance clearance on July 16, 2026.</div>
-      </div>
-      <a href="documents/Affirm_Liability_Clearance_July16.pdf" class="btn-doc" target="_blank">View PDF Document</a>
-    </div>
+        <div class="doc-card" role="listitem">
+          <div>
+            <div class="doc-type">Law Enforcement Record</div>
+            <h3 class="doc-title">Monroe Police Department Incident Report</h3>
+            <p class="doc-desc">Official criminal incident report #26-29572 filed regarding unauthorized identity theft and fraudulent loan creation.</p>
+          </div>
+          <a href="documents/monroe-police-report-26-29572.pdf" 
+             class="btn-doc" 
+             target="_blank" 
+             aria-label="Download Monroe Police Incident Report 26-29572 PDF">
+             Download Police Incident Report (PDF)
+          </a>
+        </div>
 
-    <div class="doc-card">
-      <div>
-        <div class="doc-type">Legal Representation</div>
-        <div class="doc-title">Affirm Managing Counsel Directives</div>
-        <div class="doc-desc">Formal legal correspondence from Affirm Managing Counsel Andy Y. Chen.</div>
-      </div>
-      <a href="documents/Affirm_Managing_Counsel_Directive_July17.pdf" class="btn-doc" target="_blank">View PDF Document</a>
-    </div>
+        <div class="doc-card" role="listitem">
+          <div>
+            <div class="doc-type">Carrier Logistics Evidence</div>
+            <h3 class="doc-title">OnTrac Carrier Tracking & Vendor Logs</h3>
+            <p class="doc-desc">Proof of physical delivery to unauthorized address in California, contradicting loan originator records.</p>
+          </div>
+          <a href="documents/fraudulent-vendor-emails-and-tracking.pdf" 
+             class="btn-doc" 
+             target="_blank" 
+             aria-label="Download OnTrac Carrier Tracking and Vendor Logs PDF">
+             Download Carrier Logistics Logs (PDF)
+          </a>
+        </div>
 
-    <div class="doc-card">
-      <div>
-        <div class="doc-type">Federal Regulatory Filing</div>
-        <div class="doc-title">CFPB Master Regulatory Complaint</div>
-        <div class="doc-desc">Formal submission to the Consumer Financial Protection Bureau detailing false dispute disclosures.</div>
-      </div>
-      <a href="documents/CFPB_Complaint_and_Affirm_False_Response.pdf" class="btn-doc" target="_blank">View PDF Document</a>
-    </div>
+        <div class="doc-card" role="listitem">
+          <div>
+            <div class="doc-type">Telecommunications Record</div>
+            <h3 class="doc-title">Mobile Call History Logs</h3>
+            <p class="doc-desc">Timestamps and screenshots verifying timely dispute notifications to customer operations.</p>
+          </div>
+          <a href="documents/mobile-call-history-screenshots.pdf" 
+             class="btn-doc" 
+             target="_blank" 
+             aria-label="Download Mobile Call History Log Screenshots PDF">
+             Download Call History Logs (PDF)
+          </a>
+        </div>
 
-    <div class="doc-card">
-      <div>
-        <div class="doc-type">Outside Counsel Record</div>
-        <div class="doc-title">Morgan Lewis & Bockius Correspondence</div>
-        <div class="doc-desc">Official representation communications involving outside counsel Morgan Lewis & Bockius LLP.</div>
-      </div>
-      <a href="documents/Morgan_Lewis_Correspondence.pdf" class="btn-doc" target="_blank">View PDF Document</a>
-    </div>
+        <div class="doc-card" role="listitem">
+          <div>
+            <div class="doc-type">Originator Resolution</div>
+            <h3 class="doc-title">Affirm Written Clearance Notice</h3>
+            <p class="doc-desc">Written resolution confirming zero consumer liability and balance clearance on July 16, 2026.</p>
+          </div>
+          <a href="documents/affirm-liability-clearance-july16.pdf" 
+             class="btn-doc" 
+             target="_blank" 
+             aria-label="Download Affirm Written Zero Liability Clearance Notice PDF">
+             Download Zero Liability Clearance (PDF)
+          </a>
+        </div>
 
-    <div class="doc-card">
-      <div>
-        <div class="doc-type">State Regulatory Filing</div>
-        <div class="doc-title">Louisiana AG Dispute Submission</div>
-        <div class="doc-desc">Formal consumer protection complaint lodged with the Louisiana Attorney General's Office.</div>
-      </div>
-      <a href="documents/Louisiana_AG_Dispute_Submission.pdf" class="btn-doc" target="_blank">View PDF Document</a>
-    </div>
+        <div class="doc-card" role="listitem">
+          <div>
+            <div class="doc-type">Legal Representation</div>
+            <h3 class="doc-title">Affirm Managing Counsel Directives</h3>
+            <p class="doc-desc">Formal legal correspondence from Affirm Managing Counsel Andy Y. Chen.</p>
+          </div>
+          <a href="documents/affirm-managing-counsel-directive-july17.pdf" 
+             class="btn-doc" 
+             target="_blank" 
+             aria-label="Download Affirm Managing Counsel Andy Chen Legal Directive PDF">
+             Download Legal Directive Record (PDF)
+          </a>
+        </div>
 
-    <div class="doc-card">
-      <div>
-        <div class="doc-type">State Regulatory Filing</div>
-        <div class="doc-title">California AG Dispute Notice</div>
-        <div class="doc-desc">Formal notice and dispute catalog lodged with California Attorney General Rob Bonta.</div>
-      </div>
-      <a href="documents/California_AG_Dispute_Notice.pdf" class="btn-doc" target="_blank">View PDF Document</a>
-    </div>
+        <div class="doc-card" role="listitem">
+          <div>
+            <div class="doc-type">Federal Regulatory Filing</div>
+            <h3 class="doc-title">CFPB Master Regulatory Complaint</h3>
+            <p class="doc-desc">Formal submission to the Consumer Financial Protection Bureau detailing false dispute disclosures.</p>
+          </div>
+          <a href="documents/cfpb-complaint-and-affirm-false-response.pdf" 
+             class="btn-doc" 
+             target="_blank" 
+             aria-label="Download CFPB Regulatory Complaint and Affirm Disclosures PDF">
+             Download CFPB Complaint Record (PDF)
+          </a>
+        </div>
 
-  </div>
+        <div class="doc-card" role="listitem">
+          <div>
+            <div class="doc-type">Outside Counsel Record</div>
+            <h3 class="doc-title">Morgan Lewis & Bockius Correspondence</h3>
+            <p class="doc-desc">Official representation communications involving outside counsel Morgan Lewis & Bockius LLP.</p>
+          </div>
+          <a href="documents/morgan-lewis-correspondence.pdf" 
+             class="btn-doc" 
+             target="_blank" 
+             aria-label="Download Morgan Lewis and Bockius Representation Correspondence PDF">
+             Download Representation Record (PDF)
+          </a>
+        </div>
+
+        <div class="doc-card" role="listitem">
+          <div>
+            <div class="doc-type">State Regulatory Filing</div>
+            <h3 class="doc-title">Louisiana AG Dispute Submission</h3>
+            <p class="doc-desc">Formal consumer protection complaint lodged with the Louisiana Attorney General's Office.</p>
+          </div>
+          <a href="documents/louisiana-ag-dispute-submission.pdf" 
+             class="btn-doc" 
+             target="_blank" 
+             aria-label="Download Louisiana Attorney General Liz Murrill Consumer Dispute Submission PDF">
+             Download Louisiana AG Filing (PDF)
+          </a>
+        </div>
+
+        <div class="doc-card" role="listitem">
+          <div>
+            <div class="doc-type">State Regulatory Filing</div>
+            <h3 class="doc-title">California AG Dispute Notice</h3>
+            <p class="doc-desc">Formal notice and dispute catalog lodged with California Attorney General Rob Bonta.</p>
+          </div>
+          <a href="documents/california-ag-dispute-notice.pdf" 
+             class="btn-doc" 
+             target="_blank" 
+             aria-label="Download California Attorney General Rob Bonta Dispute Notice PDF">
+             Download California AG Filing (PDF)
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
 
   <footer>
     <p>Official Public Document Archive • Finalized Record • Permanent Static Reference</p>
