@@ -2,10 +2,6 @@ User-agent: *
 Allow: /
 Allow: /documents/*.pdf
 Disallow: /CNAME
-Disallow: /google169507de43bc15cc.html
-Disallow: /google169507de43bc15cc (1).html
-Disallow: /BingSiteAuth.xml
-Disallow: /BingSiteAuth (2).xml
 
 # Block aggressive scrapers/crawlers that consume bandwidth
 User-agent: AhrefsBot
