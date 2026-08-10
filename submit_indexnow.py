@@ -1,0 +1,75 @@
+import os
+import json
+import urllib.request
+import urllib.parse
+import xml.etree.ElementTree as ET
+
+# Configuration
+KEY = "4366b539c9914619a970e53a2707ec41"
+HOST = "chasekn43.github.io"
+KEY_LOCATION = f"https://{HOST}/regulatory-archive-2026/{KEY}.txt"
+SITEMAP_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml")
+KEY_FILE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"{KEY}.txt")
+
+def create_key_file():
+    """Creates the IndexNow verification key file at the site root."""
+    with open(KEY_FILE_PATH, "w", encoding="utf-8") as f:
+        f.write(KEY)
+    print(f"[+] Key file created: {KEY_FILE_PATH}")
+
+def parse_sitemap():
+    """Extracts all URLs from sitemap.xml."""
+    urls = []
+    if not os.path.exists(SITEMAP_PATH):
+        print(f"[-] Sitemap not found at {SITEMAP_PATH}")
+        return [f"https://{HOST}/regulatory-archive-2026/"]
+
+    tree = ET.parse(SITEMAP_PATH)
+    root = tree.getroot()
+    namespace = {"ns": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    
+    for url_elem in root.findall("ns:url", namespace):
+        loc = url_elem.find("ns:loc", namespace)
+        if loc is not None and loc.text:
+            urls.append(loc.text.strip())
+
+    print(f"[+] Parsed {len(urls)} URLs from sitemap.xml")
+    return urls
+
+def submit_to_indexnow(url_list):
+    """Submits URLs to IndexNow API (notifies Bing, Yahoo, Yandex, Naver, Seznam)."""
+    endpoint = "https://api.indexnow.org/indexnow"
+    
+    payload = {
+        "host": HOST,
+        "key": KEY,
+        "keyLocation": KEY_LOCATION,
+        "urlList": url_list
+    }
+
+    data = json.dumps(payload).encode("utf-8")
+    headers = {
+        "Content-Type": "application/json; charset=utf-8"
+    }
+
+    req = urllib.request.Request(endpoint, data=data, headers=headers, method="POST")
+
+    print(f"[+] Submitting {len(url_list)} URLs to IndexNow API ({endpoint})...")
+    try:
+        with urllib.request.urlopen(req, timeout=15) as response:
+            status = response.status
+            print(f"[SUCCESS] IndexNow API Response Code: {status}")
+            if status in [200, 202]:
+                print("[OK] Submission accepted by IndexNow engine grid.")
+    except urllib.error.HTTPError as e:
+        print(f"[-] IndexNow API Status: {e.code} ({e.reason})")
+        print("[!] Note: IndexNow requires the key file (4366b539c9914619a970e53a2707ec41.txt) to be live on GitHub Pages.")
+        print("[!] Once committed and pushed to main, IndexNow will automatically verify ownership and accept indexing pings.")
+    except Exception as e:
+        print(f"[-] IndexNow Submission Error: {e}")
+
+if __name__ == "__main__":
+    print("=== IndexNow Instant Search Engine Submission ===")
+    create_key_file()
+    urls = parse_sitemap()
+    submit_to_indexnow(urls)
