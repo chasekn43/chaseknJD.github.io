@@ -37,8 +37,11 @@ def parse_sitemap():
     return urls
 
 def submit_to_indexnow(url_list):
-    """Submits URLs to IndexNow API (notifies Bing, Yahoo, Yandex, Naver, Seznam)."""
-    endpoint = "https://api.indexnow.org/indexnow"
+    """Submits URLs to IndexNow API endpoints (notifies Bing, Yahoo, Yandex, Naver, Seznam)."""
+    endpoints = [
+        "https://api.indexnow.org/indexnow",
+        "https://www.bing.com/indexnow"
+    ]
     
     payload = {
         "host": HOST,
@@ -52,24 +55,23 @@ def submit_to_indexnow(url_list):
         "Content-Type": "application/json; charset=utf-8"
     }
 
-    req = urllib.request.Request(endpoint, data=data, headers=headers, method="POST")
-
-    print(f"[+] Submitting {len(url_list)} URLs to IndexNow API ({endpoint})...")
-    try:
-        with urllib.request.urlopen(req, timeout=15) as response:
-            status = response.status
-            print(f"[SUCCESS] IndexNow API Response Code: {status}")
-            if status in [200, 202]:
-                print("[OK] Submission accepted by IndexNow engine grid.")
-    except urllib.error.HTTPError as e:
-        print(f"[-] IndexNow API Status: {e.code} ({e.reason})")
-        print("[!] Note: IndexNow requires the key file (4366b539c9914619a970e53a2707ec41.txt) to be live on GitHub Pages.")
-        print("[!] Once committed and pushed to main, IndexNow will automatically verify ownership and accept indexing pings.")
-    except Exception as e:
-        print(f"[-] IndexNow Submission Error: {e}")
+    for endpoint in endpoints:
+        print(f"[+] Submitting {len(url_list)} URLs to IndexNow API ({endpoint})...")
+        try:
+            req = urllib.request.Request(endpoint, data=data, headers=headers, method="POST")
+            with urllib.request.urlopen(req, timeout=15) as response:
+                status = response.status
+                print(f"[SUCCESS] {endpoint} Response Code: {status}")
+                if status in [200, 202]:
+                    print("[OK] Submission accepted by IndexNow engine grid.")
+        except urllib.error.HTTPError as e:
+            print(f"[-] {endpoint} Status: {e.code} ({e.reason})")
+        except Exception as e:
+            print(f"[-] {endpoint} Submission Error: {e}")
 
 if __name__ == "__main__":
     print("=== IndexNow Instant Search Engine Submission ===")
     create_key_file()
     urls = parse_sitemap()
     submit_to_indexnow(urls)
+

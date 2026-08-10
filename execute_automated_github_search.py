@@ -21,7 +21,7 @@ if sys.stdout.encoding != 'utf-8':
     except Exception:
         pass
 
-NAME = "Chase Kinslow"
+NAMES = ["Chase Kinslow", "Charles W. Kinslow IV"]
 REPO_HANDLE = "chasekn43"
 REPO_NAME = "regulatory-archive-2026"
 
@@ -70,6 +70,17 @@ USER_AGENTS = [
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 ]
 
+def get_proxy_headers():
+    ip1 = f"198.51.{random.randint(1,254)}.{random.randint(1,254)}"
+    ip2 = f"203.0.113.{random.randint(1,254)}.{random.randint(1,254)}"
+    return {
+        "User-Agent": random.choice(USER_AGENTS),
+        "Accept-Language": "en-US,en;q=0.9",
+        "X-Forwarded-For": ip1,
+        "X-Real-IP": ip2,
+        "CF-Connecting-IP": ip1
+    }
+
 def clean_text(html_str):
     if not html_str:
         return ""
@@ -79,7 +90,7 @@ def clean_text(html_str):
 
 def search_duckduckgo(query):
     url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote(query)}"
-    headers = {"User-Agent": random.choice(USER_AGENTS), "Accept-Language": "en-US,en;q=0.9"}
+    headers = get_proxy_headers()
     req = urllib.request.Request(url, headers=headers)
     results = []
     try:
@@ -87,14 +98,14 @@ def search_duckduckgo(query):
             html = response.read().decode('utf-8', errors='ignore')
             matches = re.findall(r'<a class="result__url" href="(.*?)">(.*?)</a>', html)
             for href, title in matches[:10]:
-                results.append({"engine": "DuckDuckGo", "title": clean_text(title), "url": clean_text(href)})
+                results.append({"engine": "DuckDuckGo", "title": clean_text(title), "url": clean_text(href), "proxy_ip": headers["X-Forwarded-For"]})
     except Exception as e:
-        results.append({"engine": "DuckDuckGo", "error": str(e)})
+        results.append({"engine": "DuckDuckGo", "error": str(e), "proxy_ip": headers["X-Forwarded-For"]})
     return results
 
 def search_bing(query):
     url = f"https://www.bing.com/search?q={urllib.parse.quote(query)}"
-    headers = {"User-Agent": random.choice(USER_AGENTS), "Accept-Language": "en-US,en;q=0.9"}
+    headers = get_proxy_headers()
     req = urllib.request.Request(url, headers=headers)
     results = []
     try:
@@ -102,14 +113,14 @@ def search_bing(query):
             html = response.read().decode('utf-8', errors='ignore')
             matches = re.findall(r'<h2><a href="(http[s]?://[^"]+)"[^>]*>(.*?)</a></h2>', html)
             for href, title in matches[:10]:
-                results.append({"engine": "Bing", "title": clean_text(title), "url": href})
+                results.append({"engine": "Bing", "title": clean_text(title), "url": href, "proxy_ip": headers["X-Forwarded-For"]})
     except Exception as e:
-        results.append({"engine": "Bing", "error": str(e)})
+        results.append({"engine": "Bing", "error": str(e), "proxy_ip": headers["X-Forwarded-For"]})
     return results
 
 def search_google(query):
     url = f"https://www.google.com/search?q={urllib.parse.quote(query)}&num=10"
-    headers = {"User-Agent": random.choice(USER_AGENTS), "Accept-Language": "en-US,en;q=0.9"}
+    headers = get_proxy_headers()
     req = urllib.request.Request(url, headers=headers)
     results = []
     try:
@@ -120,14 +131,14 @@ def search_google(query):
             for i, l in enumerate(raw_links[:10]):
                 if "google.com" not in l and "youtube.com" not in l:
                     t = clean_text(titles[i]) if i < len(titles) else "Google Result"
-                    results.append({"engine": "Google", "title": t, "url": urllib.parse.unquote(l)})
+                    results.append({"engine": "Google", "title": t, "url": urllib.parse.unquote(l), "proxy_ip": headers["X-Forwarded-For"]})
     except Exception as e:
-        results.append({"engine": "Google", "error": str(e)})
+        results.append({"engine": "Google", "error": str(e), "proxy_ip": headers["X-Forwarded-For"]})
     return results
 
 def search_yahoo(query):
     url = f"https://search.yahoo.com/search?p={urllib.parse.quote(query)}&nojs=1"
-    headers = {"User-Agent": random.choice(USER_AGENTS), "Accept-Language": "en-US,en;q=0.9"}
+    headers = get_proxy_headers()
     req = urllib.request.Request(url, headers=headers)
     results = []
     try:
@@ -135,19 +146,21 @@ def search_yahoo(query):
             html = response.read().decode('utf-8', errors='ignore')
             matches = re.findall(r'<h3 class="title"[^>]*><a href="(https?://[^"]+)"[^>]*>(.*?)</a></h3>', html)
             for href, title in matches[:10]:
-                results.append({"engine": "Yahoo", "title": clean_text(title), "url": href})
+                results.append({"engine": "Yahoo", "title": clean_text(title), "url": href, "proxy_ip": headers["X-Forwarded-For"]})
     except Exception as e:
-        results.append({"engine": "Yahoo", "error": str(e)})
+        results.append({"engine": "Yahoo", "error": str(e), "proxy_ip": headers["X-Forwarded-For"]})
     return results
 
-def run_continuous_automated_search(passes=5, queries_per_pass=4):
+def run_continuous_automated_search(passes=3, queries_per_pass=4):
     print("=" * 70)
     print(" AUTOMATED GITHUB REPOSITORY SEARCH ENGINE AUDITOR")
-    print(f" Target Person: {NAME}")
+    print(f" Target Person Variants: {', '.join(NAMES)}")
     print(f" Target Repository: {REPO_HANDLE}/{REPO_NAME}")
     print(f" Search Engines: Yahoo, Bing, Google, DuckDuckGo")
+    print(f" Proxy IP Header Rotation: ACTIVE")
     print(f" Total Continuous Passes: {passes}")
     print("=" * 70 + "\n")
+
     
     session_history = []
     total_matches = 0
@@ -161,8 +174,9 @@ def run_continuous_automated_search(passes=5, queries_per_pass=4):
         pass_queries = []
         
         for topic in selected_topics:
+            name_val = random.choice(NAMES)
             mod = random.choice(MODIFIERS)
-            q_str = f"{NAME} {topic} {mod}".strip()
+            q_str = f"{name_val} {topic} {mod}".strip()
             pass_queries.append(q_str)
             
         pass_data = {"pass": p, "timestamp": pass_time, "queries": []}
