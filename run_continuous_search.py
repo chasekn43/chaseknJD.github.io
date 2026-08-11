@@ -215,8 +215,8 @@ def generate_query():
     global query_counter, recent_queries
     query_counter += 1
     
-    # Every 7th iteration is branded (name + repo/LinkedIn keywords)
-    is_branded_turn = (query_counter % 7 == 0)
+    # Every 3rd iteration is branded (name + repo/LinkedIn keywords)
+    is_branded_turn = (query_counter % 3 == 0)
     
     for _ in range(50):
         if is_branded_turn:
@@ -229,7 +229,7 @@ def generate_query():
             else:
                 query = f'"{name}" "{kw}"'
         else:
-            # 6 out of 7 times: Pure compliance terms (non-branded)
+            # 2 out of 3 times: Pure compliance terms (non-branded)
             kws = random.sample(keywords, 2)
             query = f"{kws[0]} {kws[1]}"
         
