@@ -31,7 +31,8 @@ names = [
     "Charles Kinslow IV",
     "Charles Kinslow",
     "Chase Kinslow",
-    "chasekn"
+    "chasekn",
+    "kinslow"
 ]
 
 keywords = [
