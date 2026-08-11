@@ -215,23 +215,17 @@ def generate_query():
     global query_counter, recent_queries
     query_counter += 1
     
-    # Every 3rd iteration is branded (name + repo/LinkedIn keywords)
-    is_branded_turn = (query_counter % 3 == 0)
-    
     for _ in range(50):
-        if is_branded_turn:
-            name = random.choice(names)
-            # Inject specific LinkedIn and repository terms to associate the profile
-            linkedin_keywords = ["linkedin", "linkedin profile", "regulatory-archive-2026", "bnpl dispute", "kinslow bnpl"]
-            kw = random.choice(keywords + linkedin_keywords)
-            if random.random() < 0.5:
-                query = f"{name} {kw}"
-            else:
-                query = f'"{name}" "{kw}"'
+        # Every query is branded: pair a name variation (Kinslow/Chase) with a keyword
+        name = random.choice(names)
+        
+        linkedin_keywords = ["linkedin", "linkedin profile", "regulatory-archive-2026", "bnpl dispute", "kinslow bnpl"]
+        kw = random.choice(keywords + linkedin_keywords)
+        
+        if random.random() < 0.5:
+            query = f"{name} {kw}"
         else:
-            # 2 out of 3 times: Pure compliance terms (non-branded)
-            kws = random.sample(keywords, 2)
-            query = f"{kws[0]} {kws[1]}"
+            query = f'"{name}" "{kw}"'
         
         # Avoid running similar queries consecutively
         words = set(query.lower().replace('"', '').split())
@@ -252,10 +246,7 @@ def generate_query():
             return query
             
     # Fallback
-    if is_branded_turn:
-        return f"{random.choice(names)} kinslow bnpl"
-    kws = random.sample(keywords, 2)
-    return f"{kws[0]} {kws[1]}"
+    return f"{random.choice(names)} kinslow bnpl"
 
 def main():
     log_message("Continuous search simulator initialized with SSL filtering, Redirect blocking, and zero sleep.")
