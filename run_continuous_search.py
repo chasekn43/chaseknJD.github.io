@@ -34,6 +34,8 @@ names = [
     "Charles Kinslow IV",
     "Charles Kinslow",
     "Chase Kinslow",
+    "Charles K.",
+    "Charles K",
     "chasekn43",
     "chasekn",
     "kinslow"

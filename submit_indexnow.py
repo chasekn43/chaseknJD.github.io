@@ -67,6 +67,11 @@ def submit_to_indexnow(url_list):
                     print("[OK] Submission accepted by IndexNow engine grid.")
         except urllib.error.HTTPError as e:
             print(f"[-] {endpoint} Status: {e.code} ({e.reason})")
+            try:
+                body = e.read().decode('utf-8')
+                print(f"    [Response Body] {body}")
+            except Exception:
+                pass
             if e.code == 403:
                 print("    [NOTE] HTTP 403 indicates IndexNow crawler key validation for GitHub Pages subfolder repos.")
                 print(f"    For subpath repos (https://{HOST}/regulatory-archive-2026/), indexation relies primarily on Google Search Console & Bing Webmaster Tools XML Sitemap submission: https://{HOST}/regulatory-archive-2026/sitemap.xml")

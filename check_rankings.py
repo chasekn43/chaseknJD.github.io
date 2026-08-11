@@ -20,7 +20,8 @@ KEYWORDS = [
     "APA 5 U.S.C. 553 rulemaking exemption regulatory reliance interest",
     "CFPB UDAAP customer service refund delays fintech credit",
     "Uncredited ledger error SOX internal controls compliance",
-    "Charles W. Kinslow IV attorney CPA fintech regulatory archive"
+    "Charles W. Kinslow IV attorney CPA fintech regulatory archive",
+    "Charles K. Fintech BNPL merchant dispute"
 ]
 
 ENGINES = {
