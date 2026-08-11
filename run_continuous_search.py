@@ -208,23 +208,51 @@ def proxy_validator_thread():
                 
         time.sleep(10)
 
+recent_queries = []
+
 def generate_query():
-    # 90% Non-Branded (keywords only), 10% Branded (name + keyword)
-    mode = random.choices(
-        ["non-branded", "branded"],
-        weights=[90, 10],
-        k=1
-    )[0]
+    global recent_queries
     
-    if mode == "non-branded":
-        return f"{random.choice(keywords)} {random.choice(keywords)}"
-    else:
-        name = random.choice(names)
-        kw = random.choice(keywords)
-        if random.random() < 0.5:
-            return f"{name} {kw}"
+    for _ in range(50):
+        mode = random.choices(
+            ["non-branded", "branded"],
+            weights=[90, 10],
+            k=1
+        )[0]
+        
+        if mode == "non-branded":
+            # Select two distinct keywords to prevent repetitions like "credit credit"
+            kws = random.sample(keywords, 2)
+            query = f"{kws[0]} {kws[1]}"
         else:
-            return f'"{name}" "{kw}"'
+            name = random.choice(names)
+            kw = random.choice(keywords)
+            if random.random() < 0.5:
+                query = f"{name} {kw}"
+            else:
+                query = f'"{name}" "{kw}"'
+        
+        # Avoid running similar queries consecutively
+        words = set(query.lower().replace('"', '').split())
+        is_duplicate = False
+        for old_q in recent_queries:
+            old_words = set(old_q.lower().replace('"', '').split())
+            if len(words) > 0 and len(old_words) > 0:
+                intersection = words.intersection(old_words)
+                # If more than 70% word overlap, reject to maintain variety
+                if len(intersection) / max(len(words), 1) > 0.7:
+                    is_duplicate = True
+                    break
+        
+        if not is_duplicate:
+            recent_queries.append(query)
+            if len(recent_queries) > 20:
+                recent_queries.pop(0)
+            return query
+            
+    # Fallback
+    kws = random.sample(keywords, 2)
+    return f"{kws[0]} {kws[1]}"
 
 def main():
     log_message("Continuous search simulator initialized with SSL filtering, Redirect blocking, and zero sleep.")
