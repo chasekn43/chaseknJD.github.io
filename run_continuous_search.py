@@ -94,14 +94,6 @@ keywords = [
     "unsolicited team email outreach",
     "regulatory-archive-2026",
     "chasekn43.github.io",
-    "403_tools",
-    "bypass-403",
-    "byp4xx",
-    "Forbidden-Buster",
-    "noremore403payloads",
-    "403-bypass.sh",
-    "bypass-403.sh",
-    "liixhunter",
     "fintech compliance archive",
     "BNPL regulatory record"
 ]
