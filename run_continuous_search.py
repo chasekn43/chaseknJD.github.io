@@ -215,17 +215,33 @@ def generate_query():
     global query_counter, recent_queries
     query_counter += 1
     
+    fintech_terms = ["fintech", "BNPL", "buy now pay later", "lines of credit"]
+    
     for _ in range(50):
-        # Every query is branded: pair a name variation (Kinslow/Chase) with a keyword
+        # Pick name variation (Kinslow/Chase)
         name = random.choice(names)
+        # Pick mandatory fintech/BNPL industry term
+        fintech = random.choice(fintech_terms)
+        # Pick secondary compliance keyword for variety
+        other_kw = random.choice(keywords)
         
-        linkedin_keywords = ["linkedin", "linkedin profile", "regulatory-archive-2026", "bnpl dispute", "kinslow bnpl"]
-        kw = random.choice(keywords + linkedin_keywords)
-        
-        if random.random() < 0.5:
-            query = f"{name} {kw}"
+        # Clean up overlap duplicate words
+        if other_kw.lower() in [fintech.lower(), name.lower(), "linkedin"]:
+            other_kw = ""
+            
+        if other_kw:
+            query_str = f"{name} {fintech} {other_kw}"
         else:
-            query = f'"{name}" "{kw}"'
+            query_str = f"{name} {fintech}"
+            
+        # Add random quotes for exact match diversity
+        if random.random() < 0.3:
+            if other_kw:
+                query = f'"{name}" "{fintech}" "{other_kw}"'
+            else:
+                query = f'"{name}" "{fintech}"'
+        else:
+            query = query_str
         
         # Avoid running similar queries consecutively
         words = set(query.lower().replace('"', '').split())
@@ -246,7 +262,7 @@ def generate_query():
             return query
             
     # Fallback
-    return f"{random.choice(names)} kinslow bnpl"
+    return f"{random.choice(names)} fintech BNPL dispute"
 
 def main():
     log_message("Continuous search simulator initialized with SSL filtering, Redirect blocking, and zero sleep.")
