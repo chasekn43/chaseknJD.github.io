@@ -32,9 +32,10 @@ NAME = "Chase Kinslow"
 
 # Comprehensive keyword templates combining user name with GitHub repository topics
 KEYWORD_TEMPLATES = [
-    "{name} regulatory-archive-2026",
-    "{name} regulatory archive 2026 github",
-    "{name} chasekn43 github",
+    "{name} Fintech BNPL merchant dispute",
+    "{name} CFPB Administrative Procedures Act",
+    "{name} customer service refund delays BNPL",
+    "{name} point of sale lines of credit dispute",
     "{name} Affirm CFPB complaint 260717-35668593",
     "{name} Kinslow v Affirm public evidentiary record",
     "{name} Affirm Morgan Lewis Bockius lawsuit",
@@ -45,7 +46,7 @@ KEYWORD_TEMPLATES = [
     "{name} California AG Rob Bonta dispute notice",
     "{name} FTC fraud web affidavit Affirm",
     "{name} Shop app unauthorized intrusion Affirm",
-    "{name} regulatory-archive.kinslow.co",
+    "{name} Regulation Z billing error resolution",
     "{name} Madison Marshall Arjun Rao Morgan Lewis",
     "{name} Scott Williams Affirm Vice President Client Success",
     "{name} Affirm in-app payment lock BillPay workaround",

@@ -15,6 +15,10 @@ from multi_engine_search_suite import (
 )
 
 QUERIES_SET_B = [
+    "Chase Kinslow Fintech BNPL merchant dispute",
+    "Chase Kinslow CFPB Administrative Procedures Act",
+    "Chase Kinslow customer service refund delays",
+    "Chase Kinslow point of sale lines of credit",
     "Chase Kinslow Affirm Morgan Lewis Bockius lawsuit",
     "Chase Kinslow Andy Chen Affirm cease and desist",
     "Chase Kinslow Madison Marshall Arjun Rao Morgan Lewis",

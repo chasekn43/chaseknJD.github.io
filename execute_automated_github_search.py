@@ -26,10 +26,11 @@ REPO_HANDLE = "chasekn43"
 REPO_NAME = "regulatory-archive-2026"
 
 KEYWORD_TOPICS = [
-    "regulatory-archive-2026 github",
-    "chasekn43 github regulatory archive",
-    "regulatory-archive.kinslow.co",
-    "kinslow.co public record",
+    "Fintech BNPL merchant dispute",
+    "CFPB Administrative Procedures Act",
+    "Customer service refund delays BNPL",
+    "Point of sale lines of credit dispute",
+    "Buy Now Pay Later Regulation Z billing error",
     "CFPB complaint 260717-35668593",
     "Monroe Police Department incident report 26-29572",
     "Kinslow v Affirm public evidentiary record",

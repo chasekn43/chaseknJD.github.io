@@ -11,11 +11,16 @@ TARGET_REPO = "regulatory-archive-2026"
 FULL_TARGET_URL = f"https://{TARGET_DOMAIN}/{TARGET_REPO}/"
 
 KEYWORDS = [
-    "Charles W. Kinslow regulatory-archive-2026",
-    "Charles W. Kinslow IV dispute archive",
+    "Charles W. Kinslow Fintech BNPL merchant dispute",
+    "Charles W. Kinslow IV CFPB Administrative Procedures Act",
+    "Chase Kinslow customer service refund delays",
+    "Charles Kinslow point of sale lines of credit",
     "Chase Kinslow Affirm evidence vault",
-    "regulatory-archive-2026",
-    "site:chasekn43.github.io/regulatory-archive-2026/"
+    "Regulation Z billing error procedures BNPL point of sale credit",
+    "APA 5 U.S.C. 553 rulemaking exemption regulatory reliance interest",
+    "CFPB UDAAP customer service refund delays fintech credit",
+    "Uncredited ledger error SOX internal controls compliance",
+    "Charles W. Kinslow IV attorney CPA fintech regulatory archive"
 ]
 
 ENGINES = {

@@ -1,0 +1,1519 @@
+{
+  "timestamp": "2026-08-10T18:21:21.030548",
+  "queries_executed": 8,
+  "engine_summary": {
+    "Google": {
+      "queries": 8,
+      "total_time_ms": 12144.68,
+      "total_results": 0,
+      "total_hits": 0,
+      "errors": 0
+    },
+    "Bing": {
+      "queries": 8,
+      "total_time_ms": 12532.970000000001,
+      "total_results": 0,
+      "total_hits": 0,
+      "errors": 0
+    },
+    "Yahoo": {
+      "queries": 8,
+      "total_time_ms": 13551.429999999998,
+      "total_results": 172,
+      "total_hits": 40,
+      "errors": 0
+    },
+    "DuckDuckGo": {
+      "queries": 8,
+      "total_time_ms": 13665.57,
+      "total_results": 0,
+      "total_hits": 0,
+      "errors": 0
+    }
+  },
+  "detailed_results": {
+    "Chase Kinslow regulatory-archive-2026": {
+      "Google": {
+        "response_time_ms": 1542.32,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Bing": {
+        "response_time_ms": 1469.67,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Yahoo": {
+        "response_time_ms": 1586.28,
+        "status_code": 200,
+        "results_count": 20,
+        "target_hits": 4,
+        "hit_details": [
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=8pB5OgrigJjsrDzKVErKkep_Aji9WQAR8dYADZPC&p=Chase+Kinslow+regulatory-archive-2026&fr2=piv-web",
+            "matched_indicators": [
+              "regulatory-archive-2026",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › regulatory-archive-2026GitHub - chasekn43/regulatory-archive-2026: Finalized public ...",
+            "url": "https://github.com/chasekn43/regulatory-archive-2026",
+            "matched_indicators": [
+              "chasekn43",
+              "regulatory-archive-2026"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeGitHub - chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "matched_indicators": [
+              "chasekn43",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Trellis.Lawhttps://trellis.law › case › 17031Jpmorgan Chase Bank, National Association Vs Alice Kinslow ...",
+            "url": "https://trellis.law/case/17031/2026-ch-03540/jpmorgan-chase-bank-national-association-vs-alice-kinslow",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          }
+        ],
+        "error": null,
+        "raw_results": [
+          {
+            "title": "Yahoo",
+            "url": "https://www.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Home",
+            "url": "https://www.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Mail",
+            "url": "https://us.mail.yahoo.com/?.intl=us&.lang=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "News",
+            "url": "https://www.yahoo.com/news",
+            "snippet": ""
+          },
+          {
+            "title": "Finance",
+            "url": "https://finance.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Sports",
+            "url": "https://sports.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Weather",
+            "url": "https://www.yahoo.com/news/weather",
+            "snippet": ""
+          },
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=8pB5OgrigJjsrDzKVErKkep_Aji9WQAR8dYADZPC&p=Chase+Kinslow+regulatory-archive-2026&fr2=piv-web",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › regulatory-archive-2026GitHub - chasekn43/regulatory-archive-2026: Finalized public ...",
+            "url": "https://github.com/chasekn43/regulatory-archive-2026",
+            "snippet": ""
+          },
+          {
+            "title": "SEC.govhttps://www.sec.gov › search-filingsSEC.gov | Search Filings",
+            "url": "https://www.sec.gov/search-filings",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeGitHub - chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "snippet": ""
+          },
+          {
+            "title": "National Archiveshttps://www.archives.gov › federal-registerFederal Register | National Archives",
+            "url": "https://www.archives.gov/federal-register",
+            "snippet": ""
+          },
+          {
+            "title": "MarketBeathttps://www.marketbeat.com › stocks › NYSEJPMorgan Chase & Co. (JPM) 10K Form and Latest SEC Filings 2026",
+            "url": "https://www.marketbeat.com/stocks/NYSE/JPM/sec-filings/",
+            "snippet": ""
+          },
+          {
+            "title": "JPMorgan Chase & Co.https://www.jpmorganchase.com › irInvestor Relations | JPMorganChase",
+            "url": "https://www.jpmorganchase.com/ir",
+            "snippet": ""
+          },
+          {
+            "title": "Trellis.Lawhttps://trellis.law › case › 17031Jpmorgan Chase Bank, National Association Vs Alice Kinslow ...",
+            "url": "https://trellis.law/case/17031/2026-ch-03540/jpmorgan-chase-bank-national-association-vs-alice-kinslow",
+            "snippet": ""
+          },
+          {
+            "title": "Suggestions",
+            "url": "https://yahoo.uservoice.com/forums/193847-search",
+            "snippet": ""
+          },
+          {
+            "title": "Terms",
+            "url": "https://guce.yahoo.com/terms?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Privacy",
+            "url": "https://guce.yahoo.com/privacy-policy?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Your Privacy Choices",
+            "url": "https://guce.yahoo.com/state-controls?locale=en-US&state=TX",
+            "snippet": ""
+          },
+          {
+            "title": "Advertise",
+            "url": "https://advertising.yahoo.com/article/search-advertising.html",
+            "snippet": ""
+          }
+        ]
+      },
+      "DuckDuckGo": {
+        "response_time_ms": 1710.3,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      }
+    },
+    "Charles W. Kinslow IV regulatory-archive-2026": {
+      "Google": {
+        "response_time_ms": 1486.08,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Bing": {
+        "response_time_ms": 1475.24,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Yahoo": {
+        "response_time_ms": 1823.59,
+        "status_code": 200,
+        "results_count": 32,
+        "target_hits": 4,
+        "hit_details": [
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=HWwuQgrFQRq6RiXpKTU85.WBAji9WQAXJpIACJN1&p=Charles+W.+Kinslow+IV+regulatory-archive-2026&fr2=piv-web",
+            "matched_indicators": [
+              "regulatory-archive-2026",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › regulatory-archive-2026GitHub - chasekn43/regulatory-archive-2026: Finalized public ...",
+            "url": "https://github.com/chasekn43/regulatory-archive-2026",
+            "matched_indicators": [
+              "chasekn43",
+              "regulatory-archive-2026"
+            ]
+          },
+          {
+            "title": "LinkedInhttps://www.linkedin.com › pulse › formal-notice-disputeFORMAL NOTICE OF DISPUTE - CASE ID (11A69387R41098432 ...",
+            "url": "https://www.linkedin.com/pulse/formal-notice-dispute-case-id-11a69387r41098432-charles-kinslow-iv-skqrc",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          },
+          {
+            "title": "files.brokercheck.finra.orghttps://files.brokercheck.finra.org › individualCHARLES WILLIAM KINSLOW III - Financial Industry Regulatory ...",
+            "url": "https://files.brokercheck.finra.org/individual/individual_2333517.pdf",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          }
+        ],
+        "error": null,
+        "raw_results": [
+          {
+            "title": "Yahoo",
+            "url": "https://www.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Home",
+            "url": "https://www.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Mail",
+            "url": "https://us.mail.yahoo.com/?.intl=us&.lang=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "News",
+            "url": "https://www.yahoo.com/news",
+            "snippet": ""
+          },
+          {
+            "title": "Finance",
+            "url": "https://finance.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Sports",
+            "url": "https://sports.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Weather",
+            "url": "https://www.yahoo.com/news/weather",
+            "snippet": ""
+          },
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=HWwuQgrFQRq6RiXpKTU85.WBAji9WQAXJpIACJN1&p=Charles+W.+Kinslow+IV+regulatory-archive-2026&fr2=piv-web",
+            "snippet": ""
+          },
+          {
+            "title": "SEC.govhttps://www.sec.gov › search-filingsSEC.gov | Search Filings",
+            "url": "https://www.sec.gov/search-filings",
+            "snippet": ""
+          },
+          {
+            "title": "Edgar Full Text Search",
+            "url": "https://www.sec.gov/edgar/search/",
+            "snippet": ""
+          },
+          {
+            "title": "Mutual Funds Search",
+            "url": "https://www.sec.gov/search-filings/mutual-funds-search",
+            "snippet": ""
+          },
+          {
+            "title": "CIK Lookup",
+            "url": "https://www.sec.gov/search-filings/cik-lookup",
+            "snippet": ""
+          },
+          {
+            "title": "Edgar Search Assistance",
+            "url": "https://www.sec.gov/search-filings/edgar-search-assistance",
+            "snippet": ""
+          },
+          {
+            "title": "Accessing Edgar Data",
+            "url": "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data",
+            "snippet": ""
+          },
+          {
+            "title": "How Do I Use Edgar",
+            "url": "https://www.sec.gov/search-filings/edgar-search-assistance/how-do-i-use-edgar",
+            "snippet": ""
+          },
+          {
+            "title": "Edgar Application Programming Interfaces",
+            "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+            "snippet": ""
+          },
+          {
+            "title": "Using Edgar to Research Investments",
+            "url": "https://www.sec.gov/search-filings/edgar-search-assistance/using-edgar-research-investments",
+            "snippet": ""
+          },
+          {
+            "title": "Xbrl Viewer",
+            "url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000320187/000032018724000044/nke-20240531.htm",
+            "snippet": ""
+          },
+          {
+            "title": "Standard Industrial Classification (Sic) Code List",
+            "url": "https://www.sec.gov/search-filings/standard-industrial-classification-sic-code-list",
+            "snippet": ""
+          },
+          {
+            "title": "System",
+            "url": "https://www.sec.gov/search-filings/public-dissemination-service-system-contact",
+            "snippet": ""
+          },
+          {
+            "title": "Edgar Entity Landing Page",
+            "url": "https://www.sec.gov/edgar/browse/?CIK=320193&owner=exclude",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › regulatory-archive-2026GitHub - chasekn43/regulatory-archive-2026: Finalized public ...",
+            "url": "https://github.com/chasekn43/regulatory-archive-2026",
+            "snippet": ""
+          },
+          {
+            "title": "LinkedInhttps://www.linkedin.com › pulse › formal-notice-disputeFORMAL NOTICE OF DISPUTE - CASE ID (11A69387R41098432 ...",
+            "url": "https://www.linkedin.com/pulse/formal-notice-dispute-case-id-11a69387r41098432-charles-kinslow-iv-skqrc",
+            "snippet": ""
+          },
+          {
+            "title": "SEC.govhttps://www.sec.gov › edgar › searchSEC.gov | EDGAR Full Text Search",
+            "url": "https://www.sec.gov/edgar//search/",
+            "snippet": ""
+          },
+          {
+            "title": "Regulations.govhttps://www.regulations.govRegulations.gov",
+            "url": "https://www.regulations.gov/",
+            "snippet": ""
+          },
+          {
+            "title": "SECFilingshttps://www.secfilings.comSEC Filings | Track, Search, and Analyze Public Company ...",
+            "url": "https://www.secfilings.com/",
+            "snippet": ""
+          },
+          {
+            "title": "files.brokercheck.finra.orghttps://files.brokercheck.finra.org › individualCHARLES WILLIAM KINSLOW III - Financial Industry Regulatory ...",
+            "url": "https://files.brokercheck.finra.org/individual/individual_2333517.pdf",
+            "snippet": ""
+          },
+          {
+            "title": "Suggestions",
+            "url": "https://yahoo.uservoice.com/forums/193847-search",
+            "snippet": ""
+          },
+          {
+            "title": "Terms",
+            "url": "https://guce.yahoo.com/terms?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Privacy",
+            "url": "https://guce.yahoo.com/privacy-policy?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Your Privacy Choices",
+            "url": "https://guce.yahoo.com/state-controls?locale=en-US&state=TX",
+            "snippet": ""
+          },
+          {
+            "title": "Advertise",
+            "url": "https://advertising.yahoo.com/article/search-advertising.html",
+            "snippet": ""
+          }
+        ]
+      },
+      "DuckDuckGo": {
+        "response_time_ms": 1747.45,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      }
+    },
+    "Chase Kinslow chasekn43 github": {
+      "Google": {
+        "response_time_ms": 1410.36,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Bing": {
+        "response_time_ms": 1434.71,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Yahoo": {
+        "response_time_ms": 1577.85,
+        "status_code": 200,
+        "results_count": 20,
+        "target_hits": 5,
+        "hit_details": [
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=6Oda4grhddtnF1iBNbec0d.cAji9WQAR2KcADD7J&p=Chase+Kinslow+chasekn43+github&fr2=piv-web",
+            "matched_indicators": [
+              "chasekn43",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › regulatory-archive-2026GitHub - chasekn43/regulatory-archive-2026: Finalized public ...",
+            "url": "https://github.com/chasekn43/regulatory-archive-2026",
+            "matched_indicators": [
+              "chasekn43",
+              "regulatory-archive-2026"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeGitHub - chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/",
+            "matched_indicators": [
+              "chasekn43",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeKinslow-Fintech-Dispute-Case-Study-/README.md at ... - GitHub",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/README.md",
+            "matched_indicators": [
+              "chasekn43",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Mediumhttps://medium.com › @chasekn43 › 1-the-profitabilityMedium",
+            "url": "https://medium.com/@chasekn43/1-the-profitability-mandate-the-zero-late-fee-paradox-1215cbdef494",
+            "matched_indicators": [
+              "chasekn43"
+            ]
+          }
+        ],
+        "error": null,
+        "raw_results": [
+          {
+            "title": "Yahoo",
+            "url": "https://www.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Home",
+            "url": "https://www.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Mail",
+            "url": "https://us.mail.yahoo.com/?.intl=us&.lang=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "News",
+            "url": "https://www.yahoo.com/news",
+            "snippet": ""
+          },
+          {
+            "title": "Finance",
+            "url": "https://finance.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Sports",
+            "url": "https://sports.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Weather",
+            "url": "https://www.yahoo.com/news/weather",
+            "snippet": ""
+          },
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=6Oda4grhddtnF1iBNbec0d.cAji9WQAR2KcADD7J&p=Chase+Kinslow+chasekn43+github&fr2=piv-web",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › regulatory-archive-2026GitHub - chasekn43/regulatory-archive-2026: Finalized public ...",
+            "url": "https://github.com/chasekn43/regulatory-archive-2026",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeGitHub - chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeKinslow-Fintech-Dispute-Case-Study-/README.md at ... - GitHub",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/README.md",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasechase (Chase Colman) · GitHub",
+            "url": "https://github.com/chase",
+            "snippet": ""
+          },
+          {
+            "title": "Mediumhttps://medium.com › @chasekn43 › 1-the-profitabilityMedium",
+            "url": "https://medium.com/@chasekn43/1-the-profitability-mandate-the-zero-late-fee-paradox-1215cbdef494",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › jpmorganchaseJPMorganChase - GitHub",
+            "url": "https://github.com/jpmorganchase",
+            "snippet": ""
+          },
+          {
+            "title": "simonsmith.github.iohttps://simonsmith.github.io › github-user-searchGitHub User Search",
+            "url": "https://simonsmith.github.io/github-user-search/",
+            "snippet": ""
+          },
+          {
+            "title": "Suggestions",
+            "url": "https://yahoo.uservoice.com/forums/193847-search",
+            "snippet": ""
+          },
+          {
+            "title": "Terms",
+            "url": "https://guce.yahoo.com/terms?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Privacy",
+            "url": "https://guce.yahoo.com/privacy-policy?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Your Privacy Choices",
+            "url": "https://guce.yahoo.com/state-controls?locale=en-US&state=TX",
+            "snippet": ""
+          },
+          {
+            "title": "Advertise",
+            "url": "https://advertising.yahoo.com/article/search-advertising.html",
+            "snippet": ""
+          }
+        ]
+      },
+      "DuckDuckGo": {
+        "response_time_ms": 1666.75,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      }
+    },
+    "Charles W. Kinslow IV chasekn43 github": {
+      "Google": {
+        "response_time_ms": 1588.96,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Bing": {
+        "response_time_ms": 1546.21,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Yahoo": {
+        "response_time_ms": 1495.92,
+        "status_code": 200,
+        "results_count": 20,
+        "target_hits": 7,
+        "hit_details": [
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=aZ0.FArFPZbdm2eubcC_tNXwAji9WQAXkeAABwaf&p=Charles+W.+Kinslow+IV+chasekn43+github&fr2=piv-web",
+            "matched_indicators": [
+              "chasekn43",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeGitHub - chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/",
+            "matched_indicators": [
+              "chasekn43",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "LinkedInhttps://www.linkedin.com › pulse › fta-won-consumers-lostThe FTA Won. Consumers Lost. Nobody's Coming. - LinkedIn",
+            "url": "https://www.linkedin.com/pulse/fta-won-consumers-lost-nobodys-coming-charles-kinslow-iv-ynfvc",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeKinslow-Fintech-Dispute-Case-Study-/README.md at ... - GitHub",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/README.md",
+            "matched_indicators": [
+              "chasekn43",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › C-KinslowC-Kinslow · GitHub",
+            "url": "https://github.com/C-Kinslow",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Whitepageshttps://www.whitepages.com › name › Charles-William-KinslowCharles William Kinslow IV | 43 | Quercus Cir, Little Rock ...",
+            "url": "https://www.whitepages.com/name/Charles-William-Kinslow-Iv/Little-Rock-AR/PkypNpGPle8",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Twitchhttps://www.twitch.tv › chasekn43chasekn43 - Twitch",
+            "url": "https://www.twitch.tv/chasekn43",
+            "matched_indicators": [
+              "chasekn43"
+            ]
+          }
+        ],
+        "error": null,
+        "raw_results": [
+          {
+            "title": "Yahoo",
+            "url": "https://www.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Home",
+            "url": "https://www.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Mail",
+            "url": "https://us.mail.yahoo.com/?.intl=us&.lang=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "News",
+            "url": "https://www.yahoo.com/news",
+            "snippet": ""
+          },
+          {
+            "title": "Finance",
+            "url": "https://finance.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Sports",
+            "url": "https://sports.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Weather",
+            "url": "https://www.yahoo.com/news/weather",
+            "snippet": ""
+          },
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=aZ0.FArFPZbdm2eubcC_tNXwAji9WQAXkeAABwaf&p=Charles+W.+Kinslow+IV+chasekn43+github&fr2=piv-web",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeGitHub - chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/",
+            "snippet": ""
+          },
+          {
+            "title": "LinkedInhttps://www.linkedin.com › pulse › fta-won-consumers-lostThe FTA Won. Consumers Lost. Nobody's Coming. - LinkedIn",
+            "url": "https://www.linkedin.com/pulse/fta-won-consumers-lost-nobodys-coming-charles-kinslow-iv-ynfvc",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeKinslow-Fintech-Dispute-Case-Study-/README.md at ... - GitHub",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/README.md",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › C-KinslowC-Kinslow · GitHub",
+            "url": "https://github.com/C-Kinslow",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › CharlesAndersonkCharlesAndersonk · GitHub",
+            "url": "https://github.com/CharlesAndersonk",
+            "snippet": ""
+          },
+          {
+            "title": "Whitepageshttps://www.whitepages.com › name › Charles-William-KinslowCharles William Kinslow IV | 43 | Quercus Cir, Little Rock ...",
+            "url": "https://www.whitepages.com/name/Charles-William-Kinslow-Iv/Little-Rock-AR/PkypNpGPle8",
+            "snippet": ""
+          },
+          {
+            "title": "Twitchhttps://www.twitch.tv › chasekn43chasekn43 - Twitch",
+            "url": "https://www.twitch.tv/chasekn43",
+            "snippet": ""
+          },
+          {
+            "title": "Suggestions",
+            "url": "https://yahoo.uservoice.com/forums/193847-search",
+            "snippet": ""
+          },
+          {
+            "title": "Terms",
+            "url": "https://guce.yahoo.com/terms?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Privacy",
+            "url": "https://guce.yahoo.com/privacy-policy?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Your Privacy Choices",
+            "url": "https://guce.yahoo.com/state-controls?locale=en-US&state=TX",
+            "snippet": ""
+          },
+          {
+            "title": "Advertise",
+            "url": "https://advertising.yahoo.com/article/search-advertising.html",
+            "snippet": ""
+          }
+        ]
+      },
+      "DuckDuckGo": {
+        "response_time_ms": 1042.31,
+        "status_code": 202,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      }
+    },
+    "Chase Kinslow regulatory-archive.kinslow.co": {
+      "Google": {
+        "response_time_ms": 1614.63,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Bing": {
+        "response_time_ms": 1814.74,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Yahoo": {
+        "response_time_ms": 1729.62,
+        "status_code": 200,
+        "results_count": 20,
+        "target_hits": 5,
+        "hit_details": [
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=BBYcegrFPrZGQ0tJ29RPgOZPAji9WQAXnwYABxcb&p=Chase+Kinslow+regulatory-archive.kinslow.co&fr2=piv-web",
+            "matched_indicators": [
+              "regulatory-archive.kinslow.co",
+              "kinslow.co",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › regulatory-archive-2026GitHub - chasekn43/regulatory-archive-2026: Finalized public ...",
+            "url": "https://github.com/chasekn43/regulatory-archive-2026",
+            "matched_indicators": [
+              "chasekn43",
+              "regulatory-archive-2026"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeGitHub - chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "matched_indicators": [
+              "chasekn43",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeKinslow-Fintech-Dispute-Case-Study-/README.md at main ...",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/README.md",
+            "matched_indicators": [
+              "chasekn43",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "LinkedInhttps://www.linkedin.com › in › chase-kinslow-cpa-b4b496134Chase Kinslow, CPA - Tax Manager at Forvis Mazars | LinkedIn",
+            "url": "https://www.linkedin.com/in/chase-kinslow-cpa-b4b496134",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          }
+        ],
+        "error": null,
+        "raw_results": [
+          {
+            "title": "Yahoo",
+            "url": "https://www.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Home",
+            "url": "https://www.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Mail",
+            "url": "https://us.mail.yahoo.com/?.intl=us&.lang=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "News",
+            "url": "https://www.yahoo.com/news",
+            "snippet": ""
+          },
+          {
+            "title": "Finance",
+            "url": "https://finance.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Sports",
+            "url": "https://sports.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Weather",
+            "url": "https://www.yahoo.com/news/weather",
+            "snippet": ""
+          },
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=BBYcegrFPrZGQ0tJ29RPgOZPAji9WQAXnwYABxcb&p=Chase+Kinslow+regulatory-archive.kinslow.co&fr2=piv-web",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › regulatory-archive-2026GitHub - chasekn43/regulatory-archive-2026: Finalized public ...",
+            "url": "https://github.com/chasekn43/regulatory-archive-2026",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeGitHub - chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeKinslow-Fintech-Dispute-Case-Study-/README.md at main ...",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/README.md",
+            "snippet": ""
+          },
+          {
+            "title": "LinkedInhttps://www.linkedin.com › in › chase-kinslow-cpa-b4b496134Chase Kinslow, CPA - Tax Manager at Forvis Mazars | LinkedIn",
+            "url": "https://www.linkedin.com/in/chase-kinslow-cpa-b4b496134",
+            "snippet": ""
+          },
+          {
+            "title": "secure.chase.comhttps://secure.chase.com › web › authChase Account login",
+            "url": "https://secure.chase.com/web/auth/logonbox",
+            "snippet": ""
+          },
+          {
+            "title": "action.chase.comhttps://action.chase.comChase - Action Center",
+            "url": "https://action.chase.com/",
+            "snippet": ""
+          },
+          {
+            "title": "JPMorgan Chase & Co.https://jpmorganchaseco.gcs-web.comSEC Filings | JPMorgan Chase & Co.",
+            "url": "https://jpmorganchaseco.gcs-web.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Suggestions",
+            "url": "https://yahoo.uservoice.com/forums/193847-search",
+            "snippet": ""
+          },
+          {
+            "title": "Terms",
+            "url": "https://guce.yahoo.com/terms?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Privacy",
+            "url": "https://guce.yahoo.com/privacy-policy?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Your Privacy Choices",
+            "url": "https://guce.yahoo.com/state-controls?locale=en-US&state=TX",
+            "snippet": ""
+          },
+          {
+            "title": "Advertise",
+            "url": "https://advertising.yahoo.com/article/search-advertising.html",
+            "snippet": ""
+          }
+        ]
+      },
+      "DuckDuckGo": {
+        "response_time_ms": 1647.09,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      }
+    },
+    "Charles W. Kinslow IV regulatory-archive.kinslow.co": {
+      "Google": {
+        "response_time_ms": 1488.77,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Bing": {
+        "response_time_ms": 1431.34,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Yahoo": {
+        "response_time_ms": 1496.56,
+        "status_code": 200,
+        "results_count": 20,
+        "target_hits": 7,
+        "hit_details": [
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=tjnt3Aril7JoOVRkGjK_EOODAji9WQARcI4ACyeo&p=Charles+W.+Kinslow+IV+regulatory-archive.kinslow.co&fr2=piv-web",
+            "matched_indicators": [
+              "regulatory-archive.kinslow.co",
+              "kinslow.co",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "LinkedInhttps://www.linkedin.com › pulse › formal-notice-disputeFORMAL NOTICE OF DISPUTE - CASE ID (11A69387R41098432 ...",
+            "url": "https://www.linkedin.com/pulse/formal-notice-dispute-case-id-11a69387r41098432-charles-kinslow-iv-skqrc",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          },
+          {
+            "title": "files.brokercheck.finra.orghttps://files.brokercheck.finra.org › individualCHARLES WILLIAM KINSLOW III - Financial Industry Regulatory ...",
+            "url": "https://files.brokercheck.finra.org/individual/individual_2333517.pdf",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Justiahttps://lawyers.justia.com › lawyer › charles-williamCharles William Kinslow IV, Lawyer in MONROE, Louisiana ...",
+            "url": "https://lawyers.justia.com/lawyer/charles-william-kinslow-iv-1677893",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          },
+          {
+            "title": "BrokerCheckhttps://brokercheck.finra.org › individual › summaryCHARLES WILLIAM KINSLOW III - Broker at RAYMOND JAMES ...",
+            "url": "https://brokercheck.finra.org/individual/summary/2333517",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          },
+          {
+            "title": "IAPDhttps://adviserinfo.sec.gov › individual › summaryCHARLES WILLIAM KINSLOW III - Investment Adviser at RAYMOND ...",
+            "url": "https://adviserinfo.sec.gov/individual/summary/2333517",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Raymond Jameshttps://www.raymondjames.com › bioCharles Kinslow - Little Rock Branch of ... - Raymond James",
+            "url": "https://www.raymondjames.com/littlerock-branch/about-us/our-team/bio?_=Charles.Kinslow",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          }
+        ],
+        "error": null,
+        "raw_results": [
+          {
+            "title": "Yahoo",
+            "url": "https://www.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Home",
+            "url": "https://www.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Mail",
+            "url": "https://us.mail.yahoo.com/?.intl=us&.lang=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "News",
+            "url": "https://www.yahoo.com/news",
+            "snippet": ""
+          },
+          {
+            "title": "Finance",
+            "url": "https://finance.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Sports",
+            "url": "https://sports.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Weather",
+            "url": "https://www.yahoo.com/news/weather",
+            "snippet": ""
+          },
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=tjnt3Aril7JoOVRkGjK_EOODAji9WQARcI4ACyeo&p=Charles+W.+Kinslow+IV+regulatory-archive.kinslow.co&fr2=piv-web",
+            "snippet": ""
+          },
+          {
+            "title": "FINRA.orghttps://www.finra.org › finra-searchFINRA Search | FINRA.org",
+            "url": "https://www.finra.org/finra-search",
+            "snippet": ""
+          },
+          {
+            "title": "LinkedInhttps://www.linkedin.com › pulse › formal-notice-disputeFORMAL NOTICE OF DISPUTE - CASE ID (11A69387R41098432 ...",
+            "url": "https://www.linkedin.com/pulse/formal-notice-dispute-case-id-11a69387r41098432-charles-kinslow-iv-skqrc",
+            "snippet": ""
+          },
+          {
+            "title": "files.brokercheck.finra.orghttps://files.brokercheck.finra.org › individualCHARLES WILLIAM KINSLOW III - Financial Industry Regulatory ...",
+            "url": "https://files.brokercheck.finra.org/individual/individual_2333517.pdf",
+            "snippet": ""
+          },
+          {
+            "title": "Justiahttps://lawyers.justia.com › lawyer › charles-williamCharles William Kinslow IV, Lawyer in MONROE, Louisiana ...",
+            "url": "https://lawyers.justia.com/lawyer/charles-william-kinslow-iv-1677893",
+            "snippet": ""
+          },
+          {
+            "title": "BrokerCheckhttps://brokercheck.finra.org › individual › summaryCHARLES WILLIAM KINSLOW III - Broker at RAYMOND JAMES ...",
+            "url": "https://brokercheck.finra.org/individual/summary/2333517",
+            "snippet": ""
+          },
+          {
+            "title": "IAPDhttps://adviserinfo.sec.gov › individual › summaryCHARLES WILLIAM KINSLOW III - Investment Adviser at RAYMOND ...",
+            "url": "https://adviserinfo.sec.gov/individual/summary/2333517",
+            "snippet": ""
+          },
+          {
+            "title": "Raymond Jameshttps://www.raymondjames.com › bioCharles Kinslow - Little Rock Branch of ... - Raymond James",
+            "url": "https://www.raymondjames.com/littlerock-branch/about-us/our-team/bio?_=Charles.Kinslow",
+            "snippet": ""
+          },
+          {
+            "title": "Suggestions",
+            "url": "https://yahoo.uservoice.com/forums/193847-search",
+            "snippet": ""
+          },
+          {
+            "title": "Terms",
+            "url": "https://guce.yahoo.com/terms?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Privacy",
+            "url": "https://guce.yahoo.com/privacy-policy?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Your Privacy Choices",
+            "url": "https://guce.yahoo.com/state-controls?locale=en-US&state=TX",
+            "snippet": ""
+          },
+          {
+            "title": "Advertise",
+            "url": "https://advertising.yahoo.com/article/search-advertising.html",
+            "snippet": ""
+          }
+        ]
+      },
+      "DuckDuckGo": {
+        "response_time_ms": 1860.72,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      }
+    },
+    "Chase Kinslow Kinslow v Affirm": {
+      "Google": {
+        "response_time_ms": 1637.38,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Bing": {
+        "response_time_ms": 1457.44,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Yahoo": {
+        "response_time_ms": 1911.0,
+        "status_code": 200,
+        "results_count": 20,
+        "target_hits": 4,
+        "hit_details": [
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=7LOb2ArFQSI7u_Bi1U3ZMej5Aji9WQAXMfYAAUvF&p=Chase+Kinslow+Kinslow+v+Affirm&fr2=piv-web",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeKinslow-Fintech-Dispute-Case-Study-/README.md at main ...",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/README.md",
+            "matched_indicators": [
+              "chasekn43",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeGitHub - chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "matched_indicators": [
+              "chasekn43",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "LinkedInhttps://www.linkedin.com › pulse › fta-won-consumers-lostThe FTA Won. Consumers Lost. Nobody's Coming. - LinkedIn",
+            "url": "https://www.linkedin.com/pulse/fta-won-consumers-lost-nobodys-coming-charles-kinslow-iv-ynfvc",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          }
+        ],
+        "error": null,
+        "raw_results": [
+          {
+            "title": "Yahoo",
+            "url": "https://www.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Home",
+            "url": "https://www.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Mail",
+            "url": "https://us.mail.yahoo.com/?.intl=us&.lang=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "News",
+            "url": "https://www.yahoo.com/news",
+            "snippet": ""
+          },
+          {
+            "title": "Finance",
+            "url": "https://finance.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Sports",
+            "url": "https://sports.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Weather",
+            "url": "https://www.yahoo.com/news/weather",
+            "snippet": ""
+          },
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=7LOb2ArFQSI7u_Bi1U3ZMej5Aji9WQAXMfYAAUvF&p=Chase+Kinslow+Kinslow+v+Affirm&fr2=piv-web",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeKinslow-Fintech-Dispute-Case-Study-/README.md at main ...",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/README.md",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeGitHub - chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "snippet": ""
+          },
+          {
+            "title": "Affirmhttps://www.affirm.comAffirm | Pay over time with flexible payment plans and no fees",
+            "url": "https://www.affirm.com/",
+            "snippet": ""
+          },
+          {
+            "title": "PACERhttps://pcl.uscourts.gov › pcl › pagesPACER Case Locator - United States Courts",
+            "url": "https://pcl.uscourts.gov/pcl/pages/search/results/cases.jsf",
+            "snippet": ""
+          },
+          {
+            "title": "PACERhttps://pacer.uscourts.gov › find-case › court-opinionsCourt Opinions | PACER: Federal Court Records",
+            "url": "https://pacer.uscourts.gov/find-case/court-opinions",
+            "snippet": ""
+          },
+          {
+            "title": "lawfold.comhttps://lawfold.com › affirm-lawsuitAffirm Lawsuit 2026: Class Action, Payouts & Your Rights",
+            "url": "https://lawfold.com/affirm-lawsuit/",
+            "snippet": ""
+          },
+          {
+            "title": "LinkedInhttps://www.linkedin.com › pulse › fta-won-consumers-lostThe FTA Won. Consumers Lost. Nobody's Coming. - LinkedIn",
+            "url": "https://www.linkedin.com/pulse/fta-won-consumers-lost-nobodys-coming-charles-kinslow-iv-ynfvc",
+            "snippet": ""
+          },
+          {
+            "title": "Suggestions",
+            "url": "https://yahoo.uservoice.com/forums/193847-search",
+            "snippet": ""
+          },
+          {
+            "title": "Terms",
+            "url": "https://guce.yahoo.com/terms?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Privacy",
+            "url": "https://guce.yahoo.com/privacy-policy?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Your Privacy Choices",
+            "url": "https://guce.yahoo.com/state-controls?locale=en-US&state=TX",
+            "snippet": ""
+          },
+          {
+            "title": "Advertise",
+            "url": "https://advertising.yahoo.com/article/search-advertising.html",
+            "snippet": ""
+          }
+        ]
+      },
+      "DuckDuckGo": {
+        "response_time_ms": 1763.58,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      }
+    },
+    "Charles W. Kinslow IV Kinslow v Affirm": {
+      "Google": {
+        "response_time_ms": 1376.18,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Bing": {
+        "response_time_ms": 1903.62,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      },
+      "Yahoo": {
+        "response_time_ms": 1930.61,
+        "status_code": 200,
+        "results_count": 20,
+        "target_hits": 4,
+        "hit_details": [
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=KkbmtwrFE5Gl1SVJ_HyFUeSsAji9WQAXb8MADQ_8&p=Charles+W.+Kinslow+IV+Kinslow+v+Affirm&fr2=piv-web",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeKinslow-Fintech-Dispute-Case-Study-/README.md at main ...",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/README.md",
+            "matched_indicators": [
+              "chasekn43",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeGitHub - chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "matched_indicators": [
+              "chasekn43",
+              "kinslow"
+            ]
+          },
+          {
+            "title": "LinkedInhttps://www.linkedin.com › pulse › fta-won-consumers-lostThe FTA Won. Consumers Lost. Nobody's Coming. - LinkedIn",
+            "url": "https://www.linkedin.com/pulse/fta-won-consumers-lost-nobodys-coming-charles-kinslow-iv-ynfvc",
+            "matched_indicators": [
+              "kinslow"
+            ]
+          }
+        ],
+        "error": null,
+        "raw_results": [
+          {
+            "title": "Yahoo",
+            "url": "https://www.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Home",
+            "url": "https://www.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Mail",
+            "url": "https://us.mail.yahoo.com/?.intl=us&.lang=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "News",
+            "url": "https://www.yahoo.com/news",
+            "snippet": ""
+          },
+          {
+            "title": "Finance",
+            "url": "https://finance.yahoo.com",
+            "snippet": ""
+          },
+          {
+            "title": "Sports",
+            "url": "https://sports.yahoo.com/",
+            "snippet": ""
+          },
+          {
+            "title": "Weather",
+            "url": "https://www.yahoo.com/news/weather",
+            "snippet": ""
+          },
+          {
+            "title": "Shopping",
+            "url": "https://shopping.yahoo.com/search?siteId=us-search&pageId=vertical-srp&renderBySimilarity=1&viewId=KkbmtwrFE5Gl1SVJ_HyFUeSsAji9WQAXb8MADQ_8&p=Charles+W.+Kinslow+IV+Kinslow+v+Affirm&fr2=piv-web",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeKinslow-Fintech-Dispute-Case-Study-/README.md at main ...",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/README.md",
+            "snippet": ""
+          },
+          {
+            "title": "Githubhttps://github.com › chasekn43 › Kinslow-Fintech-DisputeGitHub - chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-",
+            "snippet": ""
+          },
+          {
+            "title": "lawfold.comhttps://lawfold.com › affirm-lawsuitAffirm Lawsuit 2026: Class Action, Payouts & Your Rights",
+            "url": "https://lawfold.com/affirm-lawsuit/",
+            "snippet": ""
+          },
+          {
+            "title": "hackingthecaseinterview.comhttps://www.hackingthecaseinterview.com › pages › affirmAffirm Case Interview: Complete Guide (2026)",
+            "url": "https://www.hackingthecaseinterview.com/pages/affirm-case-interview",
+            "snippet": ""
+          },
+          {
+            "title": "PACERhttps://pacer.uscourts.gov › find-case › court-opinionsCourt Opinions | PACER: Federal Court Records",
+            "url": "https://pacer.uscourts.gov/find-case/court-opinions",
+            "snippet": ""
+          },
+          {
+            "title": "LinkedInhttps://www.linkedin.com › pulse › fta-won-consumers-lostThe FTA Won. Consumers Lost. Nobody's Coming. - LinkedIn",
+            "url": "https://www.linkedin.com/pulse/fta-won-consumers-lost-nobodys-coming-charles-kinslow-iv-ynfvc",
+            "snippet": ""
+          },
+          {
+            "title": "lawfold.comhttps://lawfold.com › affirm-class-action-lawsuit-2026Affirm Class Action Lawsuit (Updated July 2026)",
+            "url": "https://lawfold.com/affirm-class-action-lawsuit-2026/",
+            "snippet": ""
+          },
+          {
+            "title": "Suggestions",
+            "url": "https://yahoo.uservoice.com/forums/193847-search",
+            "snippet": ""
+          },
+          {
+            "title": "Terms",
+            "url": "https://guce.yahoo.com/terms?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Privacy",
+            "url": "https://guce.yahoo.com/privacy-policy?locale=en-US",
+            "snippet": ""
+          },
+          {
+            "title": "Your Privacy Choices",
+            "url": "https://guce.yahoo.com/state-controls?locale=en-US&state=TX",
+            "snippet": ""
+          },
+          {
+            "title": "Advertise",
+            "url": "https://advertising.yahoo.com/article/search-advertising.html",
+            "snippet": ""
+          }
+        ]
+      },
+      "DuckDuckGo": {
+        "response_time_ms": 2227.37,
+        "status_code": 200,
+        "results_count": 0,
+        "target_hits": 0,
+        "hit_details": [],
+        "error": null,
+        "raw_results": []
+      }
+    }
+  }
+}

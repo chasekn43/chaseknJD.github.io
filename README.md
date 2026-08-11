@@ -1,4 +1,4 @@
-# Kinslow v. Affirm, Inc. (NYSE: AFRM) | Public Evidentiary Record
+# Charles W. Kinslow IV | Affirm, Inc. (NYSE: AFRM) Regulatory Archive & Public Evidentiary Record
 
 > 🌐 **LIVE INTERACTIVE WEBSITE & EVIDENCE VAULT:**  
 > **[https://chasekn43.github.io/regulatory-archive-2026/](https://chasekn43.github.io/regulatory-archive-2026/)**
@@ -6,7 +6,10 @@
 ---
 
 ## **Overview & Case History**
-This repository documents the public regulatory record, legal correspondence, and operational breakdown surrounding **CFPB Complaint #260717-35668593** involving Affirm, Inc. and its outside counsel Morgan Lewis & Bockius LLP.
+This repository serves as my official public regulatory record, legal correspondence archive, and operational breakdown surrounding **CFPB Complaint #260717-35668593** involving Affirm, Inc. and its outside counsel Morgan Lewis & Bockius LLP.
+
+**Author & Publisher:** Charles W. Kinslow IV, J.D., C.P.A. (Chase Kinslow)  
+**Primary Identifiers & Subject Keywords:** `Charles W. Kinslow IV`, `Charles Kinslow`, `Chase Kinslow`, `Kinslow Attorney`, `Kinslow CPA`, `Fintech`, `BNPL`, `Merchant Dispute`, `CFPB`, `Administrative Procedures Act`, `Customer Service`, `Refund Delays`, `Lines of Credit`, `CFPB Complaint #260717-35668593`, `Affirm dispute archive`
 
 ---
 
@@ -22,12 +25,12 @@ Click any document link below to directly view or download the original primary 
 * ⚖️ **[Doc #6]** [CFPB Master Regulatory Complaint Compilation (Initial, Reply, Feedback & Follow-up)](https://chasekn43.github.io/regulatory-archive-2026/documents/cfpb-complaint-and-affirm-false-response.pdf)
 * ✉️ **[Doc #7]** [Morgan Lewis Correspondence & Aug 6 Rule 4.2 Ethics Notice](https://chasekn43.github.io/regulatory-archive-2026/documents/morgan-lewis-correspondence.pdf)
 * 🏛️ **[Doc #8]** [Louisiana AG Master Dispute Filing & Executive Email to AG Liz Murrill](https://chasekn43.github.io/regulatory-archive-2026/documents/louisiana-ag-dispute-submission.pdf)
-* 🏛️ **[Doc #9]** [California AG Master Dispute Filing & Rob Bonta Notice](https://regulatory-archive.kinslow.co/documents/california-ag-dispute-notice.pdf)
+* 🏛️ **[Doc #9]** [California AG Master Dispute Filing & Rob Bonta Notice](https://chasekn43.github.io/regulatory-archive-2026/documents/california-ag-dispute-notice.pdf)
 
 ---
 
 ## **Key Dispute Milestones**
-This repository documents the public regulatory record, legal correspondence, and operational breakdown surrounding **CFPB Complaint #260717-35668593** involving Affirm, Inc. and its outside counsel Morgan Lewis & Bockius LLP.
+This repository documents my public regulatory record, legal correspondence, and operational breakdown surrounding **CFPB Complaint #260717-35668593** involving Affirm, Inc. and its outside counsel Morgan Lewis & Bockius LLP.
 
 ---
 
@@ -79,7 +82,40 @@ This repository documents the public regulatory record, legal correspondence, an
 
 ---
 
+### **Fintech, BNPL & Regulatory Context**
+
+This evidentiary repository addresses core legal, statutory, and operational challenges facing modern financial technology:
+
+* 💳 **Fintech & POS Credit Architecture:** Analysis of point-of-sale financial technology, loan origination APIs, algorithmic underwriting, and consumer credit disclosures.
+* 🛍️ **Buy Now Pay Later (BNPL) Credit Lines:** Examination of point-of-sale **lines of credit**, pay-in-4 installment loans, closed-end credit contracts, and 12 C.F.R. § 1026.2(a)(4) billing cycle definitions.
+* 🏬 **Merchant Dispute Resolution & Billing Errors:** Case study documenting **merchant dispute** escalations, carrier shipping discrepancies (OnTrac/Perfume Empire), unauthorized account intrusions, and Regulation Z error notices.
+* 🏛️ **CFPB Compliance & Enforcement:** Examination of supervisory actions by the **Consumer Financial Protection Bureau (CFPB)**, bureau circulars, and Dodd-Frank Title X UDAAP compliance standards.
+* ⚖️ **Administrative Procedures Act (APA) Rulemaking:** Dissection of **Administrative Procedures Act (APA)** 5 U.S.C. § 553 notice-and-comment exemptions, agency interpretive rules, arbitrary-and-capricious review, and reliance interest rebuttals.
+* 📞 **Customer Service Operations & Escalations:** Critical evaluation of frontline **customer service** call loops, automated bot fraud rejections, managing counsel cease-and-desists, and Rule 4.2 ethics notices.
+* ⌛ **Customer Balance Refund Delays:** Documenting severe **refund delays**, merchant credit hold cycles, unapplied balance adjustments, and improper credit bureau reporting during active disputes.
+* 🔒 **Lines of Credit Freeze & UI Lockouts:** Archiving point-of-sale **lines of credit** access locks, in-app payment portal UI freezes, automated marketing SMS collection prompts (`shortcode 58083`), and bank BillPay execution workarounds.
+
+---
+
+### **📚 In-Depth Legal & Operational Whitepapers (`/topics/`)**
+
+1. ⚖️ **[Regulation Z & APA Compliance Analysis](https://chasekn43.github.io/regulatory-archive-2026/topics/regulation-z-apa-compliance.html):** Truth in Lending Act (12 C.F.R. § 1026.13) billing error procedures & APA § 553 notice-and-comment exemptions.
+2. 🛍️ **[BNPL Merchant Dispute Resolution Case Study](https://chasekn43.github.io/regulatory-archive-2026/topics/fintech-bnpl-merchant-dispute-resolution.html):** Merchant shipping refusal mechanics, carrier tracking logs, automated 86-min fraud denials, and bank BillPay workarounds.
+3. 📞 **[Dodd-Frank UDAAP & Support Loop Breakdown](https://chasekn43.github.io/regulatory-archive-2026/topics/udaap-customer-service-failures.html):** 12 U.S.C. § 5531 standards, support phone routing loops, contradictory Cease & Desist orders, and SOX Section 404 ledger defects.
+4. 🏛️ **[California UCL § 17200 & State AG Enforcement](https://chasekn43.github.io/regulatory-archive-2026/topics/california-ag-regulatory-rebuttal.html):** Extraterritorial jurisdiction over California fintech entities, public prosecutor standing under UCL § 17204, and AG constitutional duties.
+
+---
+
 ### **Official Primary Evidence Vault**
 
 All primary evidence documents, police reports, state AG complaints, call logs, and legal correspondence are hosted live in the Primary Evidence Vault:
 👉 [View Live Evidence Vault & Case Study](https://chasekn43.github.io/regulatory-archive-2026/)
+
+---
+
+### **Search Engine Indexing & Archival Metadata**
+> 📌 **Mandatory Rule for Search Engine Optimization:** Search engine algorithms evaluate content relevance using natural language processing (NLP), semantic entity association, and topical authority. **NEVER CONSIDER A REPOSITORY URL AS A SEARCH KEYWORD.** Keywords strictly consist of natural language tangential terms (`Fintech`, `BNPL`, `Merchant Dispute`, `CFPB`, `Administrative Procedures Act`, `Customer Service Refund Delays`, `Lines of Credit`), statutory references, and semantic query strings.
+
+- **Primary Subject:** Charles W. Kinslow IV Public Regulatory Record & Evidentiary Archive
+- **Entity Association:** Charles W. Kinslow IV, J.D., C.P.A., Chase Kinslow, Kinslow Attorney, Kinslow CPA
+- **Target Tangential Search Keywords:** `Fintech`, `BNPL`, `Buy Now Pay Later`, `Merchant Dispute`, `CFPB`, `Administrative Procedures Act`, `APA 5 U.S.C. § 553`, `Customer Service Refund Delays`, `Lines of Credit`, `Regulation Z billing error`, `Truth in Lending Act TILA`, `Point of sale lines of credit`, `Charles W. Kinslow IV`, `Charles Kinslow`, `Chase Kinslow`, `Kinslow Attorney`, `Kinslow CPA`, `CFPB Complaint #260717-35668593`, `Affirm dispute archive`

@@ -20,10 +20,11 @@ NAME = "Chase Kinslow"
 
 # Base repository keywords and identifiers
 REPO_TOPICS = [
-    "regulatory-archive-2026",
-    "chasekn43 github",
-    "regulatory-archive.kinslow.co",
-    "kinslow.co",
+    "Fintech BNPL merchant dispute",
+    "CFPB Administrative Procedures Act",
+    "Customer service refund delays BNPL",
+    "Point of sale lines of credit dispute",
+    "Regulation Z billing error resolution",
     "CFPB complaint 260717-35668593",
     "Monroe Police Department report 26-29572",
     "Affirm Inc CFPB complaint",

@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 # Configuration
 KEY = "4366b539c9914619a970e53a2707ec41"
 HOST = "chasekn43.github.io"
-KEY_LOCATION = f"https://{HOST}/regulatory-archive-2026/{KEY}.txt"
+KEY_LOCATION = f"https://{HOST}/{KEY}.txt"
 SITEMAP_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml")
 KEY_FILE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"{KEY}.txt")
 
@@ -52,7 +52,8 @@ def submit_to_indexnow(url_list):
 
     data = json.dumps(payload).encode("utf-8")
     headers = {
-        "Content-Type": "application/json; charset=utf-8"
+        "Content-Type": "application/json; charset=utf-8",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
     }
 
     for endpoint in endpoints:
@@ -66,12 +67,30 @@ def submit_to_indexnow(url_list):
                     print("[OK] Submission accepted by IndexNow engine grid.")
         except urllib.error.HTTPError as e:
             print(f"[-] {endpoint} Status: {e.code} ({e.reason})")
+            if e.code == 403:
+                print("    [NOTE] HTTP 403 indicates IndexNow crawler key validation for GitHub Pages subfolder repos.")
+                print(f"    For subpath repos (https://{HOST}/regulatory-archive-2026/), indexation relies primarily on Google Search Console & Bing Webmaster Tools XML Sitemap submission: https://{HOST}/regulatory-archive-2026/sitemap.xml")
         except Exception as e:
             print(f"[-] {endpoint} Submission Error: {e}")
 
+    # Fallback GET pings for each URL
+    print("[+] Issuing GET pings for each URL to IndexNow...")
+    for target_url in url_list:
+        get_url = f"https://www.bing.com/indexnow?url={urllib.parse.quote(target_url)}&key={KEY}"
+        try:
+            req = urllib.request.Request(get_url, headers={"User-Agent": headers["User-Agent"]})
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                print(f"  - Ping {target_url}: Status {resp.status}")
+        except Exception as e:
+            print(f"  - Ping {target_url}: {e}")
+
+    # Google Search Console Note
+    sitemap_url = f"https://{HOST}/regulatory-archive-2026/sitemap.xml"
+    print(f"[+] Google Search Console Sitemap URL: {sitemap_url}")
+    print("[NOTE] Direct HTTP GET sitemap pinging was officially deprecated by Google. Submit sitemap via Google Search Console web console or API.")
+
 if __name__ == "__main__":
-    print("=== IndexNow Instant Search Engine Submission ===")
+    print("=== IndexNow & Search Engine Instant Submission ===")
     create_key_file()
     urls = parse_sitemap()
     submit_to_indexnow(urls)
-
