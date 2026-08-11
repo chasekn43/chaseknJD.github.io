@@ -38,7 +38,14 @@ names = [
     "Charles K",
     "chasekn43",
     "chasekn",
-    "kinslow"
+    "kinslow",
+    "Andy Chen Affirm",
+    "Andy Chen Managing Counsel",
+    "Madison Marshall",
+    "Madison Marshall Morgan Lewis",
+    "Arjun Rao",
+    "Arjun Rao Morgan Lewis",
+    "Morgan Lewis"
 ]
 
 keywords = [

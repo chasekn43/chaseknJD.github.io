@@ -21,7 +21,11 @@ KEYWORDS = [
     "CFPB UDAAP customer service refund delays fintech credit",
     "Uncredited ledger error SOX internal controls compliance",
     "Charles W. Kinslow IV attorney CPA fintech regulatory archive",
-    "Charles K. Fintech BNPL merchant dispute"
+    "Charles K. Fintech BNPL merchant dispute",
+    "Andy Chen Managing Counsel Affirm regulatory dispute",
+    "Madison Marshall Morgan Lewis attorney representation",
+    "Arjun Rao Morgan Lewis partner consumer dispute",
+    "Morgan Lewis regulatory dispute Affirm"
 ]
 
 ENGINES = {
