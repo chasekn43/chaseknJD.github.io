@@ -9,6 +9,9 @@ import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor
 
+# Configuration Flags
+USE_PROXY = False  # Set to False to run direct requests over local VPN (recommended to bypass public proxy blockages/timeouts)
+
 # Paths
 script_dir = os.path.dirname(os.path.abspath(__file__))
 log_path = os.path.join(script_dir, "search_continuous.log")
@@ -31,6 +34,7 @@ names = [
     "Charles Kinslow IV",
     "Charles Kinslow",
     "Chase Kinslow",
+    "chasekn43",
     "chasekn",
     "kinslow"
 ]
@@ -263,23 +267,23 @@ def generate_query():
             
     # Fallback
     return f"{random.choice(names)} fintech BNPL dispute"
-
 def main():
-    log_message("Continuous search simulator initialized with SSL filtering, Redirect blocking, and zero sleep.")
-    
-    # Start the validator thread
-    validator = threading.Thread(target=proxy_validator_thread, daemon=True)
-    validator.start()
-    
-    log_message("Waiting for validator thread to verify active SSL proxies...")
-    for _ in range(30):
-        with verified_lock:
-            # Wait until we have at least some verified proxies
-            total_verified = sum(len(pool) for pool in verified_pools.values())
-            if total_verified > 0:
-                break
-        time.sleep(1)
+    if USE_PROXY:
+        log_message("Continuous search simulator initialized with SSL filtering, Redirect blocking, and public proxy pools.")
+        # Start the validator thread
+        validator = threading.Thread(target=proxy_validator_thread, daemon=True)
+        validator.start()
         
+        log_message("Waiting for validator thread to verify active SSL proxies...")
+        for _ in range(30):
+            with verified_lock:
+                total_verified = sum(len(pool) for pool in verified_pools.values())
+                if total_verified > 0:
+                    break
+            time.sleep(1)
+    else:
+        log_message("Continuous search simulator initialized in DIRECT / VPN Mode (Bypassing public proxies).")
+
     while True:
         query = generate_query()
         
@@ -290,63 +294,87 @@ def main():
             k=1
         )[0]
         
-        success = False
-        max_attempts = 20
-        
-        for attempt in range(1, max_attempts + 1):
-            with verified_lock:
-                available_engines = [e for e in engines if len(verified_pools[e["name"]]) > 0]
-                
-            if not available_engines:
-                log_message(f"[QUERY PAUSE] No verified proxies available for any engine. Waiting...")
-                time.sleep(2)
-                continue
-                
-            # If the selected engine's pool is empty, dynamically fall back to another verified engine
-            active_engine = engine
-            if active_engine["name"] not in [e["name"] for e in available_engines]:
-                active_engine = random.choice(available_engines)
-                
-            with verified_lock:
-                proxies_list = list(verified_pools[active_engine["name"]])
-                
-            proxy = random.choice(proxies_list)
+        if not USE_PROXY:
+            # Execute direct query over local VPN network connection
             ua = random.choice(user_agents)
-            
             encoded_query = urllib.parse.quote_plus(query)
-            search_url = active_engine["url"].format(encoded_query)
+            search_url = engine["url"].format(encoded_query)
             
-            fake_ip = generate_random_ip()
             headers = {
-                "User-Agent": ua,
-                "X-Forwarded-For": fake_ip,
-                "Client-IP": fake_ip,
-                "Via": fake_ip
+                "User-Agent": ua
             }
             
-            proxy_support = urllib.request.ProxyHandler({'http': proxy, 'https': proxy})
-            opener = urllib.request.build_opener(proxy_support, NoRedirectHandler())
+            opener = urllib.request.build_opener(NoRedirectHandler())
             urllib.request.install_opener(opener)
             
             start_time = time.time()
             try:
                 req = urllib.request.Request(search_url, headers=headers)
-                with urllib.request.urlopen(req, timeout=4.0) as response:
+                with urllib.request.urlopen(req, timeout=10.0) as response:
                     html = response.read()
                     elapsed = time.time() - start_time
-                    log_message(f"[QUERY SUCCESS] {active_engine['name']} ({proxy}) returned {response.status} (Length: {len(html)}, Time: {elapsed:.2f}s) for query: '{query}' (Attempt {attempt})")
-                    success = True
-                    break
+                    log_message(f"[QUERY SUCCESS] {engine['name']} (Direct/VPN) returned {response.status} (Length: {len(html)}, Time: {elapsed:.2f}s) for query: '{query}'")
             except Exception as e:
                 elapsed = time.time() - start_time
-                log_message(f"[QUERY ATTEMPT FAILED] {active_engine['name']} ({proxy}) failed in {elapsed:.2f}s (Attempt {attempt}/{max_attempts}): {e}")
-                with verified_lock:
-                    if proxy in verified_pools[active_engine["name"]]:
-                        verified_pools[active_engine["name"]].remove(proxy)
-                        
-        if not success:
-            log_message(f"[QUERY ABORTED] Query '{query}' failed to execute after {max_attempts} attempts.")
+                log_message(f"[QUERY FAILED] {engine['name']} (Direct/VPN) failed in {elapsed:.2f}s: {e}")
+        else:
+            # Proxy query logic
+            success = False
+            max_attempts = 20
             
+            for attempt in range(1, max_attempts + 1):
+                with verified_lock:
+                    available_engines = [e for e in engines if len(verified_pools[e["name"]]) > 0]
+                    
+                if not available_engines:
+                    log_message(f"[QUERY PAUSE] No verified proxies available for any engine. Waiting...")
+                    time.sleep(2)
+                    continue
+                    
+                active_engine = engine
+                if active_engine["name"] not in [e["name"] for e in available_engines]:
+                    active_engine = random.choice(available_engines)
+                    
+                with verified_lock:
+                    proxies_list = list(verified_pools[active_engine["name"]])
+                    
+                proxy = random.choice(proxies_list)
+                ua = random.choice(user_agents)
+                
+                encoded_query = urllib.parse.quote_plus(query)
+                search_url = active_engine["url"].format(encoded_query)
+                
+                fake_ip = generate_random_ip()
+                headers = {
+                    "User-Agent": ua,
+                    "X-Forwarded-For": fake_ip,
+                    "Client-IP": fake_ip,
+                    "Via": fake_ip
+                }
+                
+                proxy_support = urllib.request.ProxyHandler({'http': proxy, 'https': proxy})
+                opener = urllib.request.build_opener(proxy_support, NoRedirectHandler())
+                urllib.request.install_opener(opener)
+                
+                start_time = time.time()
+                try:
+                    req = urllib.request.Request(search_url, headers=headers)
+                    with urllib.request.urlopen(req, timeout=4.0) as response:
+                        html = response.read()
+                        elapsed = time.time() - start_time
+                        log_message(f"[QUERY SUCCESS] {active_engine['name']} ({proxy}) returned {response.status} (Length: {len(html)}, Time: {elapsed:.2f}s) for query: '{query}' (Attempt {attempt})")
+                        success = True
+                        break
+                except Exception as e:
+                    elapsed = time.time() - start_time
+                    log_message(f"[QUERY ATTEMPT FAILED] {active_engine['name']} ({proxy}) failed in {elapsed:.2f}s (Attempt {attempt}/{max_attempts}): {e}")
+                    with verified_lock:
+                        if proxy in verified_pools[active_engine["name"]]:
+                            verified_pools[active_engine["name"]].remove(proxy)
+                            
+            if not success:
+                log_message(f"[QUERY ABORTED] Query '{query}' failed to execute after {max_attempts} attempts.")
+                
         # Random sleep delay between search iterations to emulate human browse pacing
         time.sleep(random.uniform(5.0, 15.0))
 
