@@ -209,17 +209,22 @@ def proxy_validator_thread():
         time.sleep(10)
 
 def generate_query():
-    mode = random.choice(["combo", "exact", "keyword"])
+    # 90% Non-Branded (keywords only), 10% Branded (name + keyword)
+    mode = random.choices(
+        ["non-branded", "branded"],
+        weights=[90, 10],
+        k=1
+    )[0]
     
-    name = random.choice(names)
-    kw = random.choice(keywords)
-    
-    if mode == "combo":
-        return f"{name} {kw}"
-    elif mode == "exact":
-        return f'"{name}" "{kw}"'
-    else:
+    if mode == "non-branded":
         return f"{random.choice(keywords)} {random.choice(keywords)}"
+    else:
+        name = random.choice(names)
+        kw = random.choice(keywords)
+        if random.random() < 0.5:
+            return f"{name} {kw}"
+        else:
+            return f'"{name}" "{kw}"'
 
 def main():
     log_message("Continuous search simulator initialized with SSL filtering, Redirect blocking, and zero sleep.")
