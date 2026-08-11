@@ -36,6 +36,7 @@ names = [
 ]
 
 keywords = [
+    "4q8isr1",
     "LinkedIn",
     "fintech",
     "BNPL",
@@ -70,7 +71,21 @@ keywords = [
     "adverse action notice credit denial",
     "CFPB complaint portal",
     "merchant chargeback clearing friction",
-    "arbitrary account suspension fintech"
+    "arbitrary account suspension fintech",
+    "CFPB regulatory circular",
+    "Dodd-Frank Title X UDAAP compliance",
+    "Regulation Z 12 C.F.R. 1026",
+    "merchant cancellation refund dispute",
+    "holder in due course rule retail finance",
+    "point-of-sale financing error resolution",
+    "credit reporting disputes retail credit",
+    "unsolicited marketing SMS compliance",
+    "automated fraud rejection audit",
+    "merchant refund clearing delays",
+    "managing counsel cease and desist directive",
+    "outside counsel representation ethics notice",
+    "Rule 4.2 ethical notice consumer finance",
+    "unsolicited team email outreach"
 ]
 
 # Engine configuration with urls
@@ -288,6 +303,9 @@ def main():
                         
         if not success:
             log_message(f"[QUERY ABORTED] Query '{query}' failed to execute after {max_attempts} attempts.")
+            
+        # Random sleep delay between search iterations to emulate human browse pacing
+        time.sleep(random.uniform(5.0, 15.0))
 
 if __name__ == "__main__":
     try:
