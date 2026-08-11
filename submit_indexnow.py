@@ -13,8 +13,8 @@ KEY_FILE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"{KEY}
 
 def create_key_file():
     """Creates the IndexNow verification key file at the site root."""
-    with open(KEY_FILE_PATH, "w", encoding="utf-8") as f:
-        f.write(KEY)
+    with open(KEY_FILE_PATH, "wb") as f:
+        f.write(KEY.encode("utf-8"))
     print(f"[+] Key file created: {KEY_FILE_PATH}")
 
 def parse_sitemap():

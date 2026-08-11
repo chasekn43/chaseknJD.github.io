@@ -89,7 +89,19 @@ keywords = [
     "managing counsel cease and desist directive",
     "outside counsel representation ethics notice",
     "Rule 4.2 ethical notice consumer finance",
-    "unsolicited team email outreach"
+    "unsolicited team email outreach",
+    "regulatory-archive-2026",
+    "chasekn43.github.io",
+    "403_tools",
+    "bypass-403",
+    "byp4xx",
+    "Forbidden-Buster",
+    "noremore403payloads",
+    "403-bypass.sh",
+    "bypass-403.sh",
+    "liixhunter",
+    "fintech compliance archive",
+    "BNPL regulatory record"
 ]
 
 # Engine configuration with urls
