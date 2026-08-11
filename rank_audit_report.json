@@ -94,9 +94,9 @@
   "Chase Kinslow Affirm evidence vault": {
     "DuckDuckGo": {
       "status": "SUCCESS",
-      "http_code": 202,
+      "http_code": 200,
       "found_domain": false,
-      "found_repo": false,
+      "found_repo": true,
       "indexed": false
     },
     "Bing": {
@@ -117,7 +117,7 @@
   "Regulation Z billing error procedures BNPL point of sale credit": {
     "DuckDuckGo": {
       "status": "SUCCESS",
-      "http_code": 202,
+      "http_code": 200,
       "found_domain": false,
       "found_repo": false,
       "indexed": false
@@ -140,7 +140,7 @@
   "APA 5 U.S.C. 553 rulemaking exemption regulatory reliance interest": {
     "DuckDuckGo": {
       "status": "SUCCESS",
-      "http_code": 202,
+      "http_code": 200,
       "found_domain": false,
       "found_repo": false,
       "indexed": false
@@ -163,7 +163,7 @@
   "CFPB UDAAP customer service refund delays fintech credit": {
     "DuckDuckGo": {
       "status": "SUCCESS",
-      "http_code": 202,
+      "http_code": 200,
       "found_domain": false,
       "found_repo": false,
       "indexed": false
@@ -186,7 +186,7 @@
   "Uncredited ledger error SOX internal controls compliance": {
     "DuckDuckGo": {
       "status": "SUCCESS",
-      "http_code": 202,
+      "http_code": 200,
       "found_domain": false,
       "found_repo": false,
       "indexed": false
@@ -209,9 +209,32 @@
   "Charles W. Kinslow IV attorney CPA fintech regulatory archive": {
     "DuckDuckGo": {
       "status": "SUCCESS",
-      "http_code": 202,
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": true,
+      "indexed": false
+    },
+    "Bing": {
+      "status": "SUCCESS",
+      "http_code": 200,
       "found_domain": false,
       "found_repo": false,
+      "indexed": false
+    },
+    "Yahoo": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": true,
+      "indexed": false
+    }
+  },
+  "Charles K. Fintech BNPL merchant dispute": {
+    "DuckDuckGo": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": true,
       "indexed": false
     },
     "Bing": {
