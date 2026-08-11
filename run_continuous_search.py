@@ -208,29 +208,30 @@ def proxy_validator_thread():
                 
         time.sleep(10)
 
+query_counter = 0
 recent_queries = []
 
 def generate_query():
-    global recent_queries
+    global query_counter, recent_queries
+    query_counter += 1
+    
+    # Every 7th iteration is branded (name + repo/LinkedIn keywords)
+    is_branded_turn = (query_counter % 7 == 0)
     
     for _ in range(50):
-        mode = random.choices(
-            ["non-branded", "branded"],
-            weights=[90, 10],
-            k=1
-        )[0]
-        
-        if mode == "non-branded":
-            # Select two distinct keywords to prevent repetitions like "credit credit"
-            kws = random.sample(keywords, 2)
-            query = f"{kws[0]} {kws[1]}"
-        else:
+        if is_branded_turn:
             name = random.choice(names)
-            kw = random.choice(keywords)
+            # Inject specific LinkedIn and repository terms to associate the profile
+            linkedin_keywords = ["linkedin", "linkedin profile", "regulatory-archive-2026", "bnpl dispute", "kinslow bnpl"]
+            kw = random.choice(keywords + linkedin_keywords)
             if random.random() < 0.5:
                 query = f"{name} {kw}"
             else:
                 query = f'"{name}" "{kw}"'
+        else:
+            # 6 out of 7 times: Pure compliance terms (non-branded)
+            kws = random.sample(keywords, 2)
+            query = f"{kws[0]} {kws[1]}"
         
         # Avoid running similar queries consecutively
         words = set(query.lower().replace('"', '').split())
@@ -251,6 +252,8 @@ def generate_query():
             return query
             
     # Fallback
+    if is_branded_turn:
+        return f"{random.choice(names)} kinslow bnpl"
     kws = random.sample(keywords, 2)
     return f"{kws[0]} {kws[1]}"
 
