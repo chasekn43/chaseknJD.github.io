@@ -5,32 +5,43 @@ import subprocess
 from datetime import datetime
 
 # Script directory
-script_dir = r"c:\Users\Charwiz43\\.gemini\antigravity\scratch\Affirm\regulatory-archive-2026"
-artifact_dir = r"C:\Users\Charwiz43\.gemini\antigravity\brain\4a7c38ce-5405-4d8c-aa94-238ed4b5146d"
+script_dir = r"c:\Users\Charwiz43\.gemini\antigravity\scratch\Affirm\regulatory-archive-2026"
+
+# Accept brain directory dynamically from command line argument, fallback to default
+if len(sys.argv) > 1 and os.path.isabs(sys.argv[1]):
+    artifact_dir = sys.argv[1]
+else:
+    artifact_dir = r"C:\Users\Charwiz43\.gemini\antigravity\brain\4a7c38ce-5405-4d8c-aa94-238ed4b5146d"
 report_filename = "rank_progress_report.md"
 
 def run_sweep():
     print("Running verification sweep...")
     try:
-        # Run run_verification_batch.py
-        result = subprocess.run(
-            [sys.executable, "run_verification_batch.py"],
+        # Run run_verification_batch.py and stream output in real time
+        process = subprocess.Popen(
+            [sys.executable, "-u", "run_verification_batch.py"],
             cwd=script_dir,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
-            text=True
+            text=True,
+            bufsize=1
         )
-        print("Sweep complete. Return code:", result.returncode)
-        if result.stdout.strip():
-            print("--- Subprocess Stdout ---")
-            print(result.stdout)
-        if result.stderr.strip():
-            print("--- Subprocess Stderr ---")
-            print(result.stderr)
+        
+        # Stream stdout in real-time to sys.stdout and flush immediately
+        for line in process.stdout:
+            sys.stdout.write(line)
+            sys.stdout.flush()
             
-        if result.returncode != 0:
-            return False
-        return True
+        # Stream stderr
+        stderr_output = process.stderr.read()
+        if stderr_output.strip():
+            print("\n--- Subprocess Stderr ---")
+            sys.stdout.write(stderr_output)
+            sys.stdout.flush()
+            
+        process.wait()
+        print(f"\nSweep complete. Return code: {process.returncode}")
+        return process.returncode == 0
     except Exception as e:
         print("Failed to run sweep:", e)
         return False
@@ -105,8 +116,13 @@ def generate_report():
         report_path = os.path.join(artifact_dir, report_filename)
         with open(report_path, "w", encoding="utf-8") as rf:
             rf.write("\n".join(md))
-            
         print(f"Progress report generated at {report_path}")
+        
+        # Write duplicate copy to workspace directory
+        workspace_report_path = os.path.join(script_dir, report_filename)
+        with open(workspace_report_path, "w", encoding="utf-8") as wf:
+            wf.write("\n".join(md))
+        print(f"Duplicate workspace copy generated at {workspace_report_path}")
         
     except Exception as e:
         print("Failed to generate report:", e)
