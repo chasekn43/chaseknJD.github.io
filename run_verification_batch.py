@@ -256,25 +256,8 @@ def fetch_with_metrics(url, extractor, engine_name=None):
             status_code = getattr(e, 'code', 500) if hasattr(e, 'code') else 500
             
         if not success:
-            print(f"    [Direct Fetch Failed] Error: {error}. Trying Obscura stealth fetch...")
-            try:
-                obscura_path = r"c:\Users\Charwiz43\.gemini\antigravity\scratch\Affirm\403_tools\obscura\obscura.exe"
-                if os.path.exists(obscura_path):
-                    cmd = [obscura_path, "--stealth", "fetch", url, "--dump", "html"]
-                    result = subprocess.run(cmd, capture_output=True, text=True, timeout=25)
-                    if result.returncode == 0 and result.stdout.strip():
-                        html = result.stdout
-                        results = extractor(html)
-                        error = None
-                        status_code = 200
-                        success = True
-                        print(f"    [Obscura Success] Fetched page and extracted {len(results)} results.")
-                    else:
-                        print(f"    [Obscura Failed] Code {result.returncode}, Stderr: {result.stderr.strip()[:100]}")
-                else:
-                    print("    [Obscura Info] obscura.exe binary not found at path.")
-            except Exception as oe:
-                print(f"    [Obscura Exception] Error executing: {oe}")
+            # Obscura stealth fetch fallback is disabled to prevent non-interactive service hangs on Windows
+            pass
 
     elapsed_ms = round((time.time() - start_time) * 1000, 2)
 
