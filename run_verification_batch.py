@@ -349,9 +349,15 @@ def search_google(query):
         print(f"    [Google Blocked/Empty] Triggering GoogleRecaptchaBypass solver for: '{query}'...")
         start_time = time.time()
         try:
+            # Parse worker ID from thread name (ThreadPoolExecutor-0_0, 0_1, etc.)
+            import threading
+            thread_name = threading.current_thread().name
+            match = re.search(r'_(\d+)$', thread_name)
+            worker_id = str(int(match.group(1)) % 3) if match else "0"
+            
             venv_python = r"C:\Users\Charwiz43\.gemini\config\plugins\stealth-browser-mcp\venv\Scripts\python.exe"
             script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "google_bypass_searcher.py")
-            cmd = [venv_python, script_path, query]
+            cmd = [venv_python, script_path, worker_id, query]
             result = subprocess.run(cmd, capture_output=True, text=True, timeout=20)
             
             if result.returncode == 0 and result.stdout.strip():

@@ -12,7 +12,7 @@ try:
 except ImportError as e:
     print("Warning: Could not import RecaptchaSolver:", e)
 
-def search_google_via_browser(query):
+def search_google_via_browser(query, worker_id="0"):
     """Executes a Google Search query via automated Chromium, solving any CAPTCHA if encountered."""
     CHROME_ARGUMENTS = [
         "-no-first-run",
@@ -39,13 +39,13 @@ def search_google_via_browser(query):
     
     # Configure custom port and explicit browser path to avoid locks
     options.set_browser_path(r"C:\Program Files\Google\Chrome\Application\chrome.exe")
-    port = random.randint(15000, 25000)
+    port = 19220 + int(worker_id)
     options.set_local_port(port)
     options.headless(True)
     
-    # Set unique user data path based on port to prevent folder locks
+    # Set unique user data path based on worker_id to prevent folder locks
     temp_dir = os.environ.get('TEMP', os.path.join(os.path.expanduser('~'), 'AppData', 'Local', 'Temp'))
-    user_data_dir = os.path.join(temp_dir, f"dp_profile_{port}")
+    user_data_dir = os.path.join(temp_dir, f"dp_profile_{worker_id}")
     options.set_paths(user_data_path=user_data_dir)
         
     driver = ChromiumPage(addr_or_opts=options)
@@ -77,22 +77,20 @@ def search_google_via_browser(query):
             driver.quit()
         except Exception:
             pass
-        # Clean up the unique profile folder
-        try:
-            import shutil
-            if os.path.exists(user_data_dir):
-                shutil.rmtree(user_data_dir, ignore_errors=True)
-        except Exception:
-            pass
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
+    if len(sys.argv) > 2:
+        worker_id = sys.argv[1]
+        query = " ".join(sys.argv[2:])
+    elif len(sys.argv) > 1:
+        worker_id = "0"
         query = " ".join(sys.argv[1:])
     else:
+        worker_id = "0"
         query = "Chase Kinslow Affirm evidence vault"
         
-    print(f"Testing Google bypass search for query: '{query}'", file=sys.stderr)
-    html = search_google_via_browser(query)
+    print(f"Testing Google bypass search for query: '{query}' (Worker ID: {worker_id})", file=sys.stderr)
+    html = search_google_via_browser(query, worker_id)
     if html:
         sys.stdout.write(html)
         print(f"Bypass search completed. Output length: {len(html)} characters.", file=sys.stderr)
