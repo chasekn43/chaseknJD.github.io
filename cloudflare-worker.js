@@ -8,7 +8,7 @@ export default {
       const newHeaders = new Headers(response.headers);
       
       // Point the PDF's canonical header to the HTML Archive Hub
-      const canonicalUrl = 'https://regulatory-archive.kinslow.co/'; 
+      const canonicalUrl = 'https://kinslow-regulatory-archive.org/'; 
       newHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
       newHeaders.set('X-Robots-Tag', 'index, follow');
 

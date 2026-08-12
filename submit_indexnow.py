@@ -5,9 +5,9 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 
 # Configuration
-KEY = "4366b539c9914619a970e53a2707ec41"
-HOST = "chasekn43.github.io"
-KEY_LOCATION = f"https://{HOST}/regulatory-archive-2026/{KEY}.txt"
+KEY = "fa481ca42fd54303a95cc9e0bb6ec542"
+HOST = "kinslow-regulatory-archive.org"
+KEY_LOCATION = f"https://{HOST}/{KEY}.txt"
 SITEMAP_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml")
 KEY_FILE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"{KEY}.txt")
 
@@ -22,7 +22,7 @@ def parse_sitemap():
     urls = []
     if not os.path.exists(SITEMAP_PATH):
         print(f"[-] Sitemap not found at {SITEMAP_PATH}")
-        return [f"https://{HOST}/regulatory-archive-2026/"]
+        return [f"https://{HOST}/"]
 
     tree = ET.parse(SITEMAP_PATH)
     root = tree.getroot()

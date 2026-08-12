@@ -140,7 +140,7 @@
   "APA 5 U.S.C. 553 rulemaking exemption regulatory reliance interest": {
     "DuckDuckGo": {
       "status": "SUCCESS",
-      "http_code": 202,
+      "http_code": 200,
       "found_domain": false,
       "found_repo": false,
       "indexed": false
@@ -163,9 +163,9 @@
   "CFPB UDAAP customer service refund delays fintech credit": {
     "DuckDuckGo": {
       "status": "SUCCESS",
-      "http_code": 202,
+      "http_code": 200,
       "found_domain": false,
-      "found_repo": false,
+      "found_repo": true,
       "indexed": false
     },
     "Bing": {
@@ -186,7 +186,7 @@
   "Uncredited ledger error SOX internal controls compliance": {
     "DuckDuckGo": {
       "status": "SUCCESS",
-      "http_code": 202,
+      "http_code": 200,
       "found_domain": false,
       "found_repo": false,
       "indexed": false
@@ -232,6 +232,98 @@
   "Charles K. Fintech BNPL merchant dispute": {
     "DuckDuckGo": {
       "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": true,
+      "indexed": false
+    },
+    "Bing": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Yahoo": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": true,
+      "indexed": false
+    }
+  },
+  "Andy Chen Managing Counsel Affirm regulatory dispute": {
+    "DuckDuckGo": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": true,
+      "indexed": false
+    },
+    "Bing": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Yahoo": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": true,
+      "indexed": false
+    }
+  },
+  "Madison Marshall Morgan Lewis attorney representation": {
+    "DuckDuckGo": {
+      "status": "SUCCESS",
+      "http_code": 202,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Bing": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Yahoo": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    }
+  },
+  "Arjun Rao Morgan Lewis partner consumer dispute": {
+    "DuckDuckGo": {
+      "status": "SUCCESS",
+      "http_code": 202,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Bing": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Yahoo": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    }
+  },
+  "Morgan Lewis regulatory dispute Affirm": {
+    "DuckDuckGo": {
+      "status": "SUCCESS",
       "http_code": 202,
       "found_domain": false,
       "found_repo": false,
@@ -249,6 +341,190 @@
       "http_code": 200,
       "found_domain": false,
       "found_repo": true,
+      "indexed": false
+    }
+  },
+  "CFPB interpretive rule withdrawal 2025": {
+    "DuckDuckGo": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Bing": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Yahoo": {
+      "status": "ERROR",
+      "error": "HTTP Error 500: INKApi Error",
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    }
+  },
+  "CFPB BNPL dispute rules": {
+    "DuckDuckGo": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Bing": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Yahoo": {
+      "status": "ERROR",
+      "error": "HTTP Error 500: INKApi Error",
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    }
+  },
+  "APA 5 U.S.C. 553 notice and comment exemption": {
+    "DuckDuckGo": {
+      "status": "SUCCESS",
+      "http_code": 202,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Bing": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Yahoo": {
+      "status": "ERROR",
+      "error": "HTTP Error 500: INKApi Error",
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    }
+  },
+  "California UCL 17200 fintech billing dispute": {
+    "DuckDuckGo": {
+      "status": "SUCCESS",
+      "http_code": 202,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Bing": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Yahoo": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    }
+  },
+  "Louisiana AG consumer protection complaint": {
+    "DuckDuckGo": {
+      "status": "SUCCESS",
+      "http_code": 202,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Bing": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Yahoo": {
+      "status": "ERROR",
+      "error": "HTTP Error 500: INKApi Error",
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    }
+  },
+  "automated fraud rejection decision trees": {
+    "DuckDuckGo": {
+      "status": "SUCCESS",
+      "http_code": 202,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Bing": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Yahoo": {
+      "status": "ERROR",
+      "error": "HTTP Error 500: INKApi Error",
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    }
+  },
+  "fintech portal lockout payment workaround": {
+    "DuckDuckGo": {
+      "status": "SUCCESS",
+      "http_code": 202,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Bing": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Yahoo": {
+      "status": "ERROR",
+      "error": "HTTP Error 500: INKApi Error",
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    }
+  },
+  "unresponsive fintech customer support loop": {
+    "DuckDuckGo": {
+      "status": "SUCCESS",
+      "http_code": 202,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Bing": {
+      "status": "SUCCESS",
+      "http_code": 200,
+      "found_domain": false,
+      "found_repo": false,
+      "indexed": false
+    },
+    "Yahoo": {
+      "status": "ERROR",
+      "error": "HTTP Error 500: INKApi Error",
+      "found_domain": false,
+      "found_repo": false,
       "indexed": false
     }
   }

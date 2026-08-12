@@ -321,8 +321,20 @@ def main():
             search_url = engine["url"].format(encoded_query)
             
             headers = {
-                "User-Agent": ua
+                "User-Agent": ua,
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+                "Accept-Language": "en-US,en;q=0.9",
+                "Connection": "keep-alive"
             }
+            if engine["name"] == "DuckDuckGo":
+                headers["Referer"] = "https://html.duckduckgo.com/"
+                headers["Accept"] = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+            elif engine["name"] == "Bing":
+                headers["Referer"] = "https://www.bing.com/"
+            elif engine["name"] == "Google":
+                headers["Referer"] = "https://www.google.com/"
+            elif engine["name"] == "Yahoo":
+                headers["Referer"] = "https://search.yahoo.com/"
             
             opener = urllib.request.build_opener(NoRedirectHandler())
             urllib.request.install_opener(opener)
@@ -369,8 +381,20 @@ def main():
                     "User-Agent": ua,
                     "X-Forwarded-For": fake_ip,
                     "Client-IP": fake_ip,
-                    "Via": fake_ip
+                    "Via": fake_ip,
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+                    "Accept-Language": "en-US,en;q=0.9",
+                    "Connection": "keep-alive"
                 }
+                if active_engine["name"] == "DuckDuckGo":
+                    headers["Referer"] = "https://html.duckduckgo.com/"
+                    headers["Accept"] = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                elif active_engine["name"] == "Bing":
+                    headers["Referer"] = "https://www.bing.com/"
+                elif active_engine["name"] == "Google":
+                    headers["Referer"] = "https://www.google.com/"
+                elif active_engine["name"] == "Yahoo":
+                    headers["Referer"] = "https://search.yahoo.com/"
                 
                 proxy_support = urllib.request.ProxyHandler({'http': proxy, 'https': proxy})
                 opener = urllib.request.build_opener(proxy_support, NoRedirectHandler())

@@ -77,14 +77,14 @@ The search strategy targets **8 distinct keyword intent pillars** designed to ca
 
 | Pillar | Topic Cluster | High-Intent Tangential Search Queries | Search Intent | Target Landing Page | Schema.org Type |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1** | **Fintech & POS Credit Architecture** | `Fintech consumer lending disputes`, `point of sale credit facility regulation`, `shadow banking disclosure compliance`, `POS installment credit freeze` | Informational / Commercial | [`index.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/index.html) | `CollectionPage`, `DefinedTerm` |
-| **2** | **BNPL Merchant Dispute Resolution** | `BNPL merchant dispute resolution`, `pay in 4 installment loan dispute`, `closed end installment credit freeze`, `unauthorized transaction BNPL carrier shipping` | Operational / Investigative | [`topics/fintech-bnpl-merchant-dispute-resolution.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/fintech-bnpl-merchant-dispute-resolution.html) | `TechArticle`, `DefinedTerm` |
-| **3** | **Regulation Z & TILA Compliance** | `Regulation Z 12 CFR 1026.13 billing errors`, `Truth in Lending Act BNPL lines of credit`, `Regulation Z fraud dispute rules`, `open end vs closed end BNPL billing error` | Legal / Regulatory | [`topics/regulation-z-apa-compliance.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/regulation-z-apa-compliance.html) | `Legislation`, `TechArticle` |
-| **4** | **APA Rulemaking & Exemption Analysis** | `APA 5 U.S.C. 553 notice and comment exemption`, `CFPB circular regulatory reliance interest`, `APA arbitrary and capricious review fintech`, `agency interpretive rule reliance defense` | Legal Scholar / Academic | [`topics/regulation-z-apa-compliance.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/regulation-z-apa-compliance.html) | `Legislation`, `TechArticle` |
-| **5** | **CFPB Oversight & UDAAP Standards** | `CFPB complaint 260717-35668593`, `CFPB UDAAP customer service refund delays`, `CFPB oversight fintech BNPL lenders`, `Dodd Frank Title X 12 USC 5531 customer care` | Regulatory / Investigative | [`topics/udaap-customer-service-failures.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/udaap-customer-service-failures.html) | `GovernmentOrganization`, `TechArticle` |
-| **6** | **Customer Service & Bot Rejection Loops** | `Automated fraud rejection 86 minute loop`, `unresponsive fintech customer care phone loop`, `cease and desist managing counsel dispute`, `fintech in app payment portal lockout billpay` | Operational / Media | [`topics/udaap-customer-service-failures.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/udaap-customer-service-failures.html) | `DefinedTerm`, `TechArticle` |
-| **7** | **State AG Enforcement & UCL § 17200** | `California UCL 17200 fintech billing dispute`, `Louisiana AG financial fraud complaint`, `state AG oversight BNPL lenders`, `California FAL 17500 extraterritorial reach` | Enforcement / Prosecutorial | [`topics/california-ag-regulatory-rebuttal.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/california-ag-regulatory-rebuttal.html) | `Legislation`, `TechArticle` |
-| **8** | **Personal Brand & Matter Identifiers** | `Charles W. Kinslow IV`, `Chase Kinslow attorney CPA`, `Monroe police report 26-29572`, `Affirm dispute archive Kinslow`, `Charles Kinslow CFPB complaint` | Navigational / Brand | [`index.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/index.html) | `Person`, `CollectionPage` |
+| **1** | **Personal Brand & Matter Identifiers** | `Charles W. Kinslow IV`, `Chase Kinslow attorney CPA`, `Monroe police report 26-29572`, `Affirm dispute archive Kinslow`, `Charles Kinslow CFPB complaint` | Navigational / Brand | [`index.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/index.html) | `Person`, `CollectionPage` |
+| **2** | **Fintech & POS Credit Architecture** | `Fintech consumer lending disputes`, `point of sale credit facility regulation`, `shadow banking disclosure compliance`, `POS installment credit freeze` | Informational / Commercial | [`index.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/index.html) | `CollectionPage`, `DefinedTerm` |
+| **3** | **BNPL Merchant Dispute Resolution** | `BNPL merchant dispute resolution`, `pay in 4 installment loan dispute`, `closed end installment credit freeze`, `unauthorized transaction BNPL carrier shipping` | Operational / Investigative | [`topics/fintech-bnpl-merchant-dispute-resolution.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/fintech-bnpl-merchant-dispute-resolution.html) | `TechArticle`, `DefinedTerm` |
+| **4** | **Regulation Z & TILA Compliance** | `Regulation Z 12 CFR 1026.13 billing errors`, `Truth in Lending Act BNPL lines of credit`, `Regulation Z fraud dispute rules`, `open end vs closed end BNPL billing error` | Legal / Regulatory | [`topics/regulation-z-apa-compliance.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/regulation-z-apa-compliance.html) | `Legislation`, `TechArticle` |
+| **5** | **APA Rulemaking & Exemption Analysis** | `APA 5 U.S.C. 553 notice and comment exemption`, `CFPB circular regulatory reliance interest`, `APA arbitrary and capricious review fintech`, `agency interpretive rule reliance defense` | Legal Scholar / Academic | [`topics/apa-fintech-rulemaking-exemptions.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/apa-fintech-rulemaking-exemptions.html) | `Legislation`, `TechArticle` |
+| **6** | **CFPB Oversight & UDAAP Standards** | `CFPB complaint 260717-35668593`, `CFPB UDAAP customer service refund delays`, `CFPB oversight fintech BNPL lenders`, `Dodd Frank Title X 12 USC 5531 customer care` | Regulatory / Investigative | [`topics/udaap-customer-service-failures.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/udaap-customer-service-failures.html) | `GovernmentOrganization`, `TechArticle` |
+| **7** | **Customer Service & Bot Rejection Loops** | `Automated fraud rejection 86 minute loop`, `unresponsive fintech customer care phone loop`, `cease and desist managing counsel dispute`, `fintech in app payment portal lockout billpay` | Operational / Media | [`topics/udaap-customer-service-failures.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/udaap-customer-service-failures.html) | `DefinedTerm`, `TechArticle` |
+| **8** | **State AG Enforcement & UCL § 17200** | `California UCL 17200 fintech billing dispute`, `Louisiana AG financial fraud complaint`, `state AG oversight BNPL lenders`, `California FAL 17500 extraterritorial reach` | Enforcement / Prosecutorial | [`topics/california-ag-regulatory-rebuttal.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/california-ag-regulatory-rebuttal.html) | `Legislation`, `TechArticle` |
 
 ---
 
@@ -130,7 +130,11 @@ regulatory-archive-2026/
 │   ├── regulation-z-apa-compliance.html               <-- Spoke 1: Reg Z & APA Statutory Analysis (Priority 0.9)
 │   ├── fintech-bnpl-merchant-dispute-resolution.html  <-- Spoke 2: BNPL Merchant Dispute Case Study (Priority 0.9)
 │   ├── udaap-customer-service-failures.html          <-- Spoke 3: Dodd-Frank UDAAP & Support Loops (Priority 0.9)
-│   └── california-ag-regulatory-rebuttal.html        <-- Spoke 4: State AG & Cal. UCL § 17200 (Priority 0.9)
+│   ├── california-ag-regulatory-rebuttal.html        <-- Spoke 4: State AG & Cal. UCL § 17200 (Priority 0.9)
+│   ├── bnpl-billing-disputes-regulation-z.html        <-- Spoke 5: BNPL Billing Errors & Reg Z (Priority 0.9)
+│   ├── apa-fintech-rulemaking-exemptions.html        <-- Spoke 6: APA Notice & Comment Exemptions (Priority 0.9)
+│   ├── pos-chargeback-payment-friction.html          <-- Spoke 7: POS Chargeback Payment Friction (Priority 0.9)
+│   └── udaap-merchant-refund-friction.html           <-- Spoke 8: UDAAP & Merchant Refund Delays (Priority 0.9)
 └── documents/                                         <-- Evidence Vault: Direct PDF Downloads (Priority 0.8)
     ├── monroe-police-report-26-29572.pdf
     ├── fraudulent-vendor-emails-and-tracking.pdf
@@ -140,7 +144,9 @@ regulatory-archive-2026/
     ├── cfpb-complaint-and-affirm-false-response.pdf
     ├── morgan-lewis-correspondence.pdf
     ├── louisiana-ag-dispute-submission.pdf
-    └── california-ag-dispute-notice.pdf
+    ├── california-ag-dispute-notice.pdf
+    ├── ca-ag-reply-1553638.pdf
+    └── Silence_Amidst_Reporters_Inquiry_Perfect_Fall_Detail.pdf
 ```
 
 ---
