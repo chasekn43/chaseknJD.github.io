@@ -2,7 +2,7 @@ import urllib.request
 import json
 import time
 
-EXA_API_KEY = "5365e676-b3a1-4dea-a0fb-140c817c0bcc"
+EXA_API_KEY = "47fee989-446a-44be-8aa0-733c1a688361"
 url = "https://api.exa.ai/search"
 payload = {
     "query": "Chase Kinslow Fintech BNPL merchant dispute",

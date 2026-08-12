@@ -371,6 +371,7 @@ def search_yahoo(query):
 
 # Multi-key rotation database for Exa
 EXA_KEYS = [
+    "47fee989-446a-44be-8aa0-733c1a688361",
     "5365e676-b3a1-4dea-a0fb-140c817c0bcc",
     "bd320fa0-9814-41f2-b107-ae1e38474eec",
     "7cf81a94-d8cf-4e6f-9089-1ac2242bee15"
