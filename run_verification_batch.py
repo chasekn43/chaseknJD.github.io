@@ -9,6 +9,8 @@ import subprocess
 import time
 from html import unescape
 from datetime import datetime
+import socket
+socket.setdefaulttimeout(10)
 
 # Ensure stdout handles utf-8
 if sys.stdout.encoding != 'utf-8':
