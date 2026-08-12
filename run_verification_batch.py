@@ -4,6 +4,8 @@ import re
 import json
 import random
 import sys
+import os
+import subprocess
 import time
 from html import unescape
 from datetime import datetime
@@ -15,7 +17,8 @@ if sys.stdout.encoding != 'utf-8':
     except Exception:
         pass
 
-queries = [
+# Load search keywords from keywords.txt or fallback to defaults
+default_queries = [
     "Chase Kinslow Fintech BNPL merchant dispute",
     "Charles W. Kinslow IV CFPB Administrative Procedures Act",
     "Chase Kinslow customer service refund delays",
@@ -25,6 +28,28 @@ queries = [
     "Chase Kinslow Kinslow v Affirm",
     "Charles W. Kinslow IV Kinslow v Affirm"
 ]
+
+keywords_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "keywords.txt")
+if os.path.exists(keywords_file):
+    try:
+        with open(keywords_file, "r", encoding="utf-8") as kf:
+            queries = [line.strip() for line in kf if line.strip() and not line.strip().startswith("#")]
+        # Deduplicate while preserving order
+        queries = list(dict.fromkeys(queries))
+        print(f"[Config] Loaded {len(queries)} unique queries from keywords.txt")
+    except Exception as e:
+        print(f"[Config] Error loading keywords.txt: {e}. Using defaults.")
+        queries = default_queries
+else:
+    try:
+        with open(keywords_file, "w", encoding="utf-8") as kf:
+            kf.write("# GRC Keywords list. Add one keyword per line to track in search results.\n")
+            for q in default_queries:
+                kf.write(f"{q}\n")
+        print(f"[Config] Generated default keywords.txt at: {keywords_file}")
+    except Exception as e:
+        pass
+    queries = default_queries
 
 TARGET_INDICATORS = [
     "chasekn43",
@@ -39,6 +64,93 @@ USER_AGENTS = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Safari/605.1.15",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0"
 ]
+
+import threading
+from concurrent.futures import ThreadPoolExecutor
+
+USE_PROXY = True
+verified_lock = threading.Lock()
+verified_pools = {
+    "Google": set(),
+    "Bing": set(),
+    "Yahoo": set(),
+    "DuckDuckGo": set()
+}
+
+raw_proxies_cache = []
+last_fetch_time = 0
+cache_lock = threading.Lock()
+
+class NoRedirectHandler(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+def get_raw_proxies():
+    global last_fetch_time, raw_proxies_cache
+    now = time.time()
+    with cache_lock:
+        if now - last_fetch_time < 90 and raw_proxies_cache:
+            return raw_proxies_cache
+
+    proxy_urls = [
+        "https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&timeout=3000&country=all&ssl=yes&anonymity=anonymous",
+        "https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&timeout=3000&country=all&ssl=yes&anonymity=elite",
+        "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt",
+        "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt"
+    ]
+    raw_list = []
+    for url in proxy_urls:
+        try:
+            req = urllib.request.Request(url, headers={'User-Agent': random.choice(USER_AGENTS)})
+            with urllib.request.urlopen(req, timeout=8) as response:
+                content = response.read().decode('utf-8', errors='ignore')
+                found = re.findall(r'\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{2,5}\b', content)
+                raw_list.extend(found)
+        except Exception:
+            pass
+            
+    with cache_lock:
+        if raw_list:
+            raw_proxies_cache = list(set(raw_list))
+            last_fetch_time = now
+        return raw_proxies_cache
+
+def test_single_proxy(proxy):
+    timeout = 1.5
+    tests = [
+        {"name": "Google", "url": "https://www.google.com/search?q=test&gbv=1"},
+        {"name": "Bing", "url": "https://www.bing.com/search?q=test"},
+        {"name": "Yahoo", "url": "https://search.yahoo.com/search?p=test"},
+        {"name": "DuckDuckGo", "url": "https://html.duckduckgo.com/html/?q=test"}
+    ]
+    random.shuffle(tests)
+    for test in tests:
+        name = test["name"]
+        test_url = test["url"]
+        try:
+            proxy_support = urllib.request.ProxyHandler({'http': proxy, 'https': proxy})
+            opener = urllib.request.build_opener(proxy_support, NoRedirectHandler())
+            req = urllib.request.Request(test_url, headers={'User-Agent': random.choice(USER_AGENTS)})
+            with opener.open(req, timeout=timeout) as resp:
+                if resp.status == 200:
+                    with verified_lock:
+                        verified_pools[name].add(proxy)
+        except Exception:
+            pass
+
+def run_validator():
+    print("Initiating fast parallel proxy validator...")
+    raw_proxies = get_raw_proxies()
+    if raw_proxies:
+        local_list = list(raw_proxies)
+        random.shuffle(local_list)
+        # Limit validation to first 250 proxies for speed
+        with ThreadPoolExecutor(max_workers=50) as executor:
+            executor.map(test_single_proxy, local_list[:250])
+    with verified_lock:
+        counts = {name: len(pool) for name, pool in verified_pools.items()}
+        print(f"Proxy pools populated: {counts}")
+
 
 def clean_text(html_str):
     cleanr = re.compile(r'<.*?>')
@@ -55,27 +167,114 @@ def decode_redirect_url(url):
             match = re.search(r'/RU=([^/]+)/', url)
             if match:
                 return urllib.parse.unquote(match.group(1))
+        # Bing /ck/a redirection base64 decoding
+        if "bing.com/ck/a" in url or "/ck/a?!" in url:
+            clean_url = url.replace("&amp;", "&")
+            parsed = urllib.parse.parse_qs(urllib.parse.urlparse(clean_url).query)
+            if "u" in parsed:
+                u_val = parsed["u"][0]
+                if len(u_val) > 2:
+                    # Strip the first 2 characters prefix (e.g. 'a1')
+                    b64_str = u_val[2:]
+                    # Add base64 padding if required
+                    padding = len(b64_str) % 4
+                    if padding:
+                        b64_str += "=" * (4 - padding)
+                    try:
+                        import base64
+                        decoded = base64.b64decode(b64_str).decode('utf-8', errors='ignore')
+                        if decoded.startswith("http"):
+                            return decoded
+                    except Exception:
+                        pass
     except Exception:
         pass
     return url
 
-def fetch_with_metrics(url, extractor):
-    headers = {"User-Agent": random.choice(USER_AGENTS), "Accept-Language": "en-US,en;q=0.9"}
-    req = urllib.request.Request(url, headers=headers)
+
+def fetch_with_metrics(url, extractor, engine_name=None):
+    headers = {
+        "User-Agent": random.choice(USER_AGENTS),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Connection": "keep-alive"
+    }
+    if "duckduckgo.com" in url:
+        headers["Referer"] = "https://html.duckduckgo.com/"
+    elif "bing.com" in url:
+        headers["Referer"] = "https://www.bing.com/"
+    elif "google.com" in url:
+        headers["Referer"] = "https://www.google.com/"
+    elif "yahoo.com" in url:
+        headers["Referer"] = "https://search.yahoo.com/"
+        
     start_time = time.time()
     results = []
     error = None
     status_code = 200
-    try:
-        with urllib.request.urlopen(req, timeout=12) as response:
-            status_code = response.getcode()
-            html = response.read().decode('utf-8', errors='ignore')
-            results = extractor(html)
-    except Exception as e:
-        error = str(e)
-        status_code = getattr(e, 'code', 500) if hasattr(e, 'code') else 500
+    
+    use_proxy = USE_PROXY and engine_name in verified_pools
+    success = False
+    
+    if use_proxy:
+        with verified_lock:
+            pool = list(verified_pools[engine_name])
+        
+        if pool:
+            random.shuffle(pool)
+            for proxy in pool[:8]:
+                try:
+                    proxy_support = urllib.request.ProxyHandler({'http': proxy, 'https': proxy})
+                    opener = urllib.request.build_opener(proxy_support)
+                    req = urllib.request.Request(url, headers=headers)
+                    with opener.open(req, timeout=3.5) as response:
+                        status_code = response.getcode()
+                        html = response.read().decode('utf-8', errors='ignore')
+                        results = extractor(html)
+                        if len(results) > 0 or "did not match any documents" in html.lower() or "no results found" in html.lower():
+                            success = True
+                            break
+                except Exception:
+                    pass
+                    
+    if not success:
+        if use_proxy:
+            print(f"No validated proxies succeeded for {engine_name}. Falling back to direct connection...")
+        req = urllib.request.Request(url, headers=headers)
+        try:
+            with urllib.request.urlopen(req, timeout=10) as response:
+                status_code = response.getcode()
+                html = response.read().decode('utf-8', errors='ignore')
+                results = extractor(html)
+                success = True
+        except Exception as e:
+            error = str(e)
+            status_code = getattr(e, 'code', 500) if hasattr(e, 'code') else 500
+            
+        if not success:
+            print(f"    [Direct Fetch Failed] Error: {error}. Trying Obscura stealth fetch...")
+            try:
+                obscura_path = r"c:\Users\Charwiz43\.gemini\antigravity\scratch\Affirm\403_tools\obscura\obscura.exe"
+                if os.path.exists(obscura_path):
+                    cmd = [obscura_path, "--stealth", "fetch", url, "--dump", "html"]
+                    result = subprocess.run(cmd, capture_output=True, text=True, timeout=25)
+                    if result.returncode == 0 and result.stdout.strip():
+                        html = result.stdout
+                        results = extractor(html)
+                        error = None
+                        status_code = 200
+                        success = True
+                        print(f"    [Obscura Success] Fetched page and extracted {len(results)} results.")
+                    else:
+                        print(f"    [Obscura Failed] Code {result.returncode}, Stderr: {result.stderr.strip()[:100]}")
+                else:
+                    print("    [Obscura Info] obscura.exe binary not found at path.")
+            except Exception as oe:
+                print(f"    [Obscura Exception] Error executing: {oe}")
 
     elapsed_ms = round((time.time() - start_time) * 1000, 2)
+
+
     
     # Check target hits
     hits = 0
@@ -99,41 +298,130 @@ def fetch_with_metrics(url, extractor):
 
 def extract_duckduckgo(html):
     results = []
-    raw_matches = re.findall(r'<a class="result__url" href="(.*?)">(.*?)</a>', html)
+    # DuckDuckGo HTML results titles are inside: <a class="result__a" href="...">
+    matches = re.findall(r'<a[^>]*class="result__a"[^>]*href="([^"]+)"[^>]*>(.*?)</a>', html, re.DOTALL)
+    if not matches:
+        matches = re.findall(r'<a[^>]*href="([^"]+)"[^>]*class="result__a"[^>]*>(.*?)</a>', html, re.DOTALL)
+        
     snippets = re.findall(r'<a class="result__snippet[^"]*"[^>]*>(.*?)</a>', html, re.DOTALL)
-    for i, (l_href, l_title) in enumerate(raw_matches):
+    for i, (l_href, l_title) in enumerate(matches):
         snip = clean_text(snippets[i]) if i < len(snippets) else ""
-        results.append({"title": clean_text(l_title), "url": decode_redirect_url(clean_text(l_href)), "snippet": snip})
+        results.append({
+            "title": clean_text(l_title), 
+            "url": decode_redirect_url(clean_text(l_href)), 
+            "snippet": snip
+        })
     return results
 
 def search_duckduckgo(query):
     url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote(query)}"
-    return fetch_with_metrics(url, extract_duckduckgo)
+    return fetch_with_metrics(url, extract_duckduckgo, "DuckDuckGo")
 
 def extract_google(html):
     results = []
-    raw_links = re.findall(r'href="/url\?q=(http[s]?://[^&]+)&', html)
-    titles = re.findall(r'<h3[^>]*>(.*?)</h3>', html)
-    for i, l in enumerate(raw_links):
-        if "google.com" not in l and "youtube.com" not in l:
-            t = clean_text(titles[i]) if i < len(titles) else "Google Result"
-            results.append({"title": t, "url": urllib.parse.unquote(l), "snippet": ""})
+    # Google basic HTML search results links are /url?q=...
+    links = re.findall(r'<a[^>]*href="/url\?q=([^&"]+)[^>]*>(.*?)</a>', html, re.DOTALL)
+    for url, text in links:
+        clean_url = urllib.parse.unquote(url)
+        if "google.com" not in clean_url and not clean_url.startswith("/"):
+            clean_text = re.sub(r'<[^>]+>', '', text).strip()
+            results.append({
+                "title": clean_text if clean_text else "Google Result", 
+                "url": clean_url, 
+                "snippet": ""
+            })
     return results
 
 def search_google(query):
-    url = f"https://www.google.com/search?q={urllib.parse.quote(query)}&num=10"
-    return fetch_with_metrics(url, extract_google)
+    # gbv=1 forces Google to render basic HTML without JavaScript challenges
+    url = f"https://www.google.com/search?q={urllib.parse.quote(query)}&num=10&gbv=1"
+    res = fetch_with_metrics(url, extract_google, "Google")
+    
+    # Check if direct search was blocked or returned no results
+    is_blocked = (
+        res.get("status_code", 200) in [403, 429, 503] or
+        "google.com/sorry" in (res.get("error") or "") or
+        res.get("results_count", 0) == 0
+    )
+    
+    if is_blocked:
+        print(f"    [Google Blocked/Empty] Triggering GoogleRecaptchaBypass solver for: '{query}'...")
+        start_time = time.time()
+        try:
+            venv_python = r"C:\Users\Charwiz43\.gemini\config\plugins\stealth-browser-mcp\venv\Scripts\python.exe"
+            script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "google_bypass_searcher.py")
+            cmd = [venv_python, script_path, query]
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=20)
+            
+            if result.returncode == 0 and result.stdout.strip():
+                html = result.stdout
+                results = extract_google(html)
+                elapsed_ms = round((time.time() - start_time) * 1000, 2)
+                
+                # Check target hits
+                hits = 0
+                hit_details = []
+                for r in results:
+                    combined = f"{r.get('title', '')} {r.get('url', '')} {r.get('snippet', '')}".lower()
+                    matched = [ind for ind in TARGET_INDICATORS if ind in combined]
+                    if matched:
+                        hits += 1
+                        hit_details.append({"title": r.get("title"), "url": r.get("url"), "matched_indicators": matched})
+                
+                print(f"    [Bypass Success] Found {len(results)} results, {hits} target hits via GoogleRecaptchaBypass.")
+                return {
+                    "response_time_ms": elapsed_ms,
+                    "status_code": 200,
+                    "results_count": len(results),
+                    "target_hits": hits,
+                    "hit_details": hit_details,
+                    "error": None,
+                    "raw_results": results
+                }
+            else:
+                err_msg = result.stderr.strip() if result.stderr else "Empty solver output"
+                print(f"    [Bypass Failed] Solver error: {err_msg}")
+                print(f"    [Google Fallback] Querying Tavily as proxy for Google results...")
+                res_tavily = search_tavily(query)
+                res_tavily["error"] = f"Direct block & Solver failed ({err_msg}). Used Tavily proxy."
+                return res_tavily
+        except Exception as e:
+            print(f"    [Bypass Exception] Error running solver: {e}")
+            print(f"    [Google Fallback] Querying Tavily as proxy for Google results...")
+            res_tavily = search_tavily(query)
+            res_tavily["error"] = f"Direct block & Solver exception ({str(e)}). Used Tavily proxy."
+            return res_tavily
+            
+    return res
 
 def extract_bing(html):
     results = []
-    matches = re.findall(r'h2><a href="(http[s]?://[^"]+)"[^>]*>(.*?)</a></h2>', html)
-    for href, title in matches:
-        results.append({"title": clean_text(title), "url": decode_redirect_url(href), "snippet": ""})
+    # Find all h2 blocks which contain result links
+    h2_blocks = re.findall(r'<h2[^>]*>(.*?)</h2>', html, re.DOTALL)
+    for block in h2_blocks:
+        link_match = re.search(r'<a[^>]*href="([^"]+)"[^>]*>(.*?)</a>', block, re.DOTALL)
+        if link_match:
+            href, title = link_match.groups()
+            
+            # Filter out internal pages but keep search result redirect URLs containing '/ck/a'
+            is_internal = False
+            if "bing.com" in href:
+                if "/ck/a" not in href:
+                    is_internal = True
+            elif "microsoft.com" in href or "live.com" in href:
+                is_internal = True
+                
+            if not is_internal:
+                results.append({
+                    "title": clean_text(title), 
+                    "url": decode_redirect_url(href), 
+                    "snippet": ""
+                })
     return results
 
 def search_bing(query):
     url = f"https://www.bing.com/search?q={urllib.parse.quote(query)}"
-    return fetch_with_metrics(url, extract_bing)
+    return fetch_with_metrics(url, extract_bing, "Bing")
 
 def extract_yahoo(html):
     results = []
@@ -146,34 +434,180 @@ def extract_yahoo(html):
 
 def search_yahoo(query):
     url = f"https://search.yahoo.com/search?p={urllib.parse.quote(query)}"
-    return fetch_with_metrics(url, extract_yahoo)
+    return fetch_with_metrics(url, extract_yahoo, "Yahoo")
+
+def search_exa(query):
+    url = "https://api.exa.ai/search"
+    payload = {
+        "query": query,
+        "useAutoprompt": False,
+        "numResults": 10
+    }
+    headers = {
+        "x-api-key": "bd320fa0-9814-41f2-b107-ae1e38474eec",
+        "Content-Type": "application/json"
+    }
+    start_time = time.time()
+    results = []
+    error = None
+    status_code = 200
+    try:
+        req = urllib.request.Request(
+            url, 
+            data=json.dumps(payload).encode('utf-8'), 
+            headers=headers, 
+            method='POST'
+        )
+        with urllib.request.urlopen(req, timeout=10) as response:
+            status_code = response.getcode()
+            res_data = json.loads(response.read().decode('utf-8'))
+            for r in res_data.get("results", []):
+                results.append({
+                    "title": r.get("title", ""),
+                    "url": r.get("url", ""),
+                    "snippet": r.get("text", "")
+                })
+    except Exception as e:
+        error = str(e)
+        status_code = 500
+        
+    elapsed_ms = round((time.time() - start_time) * 1000, 2)
+    
+    # Check target hits
+    hits = 0
+    hit_details = []
+    for r in results:
+        combined = f"{r.get('title', '')} {r.get('url', '')} {r.get('snippet', '')}".lower()
+        matched = [ind for ind in TARGET_INDICATORS if ind in combined]
+        if matched:
+            hits += 1
+            hit_details.append({"title": r.get("title"), "url": r.get("url"), "matched_indicators": matched})
+            
+    return {
+        "response_time_ms": elapsed_ms,
+        "status_code": status_code,
+        "results_count": len(results),
+        "target_hits": hits,
+        "hit_details": hit_details,
+        "error": error,
+        "raw_results": results
+    }
+
+def search_tavily(query):
+    url = "https://api.tavily.com/search"
+    payload = {
+        "api_key": "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",
+        "query": query,
+        "search_depth": "basic"
+    }
+    headers = {"Content-Type": "application/json"}
+    start_time = time.time()
+    results = []
+    error = None
+    status_code = 200
+    try:
+        req = urllib.request.Request(
+            url, 
+            data=json.dumps(payload).encode('utf-8'), 
+            headers=headers, 
+            method='POST'
+        )
+        with urllib.request.urlopen(req, timeout=10) as response:
+            status_code = response.getcode()
+            res_data = json.loads(response.read().decode('utf-8'))
+            for r in res_data.get("results", []):
+                results.append({
+                    "title": r.get("title", ""),
+                    "url": r.get("url", ""),
+                    "snippet": r.get("content", "")
+                })
+    except Exception as e:
+        error = str(e)
+        if hasattr(e, 'code'):
+            status_code = e.code
+        else:
+            status_code = 500
+            
+    # Auto-healing failover: if Tavily credit limit is exhausted (432) or any other API block occurs
+    if status_code != 200 or error or not results:
+        print(f"    [Tavily Credit Limit / Block] Status: {status_code}, Error: {error}. Falling back to Exa Search API proxy...")
+        return search_exa(query)
+        
+    elapsed_ms = round((time.time() - start_time) * 1000, 2)
+    
+    # Check target hits
+    hits = 0
+    hit_details = []
+    for r in results:
+        combined = f"{r.get('title', '')} {r.get('url', '')} {r.get('snippet', '')}".lower()
+        matched = [ind for ind in TARGET_INDICATORS if ind in combined]
+        if matched:
+            hits += 1
+            hit_details.append({"title": r.get("title"), "url": r.get("url"), "matched_indicators": matched})
+            
+    return {
+        "response_time_ms": elapsed_ms,
+        "status_code": status_code,
+        "results_count": len(results),
+        "target_hits": hits,
+        "hit_details": hit_details,
+        "error": error,
+        "raw_results": results
+    }
 
 all_results = {}
 engine_stats = {
     "Google": {"queries": 0, "total_time_ms": 0, "total_results": 0, "total_hits": 0, "errors": 0},
     "Bing": {"queries": 0, "total_time_ms": 0, "total_results": 0, "total_hits": 0, "errors": 0},
     "Yahoo": {"queries": 0, "total_time_ms": 0, "total_results": 0, "total_hits": 0, "errors": 0},
-    "DuckDuckGo": {"queries": 0, "total_time_ms": 0, "total_results": 0, "total_hits": 0, "errors": 0}
+    "DuckDuckGo": {"queries": 0, "total_time_ms": 0, "total_results": 0, "total_hits": 0, "errors": 0},
+    "Tavily": {"queries": 0, "total_time_ms": 0, "total_results": 0, "total_hits": 0, "errors": 0},
+    "Exa": {"queries": 0, "total_time_ms": 0, "total_results": 0, "total_hits": 0, "errors": 0}
 }
 
-print(f"Starting Multi-Engine Keyword Verification Sweep at {datetime.now().isoformat()}...")
-for q in queries:
+def execute_single_query(q):
     print(f"Running sweep for query: '{q}'")
-    q_res = {
-        "Google": search_google(q),
-        "Bing": search_bing(q),
-        "Yahoo": search_yahoo(q),
-        "DuckDuckGo": search_duckduckgo(q)
-    }
-    all_results[q] = q_res
+    q_res = {}
+    for engine_name, search_fn in [
+        ("Google", search_google),
+        ("Bing", search_bing),
+        ("Yahoo", search_yahoo),
+        ("DuckDuckGo", search_duckduckgo),
+        ("Tavily", search_tavily),
+        ("Exa", search_exa)
+    ]:
+        try:
+            q_res[engine_name] = search_fn(q)
+        except Exception as e:
+            q_res[engine_name] = {
+                "response_time_ms": 0,
+                "status_code": 500,
+                "results_count": 0,
+                "target_hits": 0,
+                "hit_details": [],
+                "error": str(e),
+                "raw_results": []
+            }
+        # Small delay inside worker to spread out queries
+        if engine_name in ["Google", "Bing", "Yahoo", "DuckDuckGo"]:
+            time.sleep(random.uniform(0.5, 1.5))
+    return q, q_res
 
-    for engine, res in q_res.items():
-        engine_stats[engine]["queries"] += 1
-        engine_stats[engine]["total_time_ms"] += res["response_time_ms"]
-        engine_stats[engine]["total_results"] += res["results_count"]
-        engine_stats[engine]["total_hits"] += res["target_hits"]
-        if res["error"]:
-            engine_stats[engine]["errors"] += 1
+print(f"Starting Multi-Engine Keyword Verification Sweep in Parallel at {datetime.now().isoformat()}...")
+run_validator() # Pre-populate active proxies
+
+# Run queries concurrently using ThreadPoolExecutor
+with ThreadPoolExecutor(max_workers=8) as executor:
+    results_map = executor.map(execute_single_query, queries)
+    for q, q_res in results_map:
+        all_results[q] = q_res
+        for engine, res in q_res.items():
+            engine_stats[engine]["queries"] += 1
+            engine_stats[engine]["total_time_ms"] += res.get("response_time_ms", 0)
+            engine_stats[engine]["total_results"] += res.get("results_count", 0)
+            engine_stats[engine]["total_hits"] += res.get("target_hits", 0)
+            if res.get("error"):
+                engine_stats[engine]["errors"] += 1
 
 output_data = {
     "timestamp": datetime.now().isoformat(),
