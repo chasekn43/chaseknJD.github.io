@@ -1,0 +1,11 @@
+name = "regulatory-archive-worker"
+main = "cloudflare-worker.js"
+compatibility_date = "2024-05-01"
+
+[[routes]]
+pattern = "kinslow-regulatory-archive.org/*"
+zone_name = "kinslow-regulatory-archive.org"
+
+[[routes]]
+pattern = "www.kinslow-regulatory-archive.org/*"
+zone_name = "kinslow-regulatory-archive.org"
