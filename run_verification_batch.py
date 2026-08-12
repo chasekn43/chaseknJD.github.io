@@ -334,72 +334,12 @@ def extract_google(html):
     return results
 
 def search_google(query):
-    # gbv=1 forces Google to render basic HTML without JavaScript challenges
-    url = f"https://www.google.com/search?q={urllib.parse.quote(query)}&num=10&gbv=1"
-    res = fetch_with_metrics(url, extract_google, "Google")
-    
-    # Check if direct search was blocked or returned no results
-    is_blocked = (
-        res.get("status_code", 200) in [403, 429, 503] or
-        "google.com/sorry" in (res.get("error") or "") or
-        res.get("results_count", 0) == 0
-    )
-    
-    if is_blocked:
-        print(f"    [Google Blocked/Empty] Triggering GoogleRecaptchaBypass solver for: '{query}'...")
-        start_time = time.time()
-        try:
-            # Parse worker ID from thread name (ThreadPoolExecutor-0_0, 0_1, etc.)
-            import threading
-            thread_name = threading.current_thread().name
-            match = re.search(r'_(\d+)$', thread_name)
-            worker_id = str(int(match.group(1)) % 3) if match else "0"
-            
-            venv_python = r"C:\Users\Charwiz43\.gemini\config\plugins\stealth-browser-mcp\venv\Scripts\python.exe"
-            script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "google_bypass_searcher.py")
-            cmd = [venv_python, script_path, worker_id, query]
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=20)
-            
-            if result.returncode == 0 and result.stdout.strip():
-                html = result.stdout
-                results = extract_google(html)
-                elapsed_ms = round((time.time() - start_time) * 1000, 2)
-                
-                # Check target hits
-                hits = 0
-                hit_details = []
-                for r in results:
-                    combined = f"{r.get('title', '')} {r.get('url', '')} {r.get('snippet', '')}".lower()
-                    matched = [ind for ind in TARGET_INDICATORS if ind in combined]
-                    if matched:
-                        hits += 1
-                        hit_details.append({"title": r.get("title"), "url": r.get("url"), "matched_indicators": matched})
-                
-                print(f"    [Bypass Success] Found {len(results)} results, {hits} target hits via GoogleRecaptchaBypass.")
-                return {
-                    "response_time_ms": elapsed_ms,
-                    "status_code": 200,
-                    "results_count": len(results),
-                    "target_hits": hits,
-                    "hit_details": hit_details,
-                    "error": None,
-                    "raw_results": results
-                }
-            else:
-                err_msg = result.stderr.strip() if result.stderr else "Empty solver output"
-                print(f"    [Bypass Failed] Solver error: {err_msg}")
-                print(f"    [Google Fallback] Querying Tavily as proxy for Google results...")
-                res_tavily = search_tavily(query)
-                res_tavily["error"] = f"Direct block & Solver failed ({err_msg}). Used Tavily proxy."
-                return res_tavily
-        except Exception as e:
-            print(f"    [Bypass Exception] Error running solver: {e}")
-            print(f"    [Google Fallback] Querying Tavily as proxy for Google results...")
-            res_tavily = search_tavily(query)
-            res_tavily["error"] = f"Direct block & Solver exception ({str(e)}). Used Tavily proxy."
-            return res_tavily
-            
-    return res
+    # Local IP is blocked by Google. Bypass direct/browser scrapers to use Tavily proxy immediately.
+    print(f"    [Google Bypass] IP rate-blocked. Using Tavily API proxy for Google results...")
+    res_tavily = search_tavily(query)
+    if res_tavily:
+        res_tavily["error"] = "Local IP blocked. Used Tavily proxy."
+    return res_tavily
 
 def extract_bing(html):
     results = []
