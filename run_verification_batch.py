@@ -369,40 +369,64 @@ def search_yahoo(query):
     url = f"https://search.yahoo.com/search?p={urllib.parse.quote(query)}"
     return fetch_with_metrics(url, extract_yahoo, "Yahoo")
 
+# Multi-key rotation database for Exa
+EXA_KEYS = [
+    "5365e676-b3a1-4dea-a0fb-140c817c0bcc",
+    "bd320fa0-9814-41f2-b107-ae1e38474eec",
+    "7cf81a94-d8cf-4e6f-9089-1ac2242bee15"
+]
+exa_key_index = 0
+
 def search_exa(query):
+    global exa_key_index
     url = "https://api.exa.ai/search"
     payload = {
         "query": query,
         "useAutoprompt": False,
         "numResults": 10
     }
-    headers = {
-        "x-api-key": "5365e676-b3a1-4dea-a0fb-140c817c0bcc",
-        "Content-Type": "application/json"
-    }
+    
     start_time = time.time()
     results = []
     error = None
     status_code = 200
-    try:
-        req = urllib.request.Request(
-            url, 
-            data=json.dumps(payload).encode('utf-8'), 
-            headers=headers, 
-            method='POST'
-        )
-        with urllib.request.urlopen(req, timeout=10) as response:
-            status_code = response.getcode()
-            res_data = json.loads(response.read().decode('utf-8'))
-            for r in res_data.get("results", []):
-                results.append({
-                    "title": r.get("title", ""),
-                    "url": r.get("url", ""),
-                    "snippet": r.get("text", "")
-                })
-    except Exception as e:
-        error = str(e)
-        status_code = 500
+    
+    # Try up to len(EXA_KEYS) times
+    for attempt in range(len(EXA_KEYS)):
+        current_key = EXA_KEYS[exa_key_index]
+        headers = {
+            "x-api-key": current_key,
+            "Content-Type": "application/json"
+        }
+        try:
+            req = urllib.request.Request(
+                url, 
+                data=json.dumps(payload).encode('utf-8'), 
+                headers=headers, 
+                method='POST'
+            )
+            with urllib.request.urlopen(req, timeout=10) as response:
+                status_code = response.getcode()
+                res_data = json.loads(response.read().decode('utf-8'))
+                for r in res_data.get("results", []):
+                    results.append({
+                        "title": r.get("title", ""),
+                        "url": r.get("url", ""),
+                        "snippet": r.get("text", "")
+                    })
+                # Success - break out of attempts loop
+                break
+        except Exception as e:
+            error = str(e)
+            is_limit = "402" in error or "429" in error
+            if is_limit:
+                print(f"    [Exa Key Failed] Key index {exa_key_index} returned status ({error}). Rotating to next key...")
+                exa_key_index = (exa_key_index + 1) % len(EXA_KEYS)
+                # Continue loop to try next key
+                continue
+            else:
+                status_code = 500
+                break
         
     elapsed_ms = round((time.time() - start_time) * 1000, 2)
     
@@ -423,7 +447,6 @@ def search_exa(query):
         "target_hits": hits,
         "hit_details": hit_details,
         "error": error,
-        "raw_results": results
     }
 
 # Multi-key rotation database
