@@ -612,7 +612,7 @@ print(f"Starting Multi-Engine Keyword Verification Sweep in Parallel at {datetim
 run_validator() # Pre-populate active proxies
 
 # Run queries concurrently using ThreadPoolExecutor
-with ThreadPoolExecutor(max_workers=1) as executor:
+with ThreadPoolExecutor(max_workers=3) as executor:
     results_map = executor.map(execute_single_query, queries)
     for q, q_res in results_map:
         all_results[q] = q_res

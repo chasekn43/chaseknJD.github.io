@@ -39,8 +39,14 @@ def search_google_via_browser(query):
     
     # Configure custom port and explicit browser path to avoid locks
     options.set_browser_path(r"C:\Program Files\Google\Chrome\Application\chrome.exe")
-    options.set_local_port(random.randint(15000, 25000))
+    port = random.randint(15000, 25000)
+    options.set_local_port(port)
     options.headless(True)
+    
+    # Set unique user data path based on port to prevent folder locks
+    temp_dir = os.environ.get('TEMP', os.path.join(os.path.expanduser('~'), 'AppData', 'Local', 'Temp'))
+    user_data_dir = os.path.join(temp_dir, f"dp_profile_{port}")
+    options.set_paths(user_data_path=user_data_dir)
         
     driver = ChromiumPage(addr_or_opts=options)
     try:
@@ -69,6 +75,13 @@ def search_google_via_browser(query):
     finally:
         try:
             driver.close()
+        except Exception:
+            pass
+        # Clean up the unique profile folder
+        try:
+            import shutil
+            if os.path.exists(user_data_dir):
+                shutil.rmtree(user_data_dir, ignore_errors=True)
         except Exception:
             pass
 
