@@ -9,12 +9,26 @@ while ($true) {
     Write-Host "Current Time: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" -ForegroundColor Gray
     Write-Host "=============================================" -ForegroundColor Cyan
     
-    # Check if the Python simulator is running
-    $proc = Get-CimInstance -Query "SELECT * FROM Win32_Process WHERE Name = 'python.exe' AND CommandLine LIKE '%run_continuous_search.py%'" -ErrorAction SilentlyContinue
-    if ($proc) {
-        Write-Host "Search Simulator Daemon: RUNNING (PID: $($proc.ProcessId))" -ForegroundColor Green
+    # Robust status detection: Check if log has been updated in the last 25 seconds
+    $active = $false
+    if (Test-Path $logPath) {
+        $lastWrite = (Get-Item $logPath).LastWriteTime
+        $timeDiff = (Get-Date) - $lastWrite
+        if ($timeDiff.TotalSeconds -lt 25) {
+            $active = $true
+        }
+    }
+    
+    # Fallback to python process check if log check is inactive
+    if (-not $active) {
+        $proc = Get-Process -Name python -ErrorAction SilentlyContinue
+        if ($proc) { $active = $true }
+    }
+    
+    if ($active) {
+        Write-Host "Search Simulator Daemon: ACTIVE (Running)" -ForegroundColor Green
     } else {
-        Write-Host "Search Simulator Daemon: NOT RUNNING" -ForegroundColor Red
+        Write-Host "Search Simulator Daemon: INACTIVE (Stopped)" -ForegroundColor Red
     }
     
     if (Test-Path $logPath) {
