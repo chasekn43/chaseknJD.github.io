@@ -493,67 +493,81 @@ def search_exa(query):
         "raw_results": results
     }
 
+# Multi-key rotation database
+TAVILY_KEYS = [
+    "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",
+    "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"
+]
+tavily_key_index = 0
+
 def search_tavily(query):
+    global tavily_key_index
     url = "https://api.tavily.com/search"
-    payload = {
-        "api_key": "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",
-        "query": query,
-        "search_depth": "basic"
-    }
-    headers = {"Content-Type": "application/json"}
-    start_time = time.time()
-    results = []
-    error = None
-    status_code = 200
-    try:
-        req = urllib.request.Request(
-            url, 
-            data=json.dumps(payload).encode('utf-8'), 
-            headers=headers, 
-            method='POST'
-        )
-        with urllib.request.urlopen(req, timeout=10) as response:
-            status_code = response.getcode()
-            res_data = json.loads(response.read().decode('utf-8'))
-            for r in res_data.get("results", []):
-                results.append({
-                    "title": r.get("title", ""),
-                    "url": r.get("url", ""),
-                    "snippet": r.get("content", "")
-                })
-    except Exception as e:
-        error = str(e)
-        if hasattr(e, 'code'):
-            status_code = e.code
-        else:
-            status_code = 500
-            
-    # Auto-healing failover: if Tavily credit limit is exhausted (432) or any other API block occurs
-    if status_code != 200 or error or not results:
-        print(f"    [Tavily Credit Limit / Block] Status: {status_code}, Error: {error}. Falling back to Exa Search API proxy...")
-        return search_exa(query)
-        
-    elapsed_ms = round((time.time() - start_time) * 1000, 2)
     
-    # Check target hits
-    hits = 0
-    hit_details = []
-    for r in results:
-        combined = f"{r.get('title', '')} {r.get('url', '')} {r.get('snippet', '')}".lower()
-        matched = [ind for ind in TARGET_INDICATORS if ind in combined]
-        if matched:
-            hits += 1
-            hit_details.append({"title": r.get("title"), "url": r.get("url"), "matched_indicators": matched})
-            
-    return {
-        "response_time_ms": elapsed_ms,
-        "status_code": status_code,
-        "results_count": len(results),
-        "target_hits": hits,
-        "hit_details": hit_details,
-        "error": error,
-        "raw_results": results
-    }
+    # Try all keys in rotation if one fails
+    for attempt in range(len(TAVILY_KEYS)):
+        current_key = TAVILY_KEYS[tavily_key_index]
+        payload = {
+            "api_key": current_key,
+            "query": query,
+            "search_depth": "basic"
+        }
+        headers = {"Content-Type": "application/json"}
+        start_time = time.time()
+        results = []
+        error = None
+        status_code = 200
+        try:
+            req = urllib.request.Request(
+                url, 
+                data=json.dumps(payload).encode('utf-8'), 
+                headers=headers, 
+                method='POST'
+            )
+            with urllib.request.urlopen(req, timeout=10) as response:
+                status_code = response.getcode()
+                res_data = json.loads(response.read().decode('utf-8'))
+                for r in res_data.get("results", []):
+                    results.append({
+                        "title": r.get("title", ""),
+                        "url": r.get("url", ""),
+                        "snippet": r.get("content", "")
+                    })
+        except Exception as e:
+            error = str(e)
+            if hasattr(e, 'code'):
+                status_code = e.code
+            else:
+                status_code = 500
+                
+        # If this key succeeded (status 200 and has results), return the results!
+        if status_code == 200 and not error and results:
+            elapsed_ms = round((time.time() - start_time) * 1000, 2)
+            hits = 0
+            hit_details = []
+            for r in results:
+                combined = f"{r.get('title', '')} {r.get('url', '')} {r.get('snippet', '')}".lower()
+                matched = [ind for ind in TARGET_INDICATORS if ind in combined]
+                if matched:
+                    hits += 1
+                    hit_details.append({"title": r.get("title"), "url": r.get("url"), "matched_indicators": matched})
+            return {
+                "response_time_ms": elapsed_ms,
+                "status_code": status_code,
+                "results_count": len(results),
+                "target_hits": hits,
+                "hit_details": hit_details,
+                "error": None,
+                "raw_results": results
+            }
+        
+        # If we got a credit limit (432) or rate limit (429) error, rotate to the next key!
+        print(f"    [Tavily Key Failed] Key index {tavily_key_index} returned status {status_code} ({error}). Rotating to next key...")
+        tavily_key_index = (tavily_key_index + 1) % len(TAVILY_KEYS)
+        
+    # If all keys failed, fall back to Exa Search API proxy!
+    print("    [All Tavily Keys Failed] Falling back to Exa Search API proxy...")
+    return search_exa(query)
 
 all_results = {}
 engine_stats = {
