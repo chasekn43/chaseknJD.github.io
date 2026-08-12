@@ -377,7 +377,7 @@ def search_exa(query):
         "numResults": 10
     }
     headers = {
-        "x-api-key": "bd320fa0-9814-41f2-b107-ae1e38474eec",
+        "x-api-key": "7cf81a94-d8cf-4e6f-9089-1ac2242bee15",
         "Content-Type": "application/json"
     }
     start_time = time.time()
