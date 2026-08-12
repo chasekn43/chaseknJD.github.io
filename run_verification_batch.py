@@ -428,7 +428,7 @@ def search_exa(query):
 
 # Multi-key rotation database
 TAVILY_KEYS = [
-    "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",
+    "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",
     "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",
     "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"
 ]

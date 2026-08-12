@@ -2,7 +2,7 @@ import urllib.request
 import json
 import time
 
-TAVILY_API_KEY = "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"
+TAVILY_API_KEY = "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"
 url = "https://api.tavily.com/search"
 payload = {
     "api_key": TAVILY_API_KEY,
