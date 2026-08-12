@@ -100,9 +100,16 @@ keywords = [
     "Rule 4.2 ethical notice consumer finance",
     "unsolicited team email outreach",
     "regulatory-archive-2026",
-    "chasekn43.github.io",
     "fintech compliance archive",
-    "BNPL regulatory record"
+    "BNPL regulatory record",
+    "CFPB interpretive rule withdrawal 2025",
+    "CFPB BNPL dispute rules",
+    "APA 5 U.S.C. 553 notice and comment exemption",
+    "California UCL 17200 fintech billing dispute",
+    "Louisiana AG consumer protection complaint",
+    "automated fraud rejection decision trees",
+    "fintech portal lockout payment workaround",
+    "unresponsive fintech customer support loop"
 ]
 
 # Engine configuration with urls

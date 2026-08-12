@@ -25,7 +25,15 @@ KEYWORDS = [
     "Andy Chen Managing Counsel Affirm regulatory dispute",
     "Madison Marshall Morgan Lewis attorney representation",
     "Arjun Rao Morgan Lewis partner consumer dispute",
-    "Morgan Lewis regulatory dispute Affirm"
+    "Morgan Lewis regulatory dispute Affirm",
+    "CFPB interpretive rule withdrawal 2025",
+    "CFPB BNPL dispute rules",
+    "APA 5 U.S.C. 553 notice and comment exemption",
+    "California UCL 17200 fintech billing dispute",
+    "Louisiana AG consumer protection complaint",
+    "automated fraud rejection decision trees",
+    "fintech portal lockout payment workaround",
+    "unresponsive fintech customer support loop"
 ]
 
 ENGINES = {
