@@ -23,7 +23,8 @@ def run_sweep():
             cwd=script_dir,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
-            text=True,
+            encoding="utf-8",
+            errors="replace",
             bufsize=1
         )
         
