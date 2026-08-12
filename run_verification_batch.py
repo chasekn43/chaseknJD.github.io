@@ -137,7 +137,8 @@ def test_single_proxy(proxy):
                     with verified_lock:
                         verified_pools[name].add(proxy)
         except Exception:
-            pass
+            # If the proxy connection fails, it is dead. Stop checking other engines.
+            break
 
 def run_validator():
     print("Initiating fast parallel proxy validator...")
