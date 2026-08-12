@@ -69,7 +69,7 @@ def generate_report():
         md = []
         md.append(f"# 🔍 GRC Search Indexing & Rank Tracking Report")
         md.append(f"\n> **Last Updated**: {timestamp} (Checked every 15 minutes)")
-        md.append(f"> **Target Domain**: `chasekn43.github.io/regulatory-archive-2026/`\n")
+        md.append(f"> **Target Domain**: `kinslow-regulatory-archive.org`\n")
         
         md.append("## 📊 Engine Performance Summary")
         md.append("| Search Engine | Queries Executed | Avg Latency | Total Results | Target Hits | Hit Rate | Errors |")
