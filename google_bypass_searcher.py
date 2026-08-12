@@ -74,7 +74,7 @@ def search_google_via_browser(query):
         return html
     finally:
         try:
-            driver.close()
+            driver.quit()
         except Exception:
             pass
         # Clean up the unique profile folder
