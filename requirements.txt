@@ -1,0 +1,4 @@
+# FireProx dependencies
+boto3
+tldextract
+tzlocal
