@@ -108,7 +108,6 @@ def get_bypass_headers(mode='common', url=None):
     # Browser-like headers (always added)
     headers["User-Agent"] = random.choice(USER_AGENTS)
     headers["Accept"] = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
-    headers["Accept-Encoding"] = "gzip, deflate, br"
     headers["Accept-Language"] = random.choice([
         "en-US,en;q=0.9",
         "en-GB,en;q=0.9",

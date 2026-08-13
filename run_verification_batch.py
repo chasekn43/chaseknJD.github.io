@@ -12,7 +12,7 @@ from datetime import datetime
 import socket
 from fireprox_config import get_base_url
 from waf_bypass_headers import apply_bypass_headers
-socket.setdefaulttimeout(10)
+socket.setdefaulttimeout(3)
 
 # Ensure stdout handles utf-8
 if sys.stdout.encoding != 'utf-8':
@@ -250,7 +250,7 @@ def fetch_with_metrics(url, extractor, engine_name=None):
         req = urllib.request.Request(url, headers=headers)
         apply_bypass_headers(req, mode='pro')
         try:
-            with urllib.request.urlopen(req, timeout=10) as response:
+            with urllib.request.urlopen(req, timeout=3) as response:
                 status_code = response.getcode()
                 html = response.read().decode('utf-8', errors='ignore')
                 results = extractor(html)
@@ -284,7 +284,8 @@ def fetch_with_metrics(url, extractor, engine_name=None):
         "target_hits": hits,
         "hit_details": hit_details,
         "error": error,
-        "raw_results": results
+        "raw_results": results,
+        "html": html if 'html' in locals() else ""
     }
 
 def extract_duckduckgo(html):
@@ -306,7 +307,89 @@ def extract_duckduckgo(html):
 
 def search_duckduckgo(query):
     url = f"{get_base_url('duckduckgo')}/html/?q={urllib.parse.quote(query)}"
-    return fetch_with_metrics(url, extract_duckduckgo, "DuckDuckGo")
+    res = fetch_with_metrics(url, extract_duckduckgo, "DuckDuckGo")
+    
+    # Check if direct request was blocked or timed out
+    is_blocked = (
+        res.get("status_code", 200) in [403, 429, 503] or
+        "bots use duckduckgo" in (res.get("error") or "").lower() or
+        res.get("results_count", 0) == 0
+    )
+    
+    if is_blocked:
+        print(f"    [DuckDuckGo Blocked/Empty] Triggering ddg_bypass_searcher solver for: '{query}'...")
+        start_time = time.time()
+        try:
+            import threading
+            thread_name = threading.current_thread().name
+            match = re.search(r'_(\d+)$', thread_name)
+            worker_id = str(int(match.group(1)) % 3) if match else "0"
+            
+            script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ddg_bypass_searcher.py")
+            cmd = [sys.executable, script_path, worker_id, query]
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=25)
+            
+            if result.returncode == 0 and result.stdout.strip():
+                html = result.stdout
+                results = extract_duckduckgo(html)
+                elapsed_ms = round((time.time() - start_time) * 1000, 2)
+                
+                # Check target hits
+                hits = 0
+                hit_details = []
+                for r in results:
+                    combined = f"{r.get('title', '')} {r.get('url', '')} {r.get('snippet', '')}".lower()
+                    matched = [ind for ind in TARGET_INDICATORS if ind in combined]
+                    if matched:
+                        hits += 1
+                        hit_details.append({"title": r.get("title"), "url": r.get("url"), "matched_indicators": matched})
+                
+                print(f"    [DDG Bypass Success] Found {len(results)} results, {hits} target hits via browser automation.")
+                return {
+                    "response_time_ms": elapsed_ms,
+                    "status_code": 200,
+                    "results_count": len(results),
+                    "target_hits": hits,
+                    "hit_details": hit_details,
+                    "error": None,
+                    "raw_results": results
+                }
+            elif result.returncode == 2:
+                print("    [DDG Bypass Blocked] CAPTCHA detected in browser. Clean IP/VPN required.")
+                return {
+                    "response_time_ms": round((time.time() - start_time) * 1000, 2),
+                    "status_code": 403,
+                    "results_count": 0,
+                    "target_hits": 0,
+                    "hit_details": [],
+                    "error": "Bypass failed: CAPTCHA block in browser (clean IP/VPN required)",
+                    "raw_results": []
+                }
+            else:
+                err_msg = result.stderr.strip() if result.stderr else "Empty solver output"
+                print(f"    [DDG Bypass Failed] Solver error: {err_msg}")
+                return {
+                    "response_time_ms": round((time.time() - start_time) * 1000, 2),
+                    "status_code": 503,
+                    "results_count": 0,
+                    "target_hits": 0,
+                    "hit_details": [],
+                    "error": f"Bypass failed: {err_msg}",
+                    "raw_results": []
+                }
+        except Exception as e:
+            print(f"    [DDG Bypass Exception] Error running solver: {e}")
+            return {
+                "response_time_ms": round((time.time() - start_time) * 1000, 2),
+                "status_code": 500,
+                "results_count": 0,
+                "target_hits": 0,
+                "hit_details": [],
+                "error": f"Bypass exception: {str(e)}",
+                "raw_results": []
+            }
+            
+    return res
 
 def extract_google(html):
     results = []
@@ -328,11 +411,12 @@ def search_google(query):
     url = f"{get_base_url('google')}/search?q={urllib.parse.quote(query)}&num=10&gbv=1"
     res = fetch_with_metrics(url, extract_google, "Google")
     
-    # Check if direct search was blocked or returned no results
+    # Check if direct search was blocked
     is_blocked = (
         res.get("status_code", 200) in [403, 429, 503] or
         "google.com/sorry" in (res.get("error") or "") or
-        res.get("results_count", 0) == 0
+        "google.com/sorry" in res.get("html", "") or
+        "recaptcha" in res.get("html", "")
     )
     
     if is_blocked:
@@ -643,7 +727,7 @@ print(f"Starting Multi-Engine Keyword Verification Sweep in Parallel at {datetim
 run_validator() # Pre-populate active proxies
 
 # Run queries concurrently using ThreadPoolExecutor
-with ThreadPoolExecutor(max_workers=25) as executor:
+with ThreadPoolExecutor(max_workers=3) as executor:
     results_map = executor.map(execute_single_query, queries)
     for q, q_res in results_map:
         all_results[q] = q_res

@@ -67,8 +67,11 @@ def search_google_via_browser(query, worker_id="0"):
                 time.sleep(1)
             except Exception as e:
                 screenshot_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "captcha_error.png")
-                driver.get_screenshot(path=screenshot_path)
-                print(f"[Solver ERROR] Captcha solve failed: {e}. Saved screenshot to: {screenshot_path}", file=sys.stderr)
+                try:
+                    driver.get_screenshot(path=screenshot_path)
+                    print(f"[Solver ERROR] Captcha solve failed: {e}. Saved screenshot to: {screenshot_path}", file=sys.stderr)
+                except Exception as ex_screen:
+                    print(f"[Solver ERROR] Captcha solve failed: {e} (Screenshot failed: {ex_screen})", file=sys.stderr)
                 raise e
             
         html = driver.html
