@@ -21,6 +21,31 @@ if sys.stdout.encoding != 'utf-8':
     except Exception:
         pass
 
+# Safety defaults (can be overridden by .search_safety/config.json)
+MAX_CONCURRENCY = 3
+MAX_BROWSERS = 1
+MAX_RUNTIME = 30 * 60
+MAX_QUERIES = 200
+REQUEST_TIMEOUT = 10
+NO_BROWSER = True
+HEADLESS = True
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+config_path = os.path.join(script_dir, ".search_safety", "config.json")
+if os.path.exists(config_path):
+    try:
+        with open(config_path, "r", encoding="utf-8") as cf:
+            cfg = json.load(cf)
+        MAX_CONCURRENCY = int(cfg.get("max_concurrency", MAX_CONCURRENCY))
+        MAX_BROWSERS = int(cfg.get("max_browsers", MAX_BROWSERS))
+        MAX_RUNTIME = int(cfg.get("max_runtime", MAX_RUNTIME))
+        MAX_QUERIES = int(cfg.get("max_queries", MAX_QUERIES))
+        REQUEST_TIMEOUT = float(cfg.get("request_timeout", REQUEST_TIMEOUT))
+        NO_BROWSER = bool(cfg.get("no_browser", NO_BROWSER))
+        HEADLESS = bool(cfg.get("headless", HEADLESS))
+    except Exception as e:
+        print(f"Failed to load safety config: {e}")
+
 NAMES = ["Chase Kinslow", "Charles W. Kinslow IV"]
 REPO_HANDLE = "chasekn43"
 REPO_NAME = "regulatory-archive-2026"
@@ -95,7 +120,7 @@ def search_duckduckgo(query):
     req = urllib.request.Request(url, headers=headers)
     results = []
     try:
-        with urllib.request.urlopen(req, timeout=8) as response:
+        with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as response:
             html = response.read().decode('utf-8', errors='ignore')
             matches = re.findall(r'<a class="result__url" href="(.*?)">(.*?)</a>', html)
             for href, title in matches[:10]:
@@ -110,7 +135,7 @@ def search_bing(query):
     req = urllib.request.Request(url, headers=headers)
     results = []
     try:
-        with urllib.request.urlopen(req, timeout=8) as response:
+        with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as response:
             html = response.read().decode('utf-8', errors='ignore')
             matches = re.findall(r'<h2><a href="(http[s]?://[^"]+)"[^>]*>(.*?)</a></h2>', html)
             for href, title in matches[:10]:
@@ -125,7 +150,7 @@ def search_google(query):
     req = urllib.request.Request(url, headers=headers)
     results = []
     try:
-        with urllib.request.urlopen(req, timeout=8) as response:
+        with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as response:
             html = response.read().decode('utf-8', errors='ignore')
             raw_links = re.findall(r'href="/url\?q=(http[s]?://[^&]+)&amp;', html)
             titles = re.findall(r'<h3[^>]*>(.*?)</h3>', html)
@@ -143,7 +168,7 @@ def search_yahoo(query):
     req = urllib.request.Request(url, headers=headers)
     results = []
     try:
-        with urllib.request.urlopen(req, timeout=8) as response:
+        with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as response:
             html = response.read().decode('utf-8', errors='ignore')
             matches = re.findall(r'<h3 class="title"[^>]*><a href="(https?://[^"]+)"[^>]*>(.*?)</a></h3>', html)
             for href, title in matches[:10]:
@@ -165,6 +190,8 @@ def run_continuous_automated_search(passes=3, queries_per_pass=4):
     
     session_history = []
     total_matches = 0
+    total_queries = 0
+    start_time = time.time()
     
     for p in range(1, passes + 1):
         pass_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -183,6 +210,14 @@ def run_continuous_automated_search(passes=3, queries_per_pass=4):
         pass_data = {"pass": p, "timestamp": pass_time, "queries": []}
         
         for q_idx, query in enumerate(pass_queries, 1):
+            # Safety: global caps
+            if total_queries >= MAX_QUERIES:
+                print(f"[SAFETY] Max queries reached ({total_queries} >= {MAX_QUERIES}). Stopping.")
+                break
+            if time.time() - start_time > MAX_RUNTIME:
+                print(f"[SAFETY] Max runtime exceeded ({time.time() - start_time:.1f}s > {MAX_RUNTIME}s). Stopping.")
+                break
+
             print(f"\n[{p}.{q_idx}] Executing Multi-Engine Search for: '{query}'")
             query_record = {"query": query, "engines": {}, "matches": []}
             
@@ -191,6 +226,8 @@ def run_continuous_automated_search(passes=3, queries_per_pass=4):
             bing_res = search_bing(query)
             yahoo_res = search_yahoo(query)
             google_res = search_google(query)
+            
+            total_queries += 1
             
             query_record["engines"]["DuckDuckGo"] = ddg_res
             query_record["engines"]["Bing"] = bing_res
@@ -212,11 +249,11 @@ def run_continuous_automated_search(passes=3, queries_per_pass=4):
             query_record["matches"] = matched_items
             if matched_items:
                 total_matches += len(matched_items)
-                print(f"   [🎯 MATCH FOUND] {len(matched_items)} result(s) indexed for target repository:")
+                print(f"   [MATCH FOUND] {len(matched_items)} result(s) indexed for target repository:")
                 for m in matched_items:
                     print(f"      • [{m['engine']}] ({m['indicator']}) {m['url']}")
             else:
-                print(f"   [✓ OK] DDG({len(ddg_res)}), Bing({len(bing_res)}), Yahoo({len(yahoo_res)}), Google({len(google_res)}) processed successfully.")
+                print(f"   [OK] DDG({len(ddg_res)}), Bing({len(bing_res)}), Yahoo({len(yahoo_res)}), Google({len(google_res)}) processed successfully.")
                 
             pass_data["queries"].append(query_record)
             time.sleep(1)
