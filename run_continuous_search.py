@@ -10,12 +10,40 @@ import threading
 from concurrent.futures import ThreadPoolExecutor
 from fireprox_config import get_base_url
 from waf_bypass_headers import apply_bypass_headers
+import json
 
 # Configuration Flags
 USE_PROXY = False  # Set to False to run direct requests over local VPN (recommended to bypass public proxy blockages/timeouts)
 
-# Paths
+# Safety defaults (can be overridden by .search_safety/config.json)
+MAX_CONCURRENCY = 3
+MAX_BROWSERS = 1
+MAX_RUNTIME = 30 * 60  # seconds
+MAX_QUERIES = 200
+REQUEST_TIMEOUT = 10.0
+NO_BROWSER = True
+HEADLESS = True
+
+# Load safety config if present
 script_dir = os.path.dirname(os.path.abspath(__file__))
+config_dir = os.path.join(script_dir, ".search_safety")
+config_path = os.path.join(config_dir, "config.json")
+if os.path.exists(config_path):
+    try:
+        with open(config_path, "r", encoding="utf-8") as cf:
+            cfg = json.load(cf)
+        MAX_CONCURRENCY = int(cfg.get("max_concurrency", MAX_CONCURRENCY))
+        MAX_BROWSERS = int(cfg.get("max_browsers", MAX_BROWSERS))
+        MAX_RUNTIME = int(cfg.get("max_runtime", MAX_RUNTIME))
+        MAX_QUERIES = int(cfg.get("max_queries", MAX_QUERIES))
+        REQUEST_TIMEOUT = float(cfg.get("request_timeout", REQUEST_TIMEOUT))
+        NO_BROWSER = bool(cfg.get("no_browser", NO_BROWSER))
+        HEADLESS = bool(cfg.get("headless", HEADLESS))
+    except Exception as e:
+        # config load failures are non-fatal
+        print(f"Failed to load safety config: {e}")
+
+# Paths
 log_path = os.path.join(script_dir, "search_continuous.log")
 
 # Setup Logging
@@ -108,7 +136,7 @@ keywords = [
     "CFPB BNPL dispute rules",
     "APA 5 U.S.C. 553 notice and comment exemption",
     "California UCL 17200 fintech billing dispute",
-    "Louisiana AG consumer protection complaint",
+    "Louisiana AG Liz Murrill dispute submission",
     "automated fraud rejection decision trees",
     "fintech portal lockout payment workaround",
     "unresponsive fintech customer support loop"
@@ -174,7 +202,7 @@ def get_raw_proxies():
     for url in proxy_urls:
         try:
             req = urllib.request.Request(url, headers={'User-Agent': random.choice(user_agents)})
-            with urllib.request.urlopen(req, timeout=8) as response:
+            with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as response:
                 content = response.read().decode('utf-8', errors='ignore')
                 found = re.findall(r'\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{2,5}\b', content)
                 raw_list.extend(found)
@@ -188,8 +216,8 @@ def get_raw_proxies():
         return raw_proxies_cache
 
 def test_single_proxy(proxy):
-    # Strict 1.5s timeout for validation checks
-    timeout = 1.5
+    # Strict timeout for validation checks
+    timeout = REQUEST_TIMEOUT
     
     # We test Bing, DuckDuckGo, Google, and Yahoo with active queries
     tests = [
@@ -229,7 +257,7 @@ def proxy_validator_thread():
             if raw_proxies:
                 local_list = list(raw_proxies)
                 random.shuffle(local_list)
-                with ThreadPoolExecutor(max_workers=45) as executor:
+                with ThreadPoolExecutor(max_workers=max(2, int(MAX_CONCURRENCY*5))) as executor:
                     executor.map(test_single_proxy, local_list[:150])
                 
         time.sleep(10)
@@ -289,6 +317,7 @@ def generate_query():
             
     # Fallback
     return f"{random.choice(names)} fintech BNPL dispute"
+
 def main():
     if USE_PROXY:
         log_message("Continuous search simulator initialized with SSL filtering, Redirect blocking, and public proxy pools.")
@@ -306,8 +335,19 @@ def main():
     else:
         log_message("Continuous search simulator initialized in DIRECT / VPN Mode (Bypassing public proxies).")
 
+    # Safety: track runtime
+    start_time = time.time()
+
     while True:
         query = generate_query()
+        
+        # Safety checks: global caps
+        if query_counter >= MAX_QUERIES:
+            log_message(f"[SAFETY] Max queries reached ({query_counter} >= {MAX_QUERIES}). Exiting.")
+            break
+        if time.time() - start_time > MAX_RUNTIME:
+            log_message(f"[SAFETY] Max runtime exceeded ({time.time() - start_time:.1f}s > {MAX_RUNTIME}s). Exiting.")
+            break
         
         # Bias engine weights: Bing 45%, DuckDuckGo 45%, Google 5%, Yahoo 5%
         engine = random.choices(
@@ -341,16 +381,16 @@ def main():
             opener = urllib.request.build_opener(NoRedirectHandler())
             urllib.request.install_opener(opener)
             
-            start_time = time.time()
+            start_time_q = time.time()
             try:
                 req = urllib.request.Request(search_url, headers=headers)
                 apply_bypass_headers(req, mode='pro')
-                with urllib.request.urlopen(req, timeout=10.0) as response:
+                with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as response:
                     html = response.read()
-                    elapsed = time.time() - start_time
+                    elapsed = time.time() - start_time_q
                     log_message(f"[QUERY SUCCESS] {engine['name']} (Direct/VPN) returned {response.status} (Length: {len(html)}, Time: {elapsed:.2f}s) for query: '{query}'")
             except Exception as e:
-                elapsed = time.time() - start_time
+                elapsed = time.time() - start_time_q
                 log_message(f"[QUERY FAILED] {engine['name']} (Direct/VPN) failed in {elapsed:.2f}s: {e}")
         else:
             # Proxy query logic
@@ -403,19 +443,19 @@ def main():
                 opener = urllib.request.build_opener(proxy_support, NoRedirectHandler())
                 urllib.request.install_opener(opener)
                 
-                start_time = time.time()
+                start_time_q = time.time()
                 try:
                     req = urllib.request.Request(search_url, headers=headers)
                     apply_bypass_headers(req, mode='pro')
-                    with urllib.request.urlopen(req, timeout=4.0) as response:
+                    with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as response:
                         html = response.read()
-                        elapsed = time.time() - start_time
+                        elapsed = time.time() - start_time_q
                         log_message(f"[QUERY SUCCESS] {active_engine['name']} ({proxy}) returned {response.status} (Length: {len(html)}, Time: {elapsed:.2f}s) for query: '{query}' (Attempt {attempt})")
                         success = True
                         break
                 except Exception as e:
-                    elapsed = time.time() - start_time
-                    log_message(f"[QUERY ATTEMPT FAILED] {active_engine['name']} ({proxy}) failed in {elapsed:.2f}s (Attempt {attempt}/{max_attempts}): {e}")
+                    elapsed = time.time() - start_time_q
+                    log_message(f"[QUERY ATTEMPT_FAILED] {active_engine['name']} ({proxy}) failed in {elapsed:.2f}s (Attempt {attempt}/{max_attempts}): {e}")
                     with verified_lock:
                         if proxy in verified_pools[active_engine["name"]]:
                             verified_pools[active_engine["name"]].remove(proxy)
@@ -423,6 +463,14 @@ def main():
             if not success:
                 log_message(f"[QUERY ABORTED] Query '{query}' failed to execute after {max_attempts} attempts.")
                 
+        # Safety checks: global caps (re-evaluate before next iteration)
+        if query_counter >= MAX_QUERIES:
+            log_message(f"[SAFETY] Max queries reached ({query_counter} >= {MAX_QUERIES}). Exiting.")
+            break
+        if time.time() - start_time > MAX_RUNTIME:
+            log_message(f"[SAFETY] Max runtime exceeded ({time.time() - start_time:.1f}s > {MAX_RUNTIME}s). Exiting.")
+            break
+
         # Random sleep delay between search iterations to emulate human browse pacing
         time.sleep(random.uniform(5.0, 15.0))
 

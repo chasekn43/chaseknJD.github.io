@@ -1,0 +1,10 @@
+{
+  "max_concurrency": 6,
+  "max_browsers": 0,
+  "max_runtime": 3600,
+  "max_queries": 500,
+  "request_timeout": 20,
+  "no_browser": true,
+  "headless": true,
+  "use_proxy": false
+}
