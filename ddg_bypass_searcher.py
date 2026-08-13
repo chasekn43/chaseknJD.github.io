@@ -3,6 +3,8 @@ import sys
 import os
 import time
 import urllib.parse
+import tempfile
+import shutil
 
 def search_ddg_via_browser(query, worker_id="0"):
     """Executes a DuckDuckGo Search query via automated Chromium to bypass TLS fingerprint blocks."""
@@ -34,8 +36,9 @@ def search_ddg_via_browser(query, worker_id="0"):
     options.set_local_port(port)
     options.headless(True)
     
+    # Use unique temp directory to prevent profile reuse/fingerprint caching
     temp_dir = os.environ.get('TEMP', os.path.join(os.path.expanduser('~'), 'AppData', 'Local', 'Temp'))
-    user_data_dir = os.path.join(temp_dir, f"dp_profile_ddg_{worker_id}")
+    user_data_dir = tempfile.mkdtemp(prefix=f"dp_profile_ddg_{worker_id}_", dir=temp_dir)
     options.set_paths(user_data_path=user_data_dir)
         
     driver = ChromiumPage(addr_or_opts=options)
@@ -55,6 +58,11 @@ def search_ddg_via_browser(query, worker_id="0"):
     finally:
         try:
             driver.quit()
+        except Exception:
+            pass
+        # Clean up temp folder
+        try:
+            shutil.rmtree(user_data_dir, ignore_errors=True)
         except Exception:
             pass
 

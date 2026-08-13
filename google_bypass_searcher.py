@@ -4,6 +4,8 @@ import os
 import time
 import random
 import urllib.parse
+import tempfile
+import shutil
 from fireprox_config import get_base_url
 
 # Add solver path to import RecaptchaSolver
@@ -44,9 +46,9 @@ def search_google_via_browser(query, worker_id="0"):
     options.set_local_port(port)
     options.headless(True)
     
-    # Set unique user data path based on worker_id to prevent folder locks
+    # Set unique user data path based on worker_id to prevent folder locks and sticky fingerprints
     temp_dir = os.environ.get('TEMP', os.path.join(os.path.expanduser('~'), 'AppData', 'Local', 'Temp'))
-    user_data_dir = os.path.join(temp_dir, f"dp_profile_{worker_id}")
+    user_data_dir = tempfile.mkdtemp(prefix=f"dp_profile_{worker_id}_", dir=temp_dir)
     options.set_paths(user_data_path=user_data_dir)
         
     driver = ChromiumPage(addr_or_opts=options)
@@ -79,6 +81,11 @@ def search_google_via_browser(query, worker_id="0"):
     finally:
         try:
             driver.quit()
+        except Exception:
+            pass
+        # Clean up temp folder
+        try:
+            shutil.rmtree(user_data_dir, ignore_errors=True)
         except Exception:
             pass
 
