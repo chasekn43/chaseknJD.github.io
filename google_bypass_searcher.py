@@ -51,7 +51,7 @@ def search_google_via_browser(query, worker_id="0"):
         
     driver = ChromiumPage(addr_or_opts=options)
     try:
-        url = f"{get_base_url('google')}/search?q={urllib.parse.quote(query)}&num=10"
+        url = f"https://www.google.com/search?q={urllib.parse.quote(query)}&num=10"
         print(f"[Solver] Loading Google Search URL: {url}", file=sys.stderr)
         driver.get(url)
         time.sleep(2)
