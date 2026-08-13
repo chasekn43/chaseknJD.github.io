@@ -308,7 +308,11 @@ def extract_duckduckgo(html):
         })
     return results
 
+ddg_captcha_failures = 0
+google_captcha_failures = 0
+
 def search_duckduckgo(query):
+    global ddg_captcha_failures
     url = f"{get_base_url('duckduckgo')}/html/?q={urllib.parse.quote(query)}"
     res = fetch_with_metrics(url, extract_duckduckgo, "DuckDuckGo")
     
@@ -320,6 +324,10 @@ def search_duckduckgo(query):
     )
     
     if is_blocked:
+        if ddg_captcha_failures >= 3:
+            # Skip browser fallback to save time since the current IP is blocked
+            return res
+            
         print(f"    [DuckDuckGo Blocked/Empty] Triggering ddg_bypass_searcher solver for: '{query}'...")
         start_time = time.time()
         try:
@@ -360,6 +368,7 @@ def search_duckduckgo(query):
                 }
             elif result.returncode == 2:
                 print("    [DDG Bypass Blocked] CAPTCHA detected in browser. Clean IP/VPN required.")
+                ddg_captcha_failures += 1
                 return {
                     "response_time_ms": round((time.time() - start_time) * 1000, 2),
                     "status_code": 403,
@@ -411,6 +420,7 @@ def extract_google(html):
     return results
 
 def search_google(query):
+    global google_captcha_failures
     # Try FireProx proxied search first
     url = f"{get_base_url('google')}/search?q={urllib.parse.quote(query)}&num=10&gbv=1"
     res = fetch_with_metrics(url, extract_google, "Google")
@@ -424,6 +434,10 @@ def search_google(query):
     )
     
     if is_blocked:
+        if google_captcha_failures >= 3:
+            # Skip solver to save time since the current IP/connection is blocked
+            return res
+            
         print(f"    [Google Blocked/Empty] Triggering GoogleRecaptchaBypass solver for: '{query}'...")
         start_time = time.time()
         try:
@@ -466,6 +480,7 @@ def search_google(query):
             else:
                 err_msg = result.stderr.strip() if result.stderr else "Empty solver output"
                 print(f"    [Bypass Failed] Solver error: {err_msg}")
+                google_captcha_failures += 1
                 return {
                     "response_time_ms": round((time.time() - start_time) * 1000, 2),
                     "status_code": 503,
@@ -477,6 +492,7 @@ def search_google(query):
                 }
         except Exception as e:
             print(f"    [Bypass Exception] Error running solver: {e}")
+            google_captcha_failures += 1
             return {
                 "response_time_ms": round((time.time() - start_time) * 1000, 2),
                 "status_code": 500,
