@@ -12,7 +12,10 @@ from datetime import datetime
 import socket
 from fireprox_config import get_base_url
 from waf_bypass_headers import apply_bypass_headers
+import threading
+
 socket.setdefaulttimeout(3)
+browser_lock = threading.Lock()
 
 # Ensure stdout handles utf-8
 if sys.stdout.encoding != 'utf-8':
@@ -327,7 +330,8 @@ def search_duckduckgo(query):
             
             script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ddg_bypass_searcher.py")
             cmd = [sys.executable, script_path, worker_id, query]
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=25)
+            with browser_lock:
+                result = subprocess.run(cmd, capture_output=True, text=True, timeout=25)
             
             if result.returncode == 0 and result.stdout.strip():
                 html = result.stdout
@@ -431,7 +435,8 @@ def search_google(query):
             
             script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "google_bypass_searcher.py")
             cmd = [sys.executable, script_path, worker_id, query]
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=25)
+            with browser_lock:
+                result = subprocess.run(cmd, capture_output=True, text=True, timeout=25)
             
             if result.returncode == 0 and result.stdout.strip():
                 html = result.stdout
