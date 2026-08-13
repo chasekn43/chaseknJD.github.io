@@ -9,22 +9,21 @@ import shutil
 def search_ddg_via_browser(query, worker_id="0"):
     """Executes a DuckDuckGo Search query via automated Chromium to bypass TLS fingerprint blocks."""
     CHROME_ARGUMENTS = [
-        "-no-first-run",
-        "-force-color-profile=srgb",
-        "-metrics-recording-only",
-        "-password-store=basic",
-        "-use-mock-keychain",
-        "-export-tagged-pdf",
-        "-no-default-browser-check",
-        "-disable-background-mode",
-        "-enable-features=NetworkService,NetworkServiceInProcess",
-        "-disable-features=FlashDeprecationWarning",
-        "-deny-permission-prompts",
-        "-disable-gpu",
-        "-accept-lang=en-US",
+        "--no-first-run",
+        "--force-color-profile=srgb",
+        "--metrics-recording-only",
+        "--password-store=basic",
+        "--use-mock-keychain",
+        "--export-tagged-pdf",
+        "--no-default-browser-check",
+        "--disable-background-mode",
+        "--deny-permission-prompts",
+        "--disable-gpu",
+        "--accept-lang=en-US",
         "--disable-usage-stats",
         "--disable-crash-reporter",
-        "--no-sandbox"
+        "--no-sandbox",
+        "--page-load-strategy=eager"
     ]
     
     options = ChromiumOptions()
