@@ -9,6 +9,7 @@ import re
 from html import unescape
 from datetime import datetime
 from fireprox_config import get_base_url
+from waf_bypass_headers import apply_bypass_headers
 
 # Ensure UTF-8 output on Windows pwsh
 if sys.stdout.encoding != 'utf-8':
@@ -105,6 +106,7 @@ def fetch_duckduckgo(query):
         "Referer": "https://html.duckduckgo.com/"
     }
     req = urllib.request.Request(url, headers=headers)
+    apply_bypass_headers(req, mode='pro')
     results = []
     try:
         with urllib.request.urlopen(req, timeout=10) as resp:
@@ -130,6 +132,7 @@ def fetch_bing(query):
         "Accept-Language": "en-US,en;q=0.9"
     }
     req = urllib.request.Request(url, headers=headers)
+    apply_bypass_headers(req, mode='pro')
     results = []
     try:
         with urllib.request.urlopen(req, timeout=10) as resp:
@@ -153,6 +156,7 @@ def fetch_yahoo(query):
         "DNT": "1"
     }
     req = urllib.request.Request(url, headers=headers)
+    apply_bypass_headers(req, mode='pro')
     results = []
     try:
         with urllib.request.urlopen(req, timeout=10) as resp:
@@ -175,6 +179,7 @@ def fetch_google(query):
         "Accept-Language": "en-US,en;q=0.9"
     }
     req = urllib.request.Request(url, headers=headers)
+    apply_bypass_headers(req, mode='pro')
     results = []
     try:
         with urllib.request.urlopen(req, timeout=10) as resp:

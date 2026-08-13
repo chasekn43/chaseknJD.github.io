@@ -5,6 +5,7 @@ import json
 import base64
 from html import unescape
 from fireprox_config import get_base_url
+from waf_bypass_headers import apply_bypass_headers
 
 queries = [
     "Chase Kinslow Fintech BNPL merchant dispute",
@@ -60,6 +61,7 @@ def search_ddg(query):
     url = f"{get_base_url('duckduckgo')}/html/?q={urllib.parse.quote(query)}"
     headers = {"User-Agent": USER_AGENT, "Accept-Language": "en-US,en;q=0.9"}
     req = urllib.request.Request(url, headers=headers)
+    apply_bypass_headers(req, mode='pro')
     results = []
     try:
         with urllib.request.urlopen(req, timeout=10) as response:
@@ -84,6 +86,7 @@ def search_google(query):
     url = f"{get_base_url('google')}/search?q={urllib.parse.quote(query)}&num=10"
     headers = {"User-Agent": USER_AGENT, "Accept-Language": "en-US,en;q=0.9"}
     req = urllib.request.Request(url, headers=headers)
+    apply_bypass_headers(req, mode='pro')
     results = []
     try:
         with urllib.request.urlopen(req, timeout=10) as response:
@@ -111,6 +114,7 @@ def search_bing(query):
     url = f"{get_base_url('bing')}/search?q={urllib.parse.quote(query)}"
     headers = {"User-Agent": USER_AGENT, "Accept-Language": "en-US,en;q=0.9"}
     req = urllib.request.Request(url, headers=headers)
+    apply_bypass_headers(req, mode='pro')
     results = []
     try:
         with urllib.request.urlopen(req, timeout=10) as response:
@@ -133,6 +137,7 @@ def search_yahoo(query):
     url = f"{get_base_url('yahoo')}/search?p={urllib.parse.quote(query)}"
     headers = {"User-Agent": USER_AGENT, "Accept-Language": "en-US,en;q=0.9"}
     req = urllib.request.Request(url, headers=headers)
+    apply_bypass_headers(req, mode='pro')
     results = []
     try:
         with urllib.request.urlopen(req, timeout=10) as response:

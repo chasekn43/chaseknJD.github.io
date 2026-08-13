@@ -5,6 +5,7 @@ import time
 import re
 import os
 from fireprox_config import get_base_url
+from waf_bypass_headers import apply_bypass_headers
 
 # Target configuration
 TARGET_DOMAIN = "chasekn43.github.io"
@@ -52,6 +53,7 @@ def check_keyword_on_engine(engine_name, url_template, query):
     
     headers = {"User-Agent": USER_AGENT}
     req = urllib.request.Request(search_url, headers=headers)
+    apply_bypass_headers(req, mode='pro')
     
     try:
         with urllib.request.urlopen(req, timeout=10) as response:

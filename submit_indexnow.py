@@ -4,6 +4,7 @@ import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
 from fireprox_config import get_base_url, get_bing_indexnow_url
+from waf_bypass_headers import apply_bypass_headers
 
 # Configuration
 KEY = "fa481ca42fd54303a95cc9e0bb6ec542"
@@ -61,6 +62,7 @@ def submit_to_indexnow(url_list):
         print(f"[+] Submitting {len(url_list)} URLs to IndexNow API ({endpoint})...")
         try:
             req = urllib.request.Request(endpoint, data=data, headers=headers, method="POST")
+            apply_bypass_headers(req, mode='pro')
             with urllib.request.urlopen(req, timeout=15) as response:
                 status = response.status
                 print(f"[SUCCESS] {endpoint} Response Code: {status}")
@@ -85,6 +87,7 @@ def submit_to_indexnow(url_list):
         get_url = f"{get_bing_indexnow_url()}?url={urllib.parse.quote(target_url)}&key={KEY}"
         try:
             req = urllib.request.Request(get_url, headers={"User-Agent": headers["User-Agent"]})
+            apply_bypass_headers(req, mode='pro')
             with urllib.request.urlopen(req, timeout=10) as resp:
                 print(f"  - Ping {target_url}: Status {resp.status}")
         except Exception as e:

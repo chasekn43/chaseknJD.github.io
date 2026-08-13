@@ -9,6 +9,7 @@ import re
 from html import unescape
 from datetime import datetime
 from fireprox_config import get_base_url
+from waf_bypass_headers import apply_bypass_headers
 
 # Ensure stdout uses utf-8 encoding on Windows
 if sys.stdout.encoding != 'utf-8':
@@ -97,6 +98,7 @@ def search_duckduckgo(query):
         "Content-Type": "application/x-www-form-urlencoded"
     }
     req = urllib.request.Request(url, data=data, headers=headers)
+    apply_bypass_headers(req, mode='pro')
     results = []
     try:
         with urllib.request.urlopen(req, timeout=12) as response:
@@ -138,6 +140,7 @@ def search_bing(query):
         "Cookie": "SRCHHPGUSR=SRCHLANG=v-en"
     }
     req = urllib.request.Request(url, headers=headers)
+    apply_bypass_headers(req, mode='pro')
     results = []
     try:
         with urllib.request.urlopen(req, timeout=12) as response:

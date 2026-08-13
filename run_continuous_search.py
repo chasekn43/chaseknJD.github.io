@@ -9,6 +9,7 @@ import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor
 from fireprox_config import get_base_url
+from waf_bypass_headers import apply_bypass_headers
 
 # Configuration Flags
 USE_PROXY = False  # Set to False to run direct requests over local VPN (recommended to bypass public proxy blockages/timeouts)
@@ -343,6 +344,7 @@ def main():
             start_time = time.time()
             try:
                 req = urllib.request.Request(search_url, headers=headers)
+                apply_bypass_headers(req, mode='pro')
                 with urllib.request.urlopen(req, timeout=10.0) as response:
                     html = response.read()
                     elapsed = time.time() - start_time
@@ -404,6 +406,7 @@ def main():
                 start_time = time.time()
                 try:
                     req = urllib.request.Request(search_url, headers=headers)
+                    apply_bypass_headers(req, mode='pro')
                     with urllib.request.urlopen(req, timeout=4.0) as response:
                         html = response.read()
                         elapsed = time.time() - start_time

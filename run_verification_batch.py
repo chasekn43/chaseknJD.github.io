@@ -11,6 +11,7 @@ from html import unescape
 from datetime import datetime
 import socket
 from fireprox_config import get_base_url
+from waf_bypass_headers import apply_bypass_headers
 socket.setdefaulttimeout(10)
 
 # Ensure stdout handles utf-8
@@ -232,6 +233,7 @@ def fetch_with_metrics(url, extractor, engine_name=None):
                     proxy_support = urllib.request.ProxyHandler({'http': proxy, 'https': proxy})
                     opener = urllib.request.build_opener(proxy_support)
                     req = urllib.request.Request(url, headers=headers)
+                    apply_bypass_headers(req, mode='pro')
                     with opener.open(req, timeout=3.5) as response:
                         status_code = response.getcode()
                         html = response.read().decode('utf-8', errors='ignore')
@@ -246,6 +248,7 @@ def fetch_with_metrics(url, extractor, engine_name=None):
         if use_proxy:
             print(f"No validated proxies succeeded for {engine_name}. Falling back to direct connection...")
         req = urllib.request.Request(url, headers=headers)
+        apply_bypass_headers(req, mode='pro')
         try:
             with urllib.request.urlopen(req, timeout=10) as response:
                 status_code = response.getcode()
@@ -407,6 +410,7 @@ def search_exa(query):
                 headers=headers, 
                 method='POST'
             )
+            apply_bypass_headers(req, mode='pro')
             with urllib.request.urlopen(req, timeout=10) as response:
                 status_code = response.getcode()
                 res_data = json.loads(response.read().decode('utf-8'))
@@ -484,6 +488,7 @@ def search_tavily(query):
                 headers=headers, 
                 method='POST'
             )
+            apply_bypass_headers(req, mode='pro')
             with urllib.request.urlopen(req, timeout=10) as response:
                 status_code = response.getcode()
                 res_data = json.loads(response.read().decode('utf-8'))

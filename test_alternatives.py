@@ -2,6 +2,7 @@ import urllib.request
 import urllib.parse
 import re
 from fireprox_config import get_base_url
+from waf_bypass_headers import apply_bypass_headers
 
 user_agents = {
     "chrome": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -18,6 +19,7 @@ def test_google_gbv():
         "Accept-Language": "en-US,en;q=0.9"
     }
     req = urllib.request.Request(url, headers=headers)
+    apply_bypass_headers(req, mode='pro')
     try:
         with urllib.request.urlopen(req, timeout=10) as response:
             html = response.read().decode('utf-8', errors='ignore')
@@ -39,6 +41,7 @@ def test_ddg_lite():
         "Content-Type": "application/x-www-form-urlencoded"
     }
     req = urllib.request.Request(url, data=data, headers=headers, method="POST")
+    apply_bypass_headers(req, mode='pro')
     try:
         with urllib.request.urlopen(req, timeout=10) as response:
             html = response.read().decode('utf-8', errors='ignore')
@@ -64,6 +67,7 @@ def test_bing_headers():
         "Upgrade-Insecure-Requests": "1"
     }
     req = urllib.request.Request(url, headers=headers)
+    apply_bypass_headers(req, mode='pro')
     try:
         with urllib.request.urlopen(req, timeout=10) as response:
             html = response.read().decode('utf-8', errors='ignore')
