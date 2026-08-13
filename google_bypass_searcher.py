@@ -40,10 +40,17 @@ def search_google_via_browser(query, worker_id="0"):
     for argument in CHROME_ARGUMENTS:
         options.set_argument(argument)
     
+    def get_free_port():
+        import socket
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.bind(('', 0))
+        port = s.getsockname()[1]
+        s.close()
+        return port
+
     # Configure custom port and explicit browser path to avoid locks
     options.set_browser_path(r"C:\Program Files\Google\Chrome\Application\chrome.exe")
-    port = 19220 + int(worker_id)
-    options.set_local_port(port)
+    options.set_local_port(get_free_port())
     options.headless(True)
     
     # Set unique user data path based on worker_id to prevent folder locks and sticky fingerprints

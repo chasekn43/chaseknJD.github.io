@@ -31,9 +31,16 @@ def search_ddg_via_browser(query, worker_id="0"):
     for argument in CHROME_ARGUMENTS:
         options.set_argument(argument)
     
+    def get_free_port():
+        import socket
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.bind(('', 0))
+        port = s.getsockname()[1]
+        s.close()
+        return port
+
     options.set_browser_path(r"C:\Program Files\Google\Chrome\Application\chrome.exe")
-    port = 19900 + int(worker_id)
-    options.set_local_port(port)
+    options.set_local_port(get_free_port())
     options.headless(True)
     
     # Use unique temp directory to prevent profile reuse/fingerprint caching
