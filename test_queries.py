@@ -4,6 +4,7 @@ import re
 import json
 import base64
 from html import unescape
+from fireprox_config import get_base_url
 
 queries = [
     "Chase Kinslow Fintech BNPL merchant dispute",
@@ -56,7 +57,7 @@ def decode_url(url):
     return url
 
 def search_ddg(query):
-    url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote(query)}"
+    url = f"{get_base_url('duckduckgo')}/html/?q={urllib.parse.quote(query)}"
     headers = {"User-Agent": USER_AGENT, "Accept-Language": "en-US,en;q=0.9"}
     req = urllib.request.Request(url, headers=headers)
     results = []
@@ -80,7 +81,7 @@ def search_ddg(query):
     return results
 
 def search_google(query):
-    url = f"https://www.google.com/search?q={urllib.parse.quote(query)}&num=10"
+    url = f"{get_base_url('google')}/search?q={urllib.parse.quote(query)}&num=10"
     headers = {"User-Agent": USER_AGENT, "Accept-Language": "en-US,en;q=0.9"}
     req = urllib.request.Request(url, headers=headers)
     results = []
@@ -107,7 +108,7 @@ def search_google(query):
     return results
 
 def search_bing(query):
-    url = f"https://www.bing.com/search?q={urllib.parse.quote(query)}"
+    url = f"{get_base_url('bing')}/search?q={urllib.parse.quote(query)}"
     headers = {"User-Agent": USER_AGENT, "Accept-Language": "en-US,en;q=0.9"}
     req = urllib.request.Request(url, headers=headers)
     results = []
@@ -129,7 +130,7 @@ def search_bing(query):
     return results
 
 def search_yahoo(query):
-    url = f"https://search.yahoo.com/search?p={urllib.parse.quote(query)}"
+    url = f"{get_base_url('yahoo')}/search?p={urllib.parse.quote(query)}"
     headers = {"User-Agent": USER_AGENT, "Accept-Language": "en-US,en;q=0.9"}
     req = urllib.request.Request(url, headers=headers)
     results = []

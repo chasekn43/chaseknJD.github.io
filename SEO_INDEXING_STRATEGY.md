@@ -1,6 +1,6 @@
 # Authentic Search Engine Indexation & Keyword Strategy Guide
 
-> 📌 **Repository URL:** [`https://chasekn43.github.io/regulatory-archive-2026/`](https://chasekn43.github.io/regulatory-archive-2026/)  
+> 📌 **Repository URL:** [`https://kinslow-regulatory-archive.org/`](https://kinslow-regulatory-archive.org/)  
 > **Author & Publisher:** Charles W. Kinslow IV, J.D., C.P.A.  
 > **Last Updated:** August 10, 2026
 
@@ -26,14 +26,14 @@ To expedite search crawler indexation across Google, Bing, Yahoo, and DuckDuckGo
 
 ### **A. Google Search Console Submission**
 1. Log into [Google Search Console](https://search.google.com/search-console).
-2. Add property: `https://chasekn43.github.io/regulatory-archive-2026/`.
+2. Add property: `https://kinslow-regulatory-archive.org/`.
 3. Verify ownership via the embedded meta verification tag in `index.html` (`google-site-verification`).
-4. Navigate to **Sitemaps** and submit: `https://chasekn43.github.io/regulatory-archive-2026/sitemap.xml`.
+4. Navigate to **Sitemaps** and submit: `https://kinslow-regulatory-archive.org/sitemap.xml`.
 
 ### **B. Bing & Yahoo Webmaster Tools Submission**
 1. Log into [Bing Webmaster Tools](https://www.bing.com/webmasters/).
 2. Import your verified site from Google Search Console or verify via `msvalidate.01` tag.
-3. Submit the sitemap: `https://chasekn43.github.io/regulatory-archive-2026/sitemap.xml`.
+3. Submit the sitemap: `https://kinslow-regulatory-archive.org/sitemap.xml`.
 4. Submitting to Bing Webmaster Tools guarantees indexing for both **Bing** and **Yahoo Search**.
 
 ### **C. Instant IndexNow API Ping & GitHub Pages Subpath Indexation**
@@ -42,7 +42,7 @@ Run the built-in `submit_indexnow.py` script in this repository to issue protoco
 python submit_indexnow.py
 ```
 > 📌 **Technical Note on GitHub Pages Subpaths:**  
-> For subfolder repositories (`https://chasekn43.github.io/regulatory-archive-2026/`), IndexNow protocol key verification expects root domain hosting (`https://chasekn43.github.io/key.txt`). Primary indexation for GitHub Pages subpaths relies on direct **XML Sitemap submission** via Google Search Console and Bing Webmaster Tools (`sitemap.xml`).
+> For subfolder repositories (`https://kinslow-regulatory-archive.org/`), IndexNow protocol key verification expects root domain hosting (`https://chasekn43.github.io/key.txt`). Primary indexation for GitHub Pages subpaths relies on direct **XML Sitemap submission** via Google Search Console and Bing Webmaster Tools (`sitemap.xml`).
 
 
 ---
@@ -85,7 +85,7 @@ To verify indexation and ranking performance using tangential search terms:
 
 | Topic Landing Page | Canonical URL | Primary Schema Entities |
 | :--- | :--- | :--- |
-| **Regulation Z & APA Compliance Whitepaper** | [`https://chasekn43.github.io/regulatory-archive-2026/topics/regulation-z-apa-compliance.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/regulation-z-apa-compliance.html) | `@type: TechArticle`, `@type: Legislation` (Regulation Z, APA 5 U.S.C. § 553), `@type: FAQPage` |
-| **Fintech BNPL Merchant Dispute Resolution Whitepaper** | [`https://chasekn43.github.io/regulatory-archive-2026/topics/fintech-bnpl-merchant-dispute-resolution.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/fintech-bnpl-merchant-dispute-resolution.html) | `@type: TechArticle`, `@type: DefinedTerm` (BNPL Merchant Dispute, Bank BillPay Workaround), `@type: FAQPage` |
+| **Regulation Z & APA Compliance Whitepaper** | [`https://kinslow-regulatory-archive.org/topics/regulation-z-apa-compliance.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/regulation-z-apa-compliance.html) | `@type: TechArticle`, `@type: Legislation` (Regulation Z, APA 5 U.S.C. § 553), `@type: FAQPage` |
+| **Fintech BNPL Merchant Dispute Resolution Whitepaper** | [`https://kinslow-regulatory-archive.org/topics/fintech-bnpl-merchant-dispute-resolution.html`](file:///c:/Users/Charwiz43/.gemini/antigravity/scratch/Affirm/regulatory-archive-2026/topics/fintech-bnpl-merchant-dispute-resolution.html) | `@type: TechArticle`, `@type: DefinedTerm` (BNPL Merchant Dispute, Bank BillPay Workaround), `@type: FAQPage` |
 
 

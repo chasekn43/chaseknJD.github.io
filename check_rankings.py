@@ -4,6 +4,7 @@ import json
 import time
 import re
 import os
+from fireprox_config import get_base_url
 
 # Target configuration
 TARGET_DOMAIN = "chasekn43.github.io"
@@ -37,9 +38,9 @@ KEYWORDS = [
 ]
 
 ENGINES = {
-    "DuckDuckGo": "https://html.duckduckgo.com/html/?q={}",
-    "Bing": "https://www.bing.com/search?q={}",
-    "Yahoo": "https://search.yahoo.com/search?p={}"
+    "DuckDuckGo": get_base_url('duckduckgo') + "/html/?q={}",
+    "Bing": get_base_url('bing') + "/search?q={}",
+    "Yahoo": get_base_url('yahoo') + "/search?p={}"
 }
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"

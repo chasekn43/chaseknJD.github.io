@@ -8,6 +8,7 @@ import urllib.parse
 import re
 from html import unescape
 from datetime import datetime
+from fireprox_config import get_base_url
 
 # Ensure stdout uses utf-8 encoding on Windows
 if sys.stdout.encoding != 'utf-8':
@@ -87,7 +88,7 @@ def decode_redirect_url(url):
     return url
 
 def search_duckduckgo(query):
-    url = "https://html.duckduckgo.com/html/"
+    url = f"{get_base_url('duckduckgo')}/html/"
     data = urllib.parse.urlencode({'q': query}).encode('utf-8')
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -111,7 +112,7 @@ def search_duckduckgo(query):
     return results
 
 def search_google(query):
-    url = f"https://www.google.com/search?q={urllib.parse.quote(query)}&num=10"
+    url = f"{get_base_url('google')}/search?q={urllib.parse.quote(query)}&num=10"
     headers = {"User-Agent": random.choice(USER_AGENTS), "Accept-Language": "en-US,en;q=0.9"}
     req = urllib.request.Request(url, headers=headers)
     results = []
@@ -129,7 +130,7 @@ def search_google(query):
     return results
 
 def search_bing(query):
-    url = f"https://www.bing.com/search?q={urllib.parse.quote(query)}"
+    url = f"{get_base_url('bing')}/search?q={urllib.parse.quote(query)}"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -152,7 +153,7 @@ def search_bing(query):
     return results
 
 def search_yahoo(query):
-    url = f"https://search.yahoo.com/search?p={urllib.parse.quote(query)}"
+    url = f"{get_base_url('yahoo')}/search?p={urllib.parse.quote(query)}"
     headers = {"User-Agent": random.choice(USER_AGENTS), "Accept-Language": "en-US,en;q=0.9"}
     req = urllib.request.Request(url, headers=headers)
     results = []

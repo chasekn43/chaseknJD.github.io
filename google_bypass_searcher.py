@@ -4,6 +4,7 @@ import os
 import time
 import random
 import urllib.parse
+from fireprox_config import get_base_url
 
 # Add solver path to import RecaptchaSolver
 sys.path.append(r"c:\Users\Charwiz43\.gemini\antigravity\scratch\Affirm\403_tools\GoogleRecaptchaBypass")
@@ -50,7 +51,7 @@ def search_google_via_browser(query, worker_id="0"):
         
     driver = ChromiumPage(addr_or_opts=options)
     try:
-        url = f"https://www.google.com/search?q={urllib.parse.quote(query)}&num=10"
+        url = f"{get_base_url('google')}/search?q={urllib.parse.quote(query)}&num=10"
         print(f"[Solver] Loading Google Search URL: {url}", file=sys.stderr)
         driver.get(url)
         time.sleep(2)

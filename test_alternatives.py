@@ -1,6 +1,7 @@
 import urllib.request
 import urllib.parse
 import re
+from fireprox_config import get_base_url
 
 user_agents = {
     "chrome": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -10,7 +11,7 @@ user_agents = {
 
 def test_google_gbv():
     print("=== Testing Google with &gbv=1 ===")
-    url = "https://www.google.com/search?q=Chase+Kinslow+Affirm&gbv=1"
+    url = f"{get_base_url('google')}/search?q=Chase+Kinslow+Affirm&gbv=1"
     headers = {
         "User-Agent": user_agents["chrome"],
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
@@ -31,7 +32,7 @@ def test_google_gbv():
 
 def test_ddg_lite():
     print("=== Testing DuckDuckGo Lite ===")
-    url = "https://lite.duckduckgo.com/lite/"
+    url = f"{get_base_url('duckduckgo_lite')}/lite/"
     data = urllib.parse.urlencode({"q": "Chase+Kinslow+Affirm"}).encode('utf-8')
     headers = {
         "User-Agent": user_agents["chrome"],
@@ -53,7 +54,7 @@ def test_ddg_lite():
 
 def test_bing_headers():
     print("=== Testing Bing with Full Headers ===")
-    url = "https://www.bing.com/search?q=Chase+Kinslow+Affirm"
+    url = f"{get_base_url('bing')}/search?q=Chase+Kinslow+Affirm"
     headers = {
         "User-Agent": user_agents["chrome"],
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",

@@ -3,6 +3,7 @@ import json
 import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
+from fireprox_config import get_base_url, get_bing_indexnow_url
 
 # Configuration
 KEY = "fa481ca42fd54303a95cc9e0bb6ec542"
@@ -39,8 +40,8 @@ def parse_sitemap():
 def submit_to_indexnow(url_list):
     """Submits URLs to IndexNow API endpoints (notifies Bing, Yahoo, Yandex, Naver, Seznam)."""
     endpoints = [
-        "https://api.indexnow.org/indexnow",
-        "https://www.bing.com/indexnow"
+        f"{get_base_url('indexnow')}/indexnow",
+        get_bing_indexnow_url()
     ]
     
     payload = {
@@ -81,7 +82,7 @@ def submit_to_indexnow(url_list):
     # Fallback GET pings for each URL
     print("[+] Issuing GET pings for each URL to IndexNow...")
     for target_url in url_list:
-        get_url = f"https://www.bing.com/indexnow?url={urllib.parse.quote(target_url)}&key={KEY}"
+        get_url = f"{get_bing_indexnow_url()}?url={urllib.parse.quote(target_url)}&key={KEY}"
         try:
             req = urllib.request.Request(get_url, headers={"User-Agent": headers["User-Agent"]})
             with urllib.request.urlopen(req, timeout=10) as resp:

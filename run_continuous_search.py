@@ -8,6 +8,7 @@ import os
 import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor
+from fireprox_config import get_base_url
 
 # Configuration Flags
 USE_PROXY = False  # Set to False to run direct requests over local VPN (recommended to bypass public proxy blockages/timeouts)
@@ -114,10 +115,10 @@ keywords = [
 
 # Engine configuration with urls
 engines = [
-    {"name": "Google", "url": "https://www.google.com/search?q={}"},
-    {"name": "Bing", "url": "https://www.bing.com/search?q={}"},
-    {"name": "Yahoo", "url": "https://search.yahoo.com/search?p={}"},
-    {"name": "DuckDuckGo", "url": "https://html.duckduckgo.com/html/?q={}"}
+    {"name": "Google", "url": f"{get_base_url('google')}/search?q={{}}"},
+    {"name": "Bing", "url": f"{get_base_url('bing')}/search?q={{}}"},
+    {"name": "Yahoo", "url": f"{get_base_url('yahoo')}/search?p={{}}"},
+    {"name": "DuckDuckGo", "url": f"{get_base_url('duckduckgo')}/html/?q={{}}"}
 ]
 
 user_agents = [
@@ -191,10 +192,10 @@ def test_single_proxy(proxy):
     
     # We test Bing, DuckDuckGo, Google, and Yahoo with active queries
     tests = [
-        {"name": "Google", "url": "https://www.google.com/search?q=test"},
-        {"name": "Bing", "url": "https://www.bing.com/search?q=test"},
-        {"name": "Yahoo", "url": "https://search.yahoo.com/search?p=test"},
-        {"name": "DuckDuckGo", "url": "https://html.duckduckgo.com/html/?q=test"}
+        {"name": "Google", "url": f"{get_base_url('google')}/search?q=test"},
+        {"name": "Bing", "url": f"{get_base_url('bing')}/search?q=test"},
+        {"name": "Yahoo", "url": f"{get_base_url('yahoo')}/search?p=test"},
+        {"name": "DuckDuckGo", "url": f"{get_base_url('duckduckgo')}/html/?q=test"}
     ]
     
     # Randomize test execution order to avoid sequential hotspotting
@@ -327,14 +328,14 @@ def main():
                 "Connection": "keep-alive"
             }
             if engine["name"] == "DuckDuckGo":
-                headers["Referer"] = "https://html.duckduckgo.com/"
+                headers["Referer"] = f"{get_base_url('duckduckgo')}/"
                 headers["Accept"] = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
             elif engine["name"] == "Bing":
-                headers["Referer"] = "https://www.bing.com/"
+                headers["Referer"] = f"{get_base_url('bing')}/"
             elif engine["name"] == "Google":
-                headers["Referer"] = "https://www.google.com/"
+                headers["Referer"] = f"{get_base_url('google')}/"
             elif engine["name"] == "Yahoo":
-                headers["Referer"] = "https://search.yahoo.com/"
+                headers["Referer"] = f"{get_base_url('yahoo')}/"
             
             opener = urllib.request.build_opener(NoRedirectHandler())
             urllib.request.install_opener(opener)
@@ -387,14 +388,14 @@ def main():
                     "Connection": "keep-alive"
                 }
                 if active_engine["name"] == "DuckDuckGo":
-                    headers["Referer"] = "https://html.duckduckgo.com/"
+                    headers["Referer"] = f"{get_base_url('duckduckgo')}/"
                     headers["Accept"] = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
                 elif active_engine["name"] == "Bing":
-                    headers["Referer"] = "https://www.bing.com/"
+                    headers["Referer"] = f"{get_base_url('bing')}/"
                 elif active_engine["name"] == "Google":
-                    headers["Referer"] = "https://www.google.com/"
+                    headers["Referer"] = f"{get_base_url('google')}/"
                 elif active_engine["name"] == "Yahoo":
-                    headers["Referer"] = "https://search.yahoo.com/"
+                    headers["Referer"] = f"{get_base_url('yahoo')}/"
                 
                 proxy_support = urllib.request.ProxyHandler({'http': proxy, 'https': proxy})
                 opener = urllib.request.build_opener(proxy_support, NoRedirectHandler())

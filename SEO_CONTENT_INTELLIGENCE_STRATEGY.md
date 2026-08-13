@@ -1,7 +1,7 @@
 # Master SEO Strategy & Content Intelligence Blueprint
 
 > 🌐 **Live GitHub Repository:** [https://github.com/chasekn43/regulatory-archive-2026](https://github.com/chasekn43/regulatory-archive-2026)  
-> 🌐 **Live Interactive Website:** [https://chasekn43.github.io/regulatory-archive-2026/](https://chasekn43.github.io/regulatory-archive-2026/)  
+> 🌐 **Live Interactive Website:** [https://kinslow-regulatory-archive.org/](https://kinslow-regulatory-archive.org/)  
 > 👤 **Author & Subject Entity:** Charles W. Kinslow IV, J.D., C.P.A. (`Chase Kinslow`)  
 > 📅 **Document Version:** August 2026 | Enterprise Search Intelligence Standard  
 
@@ -14,7 +14,7 @@ This Master SEO Strategy and Content Intelligence Blueprint defines the holistic
 ### Core Strategic Principles:
 
 1. **Search Engines Index Context, Not Destination URLs:**  
-   Search engines (Google, Bing, Yahoo, DuckDuckGo, Perplexity, ChatGPT Search) analyze semantic natural language intent, entity relationships, and topical authority. A URL (`https://github.com/chasekn43/regulatory-archive-2026` or `https://chasekn43.github.io/regulatory-archive-2026/`) is a web destination, **never a search keyword**. All SEO optimization, metadata markup, schema graphs, and automated rank tracking target high-intent, natural language legal, financial, and regulatory queries.
+   Search engines (Google, Bing, Yahoo, DuckDuckGo, Perplexity, ChatGPT Search) analyze semantic natural language intent, entity relationships, and topical authority. A URL (`https://github.com/chasekn43/regulatory-archive-2026` or `https://kinslow-regulatory-archive.org/`) is a web destination, **never a search keyword**. All SEO optimization, metadata markup, schema graphs, and automated rank tracking target high-intent, natural language legal, financial, and regulatory queries.
 
 2. **Entity Knowledge Graph Domination:**  
    Establish explicit semantic triples connecting `Charles W. Kinslow IV, J.D., C.P.A.`, legal statutory frameworks (`Regulation Z 12 C.F.R. § 1026.13`, `APA 5 U.S.C. § 553`, `Dodd-Frank Title X UDAAP`), regulatory bodies (`Consumer Financial Protection Bureau`, `California AG`, `Louisiana AG`), and financial institutions (`Affirm, Inc.`, `Morgan Lewis & Bockius LLP`).

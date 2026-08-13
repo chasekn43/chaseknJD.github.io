@@ -4,7 +4,7 @@ import os
 
 KEY_FILE = "google_console_key.json"
 SCOPES = ['https://www.googleapis.com/auth/webmasters.readonly']
-SITE_URL = "https://chasekn43.github.io/regulatory-archive-2026/"
+SITE_URL = "https://kinslow-regulatory-archive.org/"
 
 if not os.path.exists(KEY_FILE):
     print("GSC credentials JSON file not found.")

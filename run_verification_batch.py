@@ -10,6 +10,7 @@ import time
 from html import unescape
 from datetime import datetime
 import socket
+from fireprox_config import get_base_url
 socket.setdefaulttimeout(10)
 
 # Ensure stdout handles utf-8
@@ -121,10 +122,10 @@ def get_raw_proxies():
 def test_single_proxy(proxy):
     timeout = 1.5
     tests = [
-        {"name": "Google", "url": "https://www.google.com/search?q=test&gbv=1"},
-        {"name": "Bing", "url": "https://www.bing.com/search?q=test"},
-        {"name": "Yahoo", "url": "https://search.yahoo.com/search?p=test"},
-        {"name": "DuckDuckGo", "url": "https://html.duckduckgo.com/html/?q=test"}
+        {"name": "Google", "url": f"{get_base_url('google')}/search?q=test&gbv=1"},
+        {"name": "Bing", "url": f"{get_base_url('bing')}/search?q=test"},
+        {"name": "Yahoo", "url": f"{get_base_url('yahoo')}/search?p=test"},
+        {"name": "DuckDuckGo", "url": f"{get_base_url('duckduckgo')}/html/?q=test"}
     ]
     random.shuffle(tests)
     for test in tests:
@@ -204,13 +205,13 @@ def fetch_with_metrics(url, extractor, engine_name=None):
         "Connection": "keep-alive"
     }
     if "duckduckgo.com" in url:
-        headers["Referer"] = "https://html.duckduckgo.com/"
+        headers["Referer"] = f"{get_base_url('duckduckgo')}/"
     elif "bing.com" in url:
-        headers["Referer"] = "https://www.bing.com/"
+        headers["Referer"] = f"{get_base_url('bing')}/"
     elif "google.com" in url:
-        headers["Referer"] = "https://www.google.com/"
+        headers["Referer"] = f"{get_base_url('google')}/"
     elif "yahoo.com" in url:
-        headers["Referer"] = "https://search.yahoo.com/"
+        headers["Referer"] = f"{get_base_url('yahoo')}/"
         
     start_time = time.time()
     results = []
@@ -301,7 +302,7 @@ def extract_duckduckgo(html):
     return results
 
 def search_duckduckgo(query):
-    url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote(query)}"
+    url = f"{get_base_url('duckduckgo')}/html/?q={urllib.parse.quote(query)}"
     return fetch_with_metrics(url, extract_duckduckgo, "DuckDuckGo")
 
 def extract_google(html):
@@ -353,7 +354,7 @@ def extract_bing(html):
     return results
 
 def search_bing(query):
-    url = f"https://www.bing.com/search?q={urllib.parse.quote(query)}"
+    url = f"{get_base_url('bing')}/search?q={urllib.parse.quote(query)}"
     return fetch_with_metrics(url, extract_bing, "Bing")
 
 def extract_yahoo(html):
@@ -366,7 +367,7 @@ def extract_yahoo(html):
     return results
 
 def search_yahoo(query):
-    url = f"https://search.yahoo.com/search?p={urllib.parse.quote(query)}"
+    url = f"{get_base_url('yahoo')}/search?p={urllib.parse.quote(query)}"
     return fetch_with_metrics(url, extract_yahoo, "Yahoo")
 
 # Multi-key rotation database for Exa

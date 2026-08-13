@@ -8,6 +8,7 @@ import urllib.parse
 import re
 from html import unescape
 from datetime import datetime
+from fireprox_config import get_base_url
 
 # Ensure UTF-8 output on Windows pwsh
 if sys.stdout.encoding != 'utf-8':
@@ -96,7 +97,7 @@ def build_query_variations(name, count=20):
 
 # DuckDuckGo HTML parser
 def fetch_duckduckgo(query):
-    url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote(query)}"
+    url = f"{get_base_url('duckduckgo')}/html/?q={urllib.parse.quote(query)}"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -122,7 +123,7 @@ def fetch_duckduckgo(query):
 
 # Bing Search parser
 def fetch_bing(query):
-    url = f"https://www.bing.com/search?q={urllib.parse.quote(query)}"
+    url = f"{get_base_url('bing')}/search?q={urllib.parse.quote(query)}"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -144,7 +145,7 @@ def fetch_bing(query):
 
 # Yahoo Search parser
 def fetch_yahoo(query):
-    url = f"https://search.yahoo.com/search?p={urllib.parse.quote(query)}&nojs=1"
+    url = f"{get_base_url('yahoo')}/search?p={urllib.parse.quote(query)}&nojs=1"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -167,7 +168,7 @@ def fetch_yahoo(query):
 
 # Google Search parser
 def fetch_google(query):
-    url = f"https://www.google.com/search?q={urllib.parse.quote(query)}&num=15"
+    url = f"{get_base_url('google')}/search?q={urllib.parse.quote(query)}&num=15"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",

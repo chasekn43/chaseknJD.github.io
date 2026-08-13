@@ -11,7 +11,7 @@ import urllib.parse
 KEY_FILE = "google_console_key.json"
 SITEMAP_FILE = "sitemap.xml"
 SCOPES = ['https://www.googleapis.com/auth/webmasters.readonly']
-SITE_URL = "https://chasekn43.github.io/regulatory-archive-2026/"
+SITE_URL = "https://kinslow-regulatory-archive.org/"
 CURR_CONV_ID = "89546ed0-656f-4d27-8a0e-d24a1b42b662"
 ARTIFACT_DIR = os.path.join(r"C:\Users\Charwiz43\.gemini\antigravity\brain", CURR_CONV_ID)
 REPORT_NAME = "gsc_indexing_report.md"

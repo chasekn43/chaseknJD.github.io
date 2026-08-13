@@ -4,6 +4,9 @@ import json
 import subprocess
 from datetime import datetime
 
+# Note: Proxy routing for HTTP requests is handled by fireprox_config.py 
+# which is imported in the child script (run_verification_batch.py).
+
 # Script directory
 script_dir = r"c:\Users\Charwiz43\.gemini\antigravity\scratch\Affirm\regulatory-archive-2026"
 
