@@ -324,12 +324,81 @@ def extract_google(html):
     return results
 
 def search_google(query):
-    # Local IP is blocked by Google. Bypass direct/browser scrapers to use Tavily proxy immediately.
-    print(f"    [Google Bypass] IP rate-blocked. Using Tavily API proxy for Google results...")
-    res_tavily = search_tavily(query)
-    if res_tavily:
-        res_tavily["error"] = "Local IP blocked. Used Tavily proxy."
-    return res_tavily
+    # Try FireProx proxied search first
+    url = f"{get_base_url('google')}/search?q={urllib.parse.quote(query)}&num=10&gbv=1"
+    res = fetch_with_metrics(url, extract_google, "Google")
+    
+    # Check if direct search was blocked or returned no results
+    is_blocked = (
+        res.get("status_code", 200) in [403, 429, 503] or
+        "google.com/sorry" in (res.get("error") or "") or
+        res.get("results_count", 0) == 0
+    )
+    
+    if is_blocked:
+        print(f"    [Google Blocked/Empty] Triggering GoogleRecaptchaBypass solver for: '{query}'...")
+        start_time = time.time()
+        try:
+            # Parse worker ID from thread name
+            import threading
+            thread_name = threading.current_thread().name
+            match = re.search(r'_(\d+)$', thread_name)
+            worker_id = str(int(match.group(1)) % 3) if match else "0"
+            
+            script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "google_bypass_searcher.py")
+            cmd = [sys.executable, script_path, worker_id, query]
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=25)
+            
+            if result.returncode == 0 and result.stdout.strip():
+                html = result.stdout
+                results = extract_google(html)
+                elapsed_ms = round((time.time() - start_time) * 1000, 2)
+                
+                # Check target hits
+                hits = 0
+                hit_details = []
+                for r in results:
+                    combined = f"{r.get('title', '')} {r.get('url', '')} {r.get('snippet', '')}".lower()
+                    matched = [ind for ind in TARGET_INDICATORS if ind in combined]
+                    if matched:
+                        hits += 1
+                        hit_details.append({"title": r.get("title"), "url": r.get("url"), "matched_indicators": matched})
+                
+                print(f"    [Bypass Success] Found {len(results)} results, {hits} target hits via GoogleRecaptchaBypass.")
+                return {
+                    "response_time_ms": elapsed_ms,
+                    "status_code": 200,
+                    "results_count": len(results),
+                    "target_hits": hits,
+                    "hit_details": hit_details,
+                    "error": None,
+                    "raw_results": results
+                }
+            else:
+                err_msg = result.stderr.strip() if result.stderr else "Empty solver output"
+                print(f"    [Bypass Failed] Solver error: {err_msg}")
+                return {
+                    "response_time_ms": round((time.time() - start_time) * 1000, 2),
+                    "status_code": 503,
+                    "results_count": 0,
+                    "target_hits": 0,
+                    "hit_details": [],
+                    "error": f"Bypass failed: {err_msg}",
+                    "raw_results": []
+                }
+        except Exception as e:
+            print(f"    [Bypass Exception] Error running solver: {e}")
+            return {
+                "response_time_ms": round((time.time() - start_time) * 1000, 2),
+                "status_code": 500,
+                "results_count": 0,
+                "target_hits": 0,
+                "hit_details": [],
+                "error": f"Bypass exception: {str(e)}",
+                "raw_results": []
+            }
+            
+    return res
 
 def extract_bing(html):
     results = []
@@ -551,9 +620,7 @@ def execute_single_query(q):
         ("Google", search_google),
         ("Bing", search_bing),
         ("Yahoo", search_yahoo),
-        ("DuckDuckGo", search_duckduckgo),
-        ("Tavily", search_tavily),
-        ("Exa", search_exa)
+        ("DuckDuckGo", search_duckduckgo)
     ]:
         try:
             q_res[engine_name] = search_fn(q)
