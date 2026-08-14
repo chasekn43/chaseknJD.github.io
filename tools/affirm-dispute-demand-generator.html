@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BNPL Dispute Statutory Demand Generator &amp; Damages Calculator | Free Consumer Tool</title>
+  <meta name="description" content="Free, 100% client-side legal demand letter generator and statutory penalty calculator for consumers facing automated Buy Now Pay Later bot dispute denials, locked accounts, and fraudulent charges.">
+  <meta name="keywords" content="Affirm dispute letter generator, BNPL dispute demand letter, Regulation Z 1026.13 dispute template, Affirm CFPB complaint generator, FCRA 1681s-2b demand notice, Affirm statutory damages calculator, how to dispute Affirm loan">
+  <link rel="canonical" href="https://kinslow-regulatory-archive.org/tools/affirm-dispute-demand-generator.html">
+
+  <style>
+    :root {
+      --bg-main: #0a0e17;
+      --bg-card: #111827;
+      --bg-input: #1f2937;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --border: #374151;
+      --danger: #ef4444;
+      --success: #10b981;
+      --warning: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      background: rgba(56, 189, 248, 0.2);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    h1 {
+      font-size: 32px;
+      line-height: 1.25;
+      margin: 0 0 10px 0;
+      color: #ffffff;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 30px;
+    }
+    @media (max-width: 850px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 25px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    input, select, textarea {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+      color: #ffffff;
+      font-size: 14px;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .btn {
+      background: var(--accent);
+      color: #0a0e17;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: var(--accent-hover); }
+    .btn-secondary {
+      background: #374151;
+      color: #ffffff;
+    }
+    .btn-secondary:hover { background: #4b5563; }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .tab-btn.active {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+    }
+    .output-box {
+      background: #0d1117;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 18px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #e5e7eb;
+      height: 420px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      user-select: all;
+    }
+    .calc-card {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 18px;
+      margin-top: 20px;
+    }
+    .calc-val {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--success);
+    }
+    .privacy-notice {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: var(--success);
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <a href="../index.html" class="nav-back">&larr; Return to Master Regulatory Archive</a>
+
+  <div class="badge">100% Client-Side • Free Public Legal Tool</div>
+  <h1>BNPL Statutory Demand Letter &amp; Penalty Calculator</h1>
+  <p style="color:var(--text-muted); margin:0 0 20px 0;">
+    Generate formal Truth in Lending Act (12 C.F.R. § 1026.13), Fair Credit Reporting Act (15 U.S.C. § 1681s-2(b)), and CFPB UDAAP dispute notices in seconds.
+  </p>
+
+  <div class="grid">
+    <!-- INPUT FORM -->
+    <div class="card">
+      <h3 style="margin-top:0; color:#fff;">1. Dispute Parameters</h3>
+
+      <div class="form-group">
+        <label>Your Full Name</label>
+        <input type="text" id="userName" value="Jane Doe" placeholder="e.g. John Smith" oninput="generateLetters()">
+      </div>
+
+      <div class="form-group">
+        <label>State of Residence</label>
+        <input type="text" id="userState" value="California" placeholder="e.g. Texas, New York" oninput="generateLetters()">
+      </div>
+
+      <div class="form-group">
+        <label>Lender / Fintech Entity</label>
+        <select id="lenderName" onchange="generateLetters()">
+          <option value="Affirm, Inc. / Cross River Bank">Affirm, Inc. (Cross River Bank / Celtic Bank)</option>
+          <option value="Klarna Inc.">Klarna Inc.</option>
+          <option value="Afterpay US Services, LLC">Afterpay (Block, Inc.)</option>
+          <option value="Zip Co US Inc.">Zip Co (Quadpay)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Loan / Disputed Transaction ID</label>
+        <input type="text" id="loanId" value="XQ8M-YX19" placeholder="e.g. Loan ID or Reference #" oninput="generateLetters()">
+      </div>
+
+      <div class="form-group">
+        <label>Disputed Dollar Amount ($)</label>
+        <input type="number" id="disputeAmount" value="285.85" step="0.01" oninput="updateCalculator(); generateLetters()">
+      </div>
+
+      <div class="form-group">
+        <label>Merchant Name</label>
+        <input type="text" id="merchantName" value="Perfume Empire" placeholder="e.g. Retailer / Merchant" oninput="generateLetters()">
+      </div>
+
+      <div class="form-group">
+        <label>Carrier Tracking # (If Returned / Fraud Shipment)</label>
+        <input type="text" id="trackingNumber" value="1LSDCR10011QF38" placeholder="e.g. FedEx / UPS / OnTrac Tracking" oninput="generateLetters()">
+      </div>
+
+      <div class="form-group">
+        <label>Police Incident Report # (Optional)</label>
+        <input type="text" id="policeReport" value="26-29572" placeholder="e.g. MPD Report #" oninput="generateLetters()">
+      </div>
+
+      <div class="form-group">
+        <label>Automated Bot Rejection Time (Minutes)</label>
+        <input type="number" id="botMinutes" value="86" placeholder="e.g. 16, 86 minutes" oninput="generateLetters()">
+      </div>
+
+      <!-- STATUTORY PENALTY ESTIMATOR -->
+      <div class="calc-card">
+        <div style="font-size:11px; font-weight:800; color:var(--accent); text-transform:uppercase;">
+          ⚖️ Potential Statutory Recovery Exposure
+        </div>
+        <div class="calc-val" id="totalDamages">$2,000.00 - $3,285.85</div>
+        <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">
+          Includes TILA § 1640(a) individual penalties ($2,000 max) + FCRA § 1681n willful non-compliance ($1,000 max) + Full Principal Voiding.
+        </div>
+      </div>
+
+      <div class="privacy-notice">
+        🔒 <strong>100% Client-Side Privacy:</strong> All data is generated locally in your browser. No personal information is stored or transmitted.
+      </div>
+    </div>
+
+    <!-- OUTPUT LETTERS -->
+    <div class="card">
+      <div class="tabs">
+        <button class="tab-btn active" id="tabA" onclick="switchTab('A')">1. Reg Z &amp; TILA Notice</button>
+        <button class="tab-btn" id="tabB" onclick="switchTab('B')">2. CFPB / AG Complaint</button>
+        <button class="tab-btn" id="tabC" onclick="switchTab('C')">3. Outside Counsel Spoliation</button>
+      </div>
+
+      <div class="output-box" id="letterOutput"></div>
+
+      <div style="display:flex; gap:10px; margin-top:15px; flex-wrap:wrap;">
+        <button class="btn" onclick="copyLetter()">📋 Copy Letter to Clipboard</button>
+        <button class="btn btn-secondary" onclick="downloadLetter()">💾 Download .TXT File</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentTab = 'A';
+
+  function updateCalculator() {
+    const amt = parseFloat(document.getElementById('disputeAmount').value) || 0;
+    const minDamages = (amt + 1000 + 200).toFixed(2);
+    const maxDamages = (amt + 1000 + 2000).toFixed(2);
+    document.getElementById('totalDamages').innerText = `$${minDamages} - $${maxDamages}`;
+  }
+
+  function switchTab(tab) {
+    currentTab = tab;
+    document.getElementById('tabA').className = 'tab-btn' + (tab === 'A' ? ' active' : '');
+    document.getElementById('tabB').className = 'tab-btn' + (tab === 'B' ? ' active' : '');
+    document.getElementById('tabC').className = 'tab-btn' + (tab === 'C' ? ' active' : '');
+    generateLetters();
+  }
+
+  function generateLetters() {
+    const name = document.getElementById('userName').value || '[CONSUMER NAME]';
+    const state = document.getElementById('userState').value || '[STATE]';
+    const lender = document.getElementById('lenderName').value;
+    const loan = document.getElementById('loanId').value || '[LOAN ID]';
+    const amt = parseFloat(document.getElementById('disputeAmount').value || 0).toFixed(2);
+    const merchant = document.getElementById('merchantName').value || '[MERCHANT]';
+    const track = document.getElementById('trackingNumber').value;
+    const police = document.getElementById('policeReport').value;
+    const minutes = document.getElementById('botMinutes').value || '86';
+    const dateStr = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+
+    let text = '';
+
+    if (currentTab === 'A') {
+      text = `FORMAL BILLING ERROR DISPUTE & MANDATORY INVESTIGATION DEMAND
+PURSUANT TO THE TRUTH IN LENDING ACT (15 U.S.C. § 1666) & REGULATION Z (12 C.F.R. § 1026.13)
+
+Date: ${dateStr}
+To: Compliance & Legal Resolutions Department, ${lender}
+From: ${name} (Resident of ${state})
+Subject: Formal Billing Error Notice – Loan ID: ${loan} ($${amt})
+
+Dear Compliance Officer / Legal Resolutions Team:
+
+Please accept this written communication as a formal NOTICE OF BILLING ERROR pursuant to 12 C.F.R. § 1026.13 and the FTC Holder in Due Course Rule (16 C.F.R. Part 433).
+
+1. STATEMENT OF DISPUTE:
+I hereby dispute the transaction in the amount of $${amt} associated with merchant "${merchant}" under Loan ID ${loan}. ${police ? `This transaction was the subject of Police Incident Report #${police}.` : `This charge was unauthorized / subject to verified return.`}
+
+2. UNLAWFUL AUTOMATED REJECTION:
+Your automated servicing systems rejected this dispute in approximately ${minutes} minutes without human examination of carrier delivery logs${track ? ` (Tracking #${track})` : ''}, IP geolocation discrepancies, or merchant cancellation notices. Under CFPB Circular 2024-03, closed-end BNPL installment credit is subject to affirmative dispute investigation obligations.
+
+3. MANDATORY STATUTORY ACTIONS REQUIRED:
+Pursuant to federal law, you are required within 30 days to acknowledge this notice and within 90 days (or two complete billing cycles) conduct a reasonable investigation. You must:
+a. Freeze all finance charges, fees, and collection activity on Loan ID ${loan};
+b. Prohibit any adverse reporting to consumer reporting agencies (Equifax, Experian, TransUnion, Innovis) pursuant to 15 U.S.C. § 1681s-2(b);
+c. Provide all electronic ledger logs, virtual card authorization tokens, and IP audit trails relied upon in any automated denial.
+
+Failure to comply constitutes willful non-compliance under 15 U.S.C. § 1640(a) and 15 U.S.C. § 1681n, entitling the consumer to statutory damages ($1,000 per violation), actual damages, and attorney's fees.
+
+Sincerely,
+
+${name}
+Digital Signature & Evidentiary Reservation of Rights`;
+    } else if (currentTab === 'B') {
+      text = `CONSUMER FINANCIAL PROTECTION BUREAU (CFPB) & STATE ATTORNEY GENERAL COMPLAINT NARRATIVE
+DODD-FRANK TITLE X UDAAP (12 U.S.C. § 5536) & FCRA 15 U.S.C. § 1681s-2(b)
+
+Complainant: ${name} (${state})
+Respondent: ${lender}
+Disputed Account / Loan ID: ${loan}
+Disputed Amount: $${amt}
+Merchant Involved: ${merchant}
+
+NARRATIVE STATEMENT OF FACTS:
+1. On or about the transaction date, an unauthorized / disputed charge of $${amt} was generated through ${lender} at ${merchant}.
+2. Complainant initiated an immediate dispute providing certified documentation${track ? ` including carrier tracking (${track})` : ''}${police ? ` and Police Incident Report #${police}` : ''}.
+3. Respondent (${lender}) deployed an automated decision-tree bot that summarily rejected Complainant's dispute in ${minutes} minutes, conducting zero human review.
+4. When Complainant escalated, Respondent restricted account access, prevented external repayment on performing loans, and falsely asserted that an external bank chargeback occurred to evade regulatory scrutiny.
+5. Respondent's conduct constitutes Unfair, Deceptive, and Abusive Acts or Practices (UDAAP) under 12 U.S.C. § 5536(a)(1)(B), an evasion of the FTC Holder in Due Course Rule (16 C.F.R. § 433.2), and a failure to maintain accurate consumer credit records under 15 U.S.C. § 1681s-2(b).
+
+REQUESTED REGULATORY RELIEF:
+- Immediate administrative order directing ${lender} to permanently zero out Loan ID ${loan};
+- Expungement of any negative credit bureau reporting or internal delinquent flags;
+- Supervisory audit of Respondent's automated denial decision algorithms and single-use virtual card suspense account reconciliations.`;
+    } else if (currentTab === 'C') {
+      text = `FORMAL NOTICE OF LITIGATION HOLD, SPOLIATION PROHIBITION & ETHICAL CONFLICT NOTICE
+DELIVERED TO OUTSIDE COUNSEL / LITIGATION REPRESENTATIVES
+
+Date: ${dateStr}
+To: Outside Legal Counsel representing ${lender}
+From: ${name}
+Subject: Spoliation Notice & Evidentiary Preservation Demand – Disputed Portfolio (${loan})
+
+Counsel:
+
+You are hereby formally notified of an active legal dispute and impending regulatory enforcement action regarding Loan ID ${loan} ($${amt}).
+
+1. LITIGATION HOLD & EVIDENCE PRESERVATION:
+You and your client (${lender}) are instructed to immediately preserve and suspend all automated deletion/purging protocols regarding:
+a. All IP address server logs, device fingerprinting, and session recordings for Loan ${loan};
+b. Automated dispute bot decision trees and internal resolution speed timestamps (specifically the ${minutes}-minute denial loop);
+c. Bank partner settlement files (Cross River Bank / Celtic Bank) and single-use virtual card refund suspense ledgers;
+d. All internal customer operations communications and executive alias routing logs.
+
+2. FAIR CREDIT REPORTING ACT WARNING:
+Any attempt to report this disputed balance to consumer reporting agencies while unresolved constitutes willful violation of 15 U.S.C. § 1681s-2(b), exposing your client to statutory damages of $1,000 per violation under 15 U.S.C. § 1681n, plus punitive damages and attorney's fees.
+
+3. SETTLEMENT BYPASS VERIFICATION:
+All tender of legitimate performing balances will be routed exclusively via Federal Reserve ACH Bank BillPay with certified trace identifiers. Any refusal of payment tender discharges consumer obligation pursuant to UCC § 3-603.
+
+Governed by the Kinslow Regulatory Evidence Archive (Zenodo DOI: 10.5281/zenodo.21937896).
+
+Sincerely,
+
+${name}`;
+    }
+
+    document.getElementById('letterOutput').innerText = text;
+  }
+
+  function copyLetter() {
+    const text = document.getElementById('letterOutput').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Letter copied to clipboard successfully!');
+    });
+  }
+
+  function downloadLetter() {
+    const text = document.getElementById('letterOutput').innerText;
+    const blob = new Blob([text], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `BNPL_Dispute_Notice_${currentTab}.txt`;
+    a.click();
+  }
+
+  // Initialize
+  updateCalculator();
+  generateLetters();
+</script>
+
+</body>
+</html>

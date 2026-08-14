@@ -237,58 +237,117 @@ def proxy_validator_thread():
 query_counter = 0
 recent_queries = []
 
+generic_affirm_queries = [
+    "Affirm loan dispute resolution",
+    "Affirm CFPB complaint rebuttal",
+    "Affirm billing error Regulation Z",
+    "Affirm refund delays merchant dispute",
+    "Affirm customer service phone complaints",
+    "Affirm unauthorized charges fraud report",
+    "Affirm Morgan Lewis outside counsel",
+    "Affirm Andy Chen managing counsel",
+    "Affirm Scott Williams client success",
+    "Affirm Max Levchin regulatory scrutiny",
+    "Affirm police report carrier delivery dispute",
+    "Affirm point of sale lines of credit dispute",
+    "Affirm SOX 404 internal controls audit",
+    "Affirm Louisiana AG consumer dispute",
+    "Affirm California UCL 17200 unfair competition",
+    "Affirm CFPB circular BNPL credit card",
+    "Affirm bank billpay payment lockout",
+    "Affirm Perfume Empire tracking 1LSDCR10011QF38",
+    "CFPB Complaint 260717-35668593",
+    "CFPB Complaint 260805-36566273",
+    "Monroe Police Department report 26-29572",
+    "Buy Now Pay Later billing error resolution procedures",
+    "12 CFR 1026.13 closed-end installment dispute",
+    "APA 5 U.S.C. 553 notice and comment fintech rulemaking",
+    "FTC Holder in Due Course Rule 16 CFR 433 point of sale lending",
+    "California Business and Professions Code 17200 fintech billing",
+    "Sarbanes Oxley 404 retail installment loan ledger reconciliation",
+    "Fintech point of sale dispute portal lockout workaround",
+    "Affirm false response CFPB complaint",
+    "Affirm liability clearance directive",
+    "Affirm managing counsel cease and desist letter",
+    "Affirm 3PL carrier delivery dispute proof",
+    "Affirm unapplied merchant refund ledger loop"
+]
+
 def generate_query():
     global query_counter, recent_queries
     query_counter += 1
     
-    fintech_terms = ["fintech", "BNPL", "buy now pay later", "lines of credit"]
+    fintech_terms = ["Affirm", "fintech", "BNPL", "buy now pay later", "lines of credit"]
     
     for _ in range(50):
-        # Pick name variation (Kinslow/Chase)
-        name = random.choice(names)
-        # Pick mandatory fintech/BNPL industry term
-        fintech = random.choice(fintech_terms)
-        # Pick secondary compliance keyword for variety
-        other_kw = random.choice(keywords)
+        dice = random.random()
         
-        # Clean up overlap duplicate words
-        if other_kw.lower() in [fintech.lower(), name.lower(), "linkedin"]:
-            other_kw = ""
-            
-        if other_kw:
-            query_str = f"{name} {fintech} {other_kw}"
-        else:
-            query_str = f"{name} {fintech}"
-            
-        # Add random quotes for exact match diversity
-        if random.random() < 0.3:
-            if other_kw:
-                query = f'"{name}" "{fintech}" "{other_kw}"'
+        # 45% Strategy: Pure Generic Affirm / Regulatory / Dispute Query (NO user name)
+        if dice < 0.45:
+            base_q = random.choice(generic_affirm_queries)
+            if random.random() < 0.3:
+                query = f'"{base_q}"'
             else:
-                query = f'"{name}" "{fintech}"'
+                query = base_q
+                
+        # 30% Strategy: Entity Co-Occurrence (Affirm + Kinslow / Vault)
+        elif dice < 0.75:
+            name = random.choice(names[:10]) # Kinslow variations
+            kw = random.choice([
+                "Affirm dispute",
+                "Affirm CFPB complaint",
+                "Affirm regulatory archive",
+                "Affirm billing error",
+                "Affirm cease and desist",
+                "Affirm customer service",
+                "Affirm merchant refund",
+                "Affirm loan default rebuttal",
+                "Affirm police report 26-29572",
+                "Affirm Morgan Lewis",
+                "Affirm Andy Chen"
+            ])
+            if random.random() < 0.3:
+                query = f'"{name}" "{kw}"'
+            else:
+                query = f"{name} {kw}"
+                
+        # 15% Strategy: Statutory & Legal Analysis Deep-Dives
+        elif dice < 0.90:
+            statutory = random.choice([
+                "Regulation Z 12 CFR 1026.13 billing error",
+                "APA 5 U.S.C. 553 notice and comment exemption",
+                "California UCL 17200 fintech unfair competition",
+                "SOX 404 internal controls retail installment lending",
+                "TILA closed-end credit dispute disclosures",
+                "Holder in Due Course Rule 16 CFR 433 merchant dispute"
+            ])
+            query = statutory
+            
+        # 10% Strategy: Professional & Jurisdictional Anchor
         else:
-            query = query_str
+            name = random.choice(names)
+            other_kw = random.choice(keywords)
+            query = f"{name} {other_kw}"
         
-        # Avoid running similar queries consecutively
+        # Avoid running duplicate queries consecutively
         words = set(query.lower().replace('"', '').split())
         is_duplicate = False
         for old_q in recent_queries:
             old_words = set(old_q.lower().replace('"', '').split())
             if len(words) > 0 and len(old_words) > 0:
                 intersection = words.intersection(old_words)
-                # If more than 70% word overlap, reject to maintain variety
-                if len(intersection) / max(len(words), 1) > 0.7:
+                if len(intersection) / max(len(words), 1) > 0.8:
                     is_duplicate = True
                     break
         
         if not is_duplicate:
             recent_queries.append(query)
-            if len(recent_queries) > 20:
+            if len(recent_queries) > 30:
                 recent_queries.pop(0)
             return query
             
     # Fallback
-    return f"{random.choice(names)} fintech BNPL dispute"
+    return random.choice(generic_affirm_queries)
 def main():
     if USE_PROXY:
         log_message("Continuous search simulator initialized with SSL filtering, Redirect blocking, and public proxy pools.")
