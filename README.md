@@ -23,6 +23,7 @@
 | 🏛️ **[Regulation Z & Administrative Law Compliance](https://kinslow-regulatory-archive.org/topics/regulation-z-apa-compliance.html)** | APA § 706, TILA § 161 | Arbitrary & capricious standards, nonbank supervisory examination authority |
 | 🛡️ **[California AG UCL § 17200 Regulatory Rebuttal](https://kinslow-regulatory-archive.org/topics/california-ag-regulatory-rebuttal.html)** | Cal. Bus. & Prof. Code § 17200 | State Attorney General statutory submissions, Morgan Lewis correspondence |
 | 🏦 **[Capital Stack & ABS Warehouse Facility Risks](https://kinslow-regulatory-archive.org/topics/affirm-capital-stack-abs-warehouse-facility-risks.html)** | SEC Form ABS-EE, SOX § 404 | Warehouse credit facility covenants, ABS repurchase triggers, and uncredited dispute friction |
+| 🚨 **[Institutional Whistleblower Memorandum](https://kinslow-regulatory-archive.org/topics/affirm-institutional-whistleblower-memorandum.html)** | SEC Whistleblower, Dodd-Frank § 922 | Formal warning to ABS rating agencies, short-seller forensic desks, and Senate Banking investigators |
 
 ---
 
