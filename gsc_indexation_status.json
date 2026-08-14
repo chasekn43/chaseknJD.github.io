@@ -1,194 +1,203 @@
 {
-  "timestamp": "2026-08-12T00:22:01.216074",
+  "timestamp": "2026-08-14T00:11:14.211103",
   "results": [
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/",
-      "verdict": "PASS",
-      "coverage_state": "Submitted and indexed",
-      "last_crawl_time": "2026-08-10T17:08:42Z",
-      "crawled_as": "MOBILE",
-      "robots_status": "ALLOWED",
-      "indexing_state": "INDEXING_ALLOWED"
+      "url": "https://kinslow-regulatory-archive.org/",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
+      "crawled_as": "N/A",
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/Dear%20Penny.pdf",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/Dear%20Penny.pdf",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/monroe-police-report-26-29572.pdf",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/documents/monroe-police-report-26-29572.pdf",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/fraudulent-vendor-emails-and-tracking.pdf",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/documents/fraudulent-vendor-emails-and-tracking.pdf",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/mobile-call-history-screenshots.pdf",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/documents/mobile-call-history-screenshots.pdf",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/affirm-liability-clearance-july16.pdf",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/documents/affirm-liability-clearance-july16.pdf",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/affirm-managing-counsel-directive-july17.pdf",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/documents/affirm-managing-counsel-directive-july17.pdf",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/cfpb-complaint-and-affirm-false-response.pdf",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/documents/cfpb-complaint-and-affirm-false-response.pdf",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/morgan-lewis-correspondence.pdf",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/documents/morgan-lewis-correspondence.pdf",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/louisiana-ag-dispute-submission.pdf",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/documents/louisiana-ag-dispute-submission.pdf",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/california-ag-dispute-notice.pdf",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/documents/california-ag-dispute-notice.pdf",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/Silence_Amidst_Reporters_Inquiry_Perfect_Fall_Detail.pdf",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/documents/Silence_Amidst_Reporters_Inquiry_Perfect_Fall_Detail.pdf",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/topics/regulation-z-apa-compliance.html",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/topics/regulation-z-apa-compliance.html",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/topics/fintech-bnpl-merchant-dispute-resolution.html",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/topics/fintech-bnpl-merchant-dispute-resolution.html",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/topics/udaap-customer-service-failures.html",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/topics/udaap-customer-service-failures.html",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/topics/california-ag-regulatory-rebuttal.html",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/topics/california-ag-regulatory-rebuttal.html",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/topics/bnpl-billing-disputes-regulation-z.html",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/topics/bnpl-billing-disputes-regulation-z.html",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/topics/apa-fintech-rulemaking-exemptions.html",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/topics/apa-fintech-rulemaking-exemptions.html",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/topics/pos-chargeback-payment-friction.html",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/topics/pos-chargeback-payment-friction.html",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/topics/udaap-merchant-refund-friction.html",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/topics/udaap-merchant-refund-friction.html",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     },
     {
-      "url": "https://chasekn43.github.io/regulatory-archive-2026/documents/ca-ag-reply-1553638.pdf",
-      "verdict": "NEUTRAL",
-      "coverage_state": "URL is unknown to Google",
-      "last_crawl_time": "Never",
+      "url": "https://kinslow-regulatory-archive.org/documents/ca-ag-reply-1553638.pdf",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
       "crawled_as": "N/A",
-      "robots_status": "ROBOTS_TXT_STATE_UNSPECIFIED",
-      "indexing_state": "INDEXING_STATE_UNSPECIFIED"
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
+    },
+    {
+      "url": "https://kinslow-regulatory-archive.org/topics/verity-je-status-429.html",
+      "verdict": "ERROR",
+      "coverage_state": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+      "last_crawl_time": "N/A",
+      "crawled_as": "N/A",
+      "robots_status": "N/A",
+      "indexing_state": "N/A"
     }
   ]
 }

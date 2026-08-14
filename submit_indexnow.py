@@ -7,7 +7,7 @@ from fireprox_config import get_base_url, get_bing_indexnow_url
 from waf_bypass_headers import apply_bypass_headers
 
 # Configuration
-KEY = "fa481ca42fd54303a95cc9e0bb6ec542"
+KEY = "4366b539c9914619a970e53a2707ec41"
 HOST = "kinslow-regulatory-archive.org"
 KEY_LOCATION = f"https://{HOST}/{KEY}.txt"
 SITEMAP_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml")

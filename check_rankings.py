@@ -8,9 +8,9 @@ from fireprox_config import get_base_url
 from waf_bypass_headers import apply_bypass_headers
 
 # Target configuration
-TARGET_DOMAIN = "chasekn43.github.io"
+TARGET_DOMAIN = "kinslow-regulatory-archive.org"
 TARGET_REPO = "regulatory-archive-2026"
-FULL_TARGET_URL = f"https://{TARGET_DOMAIN}/{TARGET_REPO}/"
+FULL_TARGET_URL = f"https://{TARGET_DOMAIN}/"
 
 KEYWORDS = [
     "Charles W. Kinslow Fintech BNPL merchant dispute",

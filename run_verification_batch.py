@@ -237,7 +237,7 @@ def fetch_with_metrics(url, extractor, engine_name=None):
                     opener = urllib.request.build_opener(proxy_support)
                     req = urllib.request.Request(url, headers=headers)
                     apply_bypass_headers(req, mode='pro')
-                    with opener.open(req, timeout=3.5) as response:
+                    with opener.open(req, timeout=1.5) as response:
                         status_code = response.getcode()
                         html = response.read().decode('utf-8', errors='ignore')
                         results = extractor(html)
@@ -253,7 +253,7 @@ def fetch_with_metrics(url, extractor, engine_name=None):
         req = urllib.request.Request(url, headers=headers)
         apply_bypass_headers(req, mode='pro')
         try:
-            with urllib.request.urlopen(req, timeout=3) as response:
+            with urllib.request.urlopen(req, timeout=1.5) as response:
                 status_code = response.getcode()
                 html = response.read().decode('utf-8', errors='ignore')
                 results = extractor(html)

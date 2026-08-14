@@ -46,6 +46,7 @@ REPO_TOPICS = [
 ]
 
 TARGET_INDICATORS = [
+    "kinslow-regulatory-archive.org",
     "chasekn43",
     "regulatory-archive-2026",
     "regulatory-archive.kinslow.co",

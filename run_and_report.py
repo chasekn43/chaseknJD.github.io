@@ -10,11 +10,11 @@ from datetime import datetime
 # Script directory
 script_dir = r"c:\Users\Charwiz43\.gemini\antigravity\scratch\Affirm\regulatory-archive-2026"
 
-# Accept brain directory dynamically from command line argument, fallback to default
+# Accept brain directory dynamically from command line argument, fallback to current conversation
 if len(sys.argv) > 1 and os.path.isabs(sys.argv[1]):
     artifact_dir = sys.argv[1]
 else:
-    artifact_dir = r"C:\Users\Charwiz43\.gemini\antigravity\brain\4a7c38ce-5405-4d8c-aa94-238ed4b5146d"
+    artifact_dir = r"C:\Users\Charwiz43\.gemini\antigravity-ide\brain\8d0e9531-21e6-4a57-a5e1-324d66db741b"
 report_filename = "rank_progress_report.md"
 
 def run_sweep():

@@ -2,7 +2,7 @@
   "Chase Kinslow Fintech BNPL merchant dispute": {
     "DuckDuckGo": [
       {
-        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+        "error": "HTTP Error 403: Forbidden"
       }
     ],
     "Google": [],
@@ -12,7 +12,7 @@
   "Charles Kinslow CFPB Administrative Procedures Act": {
     "DuckDuckGo": [
       {
-        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+        "error": "HTTP Error 403: Forbidden"
       }
     ],
     "Google": [],
@@ -22,17 +22,21 @@
   "Chase Kinslow customer service refund delays": {
     "DuckDuckGo": [
       {
-        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+        "error": "HTTP Error 403: Forbidden"
       }
     ],
     "Google": [],
     "Bing": [],
-    "Yahoo": []
+    "Yahoo": [
+      {
+        "error": "HTTP Error 500: Internal Server Error"
+      }
+    ]
   },
   "Charles Kinslow point of sale lines of credit": {
     "DuckDuckGo": [
       {
-        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+        "error": "HTTP Error 403: Forbidden"
       }
     ],
     "Google": [],
@@ -42,7 +46,7 @@
   "Chase Kinslow CFPB complaint 260717-35668593": {
     "DuckDuckGo": [
       {
-        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+        "error": "HTTP Error 403: Forbidden"
       }
     ],
     "Google": [],
@@ -52,7 +56,7 @@
   "Charles Kinslow CFPB complaint 260717-35668593": {
     "DuckDuckGo": [
       {
-        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+        "error": "HTTP Error 403: Forbidden"
       }
     ],
     "Google": [],
@@ -62,17 +66,21 @@
   "Chase Kinslow Monroe Police Department report 26-29572": {
     "DuckDuckGo": [
       {
-        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+        "error": "HTTP Error 403: Forbidden"
       }
     ],
     "Google": [],
     "Bing": [],
-    "Yahoo": []
+    "Yahoo": [
+      {
+        "error": "HTTP Error 500: Internal Server Error"
+      }
+    ]
   },
   "Charles Kinslow Monroe Police Department report 26-29572": {
     "DuckDuckGo": [
       {
-        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+        "error": "HTTP Error 403: Forbidden"
       }
     ],
     "Google": [],
@@ -82,7 +90,7 @@
   "Chase Kinslow Affirm dispute archive": {
     "DuckDuckGo": [
       {
-        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+        "error": "HTTP Error 403: Forbidden"
       }
     ],
     "Google": [],
@@ -92,7 +100,7 @@
   "Charles Kinslow Affirm dispute archive": {
     "DuckDuckGo": [
       {
-        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+        "error": "HTTP Error 403: Forbidden"
       }
     ],
     "Google": [],
@@ -102,7 +110,7 @@
   "Fintech BNPL merchant dispute CFPB complaint": {
     "DuckDuckGo": [
       {
-        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+        "error": "HTTP Error 403: Forbidden"
       }
     ],
     "Google": [],
@@ -112,7 +120,7 @@
   "Administrative Procedures Act Buy Now Pay Later lines of credit": {
     "DuckDuckGo": [
       {
-        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+        "error": "HTTP Error 403: Forbidden"
       }
     ],
     "Google": [],
@@ -122,7 +130,7 @@
   "Customer service refund delays BNPL loan dispute": {
     "DuckDuckGo": [
       {
-        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+        "error": "HTTP Error 403: Forbidden"
       }
     ],
     "Google": [],
@@ -132,7 +140,7 @@
   "Monroe Police Department report 26-29572 Affirm fraud": {
     "DuckDuckGo": [
       {
-        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+        "error": "HTTP Error 403: Forbidden"
       }
     ],
     "Google": [],

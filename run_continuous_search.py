@@ -306,6 +306,26 @@ def main():
     else:
         log_message("Continuous search simulator initialized in DIRECT / VPN Mode (Bypassing public proxies).")
 
+    # Attempt to start external tools launcher so repository tools are available to the search runner.
+    try:
+        launcher = r"C:\Users\Charwiz43\.gemini\antigravity\scratch\Affirm\run_all_tools.ps1"
+        if os.path.exists(launcher):
+            log_message(f"Starting external tools launcher: {launcher}")
+            import subprocess
+            # Start launcher detached so it runs concurrently with this process
+            subprocess.Popen([
+                "powershell",
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                launcher
+            ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, close_fds=True)
+        else:
+            log_message(f"Launcher not found: {launcher}")
+    except Exception as e:
+        log_message(f"Failed to start launcher: {e}")
+
     while True:
         query = generate_query()
         
