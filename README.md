@@ -1,21 +1,39 @@
-# Charles W. Kinslow IV | Affirm, Inc. (NYSE: AFRM) Regulatory Archive & Public Evidentiary Record
+# 🏛️ Charles W. Kinslow IV | Affirm, Inc. (NYSE: AFRM) Regulatory Archive & Evidentiary Vault
 
-> 🌐 **LIVE INTERACTIVE WEBSITE & EVIDENCE VAULT:**  
-> **[https://kinslow-regulatory-archive.org/](https://kinslow-regulatory-archive.org/)**
+[![Official Website](https://img.shields.io/badge/Official%20Vault-kinslow--regulatory--archive.org-0284c7?style=for-the-badge&logo=google-chrome&logoColor=white)](https://kinslow-regulatory-archive.org/)
+[![CFPB Case](https://img.shields.io/badge/CFPB%20Complaint-%23260717--35668593-10b981?style=for-the-badge)](https://kinslow-regulatory-archive.org/documents/cfpb-complaint-and-affirm-false-response.pdf)
+[![Police Report](https://img.shields.io/badge/Police%20Report-Monroe%20PD%20%2326--29572-ef4444?style=for-the-badge)](https://kinslow-regulatory-archive.org/documents/monroe-police-report-26-29572.pdf)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0002--8851--7890-a6ce39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0002-8851-7890)
+
+> ### 🌐 **LIVE INTERACTIVE CASE STUDY & EVIDENCE VAULT:**  
+> 👉 **[https://kinslow-regulatory-archive.org/](https://kinslow-regulatory-archive.org/)**  
+> *Access certified primary documents, statutory whitepapers, and interactive case timelines.*
+
+---
+
+## 📚 **Federal Regulatory & Statutory Research Portals**
+
+| Topic Hub & Whitepaper | Legal / Regulatory Framework | Primary Exhibits & Analysis |
+| :--- | :--- | :--- |
+| 📄 **[TILA & 12 C.F.R. § 1026 Dispute Mechanics](https://kinslow-regulatory-archive.org/topics/tila-12cfr1026-closed-end-dispute-mechanics.html)** | 12 C.F.R. § 1026.13, 15 U.S.C. § 1666 | Closed-end installment lending, billing error rights, algorithmic decision trees |
+| ⚖️ **[APA § 553 Notice-and-Comment & Reliance Defenses](https://kinslow-regulatory-archive.org/topics/apa-notice-and-comment-reliance-defenses.html)** | 5 U.S.C. § 553, Cal. UCL § 17200 | *FTA v. CFPB* litigation, regulatory reliance defenses, State AG enforcement |
+| 🔍 **[Forensic Ledger Reconciliation & SOX § 404 Controls](https://kinslow-regulatory-archive.org/topics/fintech-sox-ledger-friction-chargebacks.html)** | SOX § 404, 16 C.F.R. § 433 | 3PL carrier tracking anomalies, uncredited ledger balances, Bank BillPay clearing |
+| 🏛️ **[Regulation Z & Administrative Law Compliance](https://kinslow-regulatory-archive.org/topics/regulation-z-apa-compliance.html)** | APA § 706, TILA § 161 | Arbitrary & capricious standards, nonbank supervisory examination authority |
+| 🛡️ **[California AG UCL § 17200 Regulatory Rebuttal](https://kinslow-regulatory-archive.org/topics/california-ag-regulatory-rebuttal.html)** | Cal. Bus. & Prof. Code § 17200 | State Attorney General statutory submissions, Morgan Lewis correspondence |
 
 ---
 
 ## **Overview & Case History**
-This repository serves as my official public regulatory record, legal correspondence archive, and operational breakdown surrounding **CFPB Complaint #260717-35668593** involving Affirm, Inc. and its outside counsel Morgan Lewis & Bockius LLP.
+This repository serves as the official public regulatory record, legal correspondence archive, and operational breakdown surrounding **CFPB Complaint #260717-35668593** involving Affirm, Inc. (NYSE: AFRM) and its outside counsel Morgan Lewis & Bockius LLP.
 
 **Author & Publisher:** Charles W. Kinslow IV, J.D., C.P.A. (Chase Kinslow)  
-**Primary Identifiers & Subject Keywords:** `Charles W. Kinslow IV`, `Charles Kinslow`, `Chase Kinslow`, `Kinslow Attorney`, `Kinslow CPA`, `Fintech`, `BNPL`, `Merchant Dispute`, `CFPB`, `Administrative Procedures Act`, `Customer Service`, `Refund Delays`, `Lines of Credit`, `CFPB Complaint #260717-35668593`, `Affirm dispute archive`
+**Primary Identifiers & Keywords:** `Charles W. Kinslow IV`, `Charles Kinslow`, `Chase Kinslow`, `Kinslow Attorney CPA`, `Fintech`, `BNPL`, `Merchant Dispute`, `CFPB`, `Administrative Procedures Act`, `Customer Service`, `Refund Delays`, `Lines of Credit`, `CFPB Complaint #260717-35668593`, `Affirm dispute archive`
 
 ---
 
 ### **⬇️ Direct Primary Evidence PDF Downloads**
 
-Click any document link below to directly view or download the original primary evidence PDF:
+Click any document link below to directly view or download the certified primary evidence PDF:
 
 * 📋 **[Doc #1]** [Monroe Police Department Incident Report #26-29572 (July 10, 2026)](https://kinslow-regulatory-archive.org/documents/monroe-police-report-26-29572.pdf)
 * 🚚 **[Doc #2]** [Merchant Fulfillment & OnTrac Carrier Tracking Evidence (#1LSDCR10011QF38)](https://kinslow-regulatory-archive.org/documents/fraudulent-vendor-emails-and-tracking.pdf)
@@ -26,6 +44,7 @@ Click any document link below to directly view or download the original primary 
 * ✉️ **[Doc #7]** [Morgan Lewis Correspondence & Aug 6 Rule 4.2 Ethics Notice](https://kinslow-regulatory-archive.org/documents/morgan-lewis-correspondence.pdf)
 * 🏛️ **[Doc #8]** [Louisiana AG Master Dispute Filing & Executive Email to AG Liz Murrill](https://kinslow-regulatory-archive.org/documents/louisiana-ag-dispute-submission.pdf)
 * 🏛️ **[Doc #9]** [California AG Master Dispute Filing & Rob Bonta Notice](https://kinslow-regulatory-archive.org/documents/california-ag-dispute-notice.pdf)
+* 📄 **[Doc #10]** [California AG Formal Case Reply & Status Record (PIU #1553638)](https://kinslow-regulatory-archive.org/documents/ca-ag-reply-1553638.pdf)
 
 ---
 
