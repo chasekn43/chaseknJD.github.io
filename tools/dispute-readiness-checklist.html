@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>60-Second BNPL Dispute Readiness Checklist &amp; Statutory Deadline Calculator</title>
+  <meta name="description" content="Free assessment tool for consumers evaluating automated Buy Now Pay Later dispute denials against Truth in Lending Act (12 CFR 1026.13) and FCRA statutory standards.">
+  <meta name="keywords" content="Affirm dispute checklist, BNPL billing error deadline calculator, how to dispute Affirm loan, CFPB dispute readiness, Affirm bot rejection checklist, Regulation Z 60 day rule">
+  <link rel="canonical" href="https://kinslow-regulatory-archive.org/tools/dispute-readiness-checklist.html">
+
+  <style>
+    :root {
+      --bg-main: #0a0e17;
+      --bg-card: #111827;
+      --bg-input: #1f2937;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --border: #374151;
+      --danger: #ef4444;
+      --success: #10b981;
+      --warning: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--success);
+      border: 1px solid var(--success);
+    }
+    h1 {
+      font-size: 30px;
+      line-height: 1.25;
+      margin: 0 0 10px 0;
+      color: #ffffff;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 25px;
+      margin: 25px 0;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .checklist-item:last-child { border-bottom: none; }
+    .checklist-item input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--accent);
+      margin-top: 3px;
+      cursor: pointer;
+    }
+    .check-text {
+      flex: 1;
+    }
+    .check-title {
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+    .check-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    .results-card {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.95));
+      border: 2px solid var(--accent);
+      border-radius: 10px;
+      padding: 25px;
+      margin-top: 30px;
+    }
+    .btn {
+      background: var(--accent);
+      color: #0b0f19;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <a href="../index.html" class="nav-back">&larr; Return to Master Regulatory Archive</a>
+
+  <div class="badge">Self-Assessment Tool</div>
+  <h1>60-Second BNPL Dispute Readiness Checklist</h1>
+  <p style="color:var(--text-muted); margin:0 0 20px 0;">
+    Verify whether your Buy Now Pay Later loan dispute satisfies mandatory statutory triggers under Regulation Z (12 C.F.R. § 1026.13) and Dodd-Frank Title X UDAAP.
+  </p>
+
+  <div class="card">
+    <div class="checklist-item">
+      <input type="checkbox" id="c1" onchange="evaluateChecklist()">
+      <div class="check-text">
+        <div class="check-title">1. Disputed Within 60 Days of Notice / Statement</div>
+        <p class="check-desc">You served written notice of the error within 60 days of the first billing statement displaying the disputed transaction (12 C.F.R. § 1026.13(b)(1)).</p>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <input type="checkbox" id="c2" onchange="evaluateChecklist()">
+      <div class="check-text">
+        <div class="check-title">2. Automated Decision Bot Denial (&lt; 90 Minutes)</div>
+        <p class="check-desc">Your claim was summarily denied in under 90 minutes with no evidence of human examination of carrier logs or IP data.</p>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <input type="checkbox" id="c3" onchange="evaluateChecklist()">
+      <div class="check-text">
+        <div class="check-title">3. Certified Carrier Tracking or Police Report</div>
+        <p class="check-desc">You possess a police incident report or carrier tracking showing return delivery to the merchant (or fraudulent delivery to a distant location).</p>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <input type="checkbox" id="c4" onchange="evaluateChecklist()">
+      <div class="check-text">
+        <div class="check-title">4. Account Frozen or Payment Functionality Blocked</div>
+        <p class="check-desc">The lender locked your mobile/web portal or restricted normal repayment channels, putting performing loans at risk of delinquency.</p>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <input type="checkbox" id="c5" onchange="evaluateChecklist()">
+      <div class="check-text">
+        <div class="check-title">5. Threats of Adverse Credit Reporting or Collections</div>
+        <p class="check-desc">The lender or outside collection firm threatened negative credit bureau reporting or collection action while the dispute was actively pending.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="results-card" id="resultsBox">
+    <h3 style="color:#ffffff; margin-top:0;" id="readinessScore">Select the boxes above to evaluate your statutory standing</h3>
+    <p style="color:var(--text-muted); font-size:14px;" id="readinessDesc">
+      Checking these triggers determines whether you are ready to file with the CFPB, invoke statutory damages ($1,000 per FCRA violation), or deploy external bank BillPay.
+    </p>
+    <div style="margin-top:20px;">
+      <a href="affirm-dispute-demand-generator.html" class="btn">⚡ Generate Statutory Demand Letter Now →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function evaluateChecklist() {
+    const checks = [
+      document.getElementById('c1').checked,
+      document.getElementById('c2').checked,
+      document.getElementById('c3').checked,
+      document.getElementById('c4').checked,
+      document.getElementById('c5').checked
+    ];
+    const score = checks.filter(Boolean).length;
+
+    const title = document.getElementById('readinessScore');
+    const desc = document.getElementById('readinessDesc');
+
+    if (score === 0) {
+      title.innerText = 'Select the boxes above to evaluate your statutory standing';
+      desc.innerText = 'Checking these triggers determines whether you are ready to file with the CFPB or invoke statutory damages.';
+    } else if (score <= 2) {
+      title.innerText = `🟡 Moderate Statutory Leverage (${score}/5 Triggers Met)`;
+      desc.innerText = 'You have established preliminary billing error grounds. Ensure you serve a formal written 12 C.F.R. § 1026.13 notice to preserve all Truth in Lending Act rights before the 60-day statutory window expires.';
+    } else {
+      title.innerText = `🟢 Maximum Statutory & UDAAP Leverage (${score}/5 Triggers Met)`;
+      desc.innerText = 'You have documented an affirmative institutional failure. You have grounds for immediate CFPB escalation, State Attorney General filings, and statutory damage claims under FCRA 15 U.S.C. § 1681n and TILA 15 U.S.C. § 1640(a).';
+    }
+  }
+</script>
+
+</body>
+</html>

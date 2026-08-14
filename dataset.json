@@ -1,0 +1,140 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Empirical Dataset of Automated Buy Now Pay Later (BNPL) Dispute Denials, Ledger Suspense Loops, and Regulatory Escalation Chronology",
+  "alternateName": "Kinslow v. Affirm BNPL Regulatory & Forensic Ledger Dataset",
+  "description": "A certified, minute-by-minute empirical dataset documenting automated loan denial bot latency, single-use virtual card suspense account reconciliations, CFPB complaint filings, and outside counsel litigation holds in retail installment credit.",
+  "url": "https://kinslow-regulatory-archive.org/dataset.json",
+  "identifier": "https://doi.org/10.5281/zenodo.21937896",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "datePublished": "2026-08-14",
+  "creator": {
+    "@type": "Person",
+    "name": "Charles W. Kinslow IV, J.D., C.P.A.",
+    "identifier": "https://orcid.org/0009-0002-8851-7890",
+    "sameAs": [
+      "https://orcid.org/0009-0002-8851-7890",
+      "https://doi.org/10.5281/zenodo.21937896",
+      "https://github.com/chasekn43"
+    ]
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "United States (Louisiana, Arkansas, California, Texas)"
+  },
+  "temporalCoverage": "2026-07-07/2026-08-14",
+  "keywords": [
+    "Buy Now Pay Later",
+    "BNPL",
+    "CFPB Complaint Database",
+    "Truth in Lending Act",
+    "Regulation Z",
+    "Automated Decision Systems",
+    "Algorithmic Denial Latency",
+    "SOX 404 Internal Controls",
+    "Federal Reserve ACH BillPay"
+  ],
+  "disputeMetrics": {
+    "disputedLoanId": "XQ8M-YX19",
+    "disputedGrossAmount": 285.85,
+    "disputedFinancedBalance": 104.63,
+    "initialVirtualCardDownPayment": 26.16,
+    "consumerPriorPaidBalance": 3167.11,
+    "orderTimestamp": "2026-07-07T11:53:10-05:00",
+    "firstSupportContactTimestamp": "2026-07-07T12:55:00-05:00",
+    "firstContactLatencyMinutes": 62,
+    "automatedBotDenialTimestamp": "2026-07-09T13:13:00-05:00",
+    "automatedBotDenialLatencyMinutes": 16,
+    "policeReportNumber": "26-29572",
+    "policeAgency": "Monroe Police Department, LA (Badge MPD1125)",
+    "cfpbComplaintNumberPrimary": "260717-35668593",
+    "cfpbComplaintNumberSecondary": "260805-36566273",
+    "secWhistleblowerSubmissionId": "17867-223-108-883",
+    "caDojDocketNumber": "26-1884 (PIU 1553638)",
+    "outsideCounselFirm": "Morgan, Lewis & Bockius LLP",
+    "carrierTrackingNumber": "1LSDCR10011QF38 (OnTrac)",
+    "carrierDestinationAnomalyDistanceMiles": 1800
+  },
+  "chronologicalEvents": [
+    {
+      "sequence": 1,
+      "date": "2026-07-07T11:53:10-05:00",
+      "eventType": "Unauthorized Order Creation",
+      "entity": "Perfume Empire / Affirm Virtual Card",
+      "amount": 285.85,
+      "details": "Fraudulent order PE270138 generated; merchandise routed 1,800 miles to San Jose, CA."
+    },
+    {
+      "sequence": 2,
+      "date": "2026-07-07T12:55:00-05:00",
+      "eventType": "Consumer Fraud Notice",
+      "entity": "Affirm Customer Care",
+      "amount": 0.0,
+      "details": "Immediate phone report 62 minutes post-order while cargo remained on Texas dock."
+    },
+    {
+      "sequence": 3,
+      "date": "2026-07-09T13:13:00-05:00",
+      "eventType": "Automated Algorithm Denial",
+      "entity": "Affirm Servicing Engine",
+      "amount": 104.63,
+      "details": "Automated bot denial issued 16 minutes after document upload (Thread tbR0gUxbOMi0c4Vrr1_HC3Q)."
+    },
+    {
+      "sequence": 4,
+      "date": "2026-07-10T11:15:00-05:00",
+      "eventType": "Criminal Police Filing",
+      "entity": "Monroe Police Department",
+      "amount": 0.0,
+      "details": "Certified Identity Theft Incident Report #26-29572 lodged."
+    },
+    {
+      "sequence": 5,
+      "date": "2026-07-16T00:00:00-05:00",
+      "eventType": "Written Liability Clearance",
+      "entity": "Affirm Executive Resolutions",
+      "amount": 104.63,
+      "details": "Affirm confirms in writing zero consumer responsibility for loan."
+    },
+    {
+      "sequence": 6,
+      "date": "2026-07-17T00:00:00-05:00",
+      "eventType": "Managing Counsel C&D & Portal Lockout",
+      "entity": "Affirm Legal (Andy Chen)",
+      "amount": 0.0,
+      "details": "Cease & Desist issued, UI locked, and contradictory customer service call demanded."
+    },
+    {
+      "sequence": 7,
+      "date": "2026-07-17T00:00:00-05:00",
+      "eventType": "Federal Regulatory Complaint",
+      "entity": "CFPB (Consumer Financial Protection Bureau)",
+      "amount": 104.63,
+      "details": "CFPB Complaint #260717-35668593 submitted with minute-by-minute tracking exhibits."
+    },
+    {
+      "sequence": 8,
+      "date": "2026-07-22T00:00:00-05:00",
+      "eventType": "False Regulatory Statement",
+      "entity": "Affirm Compliance",
+      "amount": 26.16,
+      "details": "Affirm files response falsely claiming phantom external bank chargeback."
+    },
+    {
+      "sequence": 9,
+      "date": "2026-08-05T00:00:00-05:00",
+      "eventType": "Secondary CFPB & State AG Filing",
+      "entity": "CFPB & California DOJ",
+      "amount": 0.0,
+      "details": "CFPB Complaint #260805-36566273 and CA DOJ Law Enforcement Docket #26-1884 opened."
+    },
+    {
+      "sequence": 10,
+      "date": "2026-08-14T11:45:12-04:00",
+      "eventType": "SEC Whistleblower Submission",
+      "entity": "U.S. Securities and Exchange Commission",
+      "amount": 0.0,
+      "details": "Form TCR Whistleblower Submission #17867-223-108-883 filed under Sarbanes-Oxley 404 / GAAP ASC 310."
+    }
+  ]
+}
