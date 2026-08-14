@@ -25,6 +25,17 @@
 
 ---
 
+## 🛠️ **Actionable Consumer Problem-Solving Guides & Press Room**
+
+* 💳 **[External Bank BillPay Routing Guide](https://kinslow-regulatory-archive.org/guides/affirm-bank-billpay-workaround.html)** — Bypass locked mobile UI controls via Federal Reserve ACH.
+* 📦 **[Denied Return Dispute Resolution Guide](https://kinslow-regulatory-archive.org/guides/affirm-dispute-denied-returned-item.html)** — Carrier tracking POD, RMA validation, and police report documentation.
+* 🚀 **[Executive Escalation & Legal Notice Playbook](https://kinslow-regulatory-archive.org/guides/affirm-ceo-executive-contacts-escalation.html)** — Breaking out of automated chatbot loops under 12 CFR § 1026.13.
+* 📑 **[FCRA & Regulation Z Credit Dispute Letters](https://kinslow-regulatory-archive.org/guides/affirm-credit-bureau-dispute-letters.html)** — Removing unlawful adverse bureau reporting during pending disputes.
+* 🚚 **[Carrier Proof of Delivery & Affidavits](https://kinslow-regulatory-archive.org/guides/affirm-merchant-return-tracking-proof.html)** — Obtaining stamped carrier delivery confirmations.
+* 📰 **[Official AP-Style Press Wire Release](https://kinslow-regulatory-archive.org/press-release.html)** — Investigative summary, 5-panel comic saga, and media contacts.
+
+---
+
 ## **Overview & Case History**
 This repository serves as the official public regulatory record, legal correspondence archive, and operational breakdown surrounding **CFPB Complaint #260717-35668593** involving Affirm, Inc. (NYSE: AFRM) and its outside counsel Morgan Lewis & Bockius LLP.
 
