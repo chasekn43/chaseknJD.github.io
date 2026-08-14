@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "title": "The Consumer Survival Playbook: Omnichannel Escalation & UDAAP Exposure Architecture in Automated Financial Disputes",
+    "upload_type": "publication",
+    "publication_type": "workingpaper",
+    "publication_date": "2026-08-14",
+    "description": "An empirical legal and forensic accounting case study examining Buy Now Pay Later (BNPL) dispute infrastructure, closed-end credit servicing, and algorithmic error resolution under the Truth in Lending Act (12 C.F.R. § 1026.13), Fair Credit Reporting Act (15 U.S.C. § 1681s-2(b)), and Dodd-Frank Title X UDAAP standards. Documents the real-world operational friction of automated bot rejections, single-use virtual card ledger reconciliation, and external Federal Reserve ACH BillPay settlement bypasses.",
+    "creators": [
+      {
+        "name": "Kinslow IV, Charles W.",
+        "affiliation": "Independent Regulatory & Forensic Accounting Researcher",
+        "orcid": "0009-0002-8851-7890"
+      }
+    ],
+    "access_right": "open",
+    "license": "cc-by-4.0",
+    "keywords": [
+      "Buy Now Pay Later",
+      "BNPL",
+      "Consumer Financial Protection Bureau",
+      "CFPB",
+      "Truth in Lending Act",
+      "Regulation Z",
+      "Fair Credit Reporting Act",
+      "FCRA",
+      "UDAAP",
+      "Affirm Holdings",
+      "Forensic Accounting",
+      "Sarbanes-Oxley",
+      "SOX 404",
+      "Administrative Procedure Act"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://kinslow-regulatory-archive.org/",
+        "relation": "isSupplementTo",
+        "scheme": "url"
+      },
+      {
+        "identifier": "https://github.com/chasekn43/regulatory-archive-2026",
+        "relation": "isDocumentedBy",
+        "scheme": "url"
+      }
+    ]
+  }
+}
