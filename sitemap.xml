@@ -203,4 +203,10 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://kinslow-regulatory-archive.org/documents/california-state-bar-misconduct-complaint-morgan-lewis.pdf</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

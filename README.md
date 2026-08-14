@@ -60,6 +60,8 @@ Click any document link below to directly view or download the certified primary
 * 🏛️ **[Doc #8]** [Louisiana AG Master Dispute Filing & Executive Email to AG Liz Murrill](https://kinslow-regulatory-archive.org/documents/louisiana-ag-dispute-submission.pdf)
 * 🏛️ **[Doc #9]** [California AG Master Dispute Filing & Rob Bonta Notice](https://kinslow-regulatory-archive.org/documents/california-ag-dispute-notice.pdf)
 * 📄 **[Doc #10]** [California AG Formal Case Reply & Status Record (PIU #1553638)](https://kinslow-regulatory-archive.org/documents/ca-ag-reply-1553638.pdf)
+* ⚖️ **[Doc #11]** [State Bar of California Attorney Misconduct Complaint against Morgan Lewis](https://kinslow-regulatory-archive.org/documents/california-state-bar-misconduct-complaint-morgan-lewis.pdf)
+* 📰 **[Doc #12]** [Silence Amidst Reporter's Inquiry Full Case Narrative Dossier](https://kinslow-regulatory-archive.org/documents/Silence_Amidst_Reporters_Inquiry_Perfect_Fall_Detail.pdf)
 
 ---
 
