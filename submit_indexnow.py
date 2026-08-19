@@ -1,14 +1,12 @@
 import os
-import json
+import time
 import requests
-from google.oauth2 import service_account
-from google.auth.transport.requests import Request as AuthRequest
+from google.auth import jwt
+from google.auth.transport.requests import Request
 
 HOST = "kinslow-regulatory-archive.org"
-SCOPES = ["https://googleapis.com"]
 KEY_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "google_credentials.json")
 
-# Cleaned array path layouts containing core backslashes
 TARGET_URLS = [
     "https://kinslow-regulatory-archive.org",
     "https://kinslow-regulatory-archive.orgDear%20Penny.pdf",
@@ -61,34 +59,35 @@ TARGET_URLS = [
 
 def run_google_pipeline():
     if not os.path.exists(KEY_PATH):
-        print(f"[-] Missing credentials file! Place 'google_credentials.json' in: {KEY_PATH}")
+        print(f"[-] Missing credentials file at: {KEY_PATH}")
         return
-        
-    print("[+] Authorizing secure credentials channel with Google API...")
-    credentials = service_account.Credentials.from_service_account_file(KEY_PATH, scopes=SCOPES)
+
+    print("[+] Building signed JWT authentication token...")
     
-    # Request token ONCE up front to handle the bulk job run safely
-    credentials.refresh(AuthRequest())
+    # Generate explicit JWT token using the credentials file target destination directly
+    audience = "https://googleapis.com"
+    signer = jwt.Credentials.from_service_account_file(KEY_PATH, audience=audience)
+    
+    # Force single signature token compilation
+    signer.refresh(Request())
     
     session = requests.Session()
-    print(f"[+] Processing {len(TARGET_URLS)} targets inside network memory...")
-    endpoint = "https://googleapis.com"
-    
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {credentials.token}"
+        "Authorization": f"Bearer {signer.token}"
     }
 
+    print(f"[+] Streaming {len(TARGET_URLS)} canonical paths directly to Google indexer grid...")
     for target_url in TARGET_URLS:
         payload = {"url": target_url, "type": "URL_UPDATED"}
         try:
-            response = session.post(endpoint, json=payload, headers=headers, timeout=10)
+            response = session.post(audience, json=payload, headers=headers, timeout=10)
             if response.status_code == 200:
-                print(f" [SUCCESS] Google Index Queue Accepted -> {target_url}")
+                print(f" [SUCCESS] Google Index Queue Accepted ➡️ {target_url}")
             else:
                 print(f" [-] Failed Status {response.status_code} for {target_url}: {response.text}")
         except Exception as e:
-            print(f" [-] Network Execution Error on {target_url}: {e}")
+            print(f" [-] Network Error on {target_url}: {e}")
 
 if __name__ == '__main__':
     print('=== Google Indexing API Automation Dashboard ===')
