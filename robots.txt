@@ -1,14 +1,8 @@
 User-agent: *
 Allow: /
-Allow: /documents/*.pdf
-Disallow: /CNAME
 
-# Block aggressive scrapers/crawlers that consume bandwidth
-User-agent: AhrefsBot
-User-agent: SemrushBot
-User-agent: PetalBot
-User-agent: MJ12bot
-User-agent: Rogerbot
-Disallow: /
+# Host domain definition
+Host: https://kinslow-regulatory-archive.org
 
-Sitemap: https://kinslow-regulatory-archive.org/sitemap.xml
+# Path pointing to your correct canonical sitemap 
+Sitemap: https://kinslow-regulatory-archive.org
