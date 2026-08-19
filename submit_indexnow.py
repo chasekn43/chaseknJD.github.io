@@ -94,7 +94,7 @@ def submit_to_indexnow(url_list):
             print(f"  - Ping {target_url}: {e}")
 
     # Google Search Console Note
-    sitemap_url = f"https://{HOST}/regulatory-archive-2026/sitemap.xml"
+    sitemap_url = f"https://kinslow-regulatory-archive.org"
     print(f"[+] Google Search Console Sitemap URL: {sitemap_url}")
     print("[NOTE] Direct HTTP GET sitemap pinging was officially deprecated by Google. Submit sitemap via Google Search Console web console or API.")
 
