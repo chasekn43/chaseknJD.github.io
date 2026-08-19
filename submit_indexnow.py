@@ -1,10 +1,10 @@
 import os
-import time
 import requests
-from google.auth import jwt
-from google.auth.transport.requests import Request
+from googleapiclient.discovery import build
+from google.oauth2 import service_account
 
 HOST = "kinslow-regulatory-archive.org"
+SCOPES = ["https://googleapis.com"]
 KEY_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "google_credentials.json")
 
 TARGET_URLS = [
@@ -59,35 +59,27 @@ TARGET_URLS = [
 
 def run_google_pipeline():
     if not os.path.exists(KEY_PATH):
-        print(f"[-] Missing credentials file at: {KEY_PATH}")
+        print(f"[-] Credentials missing at: {KEY_PATH}")
         return
 
-    print("[+] Building signed JWT authentication token...")
+    print("[+] Initializing authorized Google Indexing Service Client...")
+    credentials = service_account.Credentials.from_service_account_file(KEY_PATH, scopes=SCOPES)
     
-    # Generate explicit JWT token using the credentials file target destination directly
-    audience = "https://googleapis.com"
-    signer = jwt.Credentials.from_service_account_file(KEY_PATH, audience=audience)
-    
-    # Force single signature token compilation
-    signer.refresh(Request())
-    
-    session = requests.Session()
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {signer.token}"
-    }
+    # Build the discovery service connection object using the correct authentication protocol
+    service = build('indexing', 'v3', credentials=credentials)
 
-    print(f"[+] Streaming {len(TARGET_URLS)} canonical paths directly to Google indexer grid...")
+    print(f"[+] Direct streaming {len(TARGET_URLS)} entries to Google Indexing Service...")
     for target_url in TARGET_URLS:
-        payload = {"url": target_url, "type": "URL_UPDATED"}
+        body = {
+            'url': target_url,
+            'type': 'URL_UPDATED'
+        }
         try:
-            response = session.post(audience, json=payload, headers=headers, timeout=10)
-            if response.status_code == 200:
-                print(f" [SUCCESS] Google Index Queue Accepted ➡️ {target_url}")
-            else:
-                print(f" [-] Failed Status {response.status_code} for {target_url}: {response.text}")
+            # Execute standard REST tracking requests using built-in method configurations
+            response = service.urlNotifications().publish(body=body).execute()
+            print(f" [SUCCESS] Google Index Queue Accepted ➡️ {target_url}")
         except Exception as e:
-            print(f" [-] Network Error on {target_url}: {e}")
+            print(f" [-] Service Error on {target_url}: {e}")
 
 if __name__ == '__main__':
     print('=== Google Indexing API Automation Dashboard ===')
