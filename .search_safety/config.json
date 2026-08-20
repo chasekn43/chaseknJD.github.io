@@ -3,7 +3,7 @@
   "max_concurrency": 6,
   "use_proxy": false,
   "headless": true,
-  "bing_api_key": "34b9bbd3b295468c8d754700c3750742",
+  "bing_api_key": "",
   "use_search_api": true,
   "max_browsers": 0,
   "no_browser": true,

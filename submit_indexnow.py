@@ -1,86 +1,105 @@
 import os
-import requests
-from googleapiclient.discovery import build
-from google.oauth2 import service_account
+import json
+import urllib.request
+import urllib.parse
+import xml.etree.ElementTree as ET
+from fireprox_config import get_base_url, get_bing_indexnow_url
+from waf_bypass_headers import apply_bypass_headers
 
+# Configuration
+KEY = "4366b539c9914619a970e53a2707ec41"
 HOST = "kinslow-regulatory-archive.org"
-SCOPES = ["https://googleapis.com"]
-KEY_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "google_credentials.json")
+KEY_LOCATION = f"https://{HOST}/{KEY}.txt"
+SITEMAP_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml")
+KEY_FILE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"{KEY}.txt")
 
-TARGET_URLS = [
-    "https://kinslow-regulatory-archive.org",
-    "https://kinslow-regulatory-archive.orgDear%20Penny.pdf",
-    "https://kinslow-regulatory-archive.orgdocuments/monroe-police-report-26-29572.pdf",
-    "https://kinslow-regulatory-archive.orgdocuments/fraudulent-vendor-emails-and-tracking.pdf",
-    "https://kinslow-regulatory-archive.orgdocuments/mobile-call-history-screenshots.pdf",
-    "https://kinslow-regulatory-archive.orgdocuments/affirm-liability-clearance-july16.pdf",
-    "https://kinslow-regulatory-archive.orgdocuments/affirm-managing-counsel-directive-july17.pdf",
-    "https://kinslow-regulatory-archive.orgdocuments/cfpb-complaint-and-affirm-false-response.pdf",
-    "https://kinslow-regulatory-archive.orgdocuments/morgan-lewis-correspondence.pdf",
-    "https://kinslow-regulatory-archive.orgdocuments/louisiana-ag-dispute-submission.pdf",
-    "https://kinslow-regulatory-archive.orgdocuments/california-ag-dispute-notice.pdf",
-    "https://kinslow-regulatory-archive.orgdocuments/Silence_Amidst_Reporters_Inquiry_Perfect_Fall_Detail.pdf",
-    "https://kinslow-regulatory-archive.orgtopics/regulation-z-apa-compliance",
-    "https://kinslow-regulatory-archive.orgtopics/fintech-bnpl-merchant-dispute-resolution",
-    "https://kinslow-regulatory-archive.orgtopics/udaap-customer-service-failures",
-    "https://kinslow-regulatory-archive.orgtopics/california-ag-regulatory-rebuttal",
-    "https://kinslow-regulatory-archive.orgtopics/bnpl-billing-disputes-regulation-z",
-    "https://kinslow-regulatory-archive.orgtopics/apa-fintech-rulemaking-exemptions",
-    "https://kinslow-regulatory-archive.orgtopics/pos-chargeback-payment-friction",
-    "https://kinslow-regulatory-archive.orgtopics/udaap-merchant-refund-friction",
-    "https://kinslow-regulatory-archive.orgdocuments/ca-ag-reply-1553638.pdf",
-    "https://kinslow-regulatory-archive.orgtopics/verity-je-status-429",
-    "https://kinslow-regulatory-archive.orgtopics/tila-12cfr1026-closed-end-dispute-mechanics",
-    "https://kinslow-regulatory-archive.orgtopics/apa-notice-and-comment-reliance-defenses",
-    "https://kinslow-regulatory-archive.orgtopics/fintech-sox-ledger-friction-chargebacks",
-    "https://kinslow-regulatory-archive.orgguides/affirm-bank-billpay-workaround",
-    "https://kinslow-regulatory-archive.orgguides/affirm-dispute-denied-returned-item",
-    "https://kinslow-regulatory-archive.orgguides/affirm-automated-customer-service-escalation",
-    "https://kinslow-regulatory-archive.orgguides/affirm-ceo-executive-contacts-escalation",
-    "https://kinslow-regulatory-archive.orgguides/affirm-credit-bureau-dispute-letters",
-    "https://kinslow-regulatory-archive.orgguides/affirm-merchant-return-tracking-proof",
-    "https://kinslow-regulatory-archive.orgpress-release",
-    "https://kinslow-regulatory-archive.orgtopics/affirm-capital-stack-abs-warehouse-facility-risks",
-    "https://kinslow-regulatory-archive.orgtopics/affirm-institutional-whistleblower-memorandum",
-    "https://kinslow-regulatory-archive.orgdocuments/california-state-bar-misconduct-complaint-morgan-lewis.pdf",
-    "https://kinslow-regulatory-archive.orgtopics/affirm-dispute-denied-automated-bot-guide",
-    "https://kinslow-regulatory-archive.orgtopics/affirm-account-locked-during-dispute-solution",
-    "https://kinslow-regulatory-archive.orgtopics/affirm-frozen-account-communication-paradox",
-    "https://kinslow-regulatory-archive.orgtopics/behind-the-portal-fintech-executive-aliases-disputes",
-    "https://kinslow-regulatory-archive.orgtopics/affirm-cfpb-complaint-database-bbb-case-logs",
-    "https://kinslow-regulatory-archive.orgtools/affirm-dispute-demand-generator",
-    "https://kinslow-regulatory-archive.orgtopics/affirm-merchant-settlement-holding-refund-delays",
-    "https://kinslow-regulatory-archive.orgtopics/morgan-lewis-amlaw10-collections-protocol",
-    "https://kinslow-regulatory-archive.orgtopics/single-use-virtual-cards-reconciliation-loops",
-    "https://kinslow-regulatory-archive.orgtools/interactive-docket-timeline",
-    "https://kinslow-regulatory-archive.orgtools/dispute-readiness-checklist",
-    "https://kinslow-regulatory-archive.orgpress-kit"
-]
+def create_key_file():
+    """Creates the IndexNow verification key file at the site root."""
+    with open(KEY_FILE_PATH, "wb") as f:
+        f.write(KEY.encode("utf-8"))
+    print(f"[+] Key file created: {KEY_FILE_PATH}")
 
-def run_google_pipeline():
-    if not os.path.exists(KEY_PATH):
-        print(f"[-] Credentials missing at: {KEY_PATH}")
-        return
+def parse_sitemap():
+    """Extracts all URLs from sitemap.xml."""
+    urls = []
+    if not os.path.exists(SITEMAP_PATH):
+        print(f"[-] Sitemap not found at {SITEMAP_PATH}")
+        return [f"https://{HOST}/"]
 
-    print("[+] Initializing authorized Google Indexing Service Client...")
-    credentials = service_account.Credentials.from_service_account_file(KEY_PATH, scopes=SCOPES)
+    tree = ET.parse(SITEMAP_PATH)
+    root = tree.getroot()
+    namespace = {"ns": "http://www.sitemaps.org/schemas/sitemap/0.9"}
     
-    # Build the discovery service connection object using the correct authentication protocol
-    service = build('indexing', 'v3', credentials=credentials)
+    for url_elem in root.findall("ns:url", namespace):
+        loc = url_elem.find("ns:loc", namespace)
+        if loc is not None and loc.text:
+            urls.append(loc.text.strip())
 
-    print(f"[+] Direct streaming {len(TARGET_URLS)} entries to Google Indexing Service...")
-    for target_url in TARGET_URLS:
-        body = {
-            'url': target_url,
-            'type': 'URL_UPDATED'
-        }
+    print(f"[+] Parsed {len(urls)} URLs from sitemap.xml")
+    return urls
+
+def submit_to_indexnow(url_list):
+    """Submits URLs to IndexNow API endpoints (notifies Bing, Yahoo, Yandex, Naver, Seznam)."""
+    endpoints = [
+        f"{get_base_url('indexnow')}/indexnow",
+        get_bing_indexnow_url()
+    ]
+    
+    payload = {
+        "host": HOST,
+        "key": KEY,
+        "keyLocation": KEY_LOCATION,
+        "urlList": url_list
+    }
+
+    data = json.dumps(payload).encode("utf-8")
+    headers = {
+        "Content-Type": "application/json; charset=utf-8",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+    }
+
+    for endpoint in endpoints:
+        print(f"[+] Submitting {len(url_list)} URLs to IndexNow API ({endpoint})...")
         try:
-            # Execute standard REST tracking requests using built-in method configurations
-            response = service.urlNotifications().publish(body=body).execute()
-            print(f" [SUCCESS] Google Index Queue Accepted ➡️ {target_url}")
+            req = urllib.request.Request(endpoint, data=data, headers=headers, method="POST")
+            apply_bypass_headers(req, mode='pro')
+            with urllib.request.urlopen(req, timeout=15) as response:
+                status = response.status
+                print(f"[SUCCESS] {endpoint} Response Code: {status}")
+                if status in [200, 202]:
+                    print("[OK] Submission accepted by IndexNow engine grid.")
+        except urllib.error.HTTPError as e:
+            print(f"[-] {endpoint} Status: {e.code} ({e.reason})")
+            try:
+                body = e.read().decode('utf-8')
+                print(f"    [Response Body] {body}")
+            except Exception:
+                pass
+            if e.code == 403:
+                print("    [NOTE] HTTP 403 indicates IndexNow crawler key validation for GitHub Pages subfolder repos.")
+                print(f"    For subpath repos (https://{HOST}/regulatory-archive-2026/), indexation relies primarily on Google Search Console & Bing Webmaster Tools XML Sitemap submission: https://{HOST}/regulatory-archive-2026/sitemap.xml")
         except Exception as e:
-            print(f" [-] Service Error on {target_url}: {e}")
+            print(f"[-] {endpoint} Submission Error: {e}")
 
-if __name__ == '__main__':
-    print('=== Google Indexing API Automation Dashboard ===')
-    run_google_pipeline()
+    # Fallback GET pings for each URL
+    print("[+] Issuing GET pings for each URL to IndexNow...")
+    for target_url in url_list:
+        get_url = f"{get_bing_indexnow_url()}?url={urllib.parse.quote(target_url)}&key={KEY}"
+        try:
+            req = urllib.request.Request(get_url, headers={"User-Agent": headers["User-Agent"]})
+            apply_bypass_headers(req, mode='pro')
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                print(f"  - Ping {target_url}: Status {resp.status}")
+        except Exception as e:
+            print(f"  - Ping {target_url}: {e}")
+
+    # Google Search Console Note
+    sitemap_url = f"https://{HOST}/regulatory-archive-2026/sitemap.xml"
+    print(f"[+] Google Search Console Sitemap URL: {sitemap_url}")
+    print("[NOTE] Direct HTTP GET sitemap pinging was officially deprecated by Google. Submit sitemap via Google Search Console web console or API.")
+
+if __name__ == "__main__":
+    print("=== IndexNow & Search Engine Instant Submission ===")
+    create_key_file()
+    urls = parse_sitemap()
+    submit_to_indexnow(urls)

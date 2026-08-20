@@ -1,478 +1,870 @@
 [
   {
-    "timestamp": "2026-08-10T12:29:25.461338",
+    "timestamp": "2026-08-19T22:29:39.553241",
     "pass_number": 1,
+    "canonical_domain": "kinslow-regulatory-archive.org",
     "queries_run": [
       {
-        "query": "Chase Kinslow Kinslow v Affirm public evidentiary record",
-        "engines": {
-          "DuckDuckGo": [],
-          "Google": [],
-          "Bing": [],
-          "Yahoo": [
-            {
-              "error": "HTTP Error 500: INKApi Error"
-            }
-          ]
-        },
-        "target_matches": []
-      },
-      {
-        "query": "Chase Kinslow CFPB complaint rebuttal Affirm false response",
-        "engines": {
-          "DuckDuckGo": [],
-          "Google": [],
-          "Bing": [],
-          "Yahoo": [
-            {
-              "error": "HTTP Error 500: INKApi Error"
-            }
-          ]
-        },
-        "target_matches": []
-      },
-      {
-        "query": "Chase Kinslow Scott Williams Affirm Vice President Client Success",
+        "query": "Lines of credit and UI locks active transaction dispute remedies",
         "engines": {
           "DuckDuckGo": [
             {
-              "title": "www.linkedin.com/in/scott-williams-2450a44",
-              "url": "https://www.linkedin.com/in/scott-williams-2450a44",
-              "snippet": "Experience: Affirm \u00b7 Location: Dallas-Fort Worth Metroplex \u00b7 500+ connections on LinkedIn. View Scott Williams' profile on LinkedIn, a professional community of 1 billion members."
+              "title": "Letters of credit disputes: Legal risks and practical guidance",
+              "url": "https://www.mills-reeve.com/publications/letters-of-credit-disputes-legal-risks-and-practical-guidance/",
+              "snippet": ""
             },
             {
-              "title": "www.zoominfo.com/p/Scott-Williams/1980623513",
-              "url": "https://www.zoominfo.com/p/Scott-Williams/1980623513",
-              "snippet": "Get the details of Scott Williams's business profile including email address, phone number, work history and more."
+              "title": "Respond to Wrongful Letter of Credit Disputes - Transnational Matters",
+              "url": "https://www.transnationalmatters.com/letter-of-credit-dispute/",
+              "snippet": ""
             },
             {
-              "title": "rocketreach.co/scott-williams-email_4313530",
-              "url": "https://rocketreach.co/scott-williams-email_4313530",
-              "snippet": "Scott Williams, based in Texas, United States, is currently a Vice President Client Success and Partner Marketing at Affirm. Scott Williams brings experience from previous roles at Affirm."
+              "title": "Lesson 30: Remedies in Letters of Credit Transactions",
+              "url": "https://kindalawful.com/ucc/lesson-30-remedies-in-letters-of-credit-transactions.html",
+              "snippet": ""
             },
             {
-              "title": "www.bloomberg.com/profile/person/25542978",
-              "url": "https://www.bloomberg.com/profile/person/25542978",
-              "snippet": "Scott Williams is VP:Client Success & Strategic Alliance at Affirm Holdings Inc. See Scott Williams's compensation, career history, education, & memberships."
+              "title": "Exploring Legal Remedies for Non-Compliance in the Legal System",
+              "url": "https://decretoy.com/legal-remedies-for-non-compliance/",
+              "snippet": ""
             },
             {
-              "title": "rocketreach.co/affirm-marketing-department_b5eb2ee3f42e840f",
-              "url": "https://rocketreach.co/affirm-marketing-department_b5eb2ee3f42e840f",
-              "snippet": "Affirm's Marketing department is led by Scott Williams (Vice President Client Success and Partner Marketing) and has 64 employees."
+              "title": "Resolving Disputes in Cross Border Transactions: Legal Remedies and ...",
+              "url": "https://michaeledwards.uk/resolving-disputes-in-cross-border-transactions-legal-remedies-and-alternative-dispute-resolution/",
+              "snippet": ""
             },
             {
-              "title": "www.zoominfo.com/p/Scott-Williams/9278046406",
-              "url": "https://www.zoominfo.com/p/Scott-Williams/9278046406",
-              "snippet": "Get the details of Scott Williams's business profile including email address, phone number, work history and more."
+              "title": "Sanctions and letters of credit | What banks must know",
+              "url": "https://academy.iccwbo.org/trade-finance/article/sanctions-and-letters-of-credit/",
+              "snippet": ""
             },
             {
-              "title": "me.sh/profile/scott-williams-a9df53ac",
-              "url": "https://me.sh/profile/scott-williams-a9df53ac",
-              "snippet": "Scott Williams is a dynamic leader known for his contributions to organizational success, strategic decision-making, and effective team management across diverse industries and functions."
+              "title": "Financial Dispute Resolution: Simplifying the Basics",
+              "url": "https://www.transnationalmatters.com/financial-dispute-resolution-simplifying-the-basics/",
+              "snippet": ""
             },
             {
-              "title": "www.arounddeal.com/p/scott-williams/h8bupwhlou",
-              "url": "https://www.arounddeal.com/p/scott-williams/h8bupwhlou",
-              "snippet": "Get detailed information about Scott Williams's business profile, including email address, phone number, work history, and more."
+              "title": "Understanding Secured Transaction Disputes and Litigation in Legal ...",
+              "url": "https://statumly.com/secured-transaction-disputes-and-litigation/",
+              "snippet": ""
             },
             {
-              "title": "www.linkedin.com/posts/scott-williams-2450a44_appreciated-the-opportunity-to-join-leslie-activity-7370921890980220928-XHGL",
-              "url": "https://www.linkedin.com/posts/scott-williams-2450a44_appreciated-the-opportunity-to-join-leslie-activity-7370921890980220928-XHGL",
-              "snippet": "Last week at Kaleidoscope, 8am 's customer conference, Affirm's Head of Client Success Scott Williams joined Leslie Witt of 8am and moderator Sarah Schneider to discuss how Pay Later \u2014 8am ..."
+              "title": "PDF WORKING WITH LETTERS OF CREDIT - hklaw.com",
+              "url": "https://www.hklaw.com/-/media/files/events/2023/02/022123lettersofcredit.pdf",
+              "snippet": ""
             },
             {
-              "title": "github.com/chasekn43/regulatory-archive-2026",
-              "url": "https://github.com/chasekn43/regulatory-archive-2026",
-              "snippet": "Executive Aliases: Initial customer communications sent under first-name-only aliases (such as \"Scott from Affirm\") carried a suspected identification as Scott Williams, Vice President of Client Success, prior to in-house legal counsel appearing."
+              "title": "Understanding Secured Transaction Disputes and Litigation in Commercial ...",
+              "url": "https://clauseel.com/secured-transaction-disputes-and-litigation/",
+              "snippet": ""
             }
           ],
-          "Google": [],
+          "Google": [
+            {
+              "title": "eCFR :: 12 CFR 1022.43 -- Direct disputes.",
+              "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1022/subpart-E/section-1022.43",
+              "snippet": ""
+            },
+            {
+              "title": "Disputing a fraudulent transaction \u2014 Retail Bank",
+              "url": "https://retailbank.org/rights/disputing-fraud/",
+              "snippet": ""
+            },
+            {
+              "title": "Protecting Your Rights: Navigating Unauthorized Credit Card ...",
+              "url": "https://www.consumerlawfirm.com/protecting-your-rights-navigating-unauthorized-credit-card-transactions/",
+              "snippet": ""
+            },
+            {
+              "title": "Payment Disputes: How They Work & When They're Justified",
+              "url": "https://chargebacks911.com/disputes/",
+              "snippet": ""
+            },
+            {
+              "title": "Dispute Transaction Guide - Legal Guide | PettyLawsuit",
+              "url": "https://pettylawsuit.com/civil/dispute-transaction-guide",
+              "snippet": ""
+            },
+            {
+              "title": "Credit Card Disputes | Step-by-Step Process Guide for 2026",
+              "url": "https://chargebacks911.com/credit-card-dispute/",
+              "snippet": ""
+            },
+            {
+              "title": "Regulation Z Explained: Credit Card Dispute Rights & TILA Rules ...",
+              "url": "https://paymentsandrisk.com/docs/compliance/consumer-protection/reg-z/",
+              "snippet": ""
+            },
+            {
+              "title": "Legal remedies: Navigating Disputes under the Uniform Consumer Credit ...",
+              "url": "https://fastercapital.com/content/Legal-remedies--Navigating-Disputes-under-the-Uniform-Consumer-Credit-Code.html",
+              "snippet": ""
+            },
+            {
+              "title": "Credit Card Dispute Arbitration: Chargebacks and Resolution",
+              "url": "https://arbitration.net/credit-card-dispute-arbitration-chargebacks-resolution/",
+              "snippet": ""
+            },
+            {
+              "title": "How Banks Investigate Disputes: Step-by-Step (2026) - Chargeflow",
+              "url": "https://www.chargeflow.io/blog/how-do-banks-process-disputes",
+              "snippet": ""
+            }
+          ],
           "Bing": [],
           "Yahoo": [
             {
-              "error": "HTTP Error 500: INKApi Error"
+              "title": "FasterCapitalhttps://fastercapital.com \u203a content \u203a Legal-remediesLegal remedies: Navigating Disputes under the Uniform ...",
+              "url": "https://fastercapital.com/content/Legal-remedies--Navigating-Disputes-under-the-Uniform-Consumer-Credit-Code.html",
+              "snippet": ""
+            },
+            {
+              "title": "Quavohttps://www.quavo.com \u203a insight \u203a a-friendly-introduction-toRegulation Z Explained: Credit Dispute Rules for Financial ...",
+              "url": "https://www.quavo.com/insight/a-friendly-introduction-to-regulation-z/",
+              "snippet": ""
+            },
+            {
+              "title": "FasterCapitalhttps://fastercapital.com \u203a content \u203a Legal-remediesLegal remedies: Navigating Disputes under the Uniform ...",
+              "url": "https://fastercapital.com/content/Legal-remedies--Navigating-Disputes-under-the-Uniform-Consumer-Credit-Code-update.html",
+              "snippet": ""
+            },
+            {
+              "title": "retailbank.orghttps://retailbank.org \u203a rights \u203a disputing-fraudDisputing a fraudulent transaction \u2014 Retail Bank",
+              "url": "https://retailbank.org/rights/disputing-fraud/",
+              "snippet": ""
+            },
+            {
+              "title": "Consumer Law Firm | Francis Mailman Soumilas, P.C.https://www.consumerlawfirm.com \u203a protecting-your-rightsProtecting Your Rights: Navigating Unauthorized Credit Card ...",
+              "url": "https://www.consumerlawfirm.com/protecting-your-rights-navigating-unauthorized-credit-card-transactions/",
+              "snippet": ""
+            },
+            {
+              "title": "paymentsandrisk.comhttps://paymentsandrisk.com \u203a docs \u203a complianceRegulation Z Explained: Credit Card Dispute Rights & TILA ...",
+              "url": "https://paymentsandrisk.com/docs/compliance/consumer-protection/reg-z/",
+              "snippet": ""
+            },
+            {
+              "title": "Chargebacks911https://chargebacks911.com \u203a disputesPayment Disputes: How They Work & When They\u2019re Justified",
+              "url": "https://chargebacks911.com/disputes/",
+              "snippet": ""
+            },
+            {
+              "title": "Suggestions",
+              "url": "https://yahoo.uservoice.com/forums/193847-search",
+              "snippet": ""
+            }
+          ]
+        },
+        "target_matches": []
+      },
+      {
+        "query": "BNPL simple interest structure safer than compounding credit card trap",
+        "engines": {
+          "DuckDuckGo": [
+            {
+              "title": "BNPL vs. Credit Card: Which Is Safer for Short-Term Spending?",
+              "url": "https://onwealth.net/articles/bnpl-vs-credit-card",
+              "snippet": ""
+            },
+            {
+              "title": "Buy Now Pay Later vs Credit Card: Which Is Safer?",
+              "url": "https://thefinancetree.com/buy-now-pay-later-vs-credit-card-budget-safety/",
+              "snippet": ""
+            },
+            {
+              "title": "BNPL vs Credit Card: Differences, Costs & Credit Impact",
+              "url": "https://www.cardratings.com/financial-literacy/bnpl-vs-credit-cards.html",
+              "snippet": ""
+            },
+            {
+              "title": "BNPL vs Credit Cards: Which Is Safer for Your Wallet?",
+              "url": "https://talkindebts.com/blogs/bnpl-vs-credit-cards-which-is-safer-for-your-wallet/",
+              "snippet": ""
+            },
+            {
+              "title": "BNPL vs Credit Card: Costs, Protections, Verdict 2026",
+              "url": "https://www.fintech-zone.com/bnpl-vs-credit-cards",
+              "snippet": ""
+            },
+            {
+              "title": "BNPL vs. Credit Card: The Mistakes Costing Spenders Most",
+              "url": "https://the-credit-scout.com/buy-now-pay-later-vs-credit-card-mistakes-2026/",
+              "snippet": ""
+            },
+            {
+              "title": "BNPL Interest Rates: What You Really Pay & When You Don't",
+              "url": "https://www.miamiherald.com/banks/finances/bnpl-interest-rates/",
+              "snippet": ""
+            },
+            {
+              "title": "BNPL vs Credit Cards: True Cost Comparison My Financial 101",
+              "url": "https://myfinancial101.com/bnpl-vs-credit-card-cost-comparison/",
+              "snippet": ""
+            },
+            {
+              "title": "BNPL vs. Credit Cards: Which Is Better for Your Wallet in 2026?",
+              "url": "https://www.crediful.com/bnpl-vs-credit-cards/",
+              "snippet": ""
+            },
+            {
+              "title": "BNPL vs. Credit Cards: Which is Right for You? - Thrive Dollar",
+              "url": "https://thrivedollar.com/debt-management/credit-cards/bnpl-vs-credit-cards-which-is-right-for-you/",
+              "snippet": ""
+            }
+          ],
+          "Google": [
+            {
+              "title": "BNPL vs. Credit Card: Which Is Safer for Short-Term Spending?",
+              "url": "https://onwealth.net/articles/bnpl-vs-credit-card",
+              "snippet": ""
+            },
+            {
+              "title": "Buy Now Pay Later vs Credit Card: Which Is Safer?",
+              "url": "https://thefinancetree.com/buy-now-pay-later-vs-credit-card-budget-safety/",
+              "snippet": ""
+            },
+            {
+              "title": "BNPL vs Credit Card: Differences, Costs & Credit Impact",
+              "url": "https://www.cardratings.com/financial-literacy/bnpl-vs-credit-cards.html",
+              "snippet": ""
+            },
+            {
+              "title": "BNPL vs Credit Cards: Which Is Safer for Your Wallet?",
+              "url": "https://talkindebts.com/blogs/bnpl-vs-credit-cards-which-is-safer-for-your-wallet/",
+              "snippet": ""
+            },
+            {
+              "title": "Buy Now, Pay Later vs. Credit Card - Which Is Better in 2026?",
+              "url": "https://wallethub.com/edu/cc/buy-now-pay-later-vs-credit-cards/47314",
+              "snippet": ""
+            },
+            {
+              "title": "BNPL vs Credit Card: Costs, Protections, Verdict 2026",
+              "url": "https://www.fintech-zone.com/bnpl-vs-credit-cards",
+              "snippet": ""
+            },
+            {
+              "title": "Is BNPL Better for Consumers Than Credit Cards?",
+              "url": "https://fintechtakes.com/articles/2025-01-31/is-bnpl-better-for-consumers-than-credit-cards/",
+              "snippet": ""
+            },
+            {
+              "title": "BNPL vs. Credit Cards: Which Is Better for Your Wallet in 2026?",
+              "url": "https://www.crediful.com/bnpl-vs-credit-cards/",
+              "snippet": ""
+            },
+            {
+              "title": "BNPL vs Credit Cards: Fees & Protections | The Cards Guy",
+              "url": "https://thecardsguy.com/buy-now-pay-later-bnpl-vs-credit-cards-what-consumers-need-to-know/",
+              "snippet": ""
+            },
+            {
+              "title": "Is 'buy now, pay later' safe? New York Fed study clashes ... - Fortune",
+              "url": "https://fortune.com/2024/02/14/buy-now-pay-later-like-credit-card-or-safe/",
+              "snippet": ""
+            }
+          ],
+          "Bing": [],
+          "Yahoo": [
+            {
+              "title": "onwealth.nethttps://onwealth.net \u203a articles \u203a bnpl-vs-credit-cardBNPL vs. Credit Card: Which Is Safer for Short-Term Spending?",
+              "url": "https://onwealth.net/articles/bnpl-vs-credit-card",
+              "snippet": ""
+            },
+            {
+              "title": "CardRatingshttps://www.cardratings.com \u203a bnpl-vs-credit-cardsBNPL vs Credit Card: Differences, Costs & Credit Impact",
+              "url": "https://www.cardratings.com/financial-literacy/bnpl-vs-credit-cards.html",
+              "snippet": ""
+            },
+            {
+              "title": "talkindebts.comhttps://talkindebts.com \u203a blogs \u203a bnpl-vs-credit-cards-whichBNPL vs Credit Cards: Which Is Safer for Your Wallet?",
+              "url": "https://talkindebts.com/blogs/bnpl-vs-credit-cards-which-is-safer-for-your-wallet/",
+              "snippet": ""
+            },
+            {
+              "title": "thefinancetree.comhttps://thefinancetree.com \u203a buy-now-pay-later-vs-creditBuy Now Pay Later vs Credit Card: Which Is Safer?",
+              "url": "https://thefinancetree.com/buy-now-pay-later-vs-credit-card-budget-safety/",
+              "snippet": ""
+            },
+            {
+              "title": "the-credit-scout.comhttps://the-credit-scout.com \u203a buy-now-pay-later-vs-creditBNPL vs. Credit Card: The Mistakes Costing Spenders Most",
+              "url": "https://the-credit-scout.com/buy-now-pay-later-vs-credit-card-mistakes-2026/",
+              "snippet": ""
+            },
+            {
+              "title": "fintech-zone.comhttps://www.fintech-zone.com \u203a bnpl-vs-credit-cardsBNPL vs Credit Card: Costs, Protections, Verdict 2026",
+              "url": "https://www.fintech-zone.com/bnpl-vs-credit-cards",
+              "snippet": ""
+            },
+            {
+              "title": "mitigately.comhttps://www.mitigately.com \u203a blog \u203a buy-now-pay-later-vsBuy Now, Pay Later vs. Credit Cards: Which One Really Works ...",
+              "url": "https://www.mitigately.com/blog/buy-now-pay-later-vs-credit-cards-which-one-really-works-for-you",
+              "snippet": ""
+            },
+            {
+              "title": "Suggestions",
+              "url": "https://yahoo.uservoice.com/forums/193847-search",
+              "snippet": ""
+            }
+          ]
+        },
+        "target_matches": []
+      },
+      {
+        "query": "CFPB Complaint 260805-36566273 unapplied merchant refund ledger loop",
+        "engines": {
+          "DuckDuckGo": [
+            {
+              "title": "Submit a complaint | Consumer Financial Protection Bureau",
+              "url": "https://www.consumerfinance.gov/complaint/",
+              "snippet": ""
+            },
+            {
+              "title": "Search the Consumer Complaint Database | Consumer Financial Protection ...",
+              "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/deta",
+              "snippet": ""
+            },
+            {
+              "title": "Complaint Explorer",
+              "url": "https://complaintexplorer.consumerfinance.gov/",
+              "snippet": ""
+            },
+            {
+              "title": "CFPB Complaint Monitor",
+              "url": "http://cfpbcomplaintmonitor.org/Consumer_Complaint_History.aspx",
+              "snippet": ""
+            },
+            {
+              "title": "CFPB Consumer Complaints",
+              "url": "http://cfpbcomplaintmonitor.org/Consumer_Complaints-by-Product.aspx",
+              "snippet": ""
+            },
+            {
+              "title": "ComplaintLookup \u2014 Search Consumer Complaints by Company",
+              "url": "https://complaintlookup.com/",
+              "snippet": ""
+            },
+            {
+              "title": "CFPB - legismcp.com",
+              "url": "https://legismcp.com/docs/tools/cfpb",
+              "snippet": ""
+            },
+            {
+              "title": "Search US consumer financial complaints (CFPB data)",
+              "url": "https://financialcomplaints.org/",
+              "snippet": ""
+            },
+            {
+              "title": "Financial complaints in the US - search the CFPB database",
+              "url": "https://financialcomplaints.org/financial-complaints",
+              "snippet": ""
+            },
+            {
+              "title": "Consumer Complaints - consumerfinance.gov - GitHub Pages",
+              "url": "https://cfpb.github.io/consumerfinance.gov/consumer-complaint-database/",
+              "snippet": ""
+            }
+          ],
+          "Google": [
+            {
+              "title": "Submit a complaint | Consumer Financial Protection Bureau",
+              "url": "https://www.consumerfinance.gov/complaint/",
+              "snippet": ""
+            },
+            {
+              "title": "Search the Consumer Complaint Database | Consumer Financial Protection ...",
+              "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/deta",
+              "snippet": ""
+            },
+            {
+              "title": "CFPB Complaint Monitor",
+              "url": "http://cfpbcomplaintmonitor.org/Consumer_Complaint_History.aspx",
+              "snippet": ""
+            },
+            {
+              "title": "Complaint Explorer",
+              "url": "https://complaintexplorer.consumerfinance.gov/",
+              "snippet": ""
+            },
+            {
+              "title": "CFPB Consumer Complaints",
+              "url": "http://cfpbcomplaintmonitor.org/Consumer_Complaints-by-Product.aspx",
+              "snippet": ""
+            },
+            {
+              "title": "Search US consumer financial complaints (CFPB data)",
+              "url": "https://financialcomplaints.org/",
+              "snippet": ""
+            },
+            {
+              "title": "ComplaintLookup \u2014 Search Consumer Complaints by Company",
+              "url": "https://complaintlookup.com/",
+              "snippet": ""
+            },
+            {
+              "title": "CFPB - legismcp.com",
+              "url": "https://legismcp.com/docs/tools/cfpb",
+              "snippet": ""
+            },
+            {
+              "title": "Financial complaints in the US - search the CFPB database",
+              "url": "https://financialcomplaints.org/financial-complaints",
+              "snippet": ""
+            },
+            {
+              "title": "PDF Submit a complaint - files.consumerfinance.gov",
+              "url": "https://files.consumerfinance.gov/f/documents/cfpb_040_2025.pdf",
+              "snippet": ""
+            }
+          ],
+          "Bing": [],
+          "Yahoo": [
+            {
+              "title": "Consumer Financial Protection Bureauhttps://www.consumerfinance.gov \u203a complaintSubmit a complaint | Consumer Financial Protection Bureau",
+              "url": "https://www.consumerfinance.gov/complaint/",
+              "snippet": ""
+            },
+            {
+              "title": "Credit And Consumer Reporting Complaint Notice",
+              "url": "https://www.consumerfinance.gov/complaint/credit-and-consumer-reporting-complaint-notice/",
+              "snippet": ""
+            },
+            {
+              "title": "Log In",
+              "url": "https://portal.consumerfinance.gov/consumer/s/",
+              "snippet": ""
+            },
+            {
+              "title": "Consumer Complaint Database",
+              "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/",
+              "snippet": ""
+            },
+            {
+              "title": "The Complaint Process",
+              "url": "https://www.consumerfinance.gov/complaint/process/",
+              "snippet": ""
+            },
+            {
+              "title": "Contact Us",
+              "url": "https://www.consumerfinance.gov/about-us/contact-us/",
+              "snippet": ""
+            },
+            {
+              "title": "Press Releases",
+              "url": "https://www.consumerfinance.gov/about-us/newsroom/",
+              "snippet": ""
+            },
+            {
+              "title": "Final Rules",
+              "url": "https://www.consumerfinance.gov/rules-policy/final-rules/",
+              "snippet": ""
+            },
+            {
+              "title": "Resources for Helping Others",
+              "url": "https://www.consumerfinance.gov/consumer-tools/educator-tools/",
+              "snippet": ""
+            },
+            {
+              "title": "Credit Reports & Scores",
+              "url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+              "snippet": ""
+            },
+            {
+              "title": "Office of Minority and Women Inclusion",
+              "url": "https://www.consumerfinance.gov/about-us/omwi/",
+              "snippet": ""
+            },
+            {
+              "title": "Consumer Financial Protection Bureauhttps://www.consumerfinance.gov \u203a data-research \u203a consumerSearch the Consumer Complaint Database | Consumer Financial ...",
+              "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/deta",
+              "snippet": ""
+            },
+            {
+              "title": "cfpbcomplaintmonitor.orghttp://cfpbcomplaintmonitor.org \u203a Consumer_Complaint_HistoryCFPB Complaint Monitor",
+              "url": "http://cfpbcomplaintmonitor.org/Consumer_Complaint_History.aspx",
+              "snippet": ""
+            },
+            {
+              "title": "cfpbcomplaintmonitor.orghttp://cfpbcomplaintmonitor.org \u203a Consumer_Complaints-by-ProductCFPB Consumer Complaints",
+              "url": "http://cfpbcomplaintmonitor.org/Consumer_Complaints-by-Product.aspx",
+              "snippet": ""
+            },
+            {
+              "title": "complaintexplorer.consumerfinance.govhttps://complaintexplorer.consumerfinance.govComplaint Explorer",
+              "url": "https://complaintexplorer.consumerfinance.gov/",
+              "snippet": ""
+            },
+            {
+              "title": "complaintexplorer.consumerfinance.govhttps://complaintexplorer.consumerfinance.gov \u203a loginComplaint Explorer",
+              "url": "https://complaintexplorer.consumerfinance.gov/login/",
+              "snippet": ""
+            },
+            {
+              "title": "financialcomplaints.orghttps://financialcomplaints.orgSearch US consumer financial complaints (CFPB data)",
+              "url": "https://financialcomplaints.org/",
+              "snippet": ""
+            },
+            {
+              "title": "Search US consumer financial complaints (CFPB data)",
+              "url": "https://financialcomplaints.org/",
+              "snippet": ""
+            },
+            {
+              "title": "Search US consumer financial complaints (CFPB data)",
+              "url": "https://financialcomplaints.org/",
+              "snippet": ""
+            },
+            {
+              "title": "Search the Consumer Complaint Database | Consumer Financial Protec\u2026",
+              "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/deta",
+              "snippet": ""
+            },
+            {
+              "title": "Search US consumer financial complaints (CFPB data)",
+              "url": "https://financialcomplaints.org/",
+              "snippet": ""
+            },
+            {
+              "title": "Suggestions",
+              "url": "https://yahoo.uservoice.com/forums/193847-search",
+              "snippet": ""
+            }
+          ]
+        },
+        "target_matches": []
+      },
+      {
+        "query": "Buy now pay later hidden fees and 36 percent APR",
+        "engines": {
+          "DuckDuckGo": [
+            {
+              "title": "Affirm Buy Now, Pay Later: 2026 Review - NerdWallet",
+              "url": "https://www.nerdwallet.com/personal-loans/reviews/affirm-buy-now-pay-later",
+              "snippet": ""
+            },
+            {
+              "title": "Best Buy Now, Pay Later Apps of 2026 Compared Side by Side",
+              "url": "https://www.moneylion.com/learn/personal-loans/buy-now-pay-later/best-buy-now-pay-later-apps",
+              "snippet": ""
+            },
+            {
+              "title": "Buy Now Pay Later: The Hidden Cost of Afterpay and Klarna (2026)",
+              "url": "https://pocketclear.app/blog/buy-now-pay-later-hidden-cost.html",
+              "snippet": ""
+            },
+            {
+              "title": "What does Buy Now Pay Later",
+              "url": "https://bnplcalculator.com/",
+              "snippet": ""
+            },
+            {
+              "title": "Buy Now Pay Later (BNPL): How It Works and the Hidden Risks (2026)",
+              "url": "https://wealthvieu.com/personal-finance/budgeting/buy-now-pay-later-guide/",
+              "snippet": ""
+            },
+            {
+              "title": "Best Buy Now, Pay Later Apps of August 2026 - CNBC",
+              "url": "https://www.cnbc.com/select/best-buy-now-pay-later-apps/",
+              "snippet": ""
+            },
+            {
+              "title": "Buy Now Pay Later Cost vs Saving Up - thefinancetree.com",
+              "url": "https://thefinancetree.com/buy-now-pay-later-cost-vs-saving-up/",
+              "snippet": ""
+            },
+            {
+              "title": "Best Buy Now, Pay Later Sites & Apps - LendingTree",
+              "url": "https://www.lendingtree.com/personal/buy-now-pay-later/",
+              "snippet": ""
+            },
+            {
+              "title": "The Hidden Costs of BNPL: What Buy Now Pay Later Actually Costs You in ...",
+              "url": "https://www.frizzbee.co/blog/hidden-costs-of-bnpl",
+              "snippet": ""
+            },
+            {
+              "title": "How Buy Now Pay Later Cards Work: Costs & Hidden Fees",
+              "url": "https://www.financeoffer.com/credit-cards/guide/buy-now-pay-later-cards",
+              "snippet": ""
+            }
+          ],
+          "Google": [
+            {
+              "title": "Affirm Buy Now, Pay Later: 2026 Review - NerdWallet",
+              "url": "https://www.nerdwallet.com/personal-loans/reviews/affirm-buy-now-pay-later",
+              "snippet": ""
+            },
+            {
+              "title": "Best Buy Now, Pay Later Apps of 2026 Compared Side by Side",
+              "url": "https://www.moneylion.com/learn/personal-loans/buy-now-pay-later/best-buy-now-pay-later-apps",
+              "snippet": ""
+            },
+            {
+              "title": "Buy Now Pay Later: The Hidden Cost of Afterpay and Klarna (2026)",
+              "url": "https://pocketclear.app/blog/buy-now-pay-later-hidden-cost.html",
+              "snippet": ""
+            },
+            {
+              "title": "Best Buy Now, Pay Later Sites & Apps - LendingTree",
+              "url": "https://www.lendingtree.com/personal/buy-now-pay-later/",
+              "snippet": ""
+            },
+            {
+              "title": "The Hidden Costs of BNPL: What Buy Now Pay Later Actually Costs You in ...",
+              "url": "https://www.frizzbee.co/blog/hidden-costs-of-bnpl",
+              "snippet": ""
+            },
+            {
+              "title": "Best Buy Now, Pay Later Apps of August 2026 - CNBC",
+              "url": "https://www.cnbc.com/select/best-buy-now-pay-later-apps/",
+              "snippet": ""
+            },
+            {
+              "title": "Buy Now Pay Later Cost vs Saving Up - thefinancetree.com",
+              "url": "https://thefinancetree.com/buy-now-pay-later-cost-vs-saving-up/",
+              "snippet": ""
+            },
+            {
+              "title": "Buy Now Pay Later (BNPL): How It Works and the Hidden Risks (2026)",
+              "url": "https://wealthvieu.com/personal-finance/budgeting/buy-now-pay-later-guide/",
+              "snippet": ""
+            },
+            {
+              "title": "How Buy Now Pay Later Cards Work: Costs & Hidden Fees",
+              "url": "https://www.financeoffer.com/credit-cards/guide/buy-now-pay-later-cards",
+              "snippet": ""
+            },
+            {
+              "title": "The Top Buy Now, Pay Later Apps for 2026 - NerdWallet",
+              "url": "https://www.nerdwallet.com/personal-loans/learn/buy-now-pay-later-apps",
+              "snippet": ""
+            }
+          ],
+          "Bing": [],
+          "Yahoo": [
+            {
+              "title": "MoneyLionhttps://www.moneylion.com \u203a best-buy-now-pay-later-appsBest Buy Now, Pay Later Apps of 2026 Compared Side by Side",
+              "url": "https://www.moneylion.com/learn/personal-loans/buy-now-pay-later/best-buy-now-pay-later-apps",
+              "snippet": ""
+            },
+            {
+              "title": "NerdWallethttps://www.nerdwallet.com \u203a affirm-buy-now-pay-laterAffirm Buy Now, Pay Later: 2026 Review - NerdWallet",
+              "url": "https://www.nerdwallet.com/personal-loans/reviews/affirm-buy-now-pay-later",
+              "snippet": ""
+            },
+            {
+              "title": "bnplcalculator.comhttps://bnplcalculator.comWhat does Buy Now Pay Later",
+              "url": "https://bnplcalculator.com/",
+              "snippet": ""
+            },
+            {
+              "title": "My Exchange Storehttps://myexchangestore.com \u203a providers \u203a affirmAffirm Review 2026 | Buy Now Pay Later | 0% APR at 300,000 ...",
+              "url": "https://myexchangestore.com/providers/affirm",
+              "snippet": ""
+            },
+            {
+              "title": "affirmbnpl.comhttps://affirmbnpl.comAffirm BNPL \u2014 Buy Now, Pay Later with 0% APR at 419K+ Stores",
+              "url": "https://affirmbnpl.com/",
+              "snippet": ""
+            },
+            {
+              "title": "wealthvieu.comhttps://wealthvieu.com \u203a budgeting \u203a buy-now-pay-later-guideBuy Now Pay Later (BNPL): How It Works and the Hidden Risks ...",
+              "url": "https://wealthvieu.com/personal-finance/budgeting/buy-now-pay-later-guide/",
+              "snippet": ""
+            },
+            {
+              "title": "pocketclear.apphttps://pocketclear.app \u203a blog \u203a buy-now-pay-later-hiddenBuy Now Pay Later: The Hidden Cost of Afterpay and Klarna ...",
+              "url": "https://pocketclear.app/blog/buy-now-pay-later-hidden-cost.html",
+              "snippet": ""
+            },
+            {
+              "title": "The Top Buy Now, Pay Later Apps for 2026 - NerdWallet",
+              "url": "https://www.nerdwallet.com/personal-loans/learn/buy-now-pay-later-apps",
+              "snippet": ""
+            },
+            {
+              "title": "The Top Buy Now, Pay Later Apps for 2026 - NerdWallet",
+              "url": "https://www.nerdwallet.com/personal-loans/learn/buy-now-pay-later-apps",
+              "snippet": ""
+            },
+            {
+              "title": "The Top Buy Now, Pay Later Apps for 2026 - NerdWallet",
+              "url": "https://www.nerdwallet.com/personal-loans/learn/buy-now-pay-later-apps",
+              "snippet": ""
+            },
+            {
+              "title": "The Top Buy Now, Pay Later Apps for 2026 - NerdWallet",
+              "url": "https://www.nerdwallet.com/personal-loans/learn/buy-now-pay-later-apps",
+              "snippet": ""
+            },
+            {
+              "title": "Suggestions",
+              "url": "https://yahoo.uservoice.com/forums/193847-search",
+              "snippet": ""
+            }
+          ]
+        },
+        "target_matches": []
+      },
+      {
+        "query": "Fair Credit Reporting Act dispute notices fintech installment loans",
+        "engines": {
+          "DuckDuckGo": [
+            {
+              "title": "Fintech Lending & FCRA Compliance: BNPL Errors, Adverse Action ...",
+              "url": "https://consumerattorneys.com/article/fintech-lending-fcra-compliance",
+              "snippet": ""
+            },
+            {
+              "title": "\u00a7 1022.43 Direct disputes. - Consumer Financial Protection Bureau",
+              "url": "https://www.consumerfinance.gov/rules-policy/regulations/1022/43/",
+              "snippet": ""
+            },
+            {
+              "title": "Submit a complaint | Consumer Financial Protection Bureau",
+              "url": "https://www.consumerfinance.gov/complaint/",
+              "snippet": ""
+            },
+            {
+              "title": "PDF Fair Credit Reporting Act - Federal Trade Commission",
+              "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/fcra-march-2026.pdf",
+              "snippet": ""
+            },
+            {
+              "title": "Fair Credit Reporting Act - Federal Trade Commission",
+              "url": "https://www.ftc.gov/legal-library/browse/statutes/fair-credit-reporting-act",
+              "snippet": ""
+            },
+            {
+              "title": "How to Dispute Credit Reporting Errors Under the Fair Credit Reporting ...",
+              "url": "https://www.harborstonelaw.com/posts/how-to-dispute-credit-reporting-errors-under-the-fair-credit-reporting-act-fcra",
+              "snippet": ""
+            },
+            {
+              "title": "Disputing Errors on Your Credit Reports | Consumer Advice",
+              "url": "https://consumer.ftc.gov/articles/disputing-errors-your-credit-reports",
+              "snippet": ""
+            },
+            {
+              "title": "PDF Fair Credit Reporting Act - Federal Trade Commission",
+              "url": "https://www.consumer.ftc.gov/sites/default/files/articles/pdf/pdf-0111-fair-credit-reporting-act.pdf",
+              "snippet": ""
+            },
+            {
+              "title": "15 U.S. Code \u00a7 1681i - Procedure in case of disputed accuracy",
+              "url": "https://www.law.cornell.edu/uscode/text/15/1681i",
+              "snippet": ""
+            },
+            {
+              "title": "Credit Report Errors Lawyers | Fair Credit Reporting Act Attorneys",
+              "url": "https://www.consumerlawfirm.com/consumer-rights-fcra-fair-credit-reporting-act",
+              "snippet": ""
+            }
+          ],
+          "Google": [
+            {
+              "title": "Fintech Lending & FCRA Compliance: BNPL Errors, Adverse Action ...",
+              "url": "https://consumerattorneys.com/article/fintech-lending-fcra-compliance",
+              "snippet": ""
+            },
+            {
+              "title": "\u00a7 1022.43 Direct disputes. - Consumer Financial Protection Bureau",
+              "url": "https://www.consumerfinance.gov/rules-policy/regulations/1022/43/",
+              "snippet": ""
+            },
+            {
+              "title": "Submit a complaint | Consumer Financial Protection Bureau",
+              "url": "https://www.consumerfinance.gov/complaint/",
+              "snippet": ""
+            },
+            {
+              "title": "PDF Fair Credit Reporting Act - Federal Trade Commission",
+              "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/fcra-march-2026.pdf",
+              "snippet": ""
+            },
+            {
+              "title": "Fair Credit Reporting Act - Federal Trade Commission",
+              "url": "https://www.ftc.gov/legal-library/browse/statutes/fair-credit-reporting-act",
+              "snippet": ""
+            },
+            {
+              "title": "How to Dispute Credit Reporting Errors Under the Fair Credit Reporting ...",
+              "url": "https://www.harborstonelaw.com/posts/how-to-dispute-credit-reporting-errors-under-the-fair-credit-reporting-act-fcra",
+              "snippet": ""
+            },
+            {
+              "title": "Disputing Errors on Your Credit Reports | Consumer Advice",
+              "url": "https://consumer.ftc.gov/articles/disputing-errors-your-credit-reports",
+              "snippet": ""
+            },
+            {
+              "title": "PDF Fair Credit Reporting Act - Federal Trade Commission",
+              "url": "https://www.consumer.ftc.gov/sites/default/files/articles/pdf/pdf-0111-fair-credit-reporting-act.pdf",
+              "snippet": ""
+            },
+            {
+              "title": "15 U.S. Code \u00a7 1681i - Procedure in case of disputed accuracy",
+              "url": "https://www.law.cornell.edu/uscode/text/15/1681i",
+              "snippet": ""
+            },
+            {
+              "title": "Credit Report Errors Lawyers | Fair Credit Reporting Act Attorneys",
+              "url": "https://www.consumerlawfirm.com/consumer-rights-fcra-fair-credit-reporting-act",
+              "snippet": ""
+            }
+          ],
+          "Bing": [],
+          "Yahoo": [
+            {
+              "title": "Consumer Attorneyshttps://consumerattorneys.com \u203a article \u203a fintech-lendingFintech Lending & FCRA Compliance: BNPL Errors, Adverse ...",
+              "url": "https://consumerattorneys.com/article/fintech-lending-fcra-compliance",
+              "snippet": ""
+            },
+            {
+              "title": "Federal Trade Commissionhttps://www.ftc.gov \u203a system \u203a filesFair Credit Reporting Act - Federal Trade Commission",
+              "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/fcra-march-2026.pdf",
+              "snippet": ""
+            },
+            {
+              "title": "Consumer Financial Protection Bureauhttps://www.consumerfinance.gov \u203a rules-policy \u203a regulations\u00a7 1022.43 Direct disputes. - Consumer Financial Protection ...",
+              "url": "https://www.consumerfinance.gov/rules-policy/regulations/1022/43/",
+              "snippet": ""
+            },
+            {
+              "title": "Consumer Financial Protection Bureauhttps://www.consumerfinance.gov \u203a complaintSubmit a complaint | Consumer Financial Protection Bureau",
+              "url": "https://www.consumerfinance.gov/complaint/",
+              "snippet": ""
+            },
+            {
+              "title": "kinslow-regulatory-archive.orghttps://kinslow-regulatory-archive.orgCharles W. Kinslow IV | Fintech Regulatory Archive",
+              "url": "https://kinslow-regulatory-archive.org/",
+              "snippet": ""
+            },
+            {
+              "title": "Federal Trade Commissionhttps://www.ftc.gov \u203a statutes \u203a fair-credit-reporting-actFair Credit Reporting Act - Federal Trade Commission",
+              "url": "https://www.ftc.gov/legal-library/browse/statutes/fair-credit-reporting-act",
+              "snippet": ""
+            },
+            {
+              "title": "harborstonelaw.comhttps://www.harborstonelaw.com \u203a posts \u203a how-to-disputeHow to Dispute Credit Reporting Errors Under the Fair Credit ...",
+              "url": "https://www.harborstonelaw.com/posts/how-to-dispute-credit-reporting-errors-under-the-fair-credit-reporting-act-fcra",
+              "snippet": ""
+            },
+            {
+              "title": "Suggestions",
+              "url": "https://yahoo.uservoice.com/forums/193847-search",
+              "snippet": ""
             }
           ]
         },
         "target_matches": [
           {
-            "engine": "DuckDuckGo",
-            "indicator": "chasekn43",
-            "title": "github.com/chasekn43/regulatory-archive-2026",
-            "url": "https://github.com/chasekn43/regulatory-archive-2026"
+            "engine": "Yahoo",
+            "indicator": "kinslow-regulatory-archive.org",
+            "title": "kinslow-regulatory-archive.orghttps://kinslow-regulatory-archive.orgCharles W. Kinslow IV | Fintech Regulatory Archive",
+            "url": "https://kinslow-regulatory-archive.org/"
           }
         ]
-      },
-      {
-        "query": "Chase Kinslow Andy Chen Affirm cease and desist",
-        "engines": {
-          "DuckDuckGo": [
-            {
-              "title": "github.com/chasekn43/regulatory-archive-2026",
-              "url": "https://github.com/chasekn43/regulatory-archive-2026",
-              "snippet": "July 17, 2026 (12:11 PM CDT): Affirm Managing Counsel Andy Y. Chen issued a formal Cease and Desist prohibiting the consumer from contacting any Affirm personnel (\"strictly prohibited and will not be tolerated\")."
-            },
-            {
-              "title": "www.linkedin.com/posts/chasekn_pe270138-activity-7486286601711480833-WGdw",
-              "url": "https://www.linkedin.com/posts/chasekn_pe270138-activity-7486286601711480833-WGdw",
-              "snippet": "While the post-purchase process led to a fascinating compliance paradox\u2014where Managing Counsel Andy Y. Chen issued a formal Cease & Desist ordering me to communicate exclusively with him, while ..."
-            },
-            {
-              "title": "courtcasefinder.com",
-              "url": "https://courtcasefinder.com/",
-              "snippet": "Find Anyone's Court Case Report Online. Process Takes Only A Few Seconds! Free Case Search - View Court Records for Criminal, Civil, & Traffic Cases."
-            },
-            {
-              "title": "pcl.uscourts.gov/pcl/pages/search/findCase.xhtml",
-              "url": "https://pcl.uscourts.gov/pcl/pages/search/findCase.xhtml",
-              "snippet": "PACER systems will undergo maintenance on Sunday, August 09, 2026 , from 6:55 a.m. to 7:00 p.m. ET. As a result, certain portions of this site may be temporarily degraded during the maintenance window."
-            },
-            {
-              "title": "www.uscourts.gov/court-records/find-a-case-pacer",
-              "url": "https://www.uscourts.gov/court-records/find-a-case-pacer",
-              "snippet": "Locate a federal court case by using the Public Access to Court Electronic Records (PACER) or by visiting the Clerk's Office of the courthouse where the case was filed."
-            },
-            {
-              "title": "uslawexplained.com/cease_and_desist",
-              "url": "https://uslawexplained.com/cease_and_desist",
-              "snippet": "Protect yourself from legal threats. Learn what a cease and desist letter means, your rights, how to respond properly, and when to seek an attorney fast."
-            },
-            {
-              "title": "github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/README.md",
-              "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/README.md",
-              "snippet": "Contribute to chasekn43/Kinslow-Fintech-Dispute-Case-Study- development by creating an account on GitHub."
-            },
-            {
-              "title": "www.cnbc.com/2026/01/27/applovin-short-seller-capitalwatch-report.html",
-              "url": "https://www.cnbc.com/2026/01/27/applovin-short-seller-capitalwatch-report.html",
-              "snippet": "AppLovin's cease and desist letter to CapitalWatch called the short-seller's accusations of money laundering defamatory and baseless."
-            },
-            {
-              "title": "www.linkedin.com/in/andyychen",
-              "url": "https://www.linkedin.com/in/andyychen",
-              "snippet": "Managing Counsel, Litigation at Affirm \u00b7 Senior in-house litigation attorney at publicly-traded fintech company with experience in product counseling."
-            },
-            {
-              "title": "aaronhall.com/beat-your-false-cease-and-desist-letters/",
-              "url": "https://aaronhall.com/beat-your-false-cease-and-desist-letters/",
-              "snippet": "A cease and desist letter is a demand, not a court order. Learn how to test the claims, answer them in writing, and decide when to push back."
-            }
-          ],
-          "Google": [],
-          "Bing": [],
-          "Yahoo": [
-            {
-              "error": "HTTP Error 500: INKApi Error"
-            }
-          ]
-        },
-        "target_matches": [
-          {
-            "engine": "DuckDuckGo",
-            "indicator": "chasekn43",
-            "title": "github.com/chasekn43/regulatory-archive-2026",
-            "url": "https://github.com/chasekn43/regulatory-archive-2026"
-          },
-          {
-            "engine": "DuckDuckGo",
-            "indicator": "chasekn43",
-            "title": "github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/README.md",
-            "url": "https://github.com/chasekn43/Kinslow-Fintech-Dispute-Case-Study-/blob/main/README.md"
-          }
-        ]
-      },
-      {
-        "query": "Chase Kinslow Monroe Police Department incident report 26-29572",
-        "engines": {
-          "DuckDuckGo": [
-            {
-              "title": "reviewpublicrecords.com",
-              "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fduckduckgo.com%2Fy.js%3Fad_domain%3Dreviewpublicrecords.com%26ad_provider%3Dbingv7aa%26ad_type%3Dtxad%26click_metadata%3DuYVDU6TdQBz4UBRoCCc%252DsADJ4X9n2fUfc4fzq0hGu3RS6whObJjdBhwdZXHol4Ad%252DJ9QmQ5a6duRFEMPr1tcimi7yBgOi6gQ437PzAhtcC7cCzUhUBGayCepMwMZl8DHGXxTAqcdb%252Dgt4iKBJNwXIUz4DR1Rychm%252DENJqk4FvFA.fNIKOV2QT9bI7iMIln68ag%26rut%3D98686340cd7eb8cc8c390753a673d9b68d2529066331c44a5e44d5ee0ec27b36%26u3%3Dhttps%253A%252F%252Fwww.bing.com%252Faclick%253Fld%253De88V2oz7M4qZ9jAjqCGFJmeDVUCUzaulzbV85fxk7XvKAfm9DLumkyTnoMoTia4m%252DiD1VXwTM5WdTTIzrt9mAZJwJXl66Q7cNUnK7eJYY3avXv7MIUMHE5AgkKmEaYywtXraWGk7167vfGSF3SD5X3dHiqM_OmFCRAKUspTFPaczs%252DtOeBjw1zcoDnqDPihN_6YVVyOaaE%252DInPf213fgbnI%252DoFZT8%2526u%253DaHR0cHMlM2ElMmYlMmZ3d3cucmV2aWV3cHVibGljcmVjb3Jkcy5jb20lMmZyZWNvcmRzJTJmcG9saWNlLXJlY29yZHMlM2ZzdWJ0aGVtZSUzZHBvbGljZSUyNnMxJTNkMzk1Njk3MjQ5JTI2czIlM2QxMzMxMGRlYWQ2YTMxMzE2YTc1OTY3OTBkYzI2YzMyYSUyNnM0JTNkMTE1Nzc4NzcwNjY1NzI4MyUyNnM1JTNka3dkLTcyMzYyNTE0MTQ3MTc0JTNhbG9jLTE5MCUyNmt3JTNkaW5jaWRlbnQlMjUyMHJlcG9ydHMlMjZtc2Nsa2lkJTNkMTMzMTBkZWFkNmEzMTMxNmE3NTk2NzkwZGMyNmMzMmE%2526rlid%253D13310dead6a31316a7596790dc26c32a%26vqd%3D4%2D28202293996268078503382152956337876601%26iurl%3D%257B1%257DIG%253D6840F37E13674844BF787D5D6CFDE632%2526CID%253D2A79E1B5586C6EE02D11F60459F86FF8%2526ID%253DDevEx%252C5037.1&rut=4921cfa95c636a56317ae3252357f3edac0a32d27233589b433ce4e52b4daf73",
-              "snippet": "Criminal & traffic records lookup. Records updated daily nationwide. See anyone's police record online. Misdemeanors, felonies, arrests & more."
-            },
-            {
-              "title": "monroe.ecrash.interplat.com/SearchReports.aspx",
-              "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fmonroe.ecrash.interplat.com%2FSearchReports.aspx&rut=fcaf49b1d2f70ef94dcbb155a36e143f1d77942f377270b4fac752ae9a7c53a9",
-              "snippet": "Welcome to Monroe Police Department's Crash Report Database Search Criteria"
-            },
-            {
-              "title": "www.monroeohio.org/386/Reports",
-              "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.monroeohio.org%2F386%2FReports&rut=ed925e7ef1e5c6b047c826bd9952dc22ea22d9a4de09456d00f79ed828181054",
-              "snippet": "Police accident reports written by the Monroe Police Department are available online. Link to page"
-            },
-            {
-              "title": "recordsfinder.com/police/ct/monroe/",
-              "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Frecordsfinder.com%2Fpolice%2Fct%2Fmonroe%2F&rut=00396641b32ebdeb43f25dab56a05600e211ef400b3d579b822f04980e94a208",
-              "snippet": "Search Monroe, Connecticut police records, arrest records, and incident reports. Find department contact details, how to request reports, and look up records online."
-            },
-            {
-              "title": "trafficincidents.flhsmv.gov/SmartWebClient/CadView.aspx",
-              "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Ftrafficincidents.flhsmv.gov%2FSmartWebClient%2FCadView.aspx&rut=eb96ee2d60408ba96f697f5943d905fd7023d877b33139c693d7b0625b62bd8c",
-              "snippet": "Access live traffic crash and road condition reports from the Florida Highway Patrol."
-            },
-            {
-              "title": "github.com/chasekn43/regulatory-archive-2026",
-              "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fchasekn43%2Fregulatory%2Darchive%2D2026&rut=037181fcce7d2cf55a2bc11746bb97603cb445ab6d54b79e55fbcf7f084ec75a",
-              "snippet": "July 9, 2026: Official Identity Theft Incident Report filed with the Monroe Police Department (Case #26-29572) following Affirm's 86-minute automated denial. In-App Web Affidavit: FTC Fraud Web Affidavit completed and submitted directly through Affirm's in-app portal alongside police report documentation."
-            },
-            {
-              "title": "www.flhsmv.gov/florida-highway-patrol/traffic-incidents/",
-              "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.flhsmv.gov%2Fflorida%2Dhighway%2Dpatrol%2Ftraffic%2Dincidents%2F&rut=d1eb8f3b4016cc6eec5091954de068e8fcb3f14618932210450666c9d81853db",
-              "snippet": "Thank you for your recent visit to the Florida Highway Patrol's Live Traffic Crash and Road Condition Report. Reports are updated every five minutes. Incidents located within city limits also may not show on the map since it is not common practice for FHP to work incidents inside city limits."
-            },
-            {
-              "title": "courtcasefinder.com",
-              "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fcourtcasefinder.com%2F&rut=e82149aee4b81d4d12ba0397dd15751c2f9ebeae57e8aaa4cc3e900863fbbcab",
-              "snippet": "Police Records Police records include information about crimes and arrests, police reports, active and bench warrants, criminal investigations, registered sex offenders, and other law enforcement activity from city/town, county, state, and federal police departments, & sheriff's offices."
-            },
-            {
-              "title": "cr.monroe-clerk.com",
-              "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fcr.monroe%2Dclerk.com%2F&rut=aa9b01c8258e5f35125e7528728e4a2ca762e42e4f5434e8d43c0216e095b51d",
-              "snippet": "Clerk Online Services allows users to search court records using various criteria. To get started, select a case type using the links below or click Search All... if you are unsure of the case type."
-            },
-            {
-              "title": "www.monroect.gov/p/monroe-police-department",
-              "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.monroect.gov%2Fp%2Fmonroe%2Dpolice%2Ddepartment&rut=355c930bba87b7b7e7600df5dcb8f80ee0b6eb2c85a7dc82bfb86d0fcab855f1",
-              "snippet": "The Monroe Police Department provides a safe and orderly environment in the town through professional services, dedication, and partnership with the community to enhance the quality of life while maintaining the highest moral and ethical standards."
-            },
-            {
-              "title": "monroewa.gov/296/Blotter-News",
-              "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fmonroewa.gov%2F296%2FBlotter%2DNews&rut=733d7b19755cb7b0b9d87dca3331bbd9a3e429df13487db6b043cf6dfbc6ab8b",
-              "snippet": "Monroe Police Department Blotter 7-8-26 through 7-14-26 (PDF) Monroe Police Department Blotter 7-1-26 through 7-7-26 (PDF) Disclaimer Monroe Police officers make any number of contacts and respond to numerous calls for service. The information you see in the blotter only represents those contacts that generate a report."
-            }
-          ],
-          "Google": [],
-          "Bing": [],
-          "Yahoo": [
-            {
-              "error": "HTTP Error 500: INKApi Error"
-            }
-          ]
-        },
-        "target_matches": [
-          {
-            "engine": "DuckDuckGo",
-            "indicator": "chasekn43",
-            "title": "github.com/chasekn43/regulatory-archive-2026",
-            "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fchasekn43%2Fregulatory%2Darchive%2D2026&rut=037181fcce7d2cf55a2bc11746bb97603cb445ab6d54b79e55fbcf7f084ec75a"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "timestamp": "2026-08-10T12:29:46.625047",
-    "pass_number": 2,
-    "queries_run": [
-      {
-        "query": "Chase Kinslow Scott Williams Affirm Vice President Client Success",
-        "engines": {
-          "DuckDuckGo": [],
-          "Google": [],
-          "Bing": [],
-          "Yahoo": [
-            {
-              "error": "HTTP Error 500: INKApi Error"
-            }
-          ]
-        },
-        "target_matches": []
-      },
-      {
-        "query": "Chase Kinslow Affirm Morgan Lewis Bockius lawsuit",
-        "engines": {
-          "DuckDuckGo": [
-            {
-              "title": "github.com/chasekn43/regulatory-archive-2026/blob/main/README.md",
-              "url": "https://github.com/chasekn43/regulatory-archive-2026/blob/main/README.md",
-              "snippet": "Overview & Case History This repository documents the public regulatory record, legal correspondence, and operational breakdown surrounding CFPB Complaint #260717-35668593 involving Affirm, Inc. and its outside counsel Morgan Lewis & Bockius LLP."
-            },
-            {
-              "title": "github.com/chasekn43/regulatory-archive-2026",
-              "url": "https://github.com/chasekn43/regulatory-archive-2026",
-              "snippet": "Overview & Case History This repository documents the public regulatory record, legal correspondence, and operational breakdown surrounding CFPB Complaint #260717-35668593 involving Affirm, Inc. and its outside counsel Morgan Lewis & Bockius LLP."
-            },
-            {
-              "title": "pcl.uscourts.gov/pcl/pages/search/results/cases.jsf",
-              "url": "https://pcl.uscourts.gov/pcl/pages/search/results/cases.jsf",
-              "snippet": "The PACER Case Locator (PCL) is a national index for district, bankruptcy, and appellate courts. The PCL serves as a search tool for PACER. You may conduct nationwide searches to determine whether or not a party is involved in federal litigation. Each night, subsets of data are collected from the courts and transferred to the PCL. The PACER Case Locator (PCL) is a national index for district ..."
-            },
-            {
-              "title": "lawfold.com/affirm-lawsuit/",
-              "url": "https://lawfold.com/affirm-lawsuit/",
-              "snippet": "The Affirm lawsuit covers a data breach, securities fraud, and BNPL deception. See who qualifies, payout amounts, and 2026 case status."
-            },
-            {
-              "title": "trellis.law/case/17031/2026-ch-03540/jpmorgan-chase-bank-national-association-vs-alice-kinslow",
-              "url": "https://trellis.law/case/17031/2026-ch-03540/jpmorgan-chase-bank-national-association-vs-alice-kinslow",
-              "snippet": "Overview in the case of Jpmorgan Chase Bank, National Association Vs Alice Kinslow number 2026-CH-03540 in Cook County, IL."
-            },
-            {
-              "title": "www.sec.gov/litigations/sec-action-look-up",
-              "url": "https://www.sec.gov/litigations/sec-action-look-up",
-              "snippet": "This search feature allows you to look up information about individuals who have been named as defendants in SEC federal court actions or respondents in SEC administrative proceedings. Your search results will only include individuals charged in SEC actions filed between October 1, 1995 and January 31, 2025. This feature will be updated periodically to add individuals from newly-filed actions ..."
-            },
-            {
-              "title": "www.consumerfinance.gov/enforcement/actions/",
-              "url": "https://www.consumerfinance.gov/enforcement/actions/",
-              "snippet": "Browse court documents and other related materials to enforcement actions taken by the Bureau against entities or persons we believe have violated the law."
-            },
-            {
-              "title": "allaboutlawyer.com/affirm-class-action-lawsuit-december-2025-settlement-update-can-you-claim-money/",
-              "url": "https://allaboutlawyer.com/affirm-class-action-lawsuit-december-2025-settlement-update-can-you-claim-money/",
-              "snippet": "Affirm Holdings Inc. faces multiple class action lawsuits, with a $3.78 million data breach settlement receiving final court approval on December 15, 2025."
-            },
-            {
-              "title": "www.courtlistener.com",
-              "url": "https://www.courtlistener.com/",
-              "snippet": "Search millions of legal decisions by case name, topic, or citation. 472 Jurisdictions. Sponsored by the Non-Profit Free Law Project."
-            },
-            {
-              "title": "www.govinfo.gov/content/pkg/USCOURTS-caed-2_14-cv-02662/pdf/USCOURTS-caed-2_14-cv-02662-6.pdf",
-              "url": "https://www.govinfo.gov/content/pkg/USCOURTS-caed-2_14-cv-02662/pdf/USCOURTS-caed-2_14-cv-02662-6.pdf",
-              "snippet": "MORGAN, LEWIS & BOCKIUS LLP Joseph Duffy, Bar No. 241854 jduffy@morganlewis.com Joseph Bias, Bar No. 257127 joseph.bias@morganlewis.com 300 South Grand Avenue Twenty-Second Floor Los Angeles, CA 90071-3132 Tel: +1.213.612.2500 Fax: +1.213.612.2501 Attorneys for Defendant JPMorgan Chase Bank, N.A."
-            }
-          ],
-          "Google": [],
-          "Bing": [],
-          "Yahoo": [
-            {
-              "error": "HTTP Error 500: INKApi Error"
-            }
-          ]
-        },
-        "target_matches": [
-          {
-            "engine": "DuckDuckGo",
-            "indicator": "chasekn43",
-            "title": "github.com/chasekn43/regulatory-archive-2026/blob/main/README.md",
-            "url": "https://github.com/chasekn43/regulatory-archive-2026/blob/main/README.md"
-          },
-          {
-            "engine": "DuckDuckGo",
-            "indicator": "chasekn43",
-            "title": "github.com/chasekn43/regulatory-archive-2026",
-            "url": "https://github.com/chasekn43/regulatory-archive-2026"
-          }
-        ]
-      },
-      {
-        "query": "Chase Kinslow chasekn43 github",
-        "engines": {
-          "DuckDuckGo": [],
-          "Google": [],
-          "Bing": [],
-          "Yahoo": [
-            {
-              "error": "HTTP Error 500: INKApi Error"
-            }
-          ]
-        },
-        "target_matches": []
-      },
-      {
-        "query": "Chase Kinslow Louisiana AG Liz Murrill dispute submission",
-        "engines": {
-          "DuckDuckGo": [],
-          "Google": [],
-          "Bing": [],
-          "Yahoo": [
-            {
-              "error": "HTTP Error 500: INKApi Error"
-            }
-          ]
-        },
-        "target_matches": []
-      },
-      {
-        "query": "Chase Kinslow Monroe Police Department incident report 26-29572",
-        "engines": {
-          "DuckDuckGo": [],
-          "Google": [],
-          "Bing": [],
-          "Yahoo": [
-            {
-              "error": "HTTP Error 500: INKApi Error"
-            }
-          ]
-        },
-        "target_matches": []
-      }
-    ]
-  },
-  {
-    "timestamp": "2026-08-10T12:30:06.161287",
-    "pass_number": 3,
-    "queries_run": [
-      {
-        "query": "Chase Kinslow regulatory-archive-2026",
-        "engines": {
-          "DuckDuckGo": [],
-          "Google": [],
-          "Bing": [],
-          "Yahoo": [
-            {
-              "error": "HTTP Error 500: INKApi Error"
-            }
-          ]
-        },
-        "target_matches": []
-      },
-      {
-        "query": "Chase Kinslow Andy Chen Affirm cease and desist",
-        "engines": {
-          "DuckDuckGo": [],
-          "Google": [],
-          "Bing": [],
-          "Yahoo": [
-            {
-              "error": "HTTP Error 500: INKApi Error"
-            }
-          ]
-        },
-        "target_matches": []
-      },
-      {
-        "query": "Chase Kinslow Monroe Police Department incident report 26-29572",
-        "engines": {
-          "DuckDuckGo": [],
-          "Google": [],
-          "Bing": [],
-          "Yahoo": [
-            {
-              "error": "HTTP Error 500: INKApi Error"
-            }
-          ]
-        },
-        "target_matches": []
-      },
-      {
-        "query": "Chase Kinslow Perfume Empire tracking 1LSDCR10011QF38",
-        "engines": {
-          "DuckDuckGo": [],
-          "Google": [],
-          "Bing": [],
-          "Yahoo": [
-            {
-              "error": "HTTP Error 500: INKApi Error"
-            }
-          ]
-        },
-        "target_matches": []
-      },
-      {
-        "query": "Chase Kinslow Affirm CFPB complaint 260717-35668593",
-        "engines": {
-          "DuckDuckGo": [],
-          "Google": [],
-          "Bing": [],
-          "Yahoo": [
-            {
-              "error": "HTTP Error 500: INKApi Error"
-            }
-          ]
-        },
-        "target_matches": []
       }
     ]
   }

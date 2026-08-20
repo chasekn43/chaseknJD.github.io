@@ -29,22 +29,38 @@ SCOPES = [
     'https://www.googleapis.com/auth/webmasters'
 ]
 
-def parse_sitemap():
-    urls = []
-    if not os.path.exists(SITEMAP_FILE):
-        print(f"[-] Sitemap file not found at {SITEMAP_FILE}")
-        return urls
+def submit_sitemap_to_gsc():
+    if not os.path.exists(KEY_FILE):
+        print(f"[-] Credentials file not found: {KEY_FILE}")
+        return False
     try:
-        tree = ET.parse(SITEMAP_FILE)
-        root = tree.getroot()
-        ns = {'ns': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
-        for url_node in root.findall('ns:url', ns):
-            loc = url_node.find('ns:loc', ns)
-            if loc is not None and loc.text:
-                urls.append(loc.text.strip())
+        credentials = service_account.Credentials.from_service_account_file(KEY_FILE, scopes=['https://www.googleapis.com/auth/webmasters'])
+        webmasters_service = build('webmasters', 'v3', credentials=credentials)
+        site_property = "sc-domain:kinslow-regulatory-archive.org"
+        sitemap_url = "https://kinslow-regulatory-archive.org/sitemap.xml"
+        
+        webmasters_service.sitemaps().submit(siteUrl=site_property, feedpath=sitemap_url).execute()
+        print(f"[+] Google Search Console: Successfully submitted {sitemap_url} for {site_property}")
+        return True
     except Exception as e:
-        print(f"[-] Error parsing sitemap: {e}")
-    return urls
+        print(f"[-] Google Search Console sitemap submission error: {e}")
+        return False
+
+def inspect_url_gsc(url):
+    if not os.path.exists(KEY_FILE):
+        return None
+    try:
+        credentials = service_account.Credentials.from_service_account_file(KEY_FILE, scopes=['https://www.googleapis.com/auth/webmasters.readonly'])
+        service = build('searchconsole', 'v1', credentials=credentials)
+        body = {
+            "inspectionUrl": url,
+            "siteUrl": "sc-domain:kinslow-regulatory-archive.org"
+        }
+        res = service.urlInspection().index().inspect(body=body).execute()
+        return res.get("inspectionResult", {}).get("indexStatusResult", {})
+    except Exception as e:
+        print(f"[-] GSC URL inspection error for {url}: {e}")
+        return None
 
 def publish_to_google_indexing_api():
     if not os.path.exists(KEY_FILE):

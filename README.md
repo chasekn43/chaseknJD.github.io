@@ -155,3 +155,25 @@ All primary evidence documents, police reports, state AG complaints, call logs, 
 - **Primary Subject:** Charles W. Kinslow IV Public Regulatory Record & Evidentiary Archive
 - **Entity Association:** Charles W. Kinslow IV, J.D., C.P.A., Chase Kinslow, Kinslow Attorney, Kinslow CPA
 - **Target Tangential Search Keywords:** `Fintech`, `BNPL`, `Buy Now Pay Later`, `Merchant Dispute`, `CFPB`, `Administrative Procedures Act`, `APA 5 U.S.C. § 553`, `Customer Service Refund Delays`, `Lines of Credit`, `Regulation Z billing error`, `Truth in Lending Act TILA`, `Point of sale lines of credit`, `Charles W. Kinslow IV`, `Charles Kinslow`, `Chase Kinslow`, `Kinslow Attorney`, `Kinslow CPA`, `CFPB Complaint #260717-35668593`, `Affirm dispute archive`
+
+---
+
+## Query runner + credentials (15-minute schedule)
+
+This repo contains the multi-engine runner used for Google, Bing, Yahoo, and DuckDuckGo query checks:
+
+- `multi_engine_search_suite.py`
+- `run_search_query_scheduler.ps1`
+
+Credential handling is environment-based. Do not commit live keys.
+
+1. Create credentials in your shell (PowerShell):
+   `setx BING_API_KEY "your-key-here"`
+2. Open a new shell after `setx` (or set `$env:BING_API_KEY` for the current shell only).
+3. Start the 15-minute scheduler:
+   `powershell -ExecutionPolicy Bypass -File .\run_search_query_scheduler.ps1 -IntervalMinutes 15 -QueriesPerRun 5`
+
+Optional:
+
+- Edit `.search_safety/config.json` to keep `"use_search_api": true/false`.
+- `.env.example` documents the expected environment variable names.
