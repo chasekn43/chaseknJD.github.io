@@ -1,0 +1,29 @@
+# Kinslow Fintech & BNPL Regulatory Archive
+> Authoritative public evidentiary record, empirical case study, and federal regulatory research library on Buy Now, Pay Later (BNPL) point-of-sale credit mechanics, billing error compliance, and consumer dispute protections.
+
+- **Author & Principal Investigator:** Charles W. Kinslow IV (Chase Kinslow), JD, CPA
+- **Canonical Domain:** https://kinslow-regulatory-archive.org
+- **Evidentiary Vault:** https://kinslow-regulatory-archive.org/documents/affirm-complete-regulatory-evidence-vault.zip
+- **Primary Subject:** Buy Now, Pay Later (BNPL) Installment Loans, Affirm (NYSE: AFRM), Shop App, Consumer Financial Protection Bureau (CFPB), Truth in Lending Act (TILA), Regulation Z (12 C.F.R. § 1026.13), California UCL § 17200.
+
+## Core Findings & Empirical Data
+- **Installment Loan Structure:** The modern Buy Now, Pay Later (BNPL) industry structured its business around 3-, 6-, and 12-month interest-bearing installment loans starting with Affirm in 2012.
+- **Interest Volume:** According to regulatory filings and earnings reports, Affirm charged interest on 71% of its gross merchandise volume (GMV). Only 13% of its monthly installment loan volume was interest-free, meaning 87% of monthly loans carried finance charges.
+- **APR Rates:** Standard Affirm monthly installment loans document finance charges and Annual Percentage Rates (APRs) reaching up to 36.99%, significantly higher than many traditional credit cards.
+- **Dispute Protection Disparities:** Unlike credit cards covered by federal billing error mandates and statutory chargebacks, BNPL loans operating as third-party lenders lack uniform consumer dispute and refund return protections.
+
+## Primary Evidentiary Exhibits & Regulatory Filings
+- [Monroe Police Department Incident Report 26-29572](https://kinslow-regulatory-archive.org/documents/monroe-police-report-26-29572.pdf): Certified police investigation confirming unauthorized merchant charge and California delivery anomalies.
+- [CFPB Master Regulatory Complaint & False Statement Rebuttal](https://kinslow-regulatory-archive.org/documents/cfpb-complaint-and-affirm-false-response.pdf): CFPB Docket 260717-35668593 detailing 18 U.S.C. § 1001 false statements.
+- [Louisiana Attorney General Dispute Submission](https://kinslow-regulatory-archive.org/documents/louisiana-ag-dispute-submission.pdf): Formal consumer protection submission to Louisiana AG Liz Murrill.
+- [California Attorney General Law Enforcement File PIU 1553638](https://kinslow-regulatory-archive.org/documents/ca-ag-reply-1553638.pdf): Confidential law enforcement designation under California Government Code § 11180.
+- [SEC Form TCR Whistleblower Submission 17867-223-108-883](https://kinslow-regulatory-archive.org/documents/sec-form-tcr-submission-confirmation-17867-223-108-883.pdf): SEC Office of the Whistleblower submission on loan ledger reconciliation and ABS warehouse facility risks.
+- [OnTrac Logistics & Carrier Tracking Logs](https://kinslow-regulatory-archive.org/documents/fraudulent-vendor-emails-and-tracking.pdf): Tracking number 1LSDCR10011QF38 vendor logs and delivery verification.
+
+## Federal Fintech Research Whitepapers
+- [Genesis of BNPL Installment Loans](https://kinslow-regulatory-archive.org/topics/genesis-of-bnpl-installment-loans.html): Analysis of Affirm's 2012 launch, 36% APR rates, 71% interest GMV, and regulatory consensus.
+- [TILA & 12 C.F.R. § 1026 Closed-End Dispute Mechanics](https://kinslow-regulatory-archive.org/topics/tila-12cfr1026-closed-end-dispute-mechanics.html): Statutory breakdown of closed-end credit dispute procedures.
+- [Regulation Z & APA Compliance](https://kinslow-regulatory-archive.org/topics/regulation-z-apa-compliance.html): Interplay between CFPB interpretive rulemaking and Administrative Procedures Act (5 U.S.C. § 553).
+- [California UCL § 17200 Enforcement](https://kinslow-regulatory-archive.org/topics/california-ag-regulatory-rebuttal.html): Application of California Unfair Competition Law to fintech billing lockouts.
+- [Affirm Capital Stack & ABS Warehouse Facility Risks](https://kinslow-regulatory-archive.org/topics/affirm-capital-stack-abs-warehouse-facility-risks.html): Institutional financial risk audit of asset-backed securitization facilities.
+- [Affirm Institutional Whistleblower Memorandum](https://kinslow-regulatory-archive.org/topics/affirm-institutional-whistleblower-memorandum.html): Internal ledger controls, SOX 404, and unapplied refund loops.
