@@ -245,73 +245,21 @@ def run_custom_queries(query_list, output_filename="batch_a_results.json"):
     print(f"\nExecution complete. Saved {len(query_list)} query findings to: {out_path}")
     return batch_results
 
-def run_search_pass(iteration_num, max_queries=6):
+from generate_200_queries import build_200_archive_queries
+
+def run_search_pass(iteration_num, max_queries=10):
     domain = "kinslow-regulatory-archive.org"
     
-    # 1. Authoritative Anchor Triads (Name + Domain + Case Fact / Regulatory Anchor)
-    author_anchors = [
-        "Charles W. Kinslow IV",
-        "Chase Kinslow",
-        "Charles W. Kinslow IV JD CPA",
-        "Kinslow regulatory archive"
-    ]
-
-    core_topics = [
-        "Affirm 36% APR installment loans",
-        "Genesis of BNPL installment loans Affirm 2012",
-        "Affirm charged interest on 71% of loans",
-        "Affirm 13% interest-free monthly installment loans 87%",
-        "The minute you stray from the pay-in-four Affirm",
-        "Shop app Affirm unauthorized purchase dispute",
-        "Monroe Police Department report 26-29572",
-        "Louisiana AG dispute submission Affirm",
-        "CFPB complaint 260717-35668593 Affirm",
-        "CFPB complaint 260805-36566273 Affirm",
-        "Farfetch Affirm merchant refund dispute",
-        "Affirm closed dispute without review",
-        "Why is Affirm charging me for an order I canceled",
-        "Affirm third-party lender dispute protections",
-        "Affirm simple interest compounding trap",
-        "Affirm locked account during dispute",
-        "TILA Regulation Z 12 CFR 1026 Affirm billing error",
-        "FTC Holder in Due Course Rule 16 CFR 433 Affirm",
-        "California UCL 17200 fintech Affirm",
-        "Morgan Lewis Affirm legal defense Arjun Rao Madison Marshall",
-        "Andy Chen Affirm managing counsel cease and desist",
-        "Scott Williams Affirm Vice President Client Success"
-    ]
-
-    queries = []
-    
-    # Strategy A: Topic + Domain (Natural pairing)
-    for topic in core_topics:
-        queries.append(f"{topic} {domain}")
-        queries.append(f"{domain} {topic}")
-
-    # Strategy B: Author + Topic + Domain (Entity co-occurrence)
-    for author in author_anchors:
-        for topic in core_topics:
-            queries.append(f"{author} {topic} {domain}")
-            queries.append(f"{author} {topic}")
-
-    # Strategy C: Consumer Dispute Questions with Authority Anchor
-    consumer_qs = [
-        f"Why is Affirm charging me for an order I canceled {domain}",
-        f"Affirm returned item merchant won't refund {domain}",
-        f"Affirm dispute denied what do I do {domain}",
-        f"Shop app Affirm unauthorized purchase {domain}",
-        f"Affirm 36 percent interest rate installment loan trap {domain}",
-        f"Affirm says merchant has to refund but merchant says Affirm {domain}"
-    ]
-    queries.extend(consumer_qs)
+    # Load 100% comprehensive archive queries (200 distinct queries across all sections)
+    queries = build_200_archive_queries()
 
     random.shuffle(queries)
     selected_queries = queries[:min(max_queries, len(queries))]
 
     print(f"\n=======================================================")
-    print(f"  RUNNING TARGETED DOMAIN SEARCH PASS #{iteration_num} ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')})")
+    print(f"  RUNNING ARCHIVE 200-QUERY SEARCH PASS #{iteration_num} ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')})")
     print(f"  Target Canonical Domain: {domain}")
-    print(f"  Selected {len(selected_queries)} entity-connected query variations")
+    print(f"  Selected {len(selected_queries)} organic queries from the 200-query archive matrix")
     print(f"=======================================================\n")
 
     pass_results = {
