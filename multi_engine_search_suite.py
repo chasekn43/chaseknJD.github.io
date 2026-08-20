@@ -20,13 +20,16 @@ if sys.stdout.encoding != 'utf-8':
 
 # Define target domain & handle indicators
 TARGET_INDICATORS = [
+    "kinslow-regulatory-archive.org",
     "chasekn43",
     "regulatory-archive-2026",
     "regulatory-archive.kinslow.co",
     "kinslow.co",
     "github.com/chasekn43",
     "260717-35668593",
-    "26-29572"
+    "26-29572",
+    "chase kinslow",
+    "charles w. kinslow"
 ]
 
 # Primary user name
@@ -89,10 +92,10 @@ def decode_redirect_url(url):
     return url
 
 def search_duckduckgo(query):
-    url = f"{get_base_url('duckduckgo')}/html/"
+    url = "https://lite.duckduckgo.com/lite/"
     data = urllib.parse.urlencode({'q': query}).encode('utf-8')
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+        "User-Agent": random.choice(USER_AGENTS),
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
         "Content-Type": "application/x-www-form-urlencoded"
@@ -102,8 +105,26 @@ def search_duckduckgo(query):
     results = []
     try:
         with urllib.request.urlopen(req, timeout=12) as response:
-            h = response.read().decode('utf-8', errors='ignore')
-            items = re.findall(r'class="result__a" href="([^"]+)">(.*?)</a>', h, re.DOTALL)
+            html = response.read().decode('utf-8', errors='ignore')
+            links = re.findall(r'<a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', html)
+            for href, title_html in links:
+                if href.startswith("http") and "duckduckgo.com" not in href:
+                    t_text = clean_text(title_html)
+                    results.append({"title": t_text, "url": href, "snippet": ""})
+    except Exception as e:
+        results.append({"error": str(e)})
+    return results
+
+def search_google(query):
+    url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote(query)}"
+    headers = {"User-Agent": random.choice(USER_AGENTS), "Accept-Language": "en-US,en;q=0.9"}
+    req = urllib.request.Request(url, headers=headers)
+    apply_bypass_headers(req, mode='pro')
+    results = []
+    try:
+        with urllib.request.urlopen(req, timeout=12) as response:
+            html = response.read().decode('utf-8', errors='ignore')
+            items = re.findall(r'class="result__a" href="([^"]+)">(.*?)</a>', html, re.DOTALL)
             for href, title_html in items:
                 clean_u = decode_redirect_url(href)
                 t_text = clean_text(title_html)
@@ -113,28 +134,10 @@ def search_duckduckgo(query):
         results.append({"error": str(e)})
     return results
 
-def search_google(query):
-    url = f"{get_base_url('google')}/search?q={urllib.parse.quote(query)}&num=10"
-    headers = {"User-Agent": random.choice(USER_AGENTS), "Accept-Language": "en-US,en;q=0.9"}
-    req = urllib.request.Request(url, headers=headers)
-    results = []
-    try:
-        with urllib.request.urlopen(req, timeout=12) as response:
-            html = response.read().decode('utf-8', errors='ignore')
-            raw_links = re.findall(r'href="/url\?q=(http[s]?://[^&]+)&amp;', html)
-            titles = re.findall(r'<h3[^>]*>(.*?)</h3>', html)
-            for i, l in enumerate(raw_links):
-                if "google.com" not in l and "youtube.com" not in l:
-                    t = clean_text(titles[i]) if i < len(titles) else "Google Result"
-                    results.append({"title": t, "url": urllib.parse.unquote(l), "snippet": ""})
-    except Exception as e:
-        results.append({"error": str(e)})
-    return results
-
 def search_bing(query):
-    url = f"{get_base_url('bing')}/search?q={urllib.parse.quote(query)}"
+    url = f"https://www.bing.com/search?q={urllib.parse.quote(query)}"
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+        "User-Agent": random.choice(USER_AGENTS),
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
         "Cookie": "SRCHHPGUSR=SRCHLANG=v-en"
@@ -145,29 +148,31 @@ def search_bing(query):
     try:
         with urllib.request.urlopen(req, timeout=12) as response:
             h = response.read().decode('utf-8', errors='ignore')
-            matches = re.findall(r'<a[^>]+href="([^"]+)"[^>]*>(.*?)</a>\s*</h2>', h, re.DOTALL)
+            matches = re.findall(r'<a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', h, re.DOTALL)
             for href, title_html in matches:
                 clean_u = decode_redirect_url(href)
                 t_text = clean_text(title_html)
-                if clean_u.startswith("http") and "bing.com" not in clean_u:
+                if clean_u.startswith("http") and "bing.com" not in clean_u and "microsoft.com" not in clean_u and len(t_text) > 3:
                     results.append({"title": t_text, "url": clean_u, "snippet": ""})
     except Exception as e:
         results.append({"error": str(e)})
     return results
 
 def search_yahoo(query):
-    url = f"{get_base_url('yahoo')}/search?p={urllib.parse.quote(query)}"
+    url = f"https://search.yahoo.com/search?p={urllib.parse.quote(query)}"
     headers = {"User-Agent": random.choice(USER_AGENTS), "Accept-Language": "en-US,en;q=0.9"}
     req = urllib.request.Request(url, headers=headers)
+    apply_bypass_headers(req, mode='pro')
     results = []
     try:
         with urllib.request.urlopen(req, timeout=12) as response:
             html = response.read().decode('utf-8', errors='ignore')
-            matches = re.findall(r'<h3 class="title"[^>]*><a href="(https?://r\.search\.yahoo\.com/[^"]+)"[^>]*>(.*?)</a></h3>', html)
-            if not matches:
-                matches = re.findall(r'href="(https?://r\.search\.yahoo\.com/[^"]+)"[^>]*>(.*?)</a>', html)
+            matches = re.findall(r'<a[^>]+href="([^"]*r\.search\.yahoo\.com/[^"]*)"[^>]*>(.*?)</a>', html)
             for href, title in matches:
-                results.append({"title": clean_text(title), "url": decode_redirect_url(href), "snippet": ""})
+                ru = re.search(r'/RU=([^/]+)/', href)
+                decoded = urllib.parse.unquote(ru.group(1)) if ru else href
+                if "yahoo.com" not in decoded and decoded.startswith("http"):
+                    results.append({"title": clean_text(title), "url": decoded, "snippet": ""})
     except Exception as e:
         results.append({"error": str(e)})
     return results
@@ -241,44 +246,109 @@ def run_custom_queries(query_list, output_filename="batch_a_results.json"):
     return batch_results
 
 def run_search_pass(iteration_num, max_queries=6):
-    queries = [tmpl.format(name=NAME) for tmpl in KEYWORD_TEMPLATES]
+    domain = "kinslow-regulatory-archive.org"
+    
+    # 1. Authoritative Anchor Triads (Name + Domain + Case Fact / Regulatory Anchor)
+    author_anchors = [
+        "Charles W. Kinslow IV",
+        "Chase Kinslow",
+        "Charles W. Kinslow IV JD CPA",
+        "Kinslow regulatory archive"
+    ]
+
+    core_topics = [
+        "Affirm 36% APR installment loans",
+        "Genesis of BNPL installment loans Affirm 2012",
+        "Affirm charged interest on 71% of loans",
+        "Affirm 13% interest-free monthly installment loans 87%",
+        "The minute you stray from the pay-in-four Affirm",
+        "Shop app Affirm unauthorized purchase dispute",
+        "Monroe Police Department report 26-29572",
+        "Louisiana AG dispute submission Affirm",
+        "CFPB complaint 260717-35668593 Affirm",
+        "CFPB complaint 260805-36566273 Affirm",
+        "Farfetch Affirm merchant refund dispute",
+        "Affirm closed dispute without review",
+        "Why is Affirm charging me for an order I canceled",
+        "Affirm third-party lender dispute protections",
+        "Affirm simple interest compounding trap",
+        "Affirm locked account during dispute",
+        "TILA Regulation Z 12 CFR 1026 Affirm billing error",
+        "FTC Holder in Due Course Rule 16 CFR 433 Affirm",
+        "California UCL 17200 fintech Affirm",
+        "Morgan Lewis Affirm legal defense Arjun Rao Madison Marshall",
+        "Andy Chen Affirm managing counsel cease and desist",
+        "Scott Williams Affirm Vice President Client Success"
+    ]
+
+    queries = []
+    
+    # Strategy A: Topic + Domain (Natural pairing)
+    for topic in core_topics:
+        queries.append(f"{topic} {domain}")
+        queries.append(f"{domain} {topic}")
+
+    # Strategy B: Author + Topic + Domain (Entity co-occurrence)
+    for author in author_anchors:
+        for topic in core_topics:
+            queries.append(f"{author} {topic} {domain}")
+            queries.append(f"{author} {topic}")
+
+    # Strategy C: Consumer Dispute Questions with Authority Anchor
+    consumer_qs = [
+        f"Why is Affirm charging me for an order I canceled {domain}",
+        f"Affirm returned item merchant won't refund {domain}",
+        f"Affirm dispute denied what do I do {domain}",
+        f"Shop app Affirm unauthorized purchase {domain}",
+        f"Affirm 36 percent interest rate installment loan trap {domain}",
+        f"Affirm says merchant has to refund but merchant says Affirm {domain}"
+    ]
+    queries.extend(consumer_qs)
+
     random.shuffle(queries)
     selected_queries = queries[:min(max_queries, len(queries))]
-    
+
     print(f"\n=======================================================")
-    print(f"  RUNNING SEARCH PASS #{iteration_num} ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')})")
-    print(f"  Selected {len(selected_queries)} keyword variations for target: '{NAME}'")
+    print(f"  RUNNING TARGETED DOMAIN SEARCH PASS #{iteration_num} ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')})")
+    print(f"  Target Canonical Domain: {domain}")
+    print(f"  Selected {len(selected_queries)} entity-connected query variations")
     print(f"=======================================================\n")
-    
+
     pass_results = {
         "timestamp": datetime.now().isoformat(),
         "pass_number": iteration_num,
+        "canonical_domain": domain,
         "queries_run": []
     }
-    
+
     for q_idx, q in enumerate(selected_queries, 1):
-        print(f"[{q_idx}/{len(selected_queries)}] Querying engines for: '{q}'")
+        print(f"[{q_idx}/{len(selected_queries)}] Running Connected Query: '{q}'")
         q_data = {
             "query": q,
             "engines": {}
         }
-        
-        # 1. DuckDuckGo
+
+        # Run across engines
         ddg_res = search_duckduckgo(q)
         q_data["engines"]["DuckDuckGo"] = ddg_res
-        
-        # 2. Google
+
         g_res = search_google(q)
         q_data["engines"]["Google"] = g_res
-        
-        # 3. Bing
-        b_res = search_bing(q)
+
+        try:
+            use_api = CONFIG.get('use_search_api') and CONFIG.get('bing_api_key')
+        except NameError:
+            use_api = False
+
+        if use_api:
+            b_res = search_bing_api(q)
+        else:
+            b_res = search_bing(q)
         q_data["engines"]["Bing"] = b_res
-        
-        # 4. Yahoo
+
         y_res = search_yahoo(q)
         q_data["engines"]["Yahoo"] = y_res
-        
+
         # Check target visibility
         matches_found = []
         for eng_name, items in q_data["engines"].items():
@@ -287,18 +357,19 @@ def run_search_pass(iteration_num, max_queries=6):
                     matched, ind = is_target_match(item.get("url", ""), item.get("title", ""), item.get("snippet", ""))
                     if matched:
                         matches_found.append({"engine": eng_name, "indicator": ind, "title": item.get("title"), "url": item.get("url")})
-        
+
         q_data["target_matches"] = matches_found
         if matches_found:
-            print(f"   >>> TARGET MATCH FOUND! {len(matches_found)} repository links/references spotted across engines!")
-            for m in matches_found:
-                print(f"       [{m['engine']}] Found indicator '{m['indicator']}': {m['url']}")
+            print(f"   >>> TARGET MATCH CONFIRMED! {len(matches_found)} links to kinslow-regulatory-archive.org / author found:")
+            for m in matches_found[:4]:
+                print(f"       [{m['engine']}] Found ({m['indicator']}): {m['url']}")
         else:
-            print(f"   Completed across DDG ({len([i for i in ddg_res if 'url' in i])}), Google ({len([i for i in g_res if 'url' in i])}), Bing ({len([i for i in b_res if 'url' in i])}), Yahoo ({len([i for i in y_res if 'url' in i])})")
-            
+            engine_counts = [f"{eng} ({len([i for i in items if 'url' in i])})" for eng, items in q_data["engines"].items()]
+            print(f"   Completed across {', '.join(engine_counts)}")
+
         pass_results["queries_run"].append(q_data)
         time.sleep(1.5)
-        
+
     return pass_results
 
 if __name__ == "__main__":
