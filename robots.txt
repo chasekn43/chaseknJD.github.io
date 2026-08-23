@@ -4,7 +4,6 @@ Allow: /documents/*.pdf
 Allow: /llms.txt
 Disallow: /CNAME
 
-# Allow AI Search Crawlers & Generative Engine Optimizers
 User-agent: GPTBot
 Allow: /
 
@@ -26,12 +25,19 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# Block aggressive scrapers that consume bandwidth without indexation
 User-agent: AhrefsBot
+Disallow: /
+
 User-agent: SemrushBot
+Disallow: /
+
 User-agent: PetalBot
+Disallow: /
+
 User-agent: MJ12bot
+Disallow: /
+
 User-agent: Rogerbot
 Disallow: /
 
-Sitemap: https://kinslow-regulatory-archive.org/regulatory-archive-2026/sitemap.xml
+Sitemap: https://kinslow-regulatory-archive.org/sitemap.xml
