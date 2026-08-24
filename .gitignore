@@ -8,3 +8,7 @@ captcha_error.png
 .venv/
 __pycache__/
 *.pyc
+
+# rank_tracker.py generated output
+rank_tracking_results.json
+rank_tracking_report.md
