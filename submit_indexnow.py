@@ -76,8 +76,8 @@ def submit_to_indexnow(url_list):
             except Exception:
                 pass
             if e.code == 403:
-                print("    [NOTE] HTTP 403 indicates IndexNow crawler key validation for GitHub Pages subfolder repos.")
-                print(f"    For subpath repos (https://{HOST}/regulatory-archive-2026/), indexation relies primarily on Google Search Console & Bing Webmaster Tools XML Sitemap submission: https://{HOST}/regulatory-archive-2026/sitemap.xml")
+                print("    [NOTE] HTTP 403 indicates IndexNow crawler key validation failed.")
+                print(f"    Confirm the key file is reachable at {KEY_LOCATION}, then fall back to Google Search Console & Bing Webmaster Tools XML Sitemap submission: https://{HOST}/sitemap.xml")
         except Exception as e:
             print(f"[-] {endpoint} Submission Error: {e}")
 
@@ -94,7 +94,7 @@ def submit_to_indexnow(url_list):
             print(f"  - Ping {target_url}: {e}")
 
     # Google Search Console Note
-    sitemap_url = f"https://{HOST}/regulatory-archive-2026/sitemap.xml"
+    sitemap_url = f"https://{HOST}/sitemap.xml"
     print(f"[+] Google Search Console Sitemap URL: {sitemap_url}")
     print("[NOTE] Direct HTTP GET sitemap pinging was officially deprecated by Google. Submit sitemap via Google Search Console web console or API.")
 
