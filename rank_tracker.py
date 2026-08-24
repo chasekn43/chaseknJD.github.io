@@ -35,6 +35,7 @@ import argparse
 import datetime as dt
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -101,6 +102,39 @@ def load_tracked_terms():
             print(f"[WARN] Could not read {QUERY_BANK}: {exc}")
 
     return terms
+
+
+# Tokens that carry no ranking signal: site-scoped scraper operators, boilerplate
+# and stopwords. Tracked terms in this repo were written as scraper probes
+# ("kinslow-regulatory-archive.org \"Chase Kinslow\" Affirm dispute"), so the
+# domain and operator noise has to come off before anything can match a real
+# user query pulled from Search Console.
+STOPWORDS = {
+    "the", "a", "an", "of", "on", "in", "to", "for", "and", "or", "is", "are",
+    "was", "were", "be", "by", "with", "from", "at", "as", "it", "that", "this",
+    "you", "your", "my", "me", "more", "about", "org", "com", "www", "http",
+    "https", "site", "kinslow", "regulatory", "archive",
+}
+
+TOKEN_RE = re.compile(r"[a-z0-9]+")
+
+
+def normalize_tokens(text):
+    """Reduce a term or query to comparable significant tokens."""
+    text = text.lower()
+    text = text.replace("kinslow-regulatory-archive.org", " ")
+    tokens = TOKEN_RE.findall(text)
+    out = set()
+    for t in tokens:
+        if t in STOPWORDS or len(t) <= 1:
+            continue
+        # Light singular/plural folding so "disputes" matches "dispute".
+        if len(t) > 3 and t.endswith("es") and not t.endswith("ses"):
+            t = t[:-2]
+        elif len(t) > 3 and t.endswith("s") and not t.endswith("ss"):
+            t = t[:-1]
+        out.add(t)
+    return out
 
 
 def gsc_service():
@@ -173,8 +207,31 @@ def fetch_google(service, days):
     hidden = totals["impressions"] - visible_impr
     pct = round(hidden / totals["impressions"] * 100) if totals["impressions"] else 0
 
+    # The page dimension is not privacy-filtered the way queries are, so it
+    # recovers the clicks that anonymized queries hide and shows which pages
+    # actually earn them.
+    pages = []
+    try:
+        page_resp = service.searchanalytics().query(
+            siteUrl=SITE_URL, body={**window, "dimensions": ["page"], "rowLimit": 1000}
+        ).execute()
+        pages = [
+            {
+                "page": r["keys"][0],
+                "clicks": r.get("clicks", 0),
+                "impressions": r.get("impressions", 0),
+                "position": round(r.get("position", 0.0), 1),
+            }
+            for r in page_resp.get("rows", [])
+        ]
+    except Exception as exc:
+        print(f"[WARN] Google page-dimension request failed: {exc}")
+
     print(f"[ OK ] Google: {totals['clicks']} clicks, {totals['impressions']} impressions ({start} to {end})")
     print(f"       {len(rows)} queries visible; {hidden} impressions ({pct}%) withheld by privacy filtering")
+    if pages:
+        page_clicks = sum(p["clicks"] for p in pages)
+        print(f"       {len(pages)} pages with traffic; {page_clicks} of {totals['clicks']} clicks attributed by page")
 
     return {
         "start": start.isoformat(),
@@ -183,6 +240,7 @@ def fetch_google(service, days):
         "hidden_impressions": hidden,
         "hidden_pct": pct,
         "rows": rows,
+        "pages": pages,
     }
 
 
@@ -221,15 +279,49 @@ def fetch_bing(days):
     return {"rows": rows}
 
 
+MATCH_THRESHOLD = 0.6
+MIN_TOKEN_OVERLAP = 2
+
+
 def match_tracked(rows, terms):
-    """Split engine rows into tracked terms vs. unexpected discoveries."""
-    by_query = {r["query"].lower(): r for r in rows}
-    tracked, missing = [], []
-    for term in terms:
-        hit = by_query.get(term.lower())
-        (tracked if hit else missing).append(hit or {"query": term, "position": None})
-    tracked_set = {t.lower() for t in terms}
-    discovered = [r for r in rows if r["query"].lower() not in tracked_set]
+    """Associate each real Search Console query with at most one tracked term.
+
+    Exact string matching never worked here: the tracked bank is made of
+    site-scoped scraper probes, while Search Console returns what humans
+    actually typed. Matching is done on significant-token overlap, but it is
+    deliberately conservative -- a single shared word like "affirm" is not a
+    match, and each real query claims only its single best term. Anything that
+    fails to clear the bar is surfaced as an untracked query instead, which is
+    the more actionable result.
+    """
+    prepared = [(term, normalize_tokens(term)) for term in terms]
+    tracked, claimed_terms = [], set()
+
+    for row in rows:
+        r_tokens = normalize_tokens(row["query"])
+        if not r_tokens:
+            continue
+
+        best, best_score, best_overlap = None, 0.0, 0
+        for term, t_tokens in prepared:
+            if not t_tokens:
+                continue
+            overlap = len(t_tokens & r_tokens)
+            if overlap < min(MIN_TOKEN_OVERLAP, len(r_tokens)):
+                continue
+            score = overlap / min(len(t_tokens), len(r_tokens))
+            if score > best_score:
+                best, best_score, best_overlap = term, score, overlap
+
+        if best and best_score >= MATCH_THRESHOLD:
+            hit = dict(row)
+            hit["tracked_term"] = best
+            hit["match_score"] = round(best_score, 2)
+            tracked.append(hit)
+            claimed_terms.add(best)
+
+    discovered = [r for r in rows if r["query"] not in {t["query"] for t in tracked}]
+    missing = [{"query": t, "position": None} for t in terms if t not in claimed_terms]
     return tracked, missing, discovered
 
 
@@ -270,11 +362,12 @@ def write_report(results, terms):
             lines += [
                 "### Tracked terms currently ranking",
                 "",
-                "| Query | Position | Impressions | Clicks | CTR % |",
+                "| Real query | Matched tracked term | Position | Impressions | Clicks |",
                 "|---|---|---|---|---|",
             ]
             lines += [
-                f"| {r['query']} | {r['position']} | {r['impressions']} | {r['clicks']} | {r['ctr']} |"
+                f"| {r['query']} | {(r.get('tracked_term') or '')[:70]} | "
+                f"{r['position']} | {r['impressions']} | {r['clicks']} |"
                 for r in ranking[:50]
             ]
             lines.append("")
@@ -289,6 +382,20 @@ def write_report(results, terms):
             lines += [f"| {r['query']} | {r['position']} | {r['impressions']} |" for r in top]
             lines.append("")
         lines += [f"- Tracked terms with no impressions yet: **{len(missing)}**", ""]
+
+        pages = google.get("pages") or []
+        if pages:
+            top = sorted(pages, key=lambda p: (-p["clicks"], -p["impressions"]))[:15]
+            lines += [
+                "### Pages earning traffic (recovers the privacy-filtered clicks)",
+                "",
+                "| Page | Clicks | Impressions | Avg position |",
+                "|---|---|---|---|",
+            ]
+            for p in top:
+                path = p["page"].replace("https://kinslow-regulatory-archive.org", "") or "/"
+                lines.append(f"| {path} | {p['clicks']} | {p['impressions']} | {p['position']} |")
+            lines.append("")
     else:
         lines += ["## Google Search Console", "", "_No data - credentials unavailable._", ""]
 
