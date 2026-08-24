@@ -123,17 +123,17 @@ def gsc_service():
 
 
 def fetch_google(service, days):
-    """Pull per-query performance rows from Search Console."""
+    """Pull per-query performance rows plus true site totals from Search Console."""
     end = dt.date.today() - dt.timedelta(days=GSC_LAG_DAYS)
     start = end - dt.timedelta(days=days)
-    body = {
-        "startDate": start.isoformat(),
-        "endDate": end.isoformat(),
-        "dimensions": ["query"],
-        "rowLimit": GSC_ROW_LIMIT,
-    }
+    window = {"startDate": start.isoformat(), "endDate": end.isoformat()}
+
+    # Undimensioned totals first. Google withholds rare queries for privacy, so
+    # summing the query dimension understates real traffic -- often severely.
     try:
-        resp = service.searchanalytics().query(siteUrl=SITE_URL, body=body).execute()
+        totals_resp = service.searchanalytics().query(
+            siteUrl=SITE_URL, body={**window, "rowLimit": 1}
+        ).execute()
     except Exception as exc:
         msg = str(exc)
         if "does not own" in msg or "403" in msg:
@@ -141,6 +141,21 @@ def fetch_google(service, days):
             print("       Add its client_email in Search Console -> Settings -> Users and permissions.")
         else:
             print(f"[FAIL] Google Search Console query failed: {exc}")
+        return None
+
+    t = (totals_resp.get("rows") or [{}])[0]
+    totals = {
+        "clicks": t.get("clicks", 0),
+        "impressions": t.get("impressions", 0),
+        "position": round(t.get("position", 0.0), 1),
+    }
+
+    try:
+        resp = service.searchanalytics().query(
+            siteUrl=SITE_URL, body={**window, "dimensions": ["query"], "rowLimit": GSC_ROW_LIMIT}
+        ).execute()
+    except Exception as exc:
+        print(f"[FAIL] Google query-dimension request failed: {exc}")
         return None
 
     rows = [
@@ -153,8 +168,22 @@ def fetch_google(service, days):
         }
         for r in resp.get("rows", [])
     ]
-    print(f"[ OK ] Google: {len(rows)} ranking queries ({start} to {end})")
-    return {"start": start.isoformat(), "end": end.isoformat(), "rows": rows}
+
+    visible_impr = sum(r["impressions"] for r in rows)
+    hidden = totals["impressions"] - visible_impr
+    pct = round(hidden / totals["impressions"] * 100) if totals["impressions"] else 0
+
+    print(f"[ OK ] Google: {totals['clicks']} clicks, {totals['impressions']} impressions ({start} to {end})")
+    print(f"       {len(rows)} queries visible; {hidden} impressions ({pct}%) withheld by privacy filtering")
+
+    return {
+        "start": start.isoformat(),
+        "end": end.isoformat(),
+        "totals": totals,
+        "hidden_impressions": hidden,
+        "hidden_pct": pct,
+        "rows": rows,
+    }
 
 
 def fetch_bing(days):
@@ -219,15 +248,22 @@ def write_report(results, terms):
 
     if google:
         ranking = sorted([r for r in tracked if r.get("position")], key=lambda r: r["position"])
-        total_clicks = sum(r["clicks"] for r in rows)
-        total_impr = sum(r["impressions"] for r in rows)
+        totals = google.get("totals", {})
         lines += [
             "## Google Search Console",
             "",
             f"- Window: {google['start']} to {google['end']}",
-            f"- Ranking queries: **{len(rows)}**",
-            f"- Total clicks: **{total_clicks}** / impressions: **{total_impr}**",
+            f"- **Site totals: {totals.get('clicks', 0)} clicks, "
+            f"{totals.get('impressions', 0)} impressions, "
+            f"avg position {totals.get('position', 0)}**",
+            f"- Queries visible at query level: **{len(rows)}**",
+            f"- Impressions withheld by Google's privacy filter: "
+            f"**{google.get('hidden_impressions', 0)} ({google.get('hidden_pct', 0)}%)**",
             f"- Tracked terms ranking: **{len(ranking)}** of {len(terms)}",
+            "",
+            "> Google anonymizes rare queries, so the per-query table below does not",
+            "> sum to the site totals. Trust the totals for performance; use the table",
+            "> for which specific terms are surfacing.",
             "",
         ]
         if ranking:
