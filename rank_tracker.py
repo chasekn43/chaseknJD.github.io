@@ -47,7 +47,10 @@ BING_SITE = "https://kinslow-regulatory-archive.org"
 GSC_KEY_FILE = os.environ.get("GSC_KEY_FILE", os.path.join(HERE, "google_console_key.json"))
 SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
 
-KEYWORD_FILES = ["keywords.txt", "keywords_targeted.txt"]
+# keywords_search.txt holds real consumer search phrases and is the primary
+# bank. The legacy files hold site: operator strings, which no one searches;
+# strip_operators() rewrites them into plausible queries so they can match.
+KEYWORD_FILES = ["keywords_search.txt", "keywords.txt", "keywords_targeted.txt"]
 QUERY_BANK = "archive_200_queries.json"
 OUT_JSON = os.path.join(HERE, "rank_tracking_results.json")
 OUT_MD = os.path.join(HERE, "rank_tracking_report.md")
@@ -72,6 +75,19 @@ def load_env_file():
             os.environ.setdefault(key.strip(), value.strip())
 
 
+def strip_operators(term):
+    """Turn a site-search operator string into the phrase a person would type.
+
+    The legacy keyword files prefix every entry with the bare domain and wrap
+    fragments in quotes. Search engines never report those as queries, so the
+    prefix and quoting are removed before the term enters the tracked bank.
+    """
+    cleaned = re.sub(r"\bkinslow-regulatory-archive\.org\b", " ", term, flags=re.I)
+    cleaned = re.sub(r"\b(?:site|inurl|intitle|intext|filetype):\S*", " ", cleaned, flags=re.I)
+    cleaned = cleaned.replace('"', " ").replace("'", " ")
+    return re.sub(r"\s+", " ", cleaned).strip(" -|")
+
+
 def load_tracked_terms():
     """Collect the tracked keyword and query bank, de-duplicated, order preserved."""
     terms, seen = [], set()
@@ -82,7 +98,9 @@ def load_tracked_terms():
             continue
         with open(path, encoding="utf-8", errors="replace") as fh:
             for line in fh:
-                term = line.strip()
+                term = strip_operators(line.strip())
+                if len(term) < 3:
+                    continue
                 if term and not term.startswith("#") and term.lower() not in seen:
                     seen.add(term.lower())
                     terms.append(term)
