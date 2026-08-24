@@ -7,6 +7,11 @@ scraping search engine result pages:
   * Google  -> Search Console Search Analytics API
   * Bing    -> Bing Webmaster Tools API
 
+Bing's index also serves DuckDuckGo, Yahoo and Ecosia web results, so
+the Bing figures below effectively cover those engines too. There is no
+DuckDuckGo or Yahoo webmaster API to query, and scraping them is both
+blocked (403) and unnecessary: if you rank in Bing, you rank in DDG.
+
 Both report actual impressions, clicks, CTR and average position for the
 queries your site genuinely ranks on. That is ground truth from the
 engine, and it is strictly better data than a parsed SERP.
@@ -253,7 +258,27 @@ def write_report(results, terms):
 
     bing = results.get("bing")
     if bing:
-        lines += ["## Bing Webmaster Tools", "", f"- Ranking queries: **{len(bing['rows'])}**", ""]
+        rows_b = bing["rows"]
+        clicks_b = sum(r.get("clicks", 0) for r in rows_b)
+        impr_b = sum(r.get("impressions", 0) for r in rows_b)
+        lines += [
+            "## Bing Webmaster Tools",
+            "",
+            "_Bing's index also serves DuckDuckGo, Yahoo and Ecosia web results,_",
+            "_so these figures effectively cover those engines as well._",
+            "",
+            f"- Ranking queries: **{len(rows_b)}**",
+            f"- Total clicks: **{clicks_b}** / impressions: **{impr_b}**",
+            "",
+        ]
+        if rows_b:
+            top_b = sorted(rows_b, key=lambda r: -r.get("impressions", 0))[:25]
+            lines += ["| Query | Impressions | Clicks |", "|---|---|---|"]
+            lines += [
+                f"| {r['query']} | {r.get('impressions', 0)} | {r.get('clicks', 0)} |"
+                for r in top_b
+            ]
+            lines.append("")
     else:
         lines += ["## Bing Webmaster Tools", "", "_No data - API key not configured._", ""]
 
