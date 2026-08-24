@@ -1,4 +1,4 @@
-name = "regulatory-archive-worker"
+name = "'chaseknjd-github-io'"
 main = "cloudflare-worker.js"
 compatibility_date = "2024-05-01"
 
