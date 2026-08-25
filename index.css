@@ -1,11 +1,11 @@
 /* ==========================================================================
    KINSLOW CONSUMER DEFENSE & REGULATORY ARCHIVE
    The 60-30-10 Cognitive Trust & Clarity Design System (Fintech Standard)
-   Full Remediation Across All 9 Psychological & Behavioral Frameworks
+   Audited & Perfected Across 9 Cognitive & Behavioral Psychology Frameworks
    ========================================================================== */
 
 :root {
-  /* 60% DOMINANT CANVAS: Anti-Glare Off-White Foundation */
+  /* 60% DOMINANT CANVAS: Anti-Glare Crisp Off-White */
   --bg-canvas: #f8f9fa;
   --bg-surface: #ffffff;
   --bg-surface-subtle: #f1f5f9;
@@ -22,7 +22,7 @@
   --accent-primary-hover: #1e40af;
   --accent-primary-bg: #eff6ff;
   
-  --accent-amber: #b45309;      /* Warm Amber (Phone Bypass & Triage) */
+  --accent-amber: #b45309;      /* Warm Amber (Credit Countdown & Intel) */
   --accent-amber-bg: #fffbeb;
   --accent-amber-border: #fde68a;
 
@@ -87,13 +87,13 @@ img { max-width: 100%; height: auto; }
 
 @media (min-width: 992px) {
   .hero-grid {
-    grid-template-columns: 1.2fr 0.95fr;
+    grid-template-columns: 1.18fr 0.95fr;
     gap: 40px;
     align-items: center;
   }
 }
 
-/* Top Consumer Reality Banner */
+/* Top Reality Banner */
 .top-legal-bar {
   background: #0f172a !important;
   color: #f8fafc !important;
@@ -102,14 +102,22 @@ img { max-width: 100%; height: auto; }
   font-size: 14px !important;
 }
 
+/* Theory 3: Quick Primacy Bar (Crisp Light Gray Box - Eliminates Amber Competition) */
+.primacy-phone-bar {
+  background: #f1f5f9;
+  border-bottom: 1px solid #cbd5e1;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
 /* Hero Viewport */
 .hero-section {
   background: #ffffff !important;
   border-bottom: 1px solid var(--border-subtle) !important;
-  padding: 44px 0 36px;
+  padding: 40px 0 36px;
 }
 
-/* Theory 7: Visual Attention & Salience - Isolated Primary CTA */
+/* Theory 7: Visual Salience - Isolated Primary CTA */
 .btn-primary-isolated {
   display: block;
   width: 100%;
@@ -133,63 +141,76 @@ img { max-width: 100%; height: auto; }
   transform: translateY(-1px);
 }
 
-/* Cards & Layout */
-.tool-card {
-  background: #ffffff;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: 24px;
+/* Theory 8: Affordance-Accurate Interactive Option Cards */
+.status-option-card {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
-}
-
-.tool-card:hover {
-  border-color: var(--border-strong);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
-}
-
-.docket-card {
-  background: #f8fafc;
-  border: 1px solid var(--border-subtle);
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1.5px solid #cbd5e1;
   border-radius: var(--radius-md);
-  padding: 18px;
-  position: relative;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.status-option-card:hover {
+  border-color: var(--accent-primary);
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.status-option-card.selected {
+  border-color: var(--accent-primary);
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.radio-indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   transition: all 0.2s ease;
 }
 
-.docket-card:hover {
-  background: #ffffff;
-  border-color: var(--accent-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+.status-option-card.selected .radio-indicator {
+  border-color: #1d4ed8;
+  background: #1d4ed8;
 }
 
-.docket-card a.stretched-link::after {
+.status-option-card.selected .radio-indicator::after {
   content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
 }
 
-/* Theory 8: Affordance-Accurate Timeline Roadmap */
+/* Theory 4: Goal-Gradient Dynamic Timeline Roadmap */
 .timeline-roadmap {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  margin: 16px 0 20px;
+  margin: 14px 0 18px;
 }
 
 .timeline-roadmap::before {
   content: "";
   position: absolute;
   top: 14px;
-  left: 15px;
-  right: 15px;
+  left: 20px;
+  right: 20px;
   height: 2px;
   background: #e2e8f0;
   z-index: 1;
@@ -215,6 +236,7 @@ img { max-width: 100%; height: auto; }
   font-weight: 800;
   color: #64748b;
   margin-bottom: 4px;
+  transition: all 0.3s ease;
 }
 
 .roadmap-node.active .roadmap-circle {
@@ -222,6 +244,12 @@ img { max-width: 100%; height: auto; }
   border-color: #1d4ed8;
   color: #ffffff;
   box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2);
+}
+
+.roadmap-node.completed .roadmap-circle {
+  background: #15803d;
+  border-color: #15803d;
+  color: #ffffff;
 }
 
 .roadmap-label {
@@ -234,6 +262,65 @@ img { max-width: 100%; height: auto; }
 .roadmap-node.active .roadmap-label {
   color: #0f172a;
   font-weight: 800;
+}
+
+/* Cards & Layout */
+.tool-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.tool-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+}
+
+/* Theory 7: Isolated Primary Docket Card vs Standard Cards */
+.docket-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.docket-card:hover {
+  background: #ffffff;
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.docket-card-featured {
+  background: #ffffff;
+  border: 2px solid #1d4ed8;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  position: relative;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.1);
+}
+
+.docket-card-featured:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(29, 78, 216, 0.2);
+}
+
+.docket-card a.stretched-link::after,
+.docket-card-featured a.stretched-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 /* Badges */
@@ -271,6 +358,17 @@ img { max-width: 100%; height: auto; }
   border-radius: 9999px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+.badge-featured {
+  background: #1d4ed8;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 h1, h2, h3, h4 {

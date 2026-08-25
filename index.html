@@ -13,10 +13,10 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="icon-192.png">
-  <link rel="stylesheet" href="index.css?v=9">
+  <link rel="stylesheet" href="index.css?v=10">
   <meta name="theme-color" content="#f8f9fa">
 
-  <!-- SCHEMA THEORY: EXPLICIT WEBAPPLICATION & FAQPAGE SCHEMA -->
+  <!-- SCHEMA THEORY: WEBAPPLICATION & FAQPAGE SCHEMA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -101,11 +101,11 @@
 /* ==========================================================================
    KINSLOW CONSUMER DEFENSE & REGULATORY ARCHIVE
    The 60-30-10 Cognitive Trust & Clarity Design System (Fintech Standard)
-   Full Remediation Across All 9 Psychological & Behavioral Frameworks
+   Audited & Perfected Across 9 Cognitive & Behavioral Psychology Frameworks
    ========================================================================== */
 
 :root {
-  /* 60% DOMINANT CANVAS: Anti-Glare Off-White Foundation */
+  /* 60% DOMINANT CANVAS: Anti-Glare Crisp Off-White */
   --bg-canvas: #f8f9fa;
   --bg-surface: #ffffff;
   --bg-surface-subtle: #f1f5f9;
@@ -122,7 +122,7 @@
   --accent-primary-hover: #1e40af;
   --accent-primary-bg: #eff6ff;
   
-  --accent-amber: #b45309;      /* Warm Amber (Phone Bypass & Triage) */
+  --accent-amber: #b45309;      /* Warm Amber (Credit Countdown & Intel) */
   --accent-amber-bg: #fffbeb;
   --accent-amber-border: #fde68a;
 
@@ -187,13 +187,13 @@ img { max-width: 100%; height: auto; }
 
 @media (min-width: 992px) {
   .hero-grid {
-    grid-template-columns: 1.2fr 0.95fr;
+    grid-template-columns: 1.18fr 0.95fr;
     gap: 40px;
     align-items: center;
   }
 }
 
-/* Top Consumer Reality Banner */
+/* Top Reality Banner */
 .top-legal-bar {
   background: #0f172a !important;
   color: #f8fafc !important;
@@ -202,14 +202,22 @@ img { max-width: 100%; height: auto; }
   font-size: 14px !important;
 }
 
+/* Theory 3: Quick Primacy Bar (Crisp Light Gray Box - Eliminates Amber Competition) */
+.primacy-phone-bar {
+  background: #f1f5f9;
+  border-bottom: 1px solid #cbd5e1;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
 /* Hero Viewport */
 .hero-section {
   background: #ffffff !important;
   border-bottom: 1px solid var(--border-subtle) !important;
-  padding: 44px 0 36px;
+  padding: 40px 0 36px;
 }
 
-/* Theory 7: Visual Attention & Salience - Isolated Primary CTA */
+/* Theory 7: Visual Salience - Isolated Primary CTA */
 .btn-primary-isolated {
   display: block;
   width: 100%;
@@ -233,63 +241,76 @@ img { max-width: 100%; height: auto; }
   transform: translateY(-1px);
 }
 
-/* Cards & Layout */
-.tool-card {
-  background: #ffffff;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: 24px;
+/* Theory 8: Affordance-Accurate Interactive Option Cards */
+.status-option-card {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
-}
-
-.tool-card:hover {
-  border-color: var(--border-strong);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
-}
-
-.docket-card {
-  background: #f8fafc;
-  border: 1px solid var(--border-subtle);
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1.5px solid #cbd5e1;
   border-radius: var(--radius-md);
-  padding: 18px;
-  position: relative;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.status-option-card:hover {
+  border-color: var(--accent-primary);
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.status-option-card.selected {
+  border-color: var(--accent-primary);
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.radio-indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   transition: all 0.2s ease;
 }
 
-.docket-card:hover {
-  background: #ffffff;
-  border-color: var(--accent-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+.status-option-card.selected .radio-indicator {
+  border-color: #1d4ed8;
+  background: #1d4ed8;
 }
 
-.docket-card a.stretched-link::after {
+.status-option-card.selected .radio-indicator::after {
   content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
 }
 
-/* Theory 8: Affordance-Accurate Timeline Roadmap */
+/* Theory 4: Goal-Gradient Dynamic Timeline Roadmap */
 .timeline-roadmap {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  margin: 16px 0 20px;
+  margin: 14px 0 18px;
 }
 
 .timeline-roadmap::before {
   content: "";
   position: absolute;
   top: 14px;
-  left: 15px;
-  right: 15px;
+  left: 20px;
+  right: 20px;
   height: 2px;
   background: #e2e8f0;
   z-index: 1;
@@ -315,6 +336,7 @@ img { max-width: 100%; height: auto; }
   font-weight: 800;
   color: #64748b;
   margin-bottom: 4px;
+  transition: all 0.3s ease;
 }
 
 .roadmap-node.active .roadmap-circle {
@@ -322,6 +344,12 @@ img { max-width: 100%; height: auto; }
   border-color: #1d4ed8;
   color: #ffffff;
   box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2);
+}
+
+.roadmap-node.completed .roadmap-circle {
+  background: #15803d;
+  border-color: #15803d;
+  color: #ffffff;
 }
 
 .roadmap-label {
@@ -334,6 +362,65 @@ img { max-width: 100%; height: auto; }
 .roadmap-node.active .roadmap-label {
   color: #0f172a;
   font-weight: 800;
+}
+
+/* Cards & Layout */
+.tool-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.tool-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+}
+
+/* Theory 7: Isolated Primary Docket Card vs Standard Cards */
+.docket-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.docket-card:hover {
+  background: #ffffff;
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.docket-card-featured {
+  background: #ffffff;
+  border: 2px solid #1d4ed8;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  position: relative;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.1);
+}
+
+.docket-card-featured:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(29, 78, 216, 0.2);
+}
+
+.docket-card a.stretched-link::after,
+.docket-card-featured a.stretched-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 /* Badges */
@@ -373,6 +460,17 @@ img { max-width: 100%; height: auto; }
   letter-spacing: 0.04em;
 }
 
+.badge-featured {
+  background: #1d4ed8;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 h1, h2, h3, h4 {
   color: var(--text-main);
   letter-spacing: -0.02em;
@@ -391,11 +489,11 @@ h1, h2, h3, h4 {
     </div>
   </aside>
 
-  <!-- QUICK PRIMACY ACCESS BAR: BOT BYPASS SHORTCUT (THEORY 3) -->
-  <div style="background: #fffbeb; border-bottom: 1px solid #fde68a; padding: 8px 0; font-size: 14px;">
+  <!-- THEORY 3: QUICK PRIMACY ACCESS BAR (CRISP LIGHT GRAY - NO AMBER COMPETITION) -->
+  <div class="primacy-phone-bar">
     <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-      <span style="color: #b45309; font-weight: 700;">⚡ Need to talk to a human at Affirm right now?</span>
-      <span style="color: #0f172a; font-weight: 600;">Dial <strong>(855) 423-3729</strong> &rarr; Press <strong>1</strong> &rarr; Press <strong>0#0#</strong> <a href="tools/affirm-bot-bypass-cheat-sheet.html" style="color: #1d4ed8; font-weight: 700; margin-left: 8px; text-decoration: underline;">See Full Cheat Sheet</a></span>
+      <span style="color: #0f172a; font-weight: 700;">📞 Need to talk to a human at Affirm right now?</span>
+      <span style="color: #334155; font-weight: 600;">Dial <strong>(855) 423-3729</strong> &rarr; Press <strong>1</strong> &rarr; Press <strong>0#0#</strong> <a href="tools/affirm-bot-bypass-cheat-sheet.html" style="color: #1d4ed8; font-weight: 700; margin-left: 8px; text-decoration: underline;">View Phone Bypass Directory (Opens Instantly) &rarr;</a></span>
     </div>
   </div>
 
@@ -410,7 +508,7 @@ h1, h2, h3, h4 {
 
       <div class="hero-grid">
         
-        <!-- LEFT COLUMN: SYSTEM 1 PRE-ATTENTIVE CHUNKING & THE DOMAIN STORY -->
+        <!-- LEFT COLUMN: SYSTEM 1 PRE-ATTENTIVE CHUNKING & DOMAIN STORY -->
         <div>
           <h1 style="font-size: clamp(26px, 3.8vw, 40px); font-weight: 900; line-height: 1.25; margin: 0 0 14px; color: #0f172a;">
             Why Is Your Affirm Refund Stuck?<br>
@@ -440,7 +538,7 @@ h1, h2, h3, h4 {
           </div>
         </div>
 
-        <!-- RIGHT COLUMN: THE GOAL-GRADIENT INTERACTIVE HERO TOOL (THEORY 4, 5, 7, 8) -->
+        <!-- RIGHT COLUMN: GOAL-GRADIENT INTERACTIVE HERO TOOL (THEORY 1, 4, 5, 7, 8) -->
         <div style="background: #ffffff; border: 2.5px solid #1d4ed8; border-radius: 12px; padding: 24px; box-shadow: 0 10px 25px -5px rgba(29, 78, 216, 0.12);">
           
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
@@ -453,30 +551,40 @@ h1, h2, h3, h4 {
             Diagnose your return bottleneck and generate a formal <strong>Regulation Z (12 C.F.R. § 1026.13)</strong> billing error notice.
           </p>
 
-          <!-- THEORY 8: ACCURATE TIMELINE ROADMAP (NO FALSE AFFORDANCES) -->
-          <div class="timeline-roadmap">
-            <div class="roadmap-node active">
+          <!-- THEORY 4 & 8: GOAL-GRADIENT ACTIVE TIMELINE ROADMAP -->
+          <div class="timeline-roadmap" id="funnel-roadmap">
+            <div class="roadmap-node active" id="node-1">
               <div class="roadmap-circle">1</div>
               <span class="roadmap-label">Carrier Proof</span>
             </div>
-            <div class="roadmap-node">
+            <div class="roadmap-node" id="node-2">
               <div class="roadmap-circle">2</div>
               <span class="roadmap-label">Detect Float</span>
             </div>
-            <div class="roadmap-node">
+            <div class="roadmap-node" id="node-3">
               <div class="roadmap-circle">3</div>
               <span class="roadmap-label">1-Click Notice</span>
             </div>
           </div>
 
-          <!-- THEORY 4: GOAL-GRADIENT INTERACTIVE SINGLE-FIELD LAUNCHER -->
+          <!-- THEORY 1 & 8: SIMPLIFIED RAW CONSUMER STATUS SELECTION CARDS -->
           <div style="margin-bottom: 14px;">
-            <label for="quick-status" style="display: block; font-size: 12px; font-weight: 700; color: #0f172a; margin-bottom: 4px;">Select your current return status:</label>
-            <select id="quick-status" style="width: 100%; padding: 9px 12px; border: 1.5px solid #cbd5e1; border-radius: 6px; font-size: 13px; color: #0f172a; background: #f8fafc;">
-              <option value="received">📦 Merchant received return, but Affirm still billing</option>
-              <option value="transit">🚚 Package returned in transit with carrier tracking</option>
-              <option value="denied">❌ Affirm chatbot automatically closed/denied dispute</option>
-            </select>
+            <label style="display: block; font-size: 12px; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Where is your return currently stuck?</label>
+            
+            <div class="status-option-card selected" onclick="selectOption(this, 1)">
+              <div class="radio-indicator"></div>
+              <span>📦 I returned the item, but I am still being billed.</span>
+            </div>
+
+            <div class="status-option-card" onclick="selectOption(this, 2)">
+              <div class="radio-indicator"></div>
+              <span>🚚 The item is currently tracking back to the warehouse.</span>
+            </div>
+
+            <div class="status-option-card" onclick="selectOption(this, 3)">
+              <div class="radio-indicator"></div>
+              <span>❌ Affirm closed my dispute without fixing it.</span>
+            </div>
           </div>
 
           <!-- THEORY 5 & 7: ISOLATED HIGH-SCENT PRIMARY CTA -->
@@ -498,7 +606,24 @@ h1, h2, h3, h4 {
     </div>
   </header>
 
-  <!-- MAIN VIEWPORT: OPERATIONAL CONSUMER DEFENSE TOOLS (THEORY 1: SEPARATION OF CONCERNS) -->
+  <!-- JAVASCRIPT FOR DYNAMIC GOAL-GRADIENT FEEDBACK (THEORY 4) -->
+  <script>
+    function selectOption(el, stepNum) {
+      var cards = document.querySelectorAll('.status-option-card');
+      cards.forEach(function(c) { c.classList.remove('selected'); });
+      el.classList.add('selected');
+      
+      var node1 = document.getElementById('node-1');
+      var node2 = document.getElementById('node-2');
+      if (node1 && node2) {
+        node1.className = 'roadmap-node completed';
+        node1.querySelector('.roadmap-circle').innerHTML = '✓';
+        node2.className = 'roadmap-node active';
+      }
+    }
+  </script>
+
+  <!-- MAIN VIEWPORT: OPERATIONAL CONSUMER DEFENSE TOOLS (THEORY 1 & 3: ELEVATED DUAL PRIMACY) -->
   <main class="container" style="margin: 40px auto;">
 
     <!-- TIER 1: OPERATIONAL CONSUMER SELF-DEFENSE SUITE -->
@@ -513,11 +638,11 @@ h1, h2, h3, h4 {
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px;">
         
-        <!-- CARD 1: BOT BYPASS CHEAT SHEET -->
+        <!-- CARD 1: PHONE BYPASS DIRECTORY (THEORY 5: EXPLICIT SCENT) -->
         <div class="tool-card">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <span class="badge-amber">⚡ Phone Shortcuts</span>
+              <span class="badge-clean">⚡ Phone Shortcuts</span>
               <span style="font-size: 12px; color: #64748b;">Instant Human</span>
             </div>
             <h3 style="font-size: 17px; font-weight: 700; color: #0f172a; margin: 0 0 8px;">"Talk to a Human" Bot Bypass Cheat Sheet</h3>
@@ -525,40 +650,10 @@ h1, h2, h3, h4 {
               Direct phone tree bypass codes (skip automated SMS hang-ups), chatbot loop-killer phrases, and verified executive legal escalation email addresses.
             </p>
           </div>
-          <a href="tools/affirm-bot-bypass-cheat-sheet.html" style="font-weight: 700; font-size: 14px;">Open Phone Bypass Directory</a>
+          <a href="tools/affirm-bot-bypass-cheat-sheet.html" style="font-weight: 700; font-size: 14px;">View Phone Bypass Directory (Opens Instantly) &rarr;</a>
         </div>
 
-        <!-- CARD 2: BANK BILLPAY WORKAROUND -->
-        <div class="tool-card">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <span class="badge-clean">🛡️ Account Lock</span>
-              <span style="font-size: 12px; color: #64748b;">ACH Principal</span>
-            </div>
-            <h3 style="font-size: 17px; font-weight: 700; color: #0f172a; margin: 0 0 8px;">Online BillPay &amp; Locked Account Guide</h3>
-            <p style="color: #475569; font-size: 14px; line-height: 1.5; margin: 0 0 14px;">
-              Step-by-step instructions to pay undisputed loan principal via external bank BillPay (ACH) if your mobile app access is locked during an active dispute.
-            </p>
-          </div>
-          <a href="guides/affirm-bank-billpay-workaround.html" style="font-weight: 700; font-size: 14px;">Read BillPay Guide</a>
-        </div>
-
-        <!-- CARD 3: REDDIT & FORUM TEMPLATES -->
-        <div class="tool-card">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <span class="badge-clean">💬 Community Help</span>
-              <span style="font-size: 12px; color: #64748b;">Copy-Paste</span>
-            </div>
-            <h3 style="font-size: 17px; font-weight: 700; color: #0f172a; margin: 0 0 8px;">Reddit &amp; Forum Help Response Templates</h3>
-            <p style="color: #475569; font-size: 14px; line-height: 1.5; margin: 0 0 14px;">
-              Copy-paste helpful markdown reply snippets to drop into Reddit (r/Affirm, r/povertyfinance, r/CreditCards) to help other shoppers beat bot loops.
-            </p>
-          </div>
-          <a href="tools/reddit-community-response-toolkit.html" style="font-weight: 700; font-size: 14px;">Open Reddit Templates</a>
-        </div>
-
-        <!-- CARD 4 (RECENCY ANCHOR): 120-DAY RISK CALCULATOR -->
+        <!-- CARD 2 (ELEVATED CONCURRENT TOOL): 120-DAY CREDIT RISK COUNTDOWN (THEORY 3) -->
         <div class="tool-card" style="border-color: #fde68a; background: #fffdfa;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
@@ -570,13 +665,53 @@ h1, h2, h3, h4 {
               Calculate debt-to-income spikes, compounding interest fees, and the exact countdown to collection network escalation to protect your credit score.
             </p>
           </div>
-          <a href="tools/underwriting-credit-impact-calculator.html" style="font-weight: 700; font-size: 14px; color: #b45309;">Calculate Credit Countdown</a>
+          <a href="tools/underwriting-credit-impact-calculator.html" style="font-weight: 700; font-size: 14px; color: #b45309;">Launch 120-Day Credit Risk Calculator (Interactive) &rarr;</a>
+        </div>
+
+        <!-- CARD 3: BANK BILLPAY WORKAROUND -->
+        <div class="tool-card">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span class="badge-clean">🛡️ Account Lock</span>
+              <span style="font-size: 12px; color: #64748b;">ACH Principal</span>
+            </div>
+            <h3 style="font-size: 17px; font-weight: 700; color: #0f172a; margin: 0 0 8px;">Online BillPay &amp; Locked Account Guide</h3>
+            <p style="color: #475569; font-size: 14px; line-height: 1.5; margin: 0 0 14px;">
+              Step-by-step instructions to pay undisputed loan principal via external bank BillPay (ACH) if your mobile app access is locked during an active dispute.
+            </p>
+          </div>
+          <a href="guides/affirm-bank-billpay-workaround.html" style="font-weight: 700; font-size: 14px;">Read BillPay Workaround (Step-by-Step Guide) &rarr;</a>
+        </div>
+
+        <!-- CARD 4: REDDIT & FORUM TEMPLATES -->
+        <div class="tool-card">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span class="badge-clean">💬 Community Help</span>
+              <span style="font-size: 12px; color: #64748b;">Copy-Paste</span>
+            </div>
+            <h3 style="font-size: 17px; font-weight: 700; color: #0f172a; margin: 0 0 8px;">Reddit &amp; Forum Help Response Templates</h3>
+            <p style="color: #475569; font-size: 14px; line-height: 1.5; margin: 0 0 14px;">
+              Copy-paste helpful markdown reply snippets to drop into Reddit (r/Affirm, r/povertyfinance, r/CreditCards) to help other shoppers beat bot loops.
+            </p>
+          </div>
+          <a href="tools/reddit-community-response-toolkit.html" style="font-weight: 700; font-size: 14px;">Open Reddit Response Templates (Copy-Paste) &rarr;</a>
         </div>
 
       </div>
     </section>
 
-    <!-- TIER 2: FORENSIC INVESTIGATIVE ARCHIVE (BELOW THE FOLD - SEPARATED FOR PROCESSING FLUENCY) -->
+    <!-- THEORY 2: SOFTENED TRANSITION BANNER TO FORENSIC ARCHIVE -->
+    <div style="text-align: center; margin: 40px 0 24px; padding: 20px 0; border-top: 1px dashed #cbd5e1; border-bottom: 1px dashed #cbd5e1;">
+      <span style="background: #f1f5f9; border: 1px solid #cbd5e1; color: #475569; font-size: 12px; font-weight: 800; padding: 4px 14px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;">
+        Forensic Archive &amp; Whistleblower Records Below
+      </span>
+      <p style="margin: 8px auto 0; font-size: 14px; color: #64748b; max-width: 600px; line-height: 1.5;">
+        The sections below contain the investigative unit economic exposés, corporate capital stack analysis, and unredacted regulatory evidence dockets.
+      </p>
+    </div>
+
+    <!-- TIER 2: FORENSIC INVESTIGATIVE ARCHIVE (THEORY 1 & 9) -->
     <section aria-labelledby="investigations-heading" style="margin-bottom: 48px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px;">
       <div style="margin-bottom: 20px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">
         <span style="color: #1d4ed8; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Investigative Archive</span>
@@ -607,7 +742,7 @@ h1, h2, h3, h4 {
       </div>
     </section>
 
-    <!-- TIER 3: THE UNREDACTED EVIDENCE DOCKET -->
+    <!-- TIER 3: THE UNREDACTED EVIDENCE DOCKET (THEORY 7: FEATURED PRIMARY EXHIBIT) -->
     <section id="master-evidence-docket" aria-labelledby="docket-heading" style="margin-bottom: 48px;">
       <div style="margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
         <span style="color: #15803d; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Public Regulatory Records</span>
@@ -616,16 +751,20 @@ h1, h2, h3, h4 {
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
         
+        <!-- FEATURED PRIMARY EXHIBIT: CFPB CASE -->
+        <div class="docket-card-featured">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <strong style="font-size: 15px; color: #0f172a;">📁 CFPB Complaint Records</strong>
+            <span class="badge-featured">⭐ Primary Exhibit</span>
+          </div>
+          <span style="font-size: 13px; color: #475569; display: block; margin-bottom: 8px;">Case #260716-1553638 &amp; Affirm responses</span>
+          <a href="documents/cfpb-complaint-and-affirm-false-response.pdf" class="stretched-link" style="font-weight: 700; font-size: 13px;">Download CFPB Record (PDF) &rarr;</a>
+        </div>
+
         <div class="docket-card">
           <strong style="display: block; font-size: 15px; color: #0f172a; margin-bottom: 4px;">📁 SEC Form TCR Submission</strong>
           <span style="font-size: 13px; color: #64748b; display: block; margin-bottom: 8px;">Whistleblower filing: TCR 17867-223-108-883</span>
           <a href="documents/sec-form-tcr-submission-confirmation-17867-223-108-883.pdf" class="stretched-link" style="font-weight: 700; font-size: 13px;">Download SEC Confirmation (PDF) &rarr;</a>
-        </div>
-
-        <div class="docket-card">
-          <strong style="display: block; font-size: 15px; color: #0f172a; margin-bottom: 4px;">📁 CFPB Complaint Records</strong>
-          <span style="font-size: 13px; color: #64748b; display: block; margin-bottom: 8px;">Case #260716-1553638 &amp; responses</span>
-          <a href="documents/cfpb-complaint-and-affirm-false-response.pdf" class="stretched-link" style="font-weight: 700; font-size: 13px;">Download CFPB Record (PDF) &rarr;</a>
         </div>
 
         <div class="docket-card">
@@ -643,7 +782,7 @@ h1, h2, h3, h4 {
       </div>
     </section>
 
-    <!-- THEORY 6: THE PEAK-END EMPOWERING COMMUNITY ACTION BANNER -->
+    <!-- THEORY 6: THE PEAK-END EMPOWERING CLOSING BANNER -->
     <section aria-label="Take action" style="background: #ffffff; border: 2px solid #bfdbfe; border-radius: 12px; padding: 36px 24px; text-align: center; margin-bottom: 40px; box-shadow: 0 10px 25px -5px rgba(29, 78, 216, 0.08);">
       <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 10px;">Consumer Protection Notice</span>
       <h3 style="font-size: 24px; font-weight: 800; color: #0f172a; margin: 0 0 8px;">
@@ -652,21 +791,27 @@ h1, h2, h3, h4 {
       <p style="font-size: 15px; color: #475569; max-width: 650px; margin: 0 auto 18px; line-height: 1.6;">
         Federal law (12 C.F.R. § 1026.13) gives you explicit statutory protections when returned goods are not credited. Generate your formal billing error notice in under 60 seconds.
       </p>
-      <a href="tools/bnpl-refund-delay-diagnostic.html" class="btn-primary-isolated" style="display: inline-block; width: auto; font-size: 16px; padding: 14px 32px;">
-        Start Your 60-Second Refund Dispute Now &rarr;
-      </a>
+      <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+        <a href="tools/bnpl-refund-delay-diagnostic.html" class="btn-primary-isolated" style="display: inline-block; width: auto; font-size: 16px; padding: 14px 32px;">
+          Start Your 60-Second Refund Dispute Now &rarr;
+        </a>
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="display: inline-block; background: #f1f5f9; border: 1.5px solid #cbd5e1; color: #0f172a; font-weight: 700; font-size: 14px; padding: 14px 20px; border-radius: 6px; text-decoration: none;">
+          ⬆️ Back to Top Dispute Tools
+        </a>
+      </div>
     </section>
 
   </main>
 
-  <!-- FOOTER: MINIMIZED SYSTEM IDENTIFIERS LAYER (THEORY 6: CLEAN PEAK-END) -->
+  <!-- THEORY 6: AUTHOR SIGNATURE BLOCK & MINIMIZED FOOTER LAYER -->
   <footer style="background: #0f172a; color: #94a3b8; padding: 36px 0; border-top: 1px solid #1e293b; font-size: 13px;">
     <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
       <div>
         <strong style="color: #f8fafc; font-size: 15px; display: block; margin-bottom: 4px;">Kinslow Consumer Defense &amp; Regulatory Archive</strong>
-        <span style="color: #64748b;">An open public interest initiative published by Charles W. Kinslow IV, J.D., C.P.A.</span>
+        <span style="color: #94a3b8; display: block; margin-bottom: 4px;">An open public interest initiative by Charles W. Kinslow IV, J.D., C.P.A.</span>
+        <span style="color: #64748b; font-size: 12px;">"Built for everyday consumers who shouldn't have to hire a lawyer to get their own money back."</span>
       </div>
-      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
         <a href="https://orcid.org/0009-0004-9464-679X" style="color: #93c5fd;" target="_blank" rel="noopener">ORCID: 0009-0004-9464-679X</a>
         <a href="sitemap.xml" style="color: #93c5fd;">Sitemap Feed</a>
         <a href="llms.txt" style="color: #93c5fd;">llms.txt</a>
