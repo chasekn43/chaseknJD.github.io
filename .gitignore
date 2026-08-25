@@ -1,4 +1,6 @@
 google_console_key.json
+google_credentials.json
+regulatory-archive-*.json
 query_verification_run.json
 gsc_indexation_status.json
 captcha_error.png
