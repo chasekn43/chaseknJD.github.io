@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affirm Refund Delay Diagnostic &amp; Statutory Escalator | Kinslow Archive</title>
+  <meta name="description" content="Interactive diagnostic tool to diagnose why your Affirm refund is stuck in merchant settlement float and generate a customized statutory dispute notice under Regulation Z.">
+  <link rel="canonical" href="https://kinslow-regulatory-archive.org/tools/bnpl-refund-delay-diagnostic.html">
+  <link rel="stylesheet" href="../index.css">
+  <style>
+    .diagnostic-card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+    .step-badge {
+      display: inline-block;
+      background: #dc2626;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .question-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #f9fafb;
+      margin-bottom: 16px;
+    }
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .option-btn {
+      background: #1e293b;
+      border: 2px solid #334155;
+      border-radius: 8px;
+      padding: 16px;
+      color: #e2e8f0;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .option-btn:hover, .option-btn.selected {
+      border-color: #3b82f6;
+      background: #1e3a8a;
+      color: #ffffff;
+    }
+    .result-box {
+      background: #0f172a;
+      border: 1px solid #3b82f6;
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 24px;
+      display: none;
+    }
+    .action-script {
+      background: #030712;
+      border: 1px solid #374151;
+      border-radius: 6px;
+      padding: 16px;
+      font-family: monospace;
+      font-size: 13px;
+      color: #93c5fd;
+      white-space: pre-wrap;
+      margin: 16px 0;
+      line-height: 1.6;
+    }
+    .copy-btn {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .copy-btn:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body class="guide-page">
+  <header style="background: #0b0f19; border-bottom: 1px solid #1f2937; padding: 20px 0;">
+    <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+      <a href="../index.html" style="color: #9ca3af; text-decoration: none; font-size: 14px;">&larr; Back to Kinslow Regulatory Archive</a>
+      <h1 style="font-size: 28px; font-weight: 800; color: #f9fafb; margin: 12px 0 6px;">Affirm Refund Delay Diagnostic &amp; Statutory Escalator</h1>
+      <p style="color: #94a3b8; font-size: 15px; margin: 0;">Diagnose why your refund is trapped in merchant float and generate a customized Regulation Z dispute letter in 60 seconds.</p>
+    </div>
+  </header>
+
+  <main style="max-width: 900px; margin: 32px auto; padding: 0 20px;">
+    
+    <!-- STEP 1: CARRIER TRACKING -->
+    <div class="diagnostic-card" id="step1">
+      <span class="step-badge">Step 1 of 3</span>
+      <h2 class="question-title">What is the physical status of your return?</h2>
+      <div class="option-grid">
+        <button class="option-btn" onclick="selectOption('carrier', 'delivered')">
+          <strong>✅ Delivered to Merchant Dock</strong><br>
+          Carrier tracking (UPS, FedEx, USPS, OnTrac) confirms delivery signature.
+        </button>
+        <button class="option-btn" onclick="selectOption('carrier', 'in_transit')">
+          <strong>🚚 In Transit / Scanned by Carrier</strong><br>
+          Package is moving through carrier hubs but not yet signed for.
+        </button>
+        <button class="option-btn" onclick="selectOption('carrier', 'no_tracking')">
+          <strong>⚠️ In-Store Drop-off / Merchant Label</strong><br>
+          Returned directly in-store or dropped off using merchant pre-printed label.
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2: MERCHANT SETTLEMENT -->
+    <div class="diagnostic-card" id="step2" style="display: none;">
+      <span class="step-badge">Step 2 of 3</span>
+      <h2 class="question-title">How long has it been since the return was delivered?</h2>
+      <div class="option-grid">
+        <button class="option-btn" onclick="selectOption('timing', 'under_14')">
+          <strong>⏳ Under 14 Days</strong><br>
+          Within standard merchant dock intake and warehouse RMA inspection window.
+        </button>
+        <button class="option-btn" onclick="selectOption('timing', '15_to_30')">
+          <strong>⚠️ 15 to 30 Days</strong><br>
+          Exceeds merchant inspection window; merchant ACH settlement credit is delayed.
+        </button>
+        <button class="option-btn" onclick="selectOption('timing', 'over_30')">
+          <strong>🚨 Over 30 Days (Statutory Violation Window)</strong><br>
+          Exceeds Regulation Z billing error investigation limits under 12 C.F.R. § 1026.13.
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 3: AFFIRM DISPUTE STATUS -->
+    <div class="diagnostic-card" id="step3" style="display: none;">
+      <span class="step-badge">Step 3 of 3</span>
+      <h2 class="question-title">What is Affirm currently doing with your account?</h2>
+      <div class="option-grid">
+        <button class="option-btn" onclick="selectOption('affirm_status', 'denied')">
+          <strong>❌ Dispute Denied by Automated Bot</strong><br>
+          Affirm closed dispute claiming "insufficient evidence" despite delivery proof.
+        </button>
+        <button class="option-btn" onclick="selectOption('affirm_status', 'active_billing')">
+          <strong>💳 Auto-Deducting Monthly Installments</strong><br>
+          Affirm is continuing to withdraw payments and charging finance interest.
+        </button>
+        <button class="option-btn" onclick="selectOption('affirm_status', 'collections_threat')">
+          <strong>🚨 Threatening Late Fees / Credit Reporting</strong><br>
+          Account locked, late fees assessed, or warnings of credit bureau delinquency.
+        </button>
+      </div>
+    </div>
+
+    <!-- RESULTS & GENERATED ACTION PLAN -->
+    <div class="result-box" id="results">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+        <span style="font-size: 28px;">⚖️</span>
+        <div>
+          <h3 style="font-size: 20px; font-weight: 800; color: #60a5fa; margin: 0;">Forensic Diagnosis: Merchant Settlement Float Lockout</h3>
+          <p style="color: #94a3b8; font-size: 14px; margin: 4px 0 0;">Governed by 12 C.F.R. § 1026.13 (Regulation Z) &amp; CFPB May 2024 BNPL Enforcement Directive</p>
+        </div>
+      </div>
+
+      <div style="background: #1e293b; border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+        <h4 style="color: #f1f5f9; font-size: 15px; margin: 0 0 8px;">Why Your Refund Is Trapped:</h4>
+        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;" id="diagnosisText">
+          Your carrier delivery proof establishes completed return of merchandise. However, Affirm's automated dispute bot queries only the merchant's financial API. Because the merchant's accounting department has not completed the ACH settlement credit, the bot issued an automated denial. Under federal law, continuing to collect payments during this window constitutes a statutory violation.
+        </p>
+      </div>
+
+      <h4 style="color: #f8fafc; font-size: 16px; margin: 0 0 8px;">Your Customized Statutory Notice of Dispute (Copy &amp; Send):</h4>
+      <div class="action-script" id="generatedScript">
+DATE: [Today's Date]
+TO: Affirm, Inc. Executive Legal Escalations / Cross River Bank
+RE: FORMAL STATUTORY NOTICE OF BILLING ERROR &amp; DISPUTE UNDER 12 C.F.R. § 1026.13
+LOAN ID: [Insert Affirm Loan ID] | MERCHANT: [Insert Merchant Name]
+
+To Whom It May Concern,
+
+Please accept this formal written notice of billing error pursuant to the Truth in Lending Act (TILA), 15 U.S.C. § 1666, and Regulation Z, 12 C.F.R. § 1026.13, as applicable to Buy Now, Pay Later point-of-sale credit providers under CFPB Enforcement Guidance.
+
+1. EVIDENTIARY FACT OF RETURN:
+The merchandise associated with Loan ID [Insert Loan ID] was physically delivered and accepted at the merchant dock on [Insert Delivery Date] via [Insert Carrier] (Tracking ID: [Insert Tracking Number]). A copy of the signed delivery confirmation is attached.
+
+2. STATUTORY VIOLATIONS &amp; DEMAND:
+Pursuant to 12 C.F.R. § 1026.13(d)(1), Affirm is strictly prohibited from attempting to collect the disputed amount, assessing finance charges, or issuing automated bot denials while this billing error remains uncredited. Furthermore, pursuant to 12 C.F.R. § 1026.13(d)(2), Affirm may not report or threaten to report this disputed account as delinquent to any consumer reporting agency.
+
+Demand is hereby made that Affirm immediately:
+a) Credit the full principal balance and reverse all assessed interest.
+b) Issue written confirmation of zero remaining liability within 30 days.
+c) Cease all automated collection attempts.
+
+Sincerely,
+[Your Full Name]
+[Your Phone / Email]
+      </div>
+
+      <button class="copy-btn" onclick="copyScript()">📋 Copy Statutory Notice to Clipboard</button>
+    </div>
+
+  </main>
+
+  <script>
+    const userSelections = {};
+
+    function selectOption(step, val) {
+      userSelections[step] = val;
+      
+      if (step === 'carrier') {
+        document.getElementById('step2').style.display = 'block';
+        document.getElementById('step2').scrollIntoView({ behavior: 'smooth' });
+      } else if (step === 'timing') {
+        document.getElementById('step3').style.display = 'block';
+        document.getElementById('step3').scrollIntoView({ behavior: 'smooth' });
+      } else if (step === 'affirm_status') {
+        document.getElementById('results').style.display = 'block';
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function copyScript() {
+      const text = document.getElementById('generatedScript').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Statutory Dispute Notice copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>
