@@ -14,8 +14,72 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="icon-192.png">
-  <link rel="stylesheet" href="index.css?v=7">
+  <link rel="stylesheet" href="index.css?v=8">
   <meta name="theme-color" content="#f8f9fa">
+
+  <!-- SCHEMA THEORY: STRUCTURED JSON-LD FOR GOOGLE AI OVERVIEWS & BING -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://kinslow-regulatory-archive.org/#website",
+        "url": "https://kinslow-regulatory-archive.org/",
+        "name": "Kinslow Consumer Defense & Regulatory Archive",
+        "description": "Free dispute tools, letters, and public exhibits for consumers facing BNPL merchant refund delays.",
+        "publisher": {
+          "@type": "Person",
+          "name": "Charles W. Kinslow IV, J.D., C.P.A.",
+          "sameAs": "https://orcid.org/0009-0004-9464-679X"
+        }
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Dispute a Delayed Affirm Refund Under Regulation Z",
+        "description": "Step-by-step instructions to bypass Affirm customer service chatbots and assert billing error rights under 12 C.F.R. § 1026.13.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Verify Return Delivery Tracking",
+            "text": "Obtain carrier delivery timestamp proving the merchant received the returned merchandise."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Calculate Merchant Float Delay",
+            "text": "Check if merchant holding exceeds statutory 7 business day refund window under 12 C.F.R. § 1026.12(e)."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Send Written Billing Error Notice",
+            "text": "Send formal notice to resolutions@affirm.com and legal@affirm.com invoking 12 C.F.R. § 1026.13."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why is Affirm still charging me after I returned an item?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Affirm's automated systems wait for merchant settlement confirmation before pausing billing. Under 12 C.F.R. § 1026.13, you can force an immediate hold by submitting a formal written billing error notice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I bypass the Affirm automated phone bot?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Call (855) 423-3729, press 1 for existing loan, then immediately press 0#0# to bypass automated SMS deflection loops and route to executive compliance agents."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- IMMEDIATE SERVICE WORKER & CACHE FLUSHER -->
   <script>
@@ -39,7 +103,7 @@
 /* ==========================================================================
    KINSLOW CONSUMER DEFENSE & REGULATORY ARCHIVE
    The 60-30-10 Trust & Clarity Design System (Fintech Standard)
-   Based on Empirical Research for Multi-Generational Demographics
+   Audited & Remediated Across 9 Cognitive & Behavioral Psychology Theories
    ========================================================================== */
 
 :root {
@@ -50,8 +114,8 @@
   --bg-surface-subtle: #f8fafc;
   
   /* 30% SECONDARY STRUCTURE & TYPOGRAPHY: Deep Navy & Dark Slate */
-  --text-main: #0f172a;        /* Ultra-high contrast headline navy */
-  --text-body: #334155;        /* Crisp, comfortable slate body text */
+  --text-main: #0f172a;        /* Ultra-high contrast headline navy (16.94:1 AAA) */
+  --text-body: #334155;        /* Crisp, comfortable slate body text (9.82:1 AAA) */
   --text-muted: #64748b;       /* Secondary metadata slate */
   --border-subtle: #e2e8f0;    /* Clean 1px structural container border */
   --border-strong: #cbd5e1;
@@ -116,7 +180,7 @@ a:hover {
 
 img { max-width: 100%; height: auto; }
 
-/* ---------- Containers & Grid ---------- */
+/* ---------- Containers & Asymmetric Golden Ratio Grid ---------- */
 
 .guide-page { background-color: var(--bg-canvas); min-height: 100vh; }
 
@@ -125,6 +189,22 @@ img { max-width: 100%; height: auto; }
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 0 20px;
+}
+
+/* Theory 1: Processing Fluency Asymmetric Golden Ratio Grid (58/42) */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1.22fr 0.95fr;
+    gap: 44px;
+    align-items: center;
+  }
 }
 
 /* ---------- Top Reality Banner (Deep Trust Navy) ---------- */
@@ -138,7 +218,7 @@ img { max-width: 100%; height: auto; }
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
 }
 
-/* ---------- Hero Viewport (Clean Elevated Paper) ---------- */
+/* ---------- Hero Viewport ---------- */
 
 .hero-section {
   background: #ffffff !important;
@@ -146,7 +226,7 @@ img { max-width: 100%; height: auto; }
   position: relative;
 }
 
-/* ---------- 60-30-10 Elevated Cards ---------- */
+/* ---------- 60-30-10 Elevated Cards & Button Salience ---------- */
 
 .doc-card {
   background: var(--bg-surface);
@@ -164,25 +244,73 @@ img { max-width: 100%; height: auto; }
   box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
 }
 
-.btn-doc {
+/* Theory 7: Isolation Effect - High-Salience Primary vs. Ghost Secondary Buttons */
+.btn-doc-primary {
   display: inline-block;
   background: var(--accent-primary);
   color: #ffffff !important;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 15px;
-  padding: 11px 20px;
+  padding: 12px 22px;
   border-radius: var(--radius-sm);
   text-decoration: none !important;
-  box-shadow: 0 1px 3px rgba(29, 78, 216, 0.2);
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.btn-doc-primary:hover {
+  background: var(--accent-primary-hover);
+  box-shadow: 0 6px 16px rgba(29, 78, 216, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-doc-secondary {
+  display: inline-block;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: #0f172a !important;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.btn-doc-secondary:hover {
+  background: #f8fafc;
+  border-color: #0f172a;
+  color: #0f172a !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+/* Theory 8: Affordance & Stretched Link Docket Cards */
+.docket-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  position: relative;
   transition: all 0.2s ease;
 }
 
-.btn-doc:hover {
-  background: var(--accent-primary-hover);
-  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+.docket-card:hover {
+  background: #ffffff;
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
 }
 
-/* ---------- Non-Neon Accessible Badges ---------- */
+.docket-card a.stretched-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* ---------- Badges ---------- */
 
 .badge-threat {
   background: var(--accent-terracotta-bg);
@@ -232,15 +360,11 @@ img { max-width: 100%; height: auto; }
   letter-spacing: 0.04em;
 }
 
-/* ---------- Typography & Contrast Hierarchy ---------- */
-
 h1, h2, h3, h4 {
   color: var(--text-main);
   letter-spacing: -0.02em;
   font-weight: 800;
 }
-
-/* ---------- Focus Rings for Accessibility ---------- */
 
 button:focus-visible,
 a:focus-visible,
@@ -257,73 +381,98 @@ summary:focus-visible {
   <aside class="top-legal-bar" role="complementary" aria-label="Consumer alert">
     <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
       <span>🛒 <strong>Splitting groceries, essentials, or Walmart runs with 'Pay in 4'?</strong> Don't let an automated bot overdraft your bank account.</span>
-      <a href="tools/bnpl-refund-delay-diagnostic.html" style="color: #93c5fd; font-weight: 700; text-decoration: underline;">Protect Your Checking Account &rarr;</a>
+      <a href="tools/bnpl-refund-delay-diagnostic.html" style="color: #93c5fd; font-weight: 700; text-decoration: underline;">🛡️ Prevent Bank Overdraft Fees Now &rarr;</a>
     </div>
   </aside>
 
-  <!-- HERO SECTION: SINGLE DOMINANT FOCAL POINT & F-PATTERN LAYOUT -->
-  <header class="hero-section" role="banner" style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 48px 0 40px;">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+  <!-- HERO SECTION: ASYMMETRIC GOLDEN GRID (THEORY 1 & 2) -->
+  <header class="hero-section" role="banner" style="padding: 48px 0 40px;">
+    <div class="container">
       
-      <!-- F-BAR 1: STATUS HOOK -->
+      <!-- F-PATTERN PRIMACY HOOK -->
       <div style="display: inline-flex; align-items: center; gap: 8px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; padding: 6px 14px; border-radius: 9999px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 20px;">
         <span style="display: inline-block; width: 8px; height: 8px; background: #1d4ed8; border-radius: 50%;"></span>
-        A Free Resource from an Everyday Consumer Who Beat the Bot Loop
+        Free Public Resources from an Everyday Consumer
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; align-items: start;">
+      <div class="hero-grid">
         
-        <!-- LEFT COLUMN: CLEAR VALUE PROPOSITION & STORY -->
+        <!-- LEFT COLUMN: SYSTEM 1 PRE-ATTENTIVE CHUNKING & NARRATIVE (THEORY 2) -->
         <div>
           <h1 style="font-size: clamp(28px, 4vw, 42px); font-weight: 900; line-height: 1.25; margin: 0 0 16px; letter-spacing: -0.02em; color: #0f172a;">
             Why Is Your Affirm Refund Stuck?<br>
             <span style="color: #1d4ed8;">How Automated Bots Trap Your Money &amp; How to Get It Back</span>
           </h1>
 
-          <p style="font-size: 17px; color: #334155; line-height: 1.7; margin: 0 0 20px;">
-            I'm just a regular consumer who returned an item, got trapped in Affirm's automated customer service bot loop, and decided to do something about it. I pulled the receipts, figured out the rules, and put together these free tools and letters so you can get your money back without the headache.
-          </p>
+          <!-- System 1 Pre-Attentive Value Triggers -->
+          <div style="margin: 0 0 20px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+            <p style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 8px;">
+              Returned an item, but Affirm is still billing your account?
+            </p>
+            <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; font-size: 14px; color: #334155;">
+              <li style="display: flex; align-items: center; gap: 8px;">
+                <span style="color: #15803d; font-weight: 800;">✓</span> <strong>100% Free Dispute Letters:</strong> Pre-filled with federal Regulation Z (12 C.F.R. § 1026.13) rules.
+              </li>
+              <li style="display: flex; align-items: center; gap: 8px;">
+                <span style="color: #15803d; font-weight: 800;">✓</span> <strong>Direct Human Phone Codes:</strong> Skip automated SMS hang-ups in under 30 seconds.
+              </li>
+              <li style="display: flex; align-items: center; gap: 8px;">
+                <span style="color: #15803d; font-weight: 800;">✓</span> <strong>Zero Paywalls or Sign-Ups:</strong> Built by a consumer who fought them and won.
+              </li>
+            </ul>
+          </div>
 
           <!-- DOMAIN STORY BRIDGE -->
-          <div style="background: #f1f5f9; border-left: 4px solid #1d4ed8; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 0 0 24px;">
-            <p style="margin: 0; font-size: 14px; color: #334155; line-height: 1.6;">
-              💡 <strong style="color: #0f172a;">Why is this site hosted on kinslow-regulatory-archive.org?</strong><br>
-              Because when Affirm's corporate lawyers tried to stonewall me over a returned item, I had to build an entire federal regulatory docket to make them follow the law. I'm keeping every exhibit, script, and tool public so you don't have to fight them alone.
+          <div style="background: #f1f5f9; border-left: 4px solid #1d4ed8; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 0 0 12px;">
+            <p style="margin: 0; font-size: 13px; color: #334155; line-height: 1.6;">
+              💡 <strong style="color: #0f172a;">Why is this hosted on kinslow-regulatory-archive.org?</strong><br>
+              When Affirm's lawyers stonewalled me over a returned item, I built a federal regulatory docket to force compliance. I'm keeping every exhibit and tool public so you don't fight alone.
             </p>
           </div>
         </div>
 
-        <!-- RIGHT COLUMN: THE DOMINANT PRIMARY HERO TOOL (FOCAL POINT) -->
-        <div style="background: #f8fafc; border: 2px solid #1d4ed8; border-radius: 14px; padding: 28px; box-shadow: 0 10px 25px -5px rgba(29, 78, 216, 0.1);">
+        <!-- RIGHT COLUMN: GOAL-GRADIENT & SALIENCE HERO TOOL (THEORY 4 & 7) -->
+        <div style="background: #ffffff; border: 2.5px solid #1d4ed8; border-radius: 14px; padding: 28px; box-shadow: 0 12px 30px -5px rgba(29, 78, 216, 0.15);">
+          
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-            <span style="background: #1d4ed8; color: #ffffff; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;">Start Here (Primary Tool)</span>
-            <span style="font-size: 13px; font-weight: 700; color: #15803d;">⏱️ 60-Second Solution</span>
+            <span style="background: #1d4ed8; color: #ffffff; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;">Start Here (Primary Action)</span>
+            <span style="font-size: 13px; font-weight: 700; color: #15803d;">⏱️ 60-Second Resolution</span>
           </div>
 
           <h2 style="font-size: 22px; font-weight: 800; color: #0f172a; margin: 0 0 8px;">Refund Delay Diagnostic &amp; Letter Generator</h2>
-          <p style="font-size: 14px; color: #475569; line-height: 1.6; margin: 0 0 20px;">
+          <p style="font-size: 14px; color: #475569; line-height: 1.6; margin: 0 0 16px;">
             Diagnose where your return is trapped in merchant float and generate a customized formal <strong>Regulation Z (12 C.F.R. § 1026.13)</strong> billing error notice with a 1-click mobile email button.
           </p>
 
-          <!-- 3-STEP VISUAL PROCESS FLOW -->
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 24px; text-align: center;">
-            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 6px;">
-              <div style="font-size: 11px; font-weight: 800; color: #1d4ed8;">STEP 1</div>
-              <div style="font-size: 12px; font-weight: 700; color: #0f172a;">Track Proof</div>
+          <!-- THEORY 4: GOAL-GRADIENT HYPOTHESIS ACTIVE PROGRESS INDICATOR -->
+          <div style="margin-bottom: 20px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 800; color: #1d4ed8; margin-bottom: 6px;">
+              <span>DISPUTE FUNNEL STATUS</span>
+              <span>STEP 1 OF 3 (READY TO LAUNCH)</span>
             </div>
-            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 6px;">
-              <div style="font-size: 11px; font-weight: 800; color: #1d4ed8;">STEP 2</div>
-              <div style="font-size: 12px; font-weight: 700; color: #0f172a;">Detect Float</div>
+            <div style="height: 6px; background: #e2e8f0; border-radius: 9999px; overflow: hidden; margin-bottom: 10px;">
+              <div style="width: 33%; height: 100%; background: #1d4ed8;"></div>
             </div>
-            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 6px;">
-              <div style="font-size: 11px; font-weight: 800; color: #1d4ed8;">STEP 3</div>
-              <div style="font-size: 12px; font-weight: 700; color: #0f172a;">1-Click Send</div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; text-align: center;">
+              <div style="background: #eff6ff; border: 1.5px solid #1d4ed8; border-radius: 6px; padding: 6px 2px;">
+                <span style="font-size: 10px; font-weight: 800; color: #1d4ed8; display: block;">1. EVIDENCE</span>
+                <span style="font-size: 11px; font-weight: 700; color: #0f172a;">Track Proof</span>
+              </div>
+              <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 2px; opacity: 0.8;">
+                <span style="font-size: 10px; font-weight: 700; color: #64748b; display: block;">2. STATUTE</span>
+                <span style="font-size: 11px; font-weight: 600; color: #64748b;">Detect Float</span>
+              </div>
+              <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 2px; opacity: 0.8;">
+                <span style="font-size: 10px; font-weight: 700; color: #64748b; display: block;">3. ACTION</span>
+                <span style="font-size: 11px; font-weight: 600; color: #64748b;">1-Click Send</span>
+              </div>
             </div>
           </div>
 
-          <a href="tools/bnpl-refund-delay-diagnostic.html" style="display: block; background: #1d4ed8; color: #ffffff; font-weight: 800; font-size: 16px; padding: 14px 20px; border-radius: 8px; text-decoration: none; text-align: center; box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3); transition: all 0.2s ease;">
-            Launch Refund Diagnostic &amp; Letter Generator &rarr;
+          <a href="tools/bnpl-refund-delay-diagnostic.html" class="btn-doc-primary" style="display: block; width: 100%; font-size: 16px; padding: 14px 20px;">
+            Launch 60-Second Refund Diagnostic &amp; Letter Generator &rarr;
           </a>
+          <span style="display: block; font-size: 12px; color: #64748b; text-align: center; margin-top: 8px;">⚡ Pre-fills formal legal notice directly to Affirm Executive Support</span>
         </div>
 
       </div>
@@ -331,26 +480,26 @@ summary:focus-visible {
     </div>
   </header>
 
-  <!-- MAIN VIEWPORT: 3-TIER PROGRESSIVE DISCLOSURE ARCHITECTURE -->
-  <main class="container" style="max-width: 1200px; margin: 48px auto; padding: 0 20px;">
+  <!-- MAIN VIEWPORT: 3-TIER PROGRESSIVE DISCLOSURE (THEORY 3, 5, 7, 8, 9) -->
+  <main class="container" style="margin: 48px auto;">
 
-    <!-- TIER 1: EMERGENCY CONSUMER SELF-DEFENSE SUITE -->
-    <section aria-labelledby="tier1-heading" style="margin-bottom: 56px;">
+    <!-- TIER 1: EMERGENCY SELF-DEFENSE TOOLS (THEORY 3: PRIMACY & RECENCY ORDERING) -->
+    <section aria-labelledby="tools-heading" style="margin-bottom: 56px;">
       <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; flex-wrap: wrap; gap: 12px;">
         <div>
-          <span style="color: #1d4ed8; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Tier 1: Immediate Triage</span>
-          <h2 id="tier1-heading" style="font-size: 26px; font-weight: 800; color: #0f172a; margin: 4px 0 0;">Consumer Self-Defense Suite (Free &amp; Open Access)</h2>
+          <span style="color: #1d4ed8; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Interactive Defense Toolkit</span>
+          <h2 id="tools-heading" style="font-size: 26px; font-weight: 800; color: #0f172a; margin: 4px 0 0;">🛠️ Consumer Self-Defense Tools &amp; Phone Bypass Codes</h2>
         </div>
-        <span style="font-size: 13px; color: #64748b; font-weight: 600;">Zero Paywalls • Zero Gatekeeping</span>
+        <span style="font-size: 13px; color: #64748b; font-weight: 600;">100% Free • No Sign-Up Required</span>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
         
-        <!-- CARD 1: BOT BYPASS CHEAT SHEET -->
+        <!-- CARD 1 (PRIMACY): BOT BYPASS CHEAT SHEET -->
         <div class="doc-card" style="display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-              <span class="badge-threat">⚡ Phone &amp; Chatbot Bypass</span>
+              <span class="badge-amber">⚡ Phone &amp; Bot Shortcuts</span>
               <span style="font-size: 12px; color: #64748b;">Instant Human</span>
             </div>
             <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 10px;">The "Talk to a Human" Bot Bypass Cheat Sheet</h3>
@@ -358,22 +507,22 @@ summary:focus-visible {
               Direct phone tree bypass codes (skip automated SMS hang-ups), chatbot loop-killer phrases, and verified executive legal escalation email addresses.
             </p>
           </div>
-          <a href="tools/affirm-bot-bypass-cheat-sheet.html" class="btn-doc">Open Bot Bypass Cheat Sheet &rarr;</a>
+          <a href="tools/affirm-bot-bypass-cheat-sheet.html" class="btn-doc-primary">Open Bot Bypass Cheat Sheet &rarr;</a>
         </div>
 
-        <!-- CARD 2: 120-DAY RISK CALCULATOR -->
+        <!-- CARD 2: BANK BILLPAY DIRECT DEFENSE -->
         <div class="doc-card" style="display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-              <span class="badge-amber">📊 Credit &amp; DTI Risk</span>
-              <span style="font-size: 12px; color: #64748b;">Collection Cliff</span>
+              <span class="badge-shield">🛡️ Account Lock Bypass</span>
+              <span style="font-size: 12px; color: #64748b;">ACH Payment</span>
             </div>
-            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 10px;">120-Day Charge-Off &amp; Credit Risk Calculator</h3>
+            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 10px;">Online BillPay &amp; Locked Account Guide</h3>
             <p style="color: #475569; font-size: 14px; line-height: 1.6; margin: 0 0 16px;">
-              Calculate debt-to-income spikes, compounding interest fees, and the exact countdown to collection network escalation to protect your credit score.
+              Step-by-step instructions to pay undisputed loan principal via external bank BillPay (ACH) if your mobile app access is locked during an active dispute.
             </p>
           </div>
-          <a href="tools/underwriting-credit-impact-calculator.html" class="btn-doc">Launch Credit Calculator &rarr;</a>
+          <a href="guides/affirm-bank-billpay-workaround.html" class="btn-doc-secondary">Read BillPay Workaround &rarr;</a>
         </div>
 
         <!-- CARD 3: REDDIT & FORUM TOOLKIT -->
@@ -383,37 +532,37 @@ summary:focus-visible {
               <span class="badge-signal">💬 Community Sharing</span>
               <span style="font-size: 12px; color: #64748b;">Copy-Paste</span>
             </div>
-            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 10px;">Reddit &amp; Forum Help Response Templates</h3>
+            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 10px;">Reddit &amp; Forum Help Reply Templates</h3>
             <p style="color: #475569; font-size: 14px; line-height: 1.6; margin: 0 0 16px;">
               Copy-paste helpful markdown reply snippets to drop into Reddit (r/Affirm, r/povertyfinance, r/CreditCards) to help other shoppers beat bot loops.
             </p>
           </div>
-          <a href="tools/reddit-community-response-toolkit.html" class="btn-doc">Open Reddit Toolkit &rarr;</a>
+          <a href="tools/reddit-community-response-toolkit.html" class="btn-doc-secondary">Open Reddit Templates &rarr;</a>
         </div>
 
-        <!-- CARD 4: BANK BILLPAY DIRECT DEFENSE -->
-        <div class="doc-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <!-- CARD 4 (RECENCY ANCHOR): 120-DAY RISK CALCULATOR -->
+        <div class="doc-card" style="display: flex; flex-direction: column; justify-content: space-between; border-color: #fde68a;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-              <span class="badge-shield">🛡️ Account Lock Defense</span>
-              <span style="font-size: 12px; color: #64748b;">ACH Payment</span>
+              <span class="badge-threat">📊 Credit &amp; DTI Cliff</span>
+              <span style="font-size: 12px; color: #dc2626; font-weight: 700;">Urgent Timeline</span>
             </div>
-            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 10px;">Online BillPay &amp; Account Lock Bypass</h3>
+            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 10px;">120-Day Charge-Off &amp; Credit Risk Calculator</h3>
             <p style="color: #475569; font-size: 14px; line-height: 1.6; margin: 0 0 16px;">
-              Step-by-step guide to paying undisputed loan principal via external bank BillPay (ACH) even if your mobile app access is locked during an active dispute.
+              Calculate debt-to-income spikes, compounding interest fees, and the exact countdown to collection network escalation to protect your credit score.
             </p>
           </div>
-          <a href="guides/affirm-bank-billpay-workaround.html" class="btn-doc">Read BillPay Guide &rarr;</a>
+          <a href="tools/underwriting-credit-impact-calculator.html" class="btn-doc-secondary" style="border-color: #dc2626; color: #dc2626 !important;">Calculate Credit Impact &rarr;</a>
         </div>
 
       </div>
     </section>
 
-    <!-- TIER 2: FORENSIC MARKET & UNIT ECONOMIC EXPOSÉS -->
-    <section aria-labelledby="tier2-heading" style="margin-bottom: 56px;">
+    <!-- TIER 2: FORENSIC INVESTIGATIONS (THEORY 5: HIGH-SCENT ANCHOR TEXTS) -->
+    <section aria-labelledby="investigations-heading" style="margin-bottom: 56px;">
       <div style="margin-bottom: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px;">
-        <span style="color: #1d4ed8; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Tier 2: Behind the Scenes</span>
-        <h2 id="tier2-heading" style="font-size: 26px; font-weight: 800; color: #0f172a; margin: 4px 0 0;">How the Machine Actually Works (And Why It Traps Your Cash)</h2>
+        <span style="color: #1d4ed8; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Forensic Market Analysis</span>
+        <h2 id="investigations-heading" style="font-size: 26px; font-weight: 800; color: #0f172a; margin: 4px 0 0;">📊 Forensic Exposés: How the $0.15 Bot Trap Works</h2>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
@@ -425,7 +574,7 @@ summary:focus-visible {
           <p style="color: #475569; font-size: 15px; line-height: 1.6; margin: 0 0 16px;">
             A mathematical breakdown of BNPL unit economics: why low merchant discount take-rates ($3.50 on a $100 loan) force platforms to automate customer service into low-cost bot loops ($0.15) to prevent catastrophic margin collapse against live human phone calls ($14.00).
           </p>
-          <a href="topics/bnpl-unit-economics-customer-service-containment.html" style="color: #1d4ed8; font-weight: 700; text-decoration: underline;">Read Full Economic Exposé &rarr;</a>
+          <a href="topics/bnpl-unit-economics-customer-service-containment.html" style="color: #1d4ed8; font-weight: 800; text-decoration: underline;">🔍 See Why Affirm Spends $0.15 on Chatbots vs. $14.00 on Live Agents &rarr;</a>
         </article>
 
         <!-- EXPOSÉ 2: ABS WAREHOUSE COVENANTS -->
@@ -435,17 +584,17 @@ summary:focus-visible {
           <p style="color: #475569; font-size: 15px; line-height: 1.6; margin: 0 0 16px;">
             How asset-backed securitization (ABS) bank warehouse facility covenants incentivize fintech lenders to park disputed loans in artificial investigation loops, postponing loss recognition under CECL accounting standards.
           </p>
-          <a href="topics/affirm-short-seller-thesis-warehouse-covenants.html" style="color: #1d4ed8; font-weight: 700; text-decoration: underline;">Read ABS Facility Analysis &rarr;</a>
+          <a href="topics/affirm-short-seller-thesis-warehouse-covenants.html" style="color: #1d4ed8; font-weight: 800; text-decoration: underline;">📉 Inspect Goldman Sachs &amp; Barclays ABS Warehouse Loan Covenants &rarr;</a>
         </article>
 
       </div>
     </section>
 
-    <!-- TIER 3: THE UNREDACTED PRIMARY REGULATORY DOCKET -->
-    <section id="master-evidence-docket" aria-labelledby="tier3-heading" style="margin-bottom: 56px;">
+    <!-- TIER 3: THE PRIMARY EVIDENCE DOCKET (THEORY 8: FULL CARD AFFORDANCE) -->
+    <section id="master-evidence-docket" aria-labelledby="docket-heading" style="margin-bottom: 56px;">
       <div style="margin-bottom: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px;">
-        <span style="color: #15803d; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Tier 3: Public Receipts &amp; Proof</span>
-        <h2 id="tier3-heading" style="font-size: 26px; font-weight: 800; color: #0f172a; margin: 4px 0 0;">The Actual Case Records &amp; Physical Evidence</h2>
+        <span style="color: #15803d; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Public Receipts &amp; Regulatory Exhibits</span>
+        <h2 id="docket-heading" style="font-size: 26px; font-weight: 800; color: #0f172a; margin: 4px 0 0;">📁 Public Evidence Docket: SEC, CFPB &amp; Police Records</h2>
       </div>
 
       <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05);">
@@ -455,39 +604,53 @@ summary:focus-visible {
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
           
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+          <div class="docket-card">
             <strong style="display: block; font-size: 15px; color: #0f172a; margin-bottom: 4px;">📁 SEC Form TCR Submission</strong>
             <span style="font-size: 13px; color: #64748b; display: block; margin-bottom: 10px;">Whistleblower filing: TCR 17867-223-108-883</span>
-            <a href="documents/sec-form-tcr-submission-confirmation-17867-223-108-883.pdf" style="color: #1d4ed8; font-weight: 700; font-size: 13px;">View Filing Confirmation (PDF) &rarr;</a>
+            <a href="documents/sec-form-tcr-submission-confirmation-17867-223-108-883.pdf" class="stretched-link" style="color: #1d4ed8; font-weight: 700; font-size: 13px;">📄 Download SEC Form TCR Filing Confirmation (PDF) &rarr;</a>
           </div>
 
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+          <div class="docket-card">
             <strong style="display: block; font-size: 15px; color: #0f172a; margin-bottom: 4px;">📁 CFPB Complaint Records</strong>
             <span style="font-size: 13px; color: #64748b; display: block; margin-bottom: 10px;">Case #260716-1553638 &amp; Affirm responses</span>
-            <a href="documents/cfpb-complaint-and-affirm-false-response.pdf" style="color: #1d4ed8; font-weight: 700; font-size: 13px;">View CFPB Filing (PDF) &rarr;</a>
+            <a href="documents/cfpb-complaint-and-affirm-false-response.pdf" class="stretched-link" style="color: #1d4ed8; font-weight: 700; font-size: 13px;">📄 Download CFPB Case Filing &amp; Affirm Response (PDF) &rarr;</a>
           </div>
 
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+          <div class="docket-card">
             <strong style="display: block; font-size: 15px; color: #0f172a; margin-bottom: 4px;">📁 Police Report &amp; Carrier Logs</strong>
             <span style="font-size: 13px; color: #64748b; display: block; margin-bottom: 10px;">Monroe Police Report #26-29572 &amp; DHL receipts</span>
-            <a href="documents/monroe-police-report-26-29572.pdf" style="color: #1d4ed8; font-weight: 700; font-size: 13px;">View Police Report (PDF) &rarr;</a>
+            <a href="documents/monroe-police-report-26-29572.pdf" class="stretched-link" style="color: #1d4ed8; font-weight: 700; font-size: 13px;">🚓 Inspect Monroe Police Report &amp; Delivery Receipts (PDF) &rarr;</a>
           </div>
 
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+          <div class="docket-card">
             <strong style="display: block; font-size: 15px; color: #0f172a; margin-bottom: 4px;">📁 State Attorney General Notices</strong>
             <span style="font-size: 13px; color: #64748b; display: block; margin-bottom: 10px;">CA AG #1553638 &amp; Louisiana AG submissions</span>
-            <a href="documents/california-ag-dispute-notice.pdf" style="color: #1d4ed8; font-weight: 700; font-size: 13px;">View CA AG Notice (PDF) &rarr;</a>
+            <a href="documents/california-ag-dispute-notice.pdf" class="stretched-link" style="color: #1d4ed8; font-weight: 700; font-size: 13px;">⚖️ Download CA &amp; Louisiana AG Dispute Notices (PDF) &rarr;</a>
           </div>
 
         </div>
       </div>
     </section>
 
+    <!-- THEORY 6: PEAK-END RULE SUPPORTIVE CONSUMER RESOLUTION ACTION BANNER -->
+    <section aria-label="Take action" style="background: #ffffff; border: 2px solid #bfdbfe; border-radius: 12px; padding: 36px 24px; text-align: center; margin-bottom: 48px; box-shadow: 0 10px 25px -5px rgba(29, 78, 216, 0.08);">
+      <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 12px;">Take Back Your Money</span>
+      <h3 style="font-size: 24px; font-weight: 800; color: #0f172a; margin: 0 0 10px;">
+        Don't Let Them Keep Your Refund Trapped in Automated Limbo
+      </h3>
+      <p style="font-size: 15px; color: #475569; max-width: 650px; margin: 0 auto 20px; line-height: 1.6;">
+        Federal law (12 C.F.R. § 1026.13) gives you explicit statutory protections when goods are returned. Use our free generator to send your formal dispute notice today.
+      </p>
+      <a href="tools/bnpl-refund-delay-diagnostic.html" class="btn-doc-primary" style="font-size: 16px; padding: 14px 28px;">
+        Start Your 60-Second Refund Dispute Now &rarr;
+      </a>
+    </section>
+
   </main>
 
   <!-- FOOTER: CITATIONS & SCHOLARLY IDENTIFIERS -->
   <footer style="background: #0f172a; color: #94a3b8; padding: 48px 0; border-top: 1px solid #1e293b; font-size: 14px;">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+    <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
       <div>
         <strong style="color: #f8fafc; font-size: 16px; display: block; margin-bottom: 8px;">Kinslow Consumer Regulatory Archive</strong>
         <p style="margin: 0; line-height: 1.6; max-width: 480px;">

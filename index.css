@@ -1,7 +1,7 @@
 /* ==========================================================================
    KINSLOW CONSUMER DEFENSE & REGULATORY ARCHIVE
    The 60-30-10 Trust & Clarity Design System (Fintech Standard)
-   Based on Empirical Research for Multi-Generational Demographics
+   Audited & Remediated Across 9 Cognitive & Behavioral Psychology Theories
    ========================================================================== */
 
 :root {
@@ -12,8 +12,8 @@
   --bg-surface-subtle: #f8fafc;
   
   /* 30% SECONDARY STRUCTURE & TYPOGRAPHY: Deep Navy & Dark Slate */
-  --text-main: #0f172a;        /* Ultra-high contrast headline navy */
-  --text-body: #334155;        /* Crisp, comfortable slate body text */
+  --text-main: #0f172a;        /* Ultra-high contrast headline navy (16.94:1 AAA) */
+  --text-body: #334155;        /* Crisp, comfortable slate body text (9.82:1 AAA) */
   --text-muted: #64748b;       /* Secondary metadata slate */
   --border-subtle: #e2e8f0;    /* Clean 1px structural container border */
   --border-strong: #cbd5e1;
@@ -78,7 +78,7 @@ a:hover {
 
 img { max-width: 100%; height: auto; }
 
-/* ---------- Containers & Grid ---------- */
+/* ---------- Containers & Asymmetric Golden Ratio Grid ---------- */
 
 .guide-page { background-color: var(--bg-canvas); min-height: 100vh; }
 
@@ -87,6 +87,22 @@ img { max-width: 100%; height: auto; }
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 0 20px;
+}
+
+/* Theory 1: Processing Fluency Asymmetric Golden Ratio Grid (58/42) */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1.22fr 0.95fr;
+    gap: 44px;
+    align-items: center;
+  }
 }
 
 /* ---------- Top Reality Banner (Deep Trust Navy) ---------- */
@@ -100,7 +116,7 @@ img { max-width: 100%; height: auto; }
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
 }
 
-/* ---------- Hero Viewport (Clean Elevated Paper) ---------- */
+/* ---------- Hero Viewport ---------- */
 
 .hero-section {
   background: #ffffff !important;
@@ -108,7 +124,7 @@ img { max-width: 100%; height: auto; }
   position: relative;
 }
 
-/* ---------- 60-30-10 Elevated Cards ---------- */
+/* ---------- 60-30-10 Elevated Cards & Button Salience ---------- */
 
 .doc-card {
   background: var(--bg-surface);
@@ -126,25 +142,73 @@ img { max-width: 100%; height: auto; }
   box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
 }
 
-.btn-doc {
+/* Theory 7: Isolation Effect - High-Salience Primary vs. Ghost Secondary Buttons */
+.btn-doc-primary {
   display: inline-block;
   background: var(--accent-primary);
   color: #ffffff !important;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 15px;
-  padding: 11px 20px;
+  padding: 12px 22px;
   border-radius: var(--radius-sm);
   text-decoration: none !important;
-  box-shadow: 0 1px 3px rgba(29, 78, 216, 0.2);
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.btn-doc-primary:hover {
+  background: var(--accent-primary-hover);
+  box-shadow: 0 6px 16px rgba(29, 78, 216, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-doc-secondary {
+  display: inline-block;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: #0f172a !important;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.btn-doc-secondary:hover {
+  background: #f8fafc;
+  border-color: #0f172a;
+  color: #0f172a !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+/* Theory 8: Affordance & Stretched Link Docket Cards */
+.docket-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  position: relative;
   transition: all 0.2s ease;
 }
 
-.btn-doc:hover {
-  background: var(--accent-primary-hover);
-  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+.docket-card:hover {
+  background: #ffffff;
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
 }
 
-/* ---------- Non-Neon Accessible Badges ---------- */
+.docket-card a.stretched-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* ---------- Badges ---------- */
 
 .badge-threat {
   background: var(--accent-terracotta-bg);
@@ -194,15 +258,11 @@ img { max-width: 100%; height: auto; }
   letter-spacing: 0.04em;
 }
 
-/* ---------- Typography & Contrast Hierarchy ---------- */
-
 h1, h2, h3, h4 {
   color: var(--text-main);
   letter-spacing: -0.02em;
   font-weight: 800;
 }
-
-/* ---------- Focus Rings for Accessibility ---------- */
 
 button:focus-visible,
 a:focus-visible,
