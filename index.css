@@ -1,49 +1,45 @@
 /* ==========================================================================
    KINSLOW CONSUMER DEFENSE & REGULATORY ARCHIVE
-   Scientific Visual Ergonomics & Stress-Optimized Design System
+   The 60-30-10 Trust & Clarity Design System (Fintech Standard)
+   Based on Empirical Research for Multi-Generational Demographics
    ========================================================================== */
 
 :root {
-  /* Surface & Background Hierarchy - Deep Anti-Halation Slate */
-  --bg: #0b0f19;
-  --bg-secondary: #111827;
-  --card-bg: #151d2e;
-  --card-bg-hover: #1c263c;
-  --card-bg-elevated: #1e293b;
+  /* 60% DOMINANT CANVAS: Anti-Glare Crisp Off-White */
+  --bg-canvas: #f8f9fa;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-surface-subtle: #f8fafc;
   
-  /* Text Tokens - Soft Cloud Off-White (Anti-Bleed Contrast 13:1) */
-  --text-main: #f8fafc;
-  --text-body: #e2e8f0;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
-  
-  /* Stress-Optimized Semantic Accents (High Wavelength Penetration) */
-  --sky-action: #38bdf8;        /* Electric Sky Blue (Night Vision Peak) */
-  --sky-deep: #0284c7;
-  --sky-glow: rgba(56, 189, 248, 0.18);
-  
-  --coral-urgency: #fb7185;     /* Rose Coral (Clear Urgency Without Alarm) */
-  --coral-deep: #e11d48;
-  --coral-glow: rgba(251, 113, 133, 0.18);
-  
-  --mint-proof: #34d399;        /* Emerald Mint (Verified Proof & Safety) */
-  --mint-deep: #059669;
-  --mint-glow: rgba(52, 211, 153, 0.18);
-  
-  --amber-intel: #fbbf24;       /* Solar Amber (Penetrates Lens Yellowing) */
-  --amber-deep: #d97706;
-  --amber-glow: rgba(251, 191, 36, 0.18);
-  
-  --violet-legal: #c084fc;      /* Soft Legal Violet */
-  --violet-deep: #9333ea;
+  /* 30% SECONDARY STRUCTURE & TYPOGRAPHY: Deep Navy & Dark Slate */
+  --text-main: #0f172a;        /* Ultra-high contrast headline navy */
+  --text-body: #334155;        /* Crisp, comfortable slate body text */
+  --text-muted: #64748b;       /* Secondary metadata slate */
+  --border-subtle: #e2e8f0;    /* Clean 1px structural container border */
+  --border-strong: #cbd5e1;
+  --border-focus: #2563eb;
 
-  /* Subtle Directional Illumination */
-  --border-subtle: #233148;
-  --border-active: #38bdf8;
-  --glass-lighting: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
-  
-  --radius: 12px;
-  --radius-sm: 8px;
+  /* 10% ACCENT VECTORS: Non-Neon, High-Trust Functional Accents */
+  --accent-primary: #1d4ed8;    /* Trust Navy/Cobalt (Primary CTAs & Diagnostic) */
+  --accent-primary-hover: #1e40af;
+  --accent-primary-bg: #eff6ff;
+
+  --accent-sage: #15803d;       /* Calming Sage Green (Verified Proof & Receipts) */
+  --accent-sage-bg: #f0fdf4;
+  --accent-sage-border: #bbf7d0;
+
+  --accent-terracotta: #dc2626; /* Soft Terracotta/Coral (Urgency & Overdraft Alert) */
+  --accent-terracotta-bg: #fef2f2;
+  --accent-terracotta-border: #fecaca;
+
+  --accent-amber: #b45309;      /* Warm Amber (Phone Bypass & Intel) */
+  --accent-amber-bg: #fffbeb;
+  --accent-amber-border: #fde68a;
+
+  /* Ergonomic Sizing & Geometry */
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
   --maxw: 1200px;
 }
 
@@ -54,41 +50,37 @@
 html { 
   -webkit-text-size-adjust: 100%; 
   scroll-behavior: smooth;
-  background-color: var(--bg);
+  background-color: var(--bg-canvas);
 }
 
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Outfit", Helvetica, Arial, sans-serif;
-  background-color: var(--bg);
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(2, 132, 199, 0.06) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(147, 51, 234, 0.05) 0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(251, 113, 133, 0.03) 0px, transparent 50%);
+  background-color: var(--bg-canvas);
   color: var(--text-body);
   line-height: 1.75;
-  font-size: 17px; /* Scaled up for tired/near-sighted eyes */
-  font-weight: 450;
+  font-size: 17px;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 a { 
-  color: var(--sky-action); 
+  color: var(--accent-primary); 
   text-decoration: none; 
   transition: all 0.2s ease;
 }
 
 a:hover { 
-  color: #bae6fd; 
+  color: var(--accent-primary-hover); 
   text-decoration: underline; 
 }
 
 img { max-width: 100%; height: auto; }
 
-/* ---------- Layout Containers ---------- */
+/* ---------- Containers & Grid ---------- */
 
-.guide-page { background-color: var(--bg); min-height: 100vh; }
+.guide-page { background-color: var(--bg-canvas); min-height: 100vh; }
 
 .container,
 .content-wrapper {
@@ -97,114 +89,112 @@ img { max-width: 100%; height: auto; }
   padding: 0 20px;
 }
 
-/* ---------- Top Reality Banner ---------- */
+/* ---------- Top Reality Banner (Deep Trust Navy) ---------- */
 
 .top-legal-bar {
-  background: linear-gradient(90deg, #130e26 0%, #0d1b2a 50%, #082032 100%) !important;
-  border-bottom: 1px solid rgba(56, 189, 248, 0.3) !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  background: #0f172a !important;
+  color: #f8fafc !important;
+  border-bottom: 1px solid #1e293b !important;
+  padding: 10px 0 !important;
+  font-size: 14px !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
 }
 
-/* ---------- Hero Viewport (Visual Tunneling Centered) ---------- */
+/* ---------- Hero Viewport (Clean Elevated Paper) ---------- */
 
 .hero-section {
-  background: radial-gradient(circle at 50% 10%, #151e33 0%, #0b0f19 85%) !important;
+  background: #ffffff !important;
   border-bottom: 1px solid var(--border-subtle) !important;
   position: relative;
-  overflow: hidden;
 }
 
-/* ---------- Ergonomic Interactive Cards ---------- */
+/* ---------- 60-30-10 Elevated Cards ---------- */
 
 .doc-card {
-  background: var(--card-bg);
-  background-image: var(--glass-lighting);
+  background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   padding: 26px;
   position: relative;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05), 0 10px 15px -5px rgba(15, 23, 42, 0.04);
 }
 
 .doc-card:hover {
-  transform: translateY(-3px);
-  background-color: var(--card-bg-hover);
-  border-color: var(--sky-action);
-  box-shadow: 0 16px 32px -10px rgba(56, 189, 248, 0.2);
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
 }
 
 .btn-doc {
   display: inline-block;
-  background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
-  color: #080c14 !important;
-  font-weight: 800;
+  background: var(--accent-primary);
+  color: #ffffff !important;
+  font-weight: 700;
   font-size: 15px;
-  padding: 12px 22px;
+  padding: 11px 20px;
   border-radius: var(--radius-sm);
   text-decoration: none !important;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+  box-shadow: 0 1px 3px rgba(29, 78, 216, 0.2);
   transition: all 0.2s ease;
-  letter-spacing: 0.01em;
 }
 
 .btn-doc:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.5);
-  filter: brightness(1.08);
+  background: var(--accent-primary-hover);
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
 }
 
-/* ---------- Semantic Action Badges ---------- */
+/* ---------- Non-Neon Accessible Badges ---------- */
 
 .badge-threat {
-  background: rgba(251, 113, 133, 0.12);
-  border: 1px solid var(--coral-urgency);
-  color: var(--coral-urgency);
-  font-size: 11px;
-  font-weight: 800;
-  padding: 5px 12px;
+  background: var(--accent-terracotta-bg);
+  border: 1px solid var(--accent-terracotta-border);
+  color: var(--accent-terracotta);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
   border-radius: 9999px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
 .badge-signal {
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid var(--sky-action);
-  color: var(--sky-action);
-  font-size: 11px;
-  font-weight: 800;
-  padding: 5px 12px;
+  background: var(--accent-primary-bg);
+  border: 1px solid #bfdbfe;
+  color: var(--accent-primary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
   border-radius: 9999px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
 .badge-shield {
-  background: rgba(52, 211, 153, 0.12);
-  border: 1px solid var(--mint-proof);
-  color: var(--mint-proof);
-  font-size: 11px;
-  font-weight: 800;
-  padding: 5px 12px;
+  background: var(--accent-sage-bg);
+  border: 1px solid var(--accent-sage-border);
+  color: var(--accent-sage);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
   border-radius: 9999px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
 .badge-amber {
-  background: rgba(251, 191, 36, 0.12);
-  border: 1px solid var(--amber-intel);
-  color: var(--amber-intel);
-  font-size: 11px;
-  font-weight: 800;
-  padding: 5px 12px;
+  background: var(--accent-amber-bg);
+  border: 1px solid var(--accent-amber-border);
+  color: var(--accent-amber);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
   border-radius: 9999px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
-/* ---------- Typography & Custom Glow Headings ---------- */
+/* ---------- Typography & Contrast Hierarchy ---------- */
 
 h1, h2, h3, h4 {
   color: var(--text-main);
@@ -212,17 +202,11 @@ h1, h2, h3, h4 {
   font-weight: 800;
 }
 
-.heading-gradient-cyan {
-  background: linear-gradient(135deg, #ffffff 20%, #bae6fd 60%, #38bdf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 /* ---------- Focus Rings for Accessibility ---------- */
 
 button:focus-visible,
 a:focus-visible,
 summary:focus-visible {
-  outline: 2px solid var(--sky-action);
+  outline: 2px solid var(--accent-primary);
   outline-offset: 3px;
 }
