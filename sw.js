@@ -1,5 +1,5 @@
 // Production PWA Service Worker for Kinslow Regulatory Archive (kinslow-regulatory-archive.org)
-const CACHE_NAME = 'kinslow-archive-v2';
+const CACHE_NAME = 'kinslow-archive-v3';
 const PRECACHE_ASSETS = [
   '/',
   '/index.html',
