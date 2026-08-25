@@ -14,6 +14,8 @@ downloads_review/
 new_batch_review/
 .search_safety/
 .venv/
+venv/
+env/
 __pycache__/
 *.pyc
 # rank_tracker.py generated output
