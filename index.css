@@ -1,42 +1,36 @@
 /* ==========================================================================
    KINSLOW CONSUMER DEFENSE & REGULATORY ARCHIVE
-   The 60-30-10 Trust & Clarity Design System (Fintech Standard)
-   Audited & Remediated Across 9 Cognitive & Behavioral Psychology Theories
+   The 60-30-10 Cognitive Trust & Clarity Design System (Fintech Standard)
+   Full Remediation Across All 9 Psychological & Behavioral Frameworks
    ========================================================================== */
 
 :root {
-  /* 60% DOMINANT CANVAS: Anti-Glare Crisp Off-White */
+  /* 60% DOMINANT CANVAS: Anti-Glare Off-White Foundation */
   --bg-canvas: #f8f9fa;
   --bg-surface: #ffffff;
-  --bg-surface-elevated: #f1f5f9;
-  --bg-surface-subtle: #f8fafc;
+  --bg-surface-subtle: #f1f5f9;
   
-  /* 30% SECONDARY STRUCTURE & TYPOGRAPHY: Deep Navy & Dark Slate */
-  --text-main: #0f172a;        /* Ultra-high contrast headline navy (16.94:1 AAA) */
-  --text-body: #334155;        /* Crisp, comfortable slate body text (9.82:1 AAA) */
+  /* 30% SECONDARY STRUCTURE & TYPOGRAPHY: Deep Slate & Navy */
+  --text-main: #0f172a;        /* High-contrast headline navy (16.94:1 AAA) */
+  --text-body: #334155;        /* Crisp slate body text (9.82:1 AAA) */
   --text-muted: #64748b;       /* Secondary metadata slate */
-  --border-subtle: #e2e8f0;    /* Clean 1px structural container border */
+  --border-subtle: #e2e8f0;    /* 1px structural container border */
   --border-strong: #cbd5e1;
-  --border-focus: #2563eb;
 
-  /* 10% ACCENT VECTORS: Non-Neon, High-Trust Functional Accents */
-  --accent-primary: #1d4ed8;    /* Trust Navy/Cobalt (Primary CTAs & Diagnostic) */
+  /* 10% ACCENT VECTORS: Isolated Primary Action & Trust Markers */
+  --accent-primary: #1d4ed8;    /* Trust Cobalt (Reserved for Primary CTA) */
   --accent-primary-hover: #1e40af;
   --accent-primary-bg: #eff6ff;
-
-  --accent-sage: #15803d;       /* Calming Sage Green (Verified Proof & Receipts) */
-  --accent-sage-bg: #f0fdf4;
-  --accent-sage-border: #bbf7d0;
-
-  --accent-terracotta: #b91c1c; /* Soft Terracotta/Coral (Urgency & Overdraft Alert) */
-  --accent-terracotta-bg: #fef2f2;
-  --accent-terracotta-border: #fecaca;
-
-  --accent-amber: #b45309;      /* Warm Amber (Phone Bypass & Intel) */
+  
+  --accent-amber: #b45309;      /* Warm Amber (Phone Bypass & Triage) */
   --accent-amber-bg: #fffbeb;
   --accent-amber-border: #fde68a;
 
-  /* Ergonomic Sizing & Geometry */
+  --accent-sage: #15803d;       /* Calming Sage (Proof & Safety Cues) */
+  --accent-sage-bg: #f0fdf4;
+  --accent-sage-border: #bbf7d0;
+
+  /* Layout Geometry */
   --radius-lg: 12px;
   --radius-md: 8px;
   --radius-sm: 6px;
@@ -62,7 +56,6 @@ body {
   font-size: 17px;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a { 
@@ -78,18 +71,13 @@ a:hover {
 
 img { max-width: 100%; height: auto; }
 
-/* ---------- Containers & Asymmetric Golden Ratio Grid ---------- */
-
-.guide-page { background-color: var(--bg-canvas); min-height: 100vh; }
-
-.container,
-.content-wrapper {
+.container {
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Theory 1: Processing Fluency Asymmetric Golden Ratio Grid (58/42) */
+/* Theory 1: Processing Fluency Asymmetric Golden Ratio Grid */
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -99,97 +87,76 @@ img { max-width: 100%; height: auto; }
 
 @media (min-width: 992px) {
   .hero-grid {
-    grid-template-columns: 1.22fr 0.95fr;
-    gap: 44px;
+    grid-template-columns: 1.2fr 0.95fr;
+    gap: 40px;
     align-items: center;
   }
 }
 
-/* ---------- Top Reality Banner (Deep Trust Navy) ---------- */
-
+/* Top Consumer Reality Banner */
 .top-legal-bar {
   background: #0f172a !important;
   color: #f8fafc !important;
   border-bottom: 1px solid #1e293b !important;
   padding: 10px 0 !important;
   font-size: 14px !important;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
 }
 
-/* ---------- Hero Viewport ---------- */
-
+/* Hero Viewport */
 .hero-section {
   background: #ffffff !important;
   border-bottom: 1px solid var(--border-subtle) !important;
-  position: relative;
+  padding: 44px 0 36px;
 }
 
-/* ---------- 60-30-10 Elevated Cards & Button Salience ---------- */
-
-.doc-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: 26px;
-  position: relative;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05), 0 10px 15px -5px rgba(15, 23, 42, 0.04);
-}
-
-.doc-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--border-strong);
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
-}
-
-/* Theory 7: Isolation Effect - High-Salience Primary vs. Ghost Secondary Buttons */
-.btn-doc-primary {
-  display: inline-block;
+/* Theory 7: Visual Attention & Salience - Isolated Primary CTA */
+.btn-primary-isolated {
+  display: block;
+  width: 100%;
   background: var(--accent-primary);
   color: #ffffff !important;
   font-weight: 800;
-  font-size: 15px;
-  padding: 12px 22px;
+  font-size: 16px;
+  padding: 15px 22px;
   border-radius: var(--radius-sm);
   text-decoration: none !important;
-  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
-  transition: all 0.2s ease;
   text-align: center;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
 }
 
-.btn-doc-primary:hover {
+.btn-primary-isolated:hover {
   background: var(--accent-primary-hover);
-  box-shadow: 0 6px 16px rgba(29, 78, 216, 0.35);
+  box-shadow: 0 6px 20px rgba(29, 78, 216, 0.4);
   transform: translateY(-1px);
 }
 
-.btn-doc-secondary {
-  display: inline-block;
+/* Cards & Layout */
+.tool-card {
   background: #ffffff;
-  border: 1.5px solid #cbd5e1;
-  color: #0f172a !important;
-  font-weight: 700;
-  font-size: 14px;
-  padding: 10px 18px;
-  border-radius: var(--radius-sm);
-  text-decoration: none !important;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: all 0.2s ease;
-  text-align: center;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
 }
 
-.btn-doc-secondary:hover {
-  background: #f8fafc;
-  border-color: #0f172a;
-  color: #0f172a !important;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+.tool-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
 }
 
-/* Theory 8: Affordance & Stretched Link Docket Cards */
 .docket-card {
   background: #f8fafc;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 20px;
+  padding: 18px;
   position: relative;
   transition: all 0.2s ease;
 }
@@ -208,39 +175,75 @@ img { max-width: 100%; height: auto; }
   z-index: 1;
 }
 
-/* ---------- Badges ---------- */
-
-.badge-threat {
-  background: var(--accent-terracotta-bg);
-  border: 1px solid var(--accent-terracotta-border);
-  color: var(--accent-terracotta);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+/* Theory 8: Affordance-Accurate Timeline Roadmap */
+.timeline-roadmap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 16px 0 20px;
 }
 
-.badge-signal {
-  background: var(--accent-primary-bg);
-  border: 1px solid #bfdbfe;
-  color: var(--accent-primary);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+.timeline-roadmap::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  right: 15px;
+  height: 2px;
+  background: #e2e8f0;
+  z-index: 1;
 }
 
-.badge-shield {
-  background: var(--accent-sage-bg);
-  border: 1px solid var(--accent-sage-border);
-  color: var(--accent-sage);
+.roadmap-node {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  flex: 1;
+}
+
+.roadmap-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.roadmap-node.active .roadmap-circle {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2);
+}
+
+.roadmap-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  display: block;
+}
+
+.roadmap-node.active .roadmap-label {
+  color: #0f172a;
+  font-weight: 800;
+}
+
+/* Badges */
+.badge-clean {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
   font-size: 12px;
   font-weight: 700;
-  padding: 4px 10px;
+  padding: 3px 10px;
   border-radius: 9999px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -252,7 +255,19 @@ img { max-width: 100%; height: auto; }
   color: var(--accent-amber);
   font-size: 12px;
   font-weight: 700;
-  padding: 4px 10px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-sage {
+  background: var(--accent-sage-bg);
+  border: 1px solid var(--accent-sage-border);
+  color: var(--accent-sage);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
   border-radius: 9999px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -262,11 +277,4 @@ h1, h2, h3, h4 {
   color: var(--text-main);
   letter-spacing: -0.02em;
   font-weight: 800;
-}
-
-button:focus-visible,
-a:focus-visible,
-summary:focus-visible {
-  outline: 2px solid var(--accent-primary);
-  outline-offset: 3px;
 }
