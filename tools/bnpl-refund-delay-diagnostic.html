@@ -77,27 +77,64 @@
       margin: 16px 0;
       line-height: 1.6;
     }
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
     .copy-btn {
       background: #2563eb;
       color: #ffffff;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 20px;
       border-radius: 6px;
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 14px;
       cursor: pointer;
       transition: background 0.2s ease;
     }
     .copy-btn:hover {
       background: #1d4ed8;
     }
+    .email-btn {
+      background: #059669;
+      color: #ffffff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s ease;
+    }
+    .email-btn:hover {
+      background: #047857;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .input-field {
+      width: 100%;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 10px 14px;
+      color: #ffffff;
+      font-size: 14px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body class="guide-page">
   <header style="background: #0b0f19; border-bottom: 1px solid #1f2937; padding: 20px 0;">
     <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
-      <a href="../index.html" style="color: #9ca3af; text-decoration: none; font-size: 14px;">&larr; Back to Kinslow Regulatory Archive</a>
+      <a href="../index.html" style="color: #9ca3af; text-decoration: none; font-size: 14px;">&larr; Back to Kinslow Archive</a>
       <h1 style="font-size: 28px; font-weight: 800; color: #f9fafb; margin: 12px 0 6px;">Affirm Refund Delay Diagnostic &amp; Statutory Escalator</h1>
-      <p style="color: #94a3b8; font-size: 15px; margin: 0;">Diagnose why your refund is trapped in merchant float and generate a customized Regulation Z dispute letter in 60 seconds.</p>
+      <p style="color: #94a3b8; font-size: 15px; margin: 0;">Diagnose why your refund is trapped in merchant float and send a customized Regulation Z dispute letter in 60 seconds.</p>
     </div>
   </header>
 
@@ -168,46 +205,35 @@
       <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
         <span style="font-size: 28px;">⚖️</span>
         <div>
-          <h3 style="font-size: 20px; font-weight: 800; color: #60a5fa; margin: 0;">Forensic Diagnosis: Merchant Settlement Float Lockout</h3>
-          <p style="color: #94a3b8; font-size: 14px; margin: 4px 0 0;">Governed by 12 C.F.R. § 1026.13 (Regulation Z) &amp; CFPB May 2024 BNPL Enforcement Directive</p>
+          <h3 style="font-size: 20px; font-weight: 800; color: #60a5fa; margin: 0;">Diagnosis: Merchant Float Lockout &amp; Bot Denial</h3>
+          <p style="color: #94a3b8; font-size: 14px; margin: 4px 0 0;">Protected by 12 C.F.R. § 1026.13 (Regulation Z) &amp; CFPB BNPL Rules</p>
         </div>
       </div>
 
       <div style="background: #1e293b; border-radius: 8px; padding: 16px; margin-bottom: 20px;">
         <h4 style="color: #f1f5f9; font-size: 15px; margin: 0 0 8px;">Why Your Refund Is Trapped:</h4>
-        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;" id="diagnosisText">
-          Your carrier delivery proof establishes completed return of merchandise. However, Affirm's automated dispute bot queries only the merchant's financial API. Because the merchant's accounting department has not completed the ACH settlement credit, the bot issued an automated denial. Under federal law, continuing to collect payments during this window constitutes a statutory violation.
+        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
+          Your carrier delivery proof establishes completed return of merchandise. However, Affirm's automated dispute bot queries only the merchant's API. Because the merchant has not completed the ACH settlement credit, the bot issued an automated denial. Under federal law, continuing to collect payments during this window constitutes a statutory violation.
         </p>
       </div>
 
-      <h4 style="color: #f8fafc; font-size: 16px; margin: 0 0 8px;">Your Customized Statutory Notice of Dispute (Copy &amp; Send):</h4>
-      <div class="action-script" id="generatedScript">
-DATE: [Today's Date]
-TO: Affirm, Inc. Executive Legal Escalations / Cross River Bank
-RE: FORMAL STATUTORY NOTICE OF BILLING ERROR &amp; DISPUTE UNDER 12 C.F.R. § 1026.13
-LOAN ID: [Insert Affirm Loan ID] | MERCHANT: [Insert Merchant Name]
-
-To Whom It May Concern,
-
-Please accept this formal written notice of billing error pursuant to the Truth in Lending Act (TILA), 15 U.S.C. § 1666, and Regulation Z, 12 C.F.R. § 1026.13, as applicable to Buy Now, Pay Later point-of-sale credit providers under CFPB Enforcement Guidance.
-
-1. EVIDENTIARY FACT OF RETURN:
-The merchandise associated with Loan ID [Insert Loan ID] was physically delivered and accepted at the merchant dock on [Insert Delivery Date] via [Insert Carrier] (Tracking ID: [Insert Tracking Number]). A copy of the signed delivery confirmation is attached.
-
-2. STATUTORY VIOLATIONS &amp; DEMAND:
-Pursuant to 12 C.F.R. § 1026.13(d)(1), Affirm is strictly prohibited from attempting to collect the disputed amount, assessing finance charges, or issuing automated bot denials while this billing error remains uncredited. Furthermore, pursuant to 12 C.F.R. § 1026.13(d)(2), Affirm may not report or threaten to report this disputed account as delinquent to any consumer reporting agency.
-
-Demand is hereby made that Affirm immediately:
-a) Credit the full principal balance and reverse all assessed interest.
-b) Issue written confirmation of zero remaining liability within 30 days.
-c) Cease all automated collection attempts.
-
-Sincerely,
-[Your Full Name]
-[Your Phone / Email]
+      <!-- OPTIONAL CUSTOMIZATION INPUTS -->
+      <div style="background: #0b0f19; border: 1px solid #1f2937; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+        <div style="font-size: 13px; font-weight: 700; color: #94a3b8; margin-bottom: 10px;">Customize Your Notice (Optional - Auto-Fills Below):</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+          <input type="text" id="custLoanId" class="input-field" placeholder="Affirm Loan ID (e.g. LN-12345)" oninput="updateNotice()">
+          <input type="text" id="custMerchant" class="input-field" placeholder="Merchant Name (e.g. Walmart)" oninput="updateNotice()">
+          <input type="text" id="custCarrier" class="input-field" placeholder="Carrier Tracking (e.g. UPS 1Z...)" oninput="updateNotice()">
+        </div>
       </div>
 
-      <button class="copy-btn" onclick="copyScript()">📋 Copy Statutory Notice to Clipboard</button>
+      <h4 style="color: #f8fafc; font-size: 16px; margin: 0 0 8px;">Your Customized Statutory Notice of Dispute:</h4>
+      <div class="action-script" id="generatedScript"></div>
+
+      <div class="btn-group">
+        <button class="copy-btn" onclick="copyScript()">📋 Copy Notice to Clipboard</button>
+        <a href="#" id="emailBtn" class="email-btn" onclick="openEmail(event)">✉️ 1-Click Email Notice (Opens Mail App)</a>
+      </div>
     </div>
 
   </main>
@@ -225,9 +251,51 @@ Sincerely,
         document.getElementById('step3').style.display = 'block';
         document.getElementById('step3').scrollIntoView({ behavior: 'smooth' });
       } else if (step === 'affirm_status') {
+        updateNotice();
         document.getElementById('results').style.display = 'block';
         document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
       }
+    }
+
+    function updateNotice() {
+      const loan = document.getElementById('custLoanId').value.trim() || '[Insert Loan ID]';
+      const merch = document.getElementById('custMerchant').value.trim() || '[Insert Merchant Name]';
+      const track = document.getElementById('custCarrier').value.trim() || '[Insert Carrier Tracking ID]';
+      const today = new Date().toISOString().split('T')[0];
+
+      const noticeText = `DATE: ${today}
+TO: Affirm, Inc. Executive Legal Escalations (resolutions@affirm.com, legal@affirm.com)
+RE: FORMAL STATUTORY NOTICE OF BILLING ERROR & DISPUTE UNDER 12 C.F.R. § 1026.13
+LOAN ID: ${loan} | MERCHANT: ${merch}
+
+To Whom It May Concern,
+
+Please accept this formal written notice of billing error pursuant to the Truth in Lending Act (TILA), 15 U.S.C. § 1666, and Regulation Z, 12 C.F.R. § 1026.13, as applicable to Buy Now, Pay Later point-of-sale credit providers under CFPB Enforcement Guidance.
+
+1. EVIDENTIARY FACT OF RETURN:
+The merchandise associated with Loan ID ${loan} was physically delivered and accepted at the merchant dock via carrier (Tracking ID: ${track}). A copy of the signed delivery confirmation is attached.
+
+2. STATUTORY VIOLATIONS & DEMAND:
+Pursuant to 12 C.F.R. § 1026.13(d)(1), Affirm is strictly prohibited from attempting to collect the disputed amount, assessing finance charges, or issuing automated bot denials while this billing error remains uncredited. Furthermore, pursuant to 12 C.F.R. § 1026.13(d)(2), Affirm may not report or threaten to report this disputed account as delinquent to any consumer reporting agency.
+
+Demand is hereby made that Affirm immediately:
+a) Credit the full principal balance and reverse all assessed interest.
+b) Issue written confirmation of zero remaining liability within 30 days.
+c) Cease all automated collection attempts.
+
+Sincerely,
+[Your Full Name]
+[Your Phone / Email]`;
+
+      document.getElementById('generatedScript').innerText = noticeText;
+
+      const subject = encodeURIComponent(`FORMAL STATUTORY NOTICE OF BILLING ERROR - 12 CFR 1026.13 - ${loan}`);
+      const body = encodeURIComponent(noticeText);
+      document.getElementById('emailBtn').href = `mailto:resolutions@affirm.com,legal@affirm.com?subject=${subject}&body=${body}`;
+    }
+
+    function openEmail(e) {
+      // Allows normal mailto navigation
     }
 
     function copyScript() {
