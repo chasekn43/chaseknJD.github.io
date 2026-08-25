@@ -370,44 +370,47 @@
   <style>
 /* ==========================================================================
    KINSLOW CONSUMER DEFENSE & REGULATORY ARCHIVE
-   High-Impact Cyber-Obsidian & Electric Signal Design System
+   Scientific Visual Ergonomics & Stress-Optimized Design System
    ========================================================================== */
 
 :root {
-  /* Surface & Background Hierarchy - Deep Carbon Noir */
-  --bg: #06080d;
-  --bg-secondary: #0c1017;
-  --card-bg: #0f141f;
-  --card-bg-hover: #141b29;
-  --card-bg-elevated: #182234;
+  /* Surface & Background Hierarchy - Deep Anti-Halation Slate */
+  --bg: #0b0f19;
+  --bg-secondary: #111827;
+  --card-bg: #151d2e;
+  --card-bg-hover: #1c263c;
+  --card-bg-elevated: #1e293b;
   
-  /* Text Tokens */
+  /* Text Tokens - Soft Cloud Off-White (Anti-Bleed Contrast 13:1) */
   --text-main: #f8fafc;
-  --text-body: #cbd5e1;
+  --text-body: #e2e8f0;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
   
-  /* High-Energy Semantic Accents */
-  --cyan-signal: #00f2fe;        /* Action & Diagnostic Glow */
-  --cyan-deep: #0284c7;
-  --cyan-glow: rgba(0, 242, 254, 0.2);
+  /* Stress-Optimized Semantic Accents (High Wavelength Penetration) */
+  --sky-action: #38bdf8;        /* Electric Sky Blue (Night Vision Peak) */
+  --sky-deep: #0284c7;
+  --sky-glow: rgba(56, 189, 248, 0.18);
   
-  --crimson-threat: #ff2a5f;     /* Danger / Bot Trap / Fee Alert */
-  --crimson-glow: rgba(255, 42, 95, 0.2);
+  --coral-urgency: #fb7185;     /* Rose Coral (Clear Urgency Without Alarm) */
+  --coral-deep: #e11d48;
+  --coral-glow: rgba(251, 113, 133, 0.18);
   
-  --emerald-shield: #10e7a2;     /* Verified Evidence & Statute */
-  --emerald-glow: rgba(16, 231, 162, 0.2);
+  --mint-proof: #34d399;        /* Emerald Mint (Verified Proof & Safety) */
+  --mint-deep: #059669;
+  --mint-glow: rgba(52, 211, 153, 0.18);
   
-  --amber-intel: #ffaa00;        /* Phone Bypass & Secret Codes */
-  --amber-glow: rgba(255, 170, 0, 0.2);
+  --amber-intel: #fbbf24;       /* Solar Amber (Penetrates Lens Yellowing) */
+  --amber-deep: #d97706;
+  --amber-glow: rgba(251, 191, 36, 0.18);
   
-  --violet-docket: #a855f7;      /* Legal / Regulatory Files */
-  --violet-glow: rgba(168, 85, 247, 0.2);
+  --violet-legal: #c084fc;      /* Soft Legal Violet */
+  --violet-deep: #9333ea;
 
-  /* Borders & Glassmorphism */
-  --border-glass: rgba(255, 255, 255, 0.08);
-  --border-active: rgba(0, 242, 254, 0.4);
-  --glass-highlight: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+  /* Subtle Directional Illumination */
+  --border-subtle: #233148;
+  --border-active: #38bdf8;
+  --glass-lighting: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
   
   --radius: 12px;
   --radius-sm: 8px;
@@ -429,30 +432,31 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Outfit", Helvetica, Arial, sans-serif;
   background-color: var(--bg);
   background-image: 
-    radial-gradient(at 0% 0%, rgba(2, 132, 199, 0.08) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.06) 0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(255, 42, 95, 0.04) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(2, 132, 199, 0.06) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(147, 51, 234, 0.05) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(251, 113, 133, 0.03) 0px, transparent 50%);
   color: var(--text-body);
-  line-height: 1.7;
-  font-size: 16px;
+  line-height: 1.75;
+  font-size: 17px; /* Scaled up for tired/near-sighted eyes */
+  font-weight: 450;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 a { 
-  color: var(--cyan-signal); 
+  color: var(--sky-action); 
   text-decoration: none; 
   transition: all 0.2s ease;
 }
 
 a:hover { 
-  color: #7dd3fc; 
+  color: #bae6fd; 
   text-decoration: underline; 
 }
 
 img { max-width: 100%; height: auto; }
 
-/* ---------- Containers & Grid ---------- */
+/* ---------- Layout Containers ---------- */
 
 .guide-page { background-color: var(--bg); min-height: 100vh; }
 
@@ -466,124 +470,108 @@ img { max-width: 100%; height: auto; }
 /* ---------- Top Reality Banner ---------- */
 
 .top-legal-bar {
-  background: linear-gradient(90deg, #100a1c 0%, #071526 50%, #061e24 100%) !important;
-  border-bottom: 1px solid rgba(0, 242, 254, 0.25) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(90deg, #130e26 0%, #0d1b2a 50%, #082032 100%) !important;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.3) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* ---------- Hero Viewport ---------- */
+/* ---------- Hero Viewport (Visual Tunneling Centered) ---------- */
 
 .hero-section {
-  background: radial-gradient(circle at 50% 10%, #111a2e 0%, #06080d 85%) !important;
-  border-bottom: 1px solid var(--border-glass) !important;
+  background: radial-gradient(circle at 50% 10%, #151e33 0%, #0b0f19 85%) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
   position: relative;
   overflow: hidden;
 }
 
-.hero-section::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 800px;
-  height: 400px;
-  background: radial-gradient(ellipse at center, rgba(0, 242, 254, 0.12), transparent 70%);
-  pointer-events: none;
-}
-
-/* ---------- Glassmorphic Interactive Cards ---------- */
+/* ---------- Ergonomic Interactive Cards ---------- */
 
 .doc-card {
   background: var(--card-bg);
-  background-image: var(--glass-highlight);
-  border: 1px solid var(--border-glass);
+  background-image: var(--glass-lighting);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius);
-  padding: 24px;
+  padding: 26px;
   position: relative;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 .doc-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   background-color: var(--card-bg-hover);
-  border-color: rgba(0, 242, 254, 0.3);
-  box-shadow: 0 20px 35px -10px rgba(0, 242, 254, 0.15);
+  border-color: var(--sky-action);
+  box-shadow: 0 16px 32px -10px rgba(56, 189, 248, 0.2);
 }
 
 .btn-doc {
   display: inline-block;
-  background: linear-gradient(135deg, #0284c7 0%, #00f2fe 100%);
-  color: #06080d !important;
+  background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+  color: #080c14 !important;
   font-weight: 800;
-  font-size: 14px;
-  padding: 11px 20px;
+  font-size: 15px;
+  padding: 12px 22px;
   border-radius: var(--radius-sm);
   text-decoration: none !important;
-  box-shadow: 0 4px 14px rgba(0, 242, 254, 0.3);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
   transition: all 0.2s ease;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .btn-doc:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
-  filter: brightness(1.1);
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.5);
+  filter: brightness(1.08);
 }
 
 /* ---------- Semantic Action Badges ---------- */
 
 .badge-threat {
-  background: linear-gradient(135deg, rgba(255, 42, 95, 0.15), rgba(255, 42, 95, 0.05));
-  border: 1px solid var(--crimson-threat);
-  color: #ff7597;
+  background: rgba(251, 113, 133, 0.12);
+  border: 1px solid var(--coral-urgency);
+  color: var(--coral-urgency);
   font-size: 11px;
   font-weight: 800;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 9999px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  box-shadow: 0 0 12px var(--crimson-glow);
+  letter-spacing: 0.05em;
 }
 
 .badge-signal {
-  background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(0, 242, 254, 0.05));
-  border: 1px solid var(--cyan-signal);
-  color: var(--cyan-signal);
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid var(--sky-action);
+  color: var(--sky-action);
   font-size: 11px;
   font-weight: 800;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 9999px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  box-shadow: 0 0 12px var(--cyan-glow);
+  letter-spacing: 0.05em;
 }
 
 .badge-shield {
-  background: linear-gradient(135deg, rgba(16, 231, 162, 0.15), rgba(16, 231, 162, 0.05));
-  border: 1px solid var(--emerald-shield);
-  color: var(--emerald-shield);
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid var(--mint-proof);
+  color: var(--mint-proof);
   font-size: 11px;
   font-weight: 800;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 9999px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  box-shadow: 0 0 12px var(--emerald-glow);
+  letter-spacing: 0.05em;
 }
 
 .badge-amber {
-  background: linear-gradient(135deg, rgba(255, 170, 0, 0.15), rgba(255, 170, 0, 0.05));
+  background: rgba(251, 191, 36, 0.12);
   border: 1px solid var(--amber-intel);
   color: var(--amber-intel);
   font-size: 11px;
   font-weight: 800;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 9999px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  box-shadow: 0 0 12px var(--amber-glow);
+  letter-spacing: 0.05em;
 }
 
 /* ---------- Typography & Custom Glow Headings ---------- */
@@ -595,13 +583,7 @@ h1, h2, h3, h4 {
 }
 
 .heading-gradient-cyan {
-  background: linear-gradient(135deg, #ffffff 20%, #7dd3fc 60%, #00f2fe 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.heading-gradient-fire {
-  background: linear-gradient(135deg, #ffffff 20%, #ffaa00 60%, #ff2a5f 100%);
+  background: linear-gradient(135deg, #ffffff 20%, #bae6fd 60%, #38bdf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -611,7 +593,7 @@ h1, h2, h3, h4 {
 button:focus-visible,
 a:focus-visible,
 summary:focus-visible {
-  outline: 2px solid var(--cyan-signal);
+  outline: 2px solid var(--sky-action);
   outline-offset: 3px;
 }
 
