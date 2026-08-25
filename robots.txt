@@ -3,6 +3,17 @@ Allow: /
 Allow: /documents/*.pdf
 Allow: /llms.txt
 Disallow: /CNAME
+Disallow: /logs/
+Disallow: /scratch/
+Disallow: /downloads_review/
+Disallow: /new_batch_review/
+Disallow: /.search_safety/
+Disallow: /bin/
+
+Disallow: /*_test.html
+Disallow: /*_error.png
+Disallow: /google169507de43bc15cc*.html
+Disallow: /aider*
 
 User-agent: GPTBot
 Allow: /
