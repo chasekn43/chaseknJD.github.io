@@ -1,4 +1,21 @@
 <head>
+  <!-- IMMEDIATE SERVICE WORKER & CACHE FLUSHER -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (var i = 0; i < registrations.length; i++) {
+          registrations[i].unregister();
+        }
+      });
+    }
+    if ('caches' in window) {
+      caches.keys().then(function(names) {
+        for (var j = 0; j < names.length; j++) {
+          caches.delete(names[j]);
+        }
+      });
+    }
+  </script>
   <meta name="google-site-verification" content="vT88dkj2K0Me4YpnC0ryNFiyrvqzWKQM_3ozZ97njNU" />
   <meta name="msvalidate.01" content="BE38A756F9040272FC88AAE48403E7BB" />
   <link rel="author" href="https://orcid.org/0009-0002-8851-7890">
