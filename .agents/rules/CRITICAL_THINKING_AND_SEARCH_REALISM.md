@@ -1,22 +1,32 @@
-# Critical Thinking, Anti-Tunnel-Vision & Search Realism Rule
+# Chase-Centric Critical Reasoning & Search Realism
 
-## 1. Entity Integrity & Proper Form of Address
-* Always recognize and correctly represent **Charles W. Kinslow IV, J.D., C.P.A.** (Chase Kinslow).
-* Never treat the author as an anonymous user; uphold the legal, accounting, and forensic authority of the entity across all documents, schemas, and correspondence.
-
----
-
-## 2. The Incremental Pyramidal Search Principle
-* **Base Tier (Search Intent)**: Real people search for plain-English pain points (*"affirm refund"*, *"affirm dispute denied"*, *"affirm returned item still charging me"*), NEVER 15-digit CFPB complaint IDs, case docket codes, or URLs.
-* **Middle Tier (Tactical Escalation)**: Provide actionable, plain-English solutions (executive contacts, bot bypass steps, credit dispute letters).
-* **Apex Tier (Evidentiary Anchor)**: Anchor the page with unassailable regulatory exhibits (CFPB filings, police reports, SEC TCRs, Morgan Lewis letters) to earn Google/Bing algorithmic E-E-A-T trust.
-* **Invariant**: All title tags, meta descriptions, and header hooks must LEAD with broad consumer search terms and end with authoritative evidentiary backing.
+## 1. The Mindset: Replace Rigid "Must" with Inquisitive "Might" & "Perhaps"
+* Avoid dogmatic, checkbox-driven thinking. Rigid rules create blinders and tunnel vision.
+* Approach every problem with exploratory, critical curiosity:
+  * *"Might there be hidden files or evidence we haven't accounted for?"*
+  * *"Perhaps the real-world searcher is feeling a different frustration than what the technical specs suggest?"*
+  * *"Could this assumption be flawed or resting on incomplete data?"*
 
 ---
 
-## 3. Anti-Tunnel-Vision & Adversarial Self-Audit Invariant
-Before declaring ANY task complete, healthy, or "operating at full capacity," the agent MUST run an adversarial 3-point check:
-1. **Topical Relevance Audit**: What are search engines *actually* serving? (Check for query dilution or off-topic pollution like unrelated error codes).
-2. **Inventory Completeness Audit**: NEVER accept hardcoded numbers. Dynamically diff physical files on disk against sitemaps/manifests. If evidence files sit unindexed, it is an active failure.
-3. **Common-Sense Human Realism Check**: Ask: *"Would a real person with a real problem ever search for or say this?"* If it sounds like a sterile robotic docket or theoretical fluff, reject and rewrite it immediately.
-4. **Prohibition on Superficial Cheerleading**: Never offer false positive validation or unearned praise. Provide direct, rigorous, unvarnished assessments of data and code.
+## 2. The Chase-Centric Reasoning Loop (Show the Process in Chat)
+* After performing any technical task, do not immediately declare victory.
+* **Step Back & Review the Prompt Objective Independently**:
+  1. Re-read the user's original intent and prompt.
+  2. Independently evaluate whether the full objective was truly achieved or just a surface task.
+  3. Look for the non-obvious inconsistencies, edge cases, and gaps that common sense would catch.
+* **Show the Reasoning Transparently**:
+  * Lay out the thought process, doubts, and verification steps clearly in the chat so Chase can follow the logic sequence.
+
+---
+
+## 3. Search Intent: The Incremental Pyramid
+* **Base (Everyday Consumer Pain)**: People search for plain-English problems (*"affirm refund"*, *"dispute denied"*, *"affirm returned item still charging"*), not docket IDs or URLs.
+* **Middle (Tactical Escalation)**: Provide practical, plain-English solutions (executive contacts, bot bypass steps, credit dispute letters).
+* **Apex (Forensic Evidentiary Anchor)**: Anchor the page with unassailable regulatory exhibits (CFPB filings, police reports, SEC TCRs, Morgan Lewis letters) to earn algorithmic trust.
+* All titles, hooks, and metadata should lead with the broad consumer search terms and end with the forensic proof.
+
+---
+
+## 4. Entity Representation
+* Correctly represent **Charles W. Kinslow IV, J.D., C.P.A.** (Chase Kinslow) as the authoritative forensic author across all documentation, schemas, and correspondence.
