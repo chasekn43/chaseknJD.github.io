@@ -6,11 +6,11 @@
   <title>Affirm Refund Delay Diagnostic &amp; Statutory Escalator | Kinslow Archive</title>
   <meta name="description" content="Interactive diagnostic tool to diagnose why your Affirm refund is stuck in merchant settlement float and generate a customized statutory dispute notice under Regulation Z.">
   <link rel="canonical" href="https://kinslow-regulatory-archive.org/tools/bnpl-refund-delay-diagnostic.html">
-  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="../index.css?v=5">
   <style>
     .diagnostic-card {
-      background: #111827;
-      border: 1px solid #1f2937;
+      background: #151d2e;
+      border: 1px solid #233148;
       border-radius: 12px;
       padding: 28px;
       margin-bottom: 24px;
@@ -41,8 +41,8 @@
       margin-bottom: 20px;
     }
     .option-btn {
-      background: #1e293b;
-      border: 2px solid #334155;
+      background: #1c263c;
+      border: 1px solid #233148;
       border-radius: 8px;
       padding: 16px;
       color: #e2e8f0;
@@ -66,7 +66,7 @@
       display: none;
     }
     .action-script {
-      background: #030712;
+      background: #080c14;
       border: 1px solid #374151;
       border-radius: 6px;
       padding: 16px;
@@ -84,7 +84,7 @@
       margin-top: 16px;
     }
     .copy-btn {
-      background: #2563eb;
+      background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%); color: #080c14;
       color: #ffffff;
       border: none;
       padding: 12px 20px;
@@ -98,7 +98,7 @@
       background: #1d4ed8;
     }
     .email-btn {
-      background: #059669;
+      background: linear-gradient(180deg, #34d399 0%, #059669 100%); color: #080c14;
       color: #ffffff;
       border: none;
       padding: 12px 20px;
@@ -118,7 +118,7 @@
     }
     .input-field {
       width: 100%;
-      background: #1e293b;
+      background: #1c263c;
       border: 1px solid #334155;
       border-radius: 6px;
       padding: 10px 14px;
@@ -210,7 +210,7 @@
         </div>
       </div>
 
-      <div style="background: #1e293b; border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+      <div style="background: #1c263c; border-radius: 8px; padding: 16px; margin-bottom: 20px;">
         <h4 style="color: #f1f5f9; font-size: 15px; margin: 0 0 8px;">Why Your Refund Is Trapped:</h4>
         <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
           Your carrier delivery proof establishes completed return of merchandise. However, Affirm's automated dispute bot queries only the merchant's API. Because the merchant has not completed the ACH settlement credit, the bot issued an automated denial. Under federal law, continuing to collect payments during this window constitutes a statutory violation.
@@ -218,7 +218,7 @@
       </div>
 
       <!-- OPTIONAL CUSTOMIZATION INPUTS -->
-      <div style="background: #0b0f19; border: 1px solid #1f2937; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+      <div style="background: #0b0f19; border: 1px solid #233148; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
         <div style="font-size: 13px; font-weight: 700; color: #94a3b8; margin-bottom: 10px;">Customize Your Notice (Optional - Auto-Fills Below):</div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
           <input type="text" id="custLoanId" class="input-field" placeholder="Affirm Loan ID (e.g. LN-12345)" oninput="updateNotice()">
