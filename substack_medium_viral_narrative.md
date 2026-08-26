@@ -88,7 +88,19 @@ When you show up with certified bank ACH trace logs, police reports, and carrier
 
 ---
 
-### Act V: The Structural Reality Behind the Curtain
+### Act V: The Farfetch Evidence & The Merchant Settlement Trap
+
+This isn't an isolated software glitch—it is an architectural business practice.
+
+Unredacted court exhibits and merchant correspondence from luxury e-commerce platforms like Farfetch (available in full in the archive) demonstrate the exact structural trap consumers face:
+
+1. **The Merchant Holding Period**: When a customer returns goods or cancels an order, merchants frequently delay reporting the refund to the BNPL platform for weeks while maintaining cash float.
+2. **The Automated Dispute Bot Shield**: When the consumer opens a dispute during this window, the BNPL bot issues an automated denial within hours, citing lack of merchant confirmation.
+3. **The Collateral Contagion**: If the consumer refuses to pay for returned goods, the lender risks carrying non-compliant, disputed debt on its ABS warehouse facilities, creating pressure to aggressively threaten collections rather than honor basic error resolution rights.
+
+---
+
+### Act VI: The Structural Reality Behind the Curtain
 
 Beyond the comedy of this individual dispute lies a massive macroeconomic reality that Wall Street and federal regulators are now waking up to:
 
@@ -109,11 +121,13 @@ If you ever find yourself locked in a dispute with a fintech chatbot, remember t
 
 ---
 
-### Explore the Master Evidence Vault
+### Explore the Master Evidence Vault & AI Search
 
-All primary documents—including certified Monroe Police reports, internal managing counsel directives, California Department of Justice letters, SEC whistleblower filings, and interactive legal dispute generators—are open to the public:
+All primary documents—including certified Monroe Police reports, Farfetch exhibits, internal managing counsel directives, California Department of Justice letters, SEC whistleblower filings, and interactive dispute generators—are open to the public:
 
 👉 **[kinslow-regulatory-archive.org](https://kinslow-regulatory-archive.org)**
+
+*You can also search the entire archive live using Cloudflare-powered AI Search by pressing `Ctrl + K` anywhere on the site.*
 
 ---
 *Charles W. Kinslow IV is an attorney and CPA. When he isn't analyzing federal regulatory frameworks or forensic accounting ledgers, he works in operations and inventory management in Monroe, Louisiana.*
