@@ -47,12 +47,13 @@ User-agent: Amazonbot
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
-# Disallow build directories
+# Disallow build & scratch directories
 Disallow: /.git/
 Disallow: /.github/
 Disallow: /.vscode/
 Disallow: /.agents/
+Disallow: /scratch/
+Disallow: /logs/
 
-# Sitemaps & LLM Context Endpoints
+# Canonical Sitemap & LLM Context Endpoints
 Sitemap: https://kinslow-regulatory-archive.org/sitemap.xml
-Sitemap: https://bypassbots.org/sitemap.xml
