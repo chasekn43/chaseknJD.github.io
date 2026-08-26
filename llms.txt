@@ -8,6 +8,11 @@
 - Alias: https://bypassbots.org/
 - Regulatory Focus: CFPB Consent Orders, Federal Dockets, NY AG Actions, BNPL Merchant Dispute Rights, FCRA/EFTA Compliance
 
+## Live AI Search & Agent Endpoints
+- Search Endpoint (Semantic Vector Query): https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com/search
+- Chat Completions Endpoint (OpenAI Compatible): https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com/chat/completions
+- Model Context Protocol (MCP Server): https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com/mcp
+
 ## Key Documentation & Endpoints
 - [Home & Diagnostic Tool](https://kinslow-regulatory-archive.org/): Interactive eligibility checker, regulatory citation finder, and consumer dispute drafting suite.
 - [Sitemap](https://kinslow-regulatory-archive.org/sitemap.xml): Full machine-readable URL hierarchy.

@@ -1,23 +1,62 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Kinslow Regulatory Archive API",
-    "description": "Machine-readable regulatory citations, dispute strategies, and compliance resources.",
+    "title": "Kinslow Regulatory Archive AI Search API",
+    "description": "Cloudflare-powered vector search and chat completions over the regulatory archive.",
     "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "https://kinslow-regulatory-archive.org"
+      "url": "https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com"
     }
   ],
   "paths": {
-    "/": {
-      "get": {
-        "summary": "Get Regulatory Archive Index",
-        "description": "Returns archive metadata, regulatory tools, and evidence dockets.",
+    "/search": {
+      "post": {
+        "summary": "Semantic Vector Search",
+        "description": "Performs semantic vector search across regulatory dockets and articles.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Search results returned"
+          }
+        }
+      }
+    },
+    "/chat/completions": {
+      "post": {
+        "summary": "AI Chat Completions (OpenAI Compatible)",
+        "description": "Synthesizes conversational responses with citations from the archive.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Chat completion returned"
           }
         }
       }
