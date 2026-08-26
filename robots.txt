@@ -1,61 +1,58 @@
-# RFC 9309 Compliant robots.txt for Kinslow Regulatory Archive
+# RFC 9309 & IETF Content Signals Policy
 # https://kinslow-regulatory-archive.org/
+# https://contentsignals.org/
 
 User-agent: *
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
-# AI and Agent Content Signals Policy (RFC Draft / contentsignals.org)
-Content-Signal: ai-train=yes, search=yes, ai-input=yes
-
-# Dedicated AI Scrapers & Agents
+# Dedicated AI Crawlers with Explicit Content Signals
 User-agent: GPTBot
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
 User-agent: ChatGPT-User
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
 User-agent: ClaudeBot
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
 User-agent: Claude-Web
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
 User-agent: Google-Extended
-Allow: /
-
-User-agent: Googlebot
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
 User-agent: PerplexityBot
-Allow: /
-
-User-agent: Applebot
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
 User-agent: Applebot-Extended
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: DuckAssistBot
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
 User-agent: meta-externalagent
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
 User-agent: CCBot
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
 User-agent: Amazonbot
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
-# Disallow sensitive internal build directories
+# Disallow build directories
 Disallow: /.git/
 Disallow: /.github/
 Disallow: /.vscode/
 Disallow: /.agents/
 
-# Sitemaps and AI Discovery Endpoints
+# Sitemaps & LLM Context Endpoints
 Sitemap: https://kinslow-regulatory-archive.org/sitemap.xml
 Sitemap: https://bypassbots.org/sitemap.xml
