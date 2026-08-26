@@ -1,0 +1,26 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Kinslow Regulatory Archive API",
+    "description": "Machine-readable regulatory citations, dispute strategies, and compliance resources.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://kinslow-regulatory-archive.org"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Get Regulatory Archive Index",
+        "description": "Returns archive metadata, regulatory tools, and evidence dockets.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
