@@ -1,40 +1,29 @@
-// Production PWA Service Worker for Kinslow Regulatory Archive (kinslow-regulatory-archive.org)
-const CACHE_NAME = 'kinslow-archive-v5-network-first';
-
-// Install: Immediately activate new service worker without waiting
-self.addEventListener('install', (event) => {
+// Aggressive Cache-Buster & Self-Unregister Service Worker
+self.addEventListener('install', function(e) {
   self.skipWaiting();
 });
 
-// Activate: Immediately purge ALL old caches and take control of all open tabs
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((keys) => {
+self.addEventListener('activate', function(e) {
+  e.waitUntil(
+    caches.keys().then(function(cacheNames) {
       return Promise.all(
-        keys.map((key) => caches.delete(key))
+        cacheNames.map(function(cacheName) {
+          console.log('[SW] Purging cache:', cacheName);
+          return caches.delete(cacheName);
+        })
       );
-    }).then(() => self.clients.claim())
+    }).then(function() {
+      return self.clients.claim();
+    }).then(function() {
+      return self.registration.unregister();
+    })
   );
 });
 
-// Fetch: NETWORK-FIRST strategy so live CSS and HTML changes appear immediately
-self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET') return;
-  
+self.addEventListener('fetch', function(event) {
   event.respondWith(
-    fetch(event.request)
-      .then((networkResponse) => {
-        if (networkResponse && networkResponse.status === 200) {
-          const responseToCache = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseToCache);
-          });
-        }
-        return networkResponse;
-      })
-      .catch(() => {
-        // Fallback to cache ONLY when offline
-        return caches.match(event.request);
-      })
+    fetch(event.request, { cache: 'no-store' }).catch(function() {
+      return fetch(event.request);
+    })
   );
 });
