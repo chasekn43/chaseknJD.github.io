@@ -819,5 +819,303 @@ h1, h2, h3, h4 {
     </div>
   </footer>
 
+
+<!-- Cloudflare AI Search & Chat Assistant Widget -->
+<style>
+  .cf-ai-fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cf-ai-fab:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(14, 165, 233, 0.6);
+  }
+  .cf-ai-fab .hotkey {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-family: monospace;
+  }
+  .cf-ai-modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 8, 15, 0.82);
+    backdrop-filter: blur(8px);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .cf-ai-modal-backdrop.active {
+    display: flex;
+    opacity: 1;
+  }
+  .cf-ai-modal {
+    background: #090d16;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 680px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(56, 189, 248, 0.2);
+    overflow: hidden;
+  }
+  .cf-ai-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0d1322;
+  }
+  .cf-ai-header h3 {
+    margin: 0;
+    font-size: 15px;
+    color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cf-ai-header .badge {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+  }
+  .cf-ai-close {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 8px;
+    line-height: 1;
+  }
+  .cf-ai-close:hover { color: #fff; }
+  .cf-ai-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+  }
+  .cf-ai-input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .cf-ai-input {
+    flex: 1;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #f8fafc;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .cf-ai-input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+  }
+  .cf-ai-btn {
+    background: #0ea5e9;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0 18px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .cf-ai-btn:hover { background: #0284c7; }
+  .cf-ai-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .cf-ai-chip {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid #334155;
+    color: #94a3b8;
+    padding: 4px 10px;
+    border-radius: 14px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .cf-ai-chip:hover {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    border-color: #38bdf8;
+  }
+  .cf-ai-result-box {
+    background: #0d1322;
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e2e8f0;
+    min-height: 120px;
+    white-space: pre-wrap;
+  }
+  .cf-ai-result-box.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-style: italic;
+  }
+</style>
+
+<button class="cf-ai-fab" id="cfAiTrigger" onclick="openCfAiModal()" aria-label="Open AI Archive Search">
+  <span>⚡ Ask Archive AI</span>
+  <span class="hotkey">Ctrl+K</span>
+</button>
+
+<div class="cf-ai-modal-backdrop" id="cfAiModalBackdrop" onclick="if(event.target === this) closeCfAiModal()">
+  <div class="cf-ai-modal" role="dialog" aria-modal="true" aria-labelledby="cfAiTitle">
+    <div class="cf-ai-header">
+      <h3 id="cfAiTitle">
+        <span>🛡️ Kinslow Archive AI Search</span>
+        <span class="badge">Cloudflare Llama 3.3</span>
+      </h3>
+      <button class="cf-ai-close" onclick="closeCfAiModal()" aria-label="Close modal">&times;</button>
+    </div>
+    <div class="cf-ai-body">
+      <div class="cf-ai-suggestions">
+        <span class="cf-ai-chip" onclick="runSuggestedQuery('What are Affirm\'s merchant dispute obligations under CFPB regulations?')">CFPB Dispute Rules</span>
+        <span class="cf-ai-chip" onclick="runSuggestedQuery('What do Farfetch court exhibits demonstrate regarding refund delays?')">Farfetch Exhibits</span>
+        <span class="cf-ai-chip" onclick="runSuggestedQuery('What are the risks documented regarding Affirm ABS warehouse facilities?')">ABS Warehouse Risks</span>
+        <span class="cf-ai-chip" onclick="runSuggestedQuery('How should a consumer dispute an automated chatbot refund denial?')">Dispute Guide</span>
+      </div>
+      <div class="cf-ai-input-group">
+        <input type="text" class="cf-ai-input" id="cfAiQueryInput" placeholder="Ask anything about CFPB dockets, Farfetch exhibits, or dispute rights..." onkeydown="if(event.key==='Enter') executeCfAiSearch()" />
+        <button class="cf-ai-btn" id="cfAiSubmitBtn" onclick="executeCfAiSearch()">Search</button>
+      </div>
+      <div class="cf-ai-result-box empty" id="cfAiResultBox">
+        Type a question or select a suggested topic above to search the archive using Cloudflare AI.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openCfAiModal() {
+    const modal = document.getElementById('cfAiModalBackdrop');
+    modal.classList.add('active');
+    setTimeout(() => document.getElementById('cfAiQueryInput').focus(), 50);
+  }
+
+  function closeCfAiModal() {
+    document.getElementById('cfAiModalBackdrop').classList.remove('active');
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      const modal = document.getElementById('cfAiModalBackdrop');
+      if (modal.classList.contains('active')) {
+        closeCfAiModal();
+      } else {
+        openCfAiModal();
+      }
+    } else if (e.key === 'Escape') {
+      closeCfAiModal();
+    }
+  });
+
+  function runSuggestedQuery(q) {
+    document.getElementById('cfAiQueryInput').value = q;
+    executeCfAiSearch();
+  }
+
+  async function executeCfAiSearch() {
+    const input = document.getElementById('cfAiQueryInput');
+    const box = document.getElementById('cfAiResultBox');
+    const btn = document.getElementById('cfAiSubmitBtn');
+    const query = input.value.trim();
+    if (!query) return;
+
+    box.classList.remove('empty');
+    box.innerHTML = '<span style="color:#38bdf8;">⚡ Searching 1,024-D vector index and synthesizing response with Llama 3.3...</span>';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch('https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com/chat/completions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: [
+            { role: 'system', content: 'You are the Charles W. Kinslow IV Regulatory Archive AI Assistant. Answer authoritatively with direct citations to the archive.' },
+            { role: 'user', content: query }
+          ]
+        })
+      });
+
+      if (!res.ok) {
+        throw new Error('Endpoint returned HTTP ' + res.status);
+      }
+
+      const data = await res.json();
+      const answer = data.choices && data.choices[0] && data.choices[0].message ? data.choices[0].message.content : (data.response || JSON.stringify(data));
+      box.innerHTML = answer;
+    } catch (err) {
+      console.warn('Chat completions fallback to search endpoint:', err);
+      try {
+        const sRes = await fetch('https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com/search', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: query })
+        });
+        const sData = await sRes.json();
+        if (sData.results && sData.results.length > 0) {
+          let htmlOut = '<strong>Top Matching Excerpts from Archive:</strong><br><br>';
+          sData.results.slice(0, 3).forEach((r, idx) => {
+            htmlOut += `<div style="margin-bottom:12px;padding:10px;background:#090d16;border-radius:6px;border-left:3px solid #38bdf8;">
+              <div style="font-weight:bold;color:#38bdf8;font-size:12px;">${r.title || r.url || 'Document #' + (idx+1)}</div>
+              <div style="margin-top:4px;">${r.content || r.text || r.excerpt || JSON.stringify(r)}</div>
+            </div>`;
+          });
+          box.innerHTML = htmlOut;
+        } else {
+          box.innerHTML = '<span style="color:#f59e0b;">No exact semantic matches found. Try refining your query.</span>';
+        }
+      } catch (searchErr) {
+        box.innerHTML = '<span style="color:#ef4444;">Unable to connect to Cloudflare AI Search: ' + searchErr.message + '</span>';
+      }
+    } finally {
+      btn.disabled = false;
+    }
+  }
+</script>
+<!-- End Cloudflare AI Search Widget -->
+
 </body>
 </html>
