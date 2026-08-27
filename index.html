@@ -4,7 +4,7 @@
   
   
   <link rel="preconnect" href="https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com">
-  <link rel="dns-prefetch" href="https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com">
+  
   <meta charset="UTF-8">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
@@ -15,7 +15,7 @@
   <meta name="description" content="Free tools and step-by-step letters from an everyday consumer to help you beat Affirm customer service bot loops, fix refund delays, and protect your credit score.">
   <link rel="canonical" href="https://kinslow-regulatory-archive.org/">
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
   <link rel="apple-touch-icon" href="icon-192.png">
   <style>
 /* INLINED ZERO-BLOCKING CORE CSS */
@@ -469,18 +469,7 @@ h1, h2, h3, h4 {
   </script>
 
   <!-- CACHE FLUSHER -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(function(r) {
-        for (var i = 0; i < r.length; i++) r[i].unregister();
-      });
-    }
-    if ('caches' in window) {
-      caches.keys().then(function(k) {
-        for (var j = 0; j < k.length; j++) caches.delete(k[j]);
-      });
-    }
-  </script>
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(function(r){for(var i=0;i<r.length;i++)r[i].unregister();});}if('caches' in window){caches.keys().then(function(k){for(var j=0;j<k.length;j++)caches.delete(k[j]);});}</script>
 
   <style>
 /* ==========================================================================
@@ -992,21 +981,7 @@ h1, h2, h3, h4 {
   </header>
 
   <!-- JAVASCRIPT FOR DYNAMIC GOAL-GRADIENT FEEDBACK (THEORY 4) -->
-  <script>
-    function selectOption(el, stepNum) {
-      var cards = document.querySelectorAll('.status-option-card');
-      cards.forEach(function(c) { c.classList.remove('selected'); });
-      el.classList.add('selected');
-      
-      var node1 = document.getElementById('node-1');
-      var node2 = document.getElementById('node-2');
-      if (node1 && node2) {
-        node1.className = 'roadmap-node completed';
-        node1.querySelector('.roadmap-circle').innerHTML = '✓';
-        node2.className = 'roadmap-node active';
-      }
-    }
-  </script>
+  <script>function selectOption(el,stepNum){var cards=document.querySelectorAll('.status-option-card');cards.forEach(function(c){c.classList.remove('selected');});el.classList.add('selected');var node1=document.getElementById('node-1');var node2=document.getElementById('node-2');if(node1&&node2){node1.className='roadmap-node completed';node1.querySelector('.roadmap-circle').innerHTML='✓';node2.className='roadmap-node active';}}</script>
 
   <!-- MAIN VIEWPORT: OPERATIONAL CONSUMER DEFENSE TOOLS (THEORY 1 & 3: ELEVATED DUAL PRIMACY) -->
   <main class="container" style="margin: 40px auto;">
@@ -1411,95 +1386,7 @@ h1, h2, h3, h4 {
   </div>
 </div>
 
-<script>
-  function openCfAiModal() {
-    const modal = document.getElementById('cfAiModalBackdrop');
-    modal.classList.add('active');
-    setTimeout(() => document.getElementById('cfAiQueryInput').focus(), 50);
-  }
-
-  function closeCfAiModal() {
-    document.getElementById('cfAiModalBackdrop').classList.remove('active');
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
-      e.preventDefault();
-      const modal = document.getElementById('cfAiModalBackdrop');
-      if (modal.classList.contains('active')) {
-        closeCfAiModal();
-      } else {
-        openCfAiModal();
-      }
-    } else if (e.key === 'Escape') {
-      closeCfAiModal();
-    }
-  });
-
-  function runSuggestedQuery(q) {
-    document.getElementById('cfAiQueryInput').value = q;
-    executeCfAiSearch();
-  }
-
-  async function executeCfAiSearch() {
-    const input = document.getElementById('cfAiQueryInput');
-    const box = document.getElementById('cfAiResultBox');
-    const btn = document.getElementById('cfAiSubmitBtn');
-    const query = input.value.trim();
-    if (!query) return;
-
-    box.classList.remove('empty');
-    box.innerHTML = '<span style="color:#38bdf8;">⚡ Searching 1,024-D vector index and synthesizing response with Llama 3.3...</span>';
-    btn.disabled = true;
-
-    try {
-      const res = await fetch('https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com/chat/completions', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          messages: [
-            { role: 'system', content: 'You are the Charles W. Kinslow IV Regulatory Archive AI Assistant. Answer authoritatively with direct citations to the archive.' },
-            { role: 'user', content: query }
-          ]
-        })
-      });
-
-      if (!res.ok) {
-        throw new Error('Endpoint returned HTTP ' + res.status);
-      }
-
-      const data = await res.json();
-      const answer = data.choices && data.choices[0] && data.choices[0].message ? data.choices[0].message.content : (data.response || JSON.stringify(data));
-      box.innerHTML = answer;
-    } catch (err) {
-      console.warn('Chat completions fallback to search endpoint:', err);
-      try {
-        const sRes = await fetch('https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com/search', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ query: query })
-        });
-        const sData = await sRes.json();
-        if (sData.results && sData.results.length > 0) {
-          let htmlOut = '<strong>Top Matching Excerpts from Archive:</strong><br><br>';
-          sData.results.slice(0, 3).forEach((r, idx) => {
-            htmlOut += `<div style="margin-bottom:12px;padding:10px;background:#090d16;border-radius:6px;border-left:3px solid #38bdf8;">
-              <div style="font-weight:bold;color:#38bdf8;font-size:12px;">${r.title || r.url || 'Document #' + (idx+1)}</div>
-              <div style="margin-top:4px;">${r.content || r.text || r.excerpt || JSON.stringify(r)}</div>
-            </div>`;
-          });
-          box.innerHTML = htmlOut;
-        } else {
-          box.innerHTML = '<span style="color:#f59e0b;">No exact semantic matches found. Try refining your query.</span>';
-        }
-      } catch (searchErr) {
-        box.innerHTML = '<span style="color:#ef4444;">Unable to connect to Cloudflare AI Search: ' + searchErr.message + '</span>';
-      }
-    } finally {
-      btn.disabled = false;
-    }
-  }
-</script>
+<script>function openCfAiModal(){const modal=document.getElementById('cfAiModalBackdrop');modal.classList.add('active');setTimeout(()=>document.getElementById('cfAiQueryInput').focus(),50);}function closeCfAiModal(){document.getElementById('cfAiModalBackdrop').classList.remove('active');}document.addEventListener('keydown',(e)=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();const modal=document.getElementById('cfAiModalBackdrop');if(modal.classList.contains('active')){closeCfAiModal();}else{openCfAiModal();}}else if(e.key==='Escape'){closeCfAiModal();}});function runSuggestedQuery(q){document.getElementById('cfAiQueryInput').value=q;executeCfAiSearch();}async function executeCfAiSearch(){const input=document.getElementById('cfAiQueryInput');const box=document.getElementById('cfAiResultBox');const btn=document.getElementById('cfAiSubmitBtn');const query=input.value.trim();if(!query)return;box.classList.remove('empty');box.innerHTML='<span style="color:#38bdf8;">⚡ Searching 1,024-D vector index and synthesizing response with Llama 3.3...</span>';btn.disabled=true;try{const res=await fetch('https:method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:[{role:'system',content:'You are the Charles W. Kinslow IV Regulatory Archive AI Assistant. Answer authoritatively with direct citations to the archive.'},{role:'user',content:query}]})});if(!res.ok){throw new Error('Endpoint returned HTTP '+res.status);}const data=await res.json();const answer=data.choices&&data.choices[0]&&data.choices[0].message ? data.choices[0].message.content:(data.response||JSON.stringify(data));box.innerHTML=answer;}catch(err){console.warn('Chat completions fallback to search endpoint:',err);try{const sRes=await fetch('https:method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:query})});const sData=await sRes.json();if(sData.results&&sData.results.length>0){let htmlOut='<strong>Top Matching Excerpts from Archive:</strong><br><br>';sData.results.slice(0,3).forEach((r,idx)=>{htmlOut+=`<div style="margin-bottom:12px;padding:10px;background:#090d16;border-radius:6px;border-left:3px solid #38bdf8;"><div style="font-weight:bold;color:#38bdf8;font-size:12px;">${r.title||r.url||'Document #'+(idx+1)}</div><div style="margin-top:4px;">${r.content||r.text||r.excerpt||JSON.stringify(r)}</div></div>`;});box.innerHTML=htmlOut;}else{box.innerHTML='<span style="color:#f59e0b;">No exact semantic matches found. Try refining your query.</span>';}}catch(searchErr){box.innerHTML='<span style="color:#ef4444;">Unable to connect to Cloudflare AI Search:'+searchErr.message+'</span>';}}finally{btn.disabled=false;}}</script>
 <!-- End Cloudflare AI Search Widget -->
 
 </body>
