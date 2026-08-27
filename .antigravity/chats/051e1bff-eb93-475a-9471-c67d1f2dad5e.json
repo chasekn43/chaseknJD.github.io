@@ -1,0 +1,81 @@
+{
+  "sessionId": "051e1bff-eb93-475a-9471-c67d1f2dad5e",
+  "name": "Badass",
+  "createdAt": "2026-08-26T16:04:20.858Z",
+  "filename": "051e1bff-eb93-475a-9471-c67d1f2dad5e.json",
+  "geminiStarted": true,
+  "messages": [
+    {
+      "id": "81cb4bb5-4570-4168-95cc-abb860e468b4",
+      "role": "user",
+      "content": "Yo",
+      "status": "pending",
+      "model": "gemini-2.5-flash",
+      "client_type": "gemini-bridge",
+      "parent_message_id": null,
+      "created_at": "2026-08-26T16:04:33.43+00:00",
+      "sender": "ios",
+      "is_cancelled": false
+    },
+    {
+      "id": "ff5eeff9-924a-49f5-9ff4-8e9863ff4e37",
+      "role": "agent",
+      "content": "Bridge internal error while processing your message.\n\nAntigravity CLI executable path is empty. Please ensure the CLI is installed.",
+      "status": "error",
+      "model": "gemini-2.5-flash",
+      "client_type": "gemini-bridge",
+      "parent_message_id": "81cb4bb5-4570-4168-95cc-abb860e468b4",
+      "created_at": "2026-08-26T16:04:34.924Z",
+      "sender": "macOS",
+      "is_cancelled": false
+    },
+    {
+      "id": "a5e642a4-8915-4152-8c35-94bbc85c7548",
+      "role": "user",
+      "content": "Please commit all staged changes with a descriptive commit message",
+      "status": "pending",
+      "model": "gemini-2.5-flash",
+      "client_type": "gemini-bridge",
+      "parent_message_id": null,
+      "created_at": "2026-08-26T16:04:58.846+00:00",
+      "sender": "ios",
+      "is_cancelled": false
+    },
+    {
+      "id": "9eabf577-92d7-45b7-b6ef-da6bfb85c960",
+      "role": "agent",
+      "content": "Bridge internal error while processing your message.\n\nAntigravity CLI executable path is empty. Please ensure the CLI is installed.",
+      "status": "error",
+      "model": "gemini-2.5-flash",
+      "client_type": "gemini-bridge",
+      "parent_message_id": "a5e642a4-8915-4152-8c35-94bbc85c7548",
+      "created_at": "2026-08-26T16:05:00.689Z",
+      "sender": "macOS",
+      "is_cancelled": false
+    },
+    {
+      "id": "b8e695f3-aa57-4c3c-85ea-a441a95d02fb",
+      "role": "user",
+      "content": "Status",
+      "status": "cancelled",
+      "model": "gemini-2.5-flash",
+      "client_type": "gemini-bridge",
+      "parent_message_id": null,
+      "created_at": "2026-08-26T16:40:29.794+00:00",
+      "sender": "ios",
+      "is_cancelled": true
+    },
+    {
+      "id": "604286fc-709e-41bf-a628-accf3d5b2262",
+      "role": "user",
+      "content": "Status",
+      "status": "cancelled",
+      "model": "gemini-2.5-flash",
+      "client_type": "gemini-bridge",
+      "parent_message_id": null,
+      "created_at": "2026-08-26T16:45:12.28+00:00",
+      "sender": "ios",
+      "is_cancelled": true
+    }
+  ]
+}

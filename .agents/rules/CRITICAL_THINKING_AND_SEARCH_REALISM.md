@@ -41,3 +41,7 @@
 
 ## 5. Entity Representation
 * Correctly represent **Charles W. Kinslow IV, J.D., C.P.A.** (Chase Kinslow) as the authoritative forensic author across all documentation, schemas, and correspondence.
+
+
+## 6. INDEPENDENT USER VERIFICATION & ZERO SHORTCUTS
+* When asked to fix an issue, the fix depends on the user's independent verification, not agent shortcuts that take multiple iterations before accomplishing the objective. Always solve root causes on the first attempt.
