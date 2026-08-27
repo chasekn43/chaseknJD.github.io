@@ -17,388 +17,7 @@
   <link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%20%22Charles%20W.%20Kinslow%20IV%20%7C%20Fintech%20%26%20BNPL%20Regulatory%20Archive%22%2C%20%22short_name%22%3A%20%22Kinslow%20Archive%22%2C%20%22description%22%3A%20%22Public%20regulatory%20archive%20of%20CFPB%20Complaint%20%23260717-35668593%2C%20primary%20exhibits%2C%20and%20legal%20research.%22%2C%20%22start_url%22%3A%20%22/%22%2C%20%22scope%22%3A%20%22/%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22background_color%22%3A%20%22%230b0f19%22%2C%20%22theme_color%22%3A%20%22%230b0f19%22%2C%20%22orientation%22%3A%20%22portrait-primary%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22/icon-192.png%22%2C%20%22sizes%22%3A%20%22192x192%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%20maskable%22%7D%2C%20%7B%22src%22%3A%20%22/icon-512.png%22%2C%20%22sizes%22%3A%20%22512x512%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%20maskable%22%7D%5D%7D">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
   <link rel="apple-touch-icon" href="icon-192.png">
-  <style>
-/* INLINED ZERO-BLOCKING CORE CSS */
-/* ==========================================================================
-   KINSLOW CONSUMER DEFENSE & REGULATORY ARCHIVE
-   The 60-30-10 Cognitive Trust & Clarity Design System (Fintech Standard)
-   Audited & Perfected Across 9 Cognitive & Behavioral Psychology Frameworks
-   ========================================================================== */
-
-:root {
-  /* 60% DOMINANT CANVAS: Anti-Glare Crisp Off-White */
-  --bg-canvas: #f8f9fa;
-  --bg-surface: #ffffff;
-  --bg-surface-subtle: #f1f5f9;
-  
-  /* 30% SECONDARY STRUCTURE & TYPOGRAPHY: Deep Slate & Navy */
-  --text-main: #0f172a;        /* High-contrast headline navy (16.94:1 AAA) */
-  --text-body: #334155;        /* Crisp slate body text (9.82:1 AAA) */
-  --text-muted: #475569; /* Elevated to 7.18:1 WCAG AAA */       /* Secondary metadata slate */
-  --border-subtle: #e2e8f0;    /* 1px structural container border */
-  --border-strong: #cbd5e1;
-
-  /* 10% ACCENT VECTORS: Isolated Primary Action & Trust Markers */
-  --accent-primary: #1d4ed8;    /* Trust Cobalt (Reserved for Primary CTA) */
-  --accent-primary-hover: #1e40af;
-  --accent-primary-bg: #eff6ff;
-  
-  --accent-amber: #b45309;      /* Warm Amber (Credit Countdown & Intel) */
-  --accent-amber-bg: #fffbeb;
-  --accent-amber-border: #fde68a;
-
-  --accent-sage: #15803d;       /* Calming Sage (Proof & Safety Cues) */
-  --accent-sage-bg: #f0fdf4;
-  --accent-sage-border: #bbf7d0;
-
-  /* Layout Geometry */
-  --radius-lg: 12px;
-  --radius-md: 8px;
-  --radius-sm: 6px;
-  --maxw: 1200px;
-}
-
-*,
-*::before,
-*::after { box-sizing: border-box; }
-
-html { 
-  -webkit-text-size-adjust: 100%; 
-  scroll-behavior: smooth;
-  background-color: var(--bg-canvas);
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Outfit", Helvetica, Arial, sans-serif;
-  background-color: var(--bg-canvas);
-  color: var(--text-body);
-  line-height: 1.75;
-  font-size: 17px;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-}
-
-a { 
-  color: var(--accent-primary); 
-  text-decoration: none; 
-  transition: all 0.2s ease;
-}
-
-a:hover { 
-  color: var(--accent-primary-hover); 
-  text-decoration: underline; 
-}
-
-img { max-width: 100%; height: auto; }
-
-.container {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Theory 1: Processing Fluency Asymmetric Golden Ratio Grid */
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 36px;
-  align-items: start;
-}
-
-@media (min-width: 992px) {
-  .hero-grid {
-    grid-template-columns: 1.18fr 0.95fr;
-    gap: 40px;
-    align-items: center;
-  }
-}
-
-/* Top Reality Banner */
-.top-legal-bar {
-  background: #0f172a !important;
-  color: #f8fafc !important;
-  border-bottom: 1px solid #1e293b !important;
-  padding: 10px 0 !important;
-  font-size: 14px !important;
-}
-
-/* Theory 3: Quick Primacy Bar (Crisp Light Gray Box - Eliminates Amber Competition) */
-.primacy-phone-bar {
-  background: #f1f5f9;
-  border-bottom: 1px solid #cbd5e1;
-  padding: 10px 0;
-  font-size: 14px;
-}
-
-/* Hero Viewport */
-.hero-section {
-  background: #ffffff !important;
-  border-bottom: 1px solid var(--border-subtle) !important;
-  padding: 40px 0 36px;
-}
-
-/* Theory 7: Visual Salience - Isolated Primary CTA */
-.btn-primary-isolated {
-  display: block;
-  width: 100%;
-  background: var(--accent-primary);
-  color: #ffffff !important;
-  font-weight: 800;
-  font-size: 16px;
-  padding: 15px 22px;
-  border-radius: var(--radius-sm);
-  text-decoration: none !important;
-  text-align: center;
-  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
-  transition: all 0.2s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.btn-primary-isolated:hover {
-  background: var(--accent-primary-hover);
-  box-shadow: 0 6px 20px rgba(29, 78, 216, 0.4);
-  transform: translateY(-1px);
-}
-
-/* Theory 8: Affordance-Accurate Interactive Option Cards */
-.status-option-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
-  border: 1.5px solid #cbd5e1;
-  border-radius: var(--radius-md);
-  background: #f8fafc;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-bottom: 10px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #0f172a;
-}
-
-.status-option-card:hover {
-  border-color: var(--accent-primary);
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
-}
-
-.status-option-card.selected {
-  border-color: var(--accent-primary);
-  background: #eff6ff;
-  color: #1d4ed8;
-  font-weight: 700;
-}
-
-.radio-indicator {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 2px solid #94a3b8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: all 0.2s ease;
-}
-
-.status-option-card.selected .radio-indicator {
-  border-color: #1d4ed8;
-  background: #1d4ed8;
-}
-
-.status-option-card.selected .radio-indicator::after {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ffffff;
-}
-
-/* Theory 4: Goal-Gradient Dynamic Timeline Roadmap */
-.timeline-roadmap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  margin: 14px 0 18px;
-}
-
-.timeline-roadmap::before {
-  content: "";
-  position: absolute;
-  top: 14px;
-  left: 20px;
-  right: 20px;
-  height: 2px;
-  background: #e2e8f0;
-  z-index: 1;
-}
-
-.roadmap-node {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  flex: 1;
-}
-
-.roadmap-circle {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #ffffff;
-  border: 2px solid #cbd5e1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 800;
-  color: #475569;
-  margin-bottom: 4px;
-  transition: all 0.3s ease;
-}
-
-.roadmap-node.active .roadmap-circle {
-  background: #1d4ed8;
-  border-color: #1d4ed8;
-  color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2);
-}
-
-.roadmap-node.completed .roadmap-circle {
-  background: #15803d;
-  border-color: #15803d;
-  color: #ffffff;
-}
-
-.roadmap-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: #475569;
-  display: block;
-}
-
-.roadmap-node.active .roadmap-label {
-  color: #0f172a;
-  font-weight: 800;
-}
-
-/* Cards & Layout */
-.tool-card {
-  background: #ffffff;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
-}
-
-.tool-card:hover {
-  border-color: var(--border-strong);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
-}
-
-/* Theory 7: Isolated Primary Docket Card vs Standard Cards */
-.docket-card {
-  background: #f8fafc;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 18px;
-  position: relative;
-  transition: all 0.2s ease;
-}
-
-.docket-card:hover {
-  background: #ffffff;
-  border-color: var(--accent-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-}
-
-.docket-card-featured {
-  background: #ffffff;
-  border: 2px solid #1d4ed8;
-  border-radius: var(--radius-md);
-  padding: 18px;
-  position: relative;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.1);
-}
-
-.docket-card-featured:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(29, 78, 216, 0.2);
-}
-
-.docket-card a.stretched-link::after,
-.docket-card-featured a.stretched-link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-/* Badges */
-.badge-clean {
-  background: #f1f5f9;
-  border: 1px solid #cbd5e1;
-  color: #334155;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.badge-amber {
-  background: var(--accent-amber-bg);
-  border: 1px solid var(--accent-amber-border);
-  color: var(--accent-amber);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.badge-sage {
-  background: var(--accent-sage-bg);
-  border: 1px solid var(--accent-sage-border);
-  color: var(--accent-sage);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.badge-featured {
-  background: #1d4ed8;
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 800;
-  padding: 3px 8px;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-h1, h2, h3, h4 {
-  color: var(--text-main);
-  letter-spacing: -0.02em;
-  font-weight: 800;
-}
-
-</style>
+  <style>:root{--bg-canvas:#f8f9fa;--bg-surface:#ffffff;--bg-surface-subtle:#f1f5f9;--text-main:#0f172a;--text-body:#334155;--text-muted:#475569;--border-subtle:#e2e8f0;--border-strong:#cbd5e1;--accent-primary:#1d4ed8;--accent-primary-hover:#1e40af;--accent-primary-bg:#eff6ff;--accent-amber:#b45309;--accent-amber-bg:#fffbeb;--accent-amber-border:#fde68a;--accent-sage:#15803d;--accent-sage-bg:#f0fdf4;--accent-sage-border:#bbf7d0;--radius-lg:12px;--radius-md:8px;--radius-sm:6px;--maxw:1200px;}*,*::before,*::after{box-sizing:border-box;}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background-color:var(--bg-canvas);}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Inter","Outfit",Helvetica,Arial,sans-serif;background-color:var(--bg-canvas);color:var(--text-body);line-height:1.75;font-size:17px;font-weight:400;-webkit-font-smoothing:antialiased;}a{color:var(--accent-primary);text-decoration:none;transition:all 0.2s ease;}a:hover{color:var(--accent-primary-hover);text-decoration:underline;}img{max-width:100%;height:auto;}.container{max-width:var(--maxw);margin:0 auto;padding:0 20px;}.hero-grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:start;}@media(min-width:992px){.hero-grid{grid-template-columns:1.18fr 0.95fr;gap:40px;align-items:center;}}.top-legal-bar{background:#0f172a !important;color:#f8fafc !important;border-bottom:1px solid #1e293b !important;padding:10px 0 !important;font-size:14px !important;}.primacy-phone-bar{background:#f1f5f9;border-bottom:1px solid #cbd5e1;padding:10px 0;font-size:14px;}.hero-section{background:#ffffff !important;border-bottom:1px solid var(--border-subtle)!important;padding:40px 0 36px;}.btn-primary-isolated{display:block;width:100%;background:var(--accent-primary);color:#1d4ed8;font-weight:800;font-size:16px;padding:15px 22px;border-radius:var(--radius-sm);text-decoration:none !important;text-align:center;box-shadow:0 4px 14px rgba(29,78,216,0.3);transition:all 0.2s ease;cursor:pointer;border:none;}.btn-primary-isolated:hover{background:var(--accent-primary-hover);box-shadow:0 6px 20px rgba(29,78,216,0.4);transform:translateY(-1px);}.status-option-card{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1.5px solid #cbd5e1;border-radius:var(--radius-md);background:#f8fafc;cursor:pointer;transition:all 0.2s ease;margin-bottom:10px;font-size:14px;font-weight:600;color:#0f172a;}.status-option-card:hover{border-color:var(--accent-primary);background:#ffffff;box-shadow:0 2px 8px rgba(15,23,42,0.06);}.status-option-card.selected{border-color:var(--accent-primary);background:#eff6ff;color:#1d4ed8;font-weight:700;}.radio-indicator{width:18px;height:18px;border-radius:50%;border:2px solid #94a3b8;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s ease;}.status-option-card.selected .radio-indicator{border-color:#1d4ed8;background:#1d4ed8;}.status-option-card.selected .radio-indicator::after{content:"";width:6px;height:6px;border-radius:50%;background:#ffffff;}.timeline-roadmap{display:flex;align-items:center;justify-content:space-between;position:relative;margin:14px 0 18px;}.timeline-roadmap::before{content:"";position:absolute;top:14px;left:20px;right:20px;height:2px;background:#e2e8f0;z-index:1;}.roadmap-node{position:relative;z-index:2;text-align:center;flex:1;}.roadmap-circle{width:28px;height:28px;border-radius:50%;background:#ffffff;border:2px solid #cbd5e1;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#475569;margin-bottom:4px;transition:all 0.3s ease;}.roadmap-node.active .roadmap-circle{background:#1d4ed8;border-color:#1d4ed8;color:#1d4ed8;box-shadow:0 0 0 3px rgba(29,78,216,0.2);}.roadmap-node.completed .roadmap-circle{background:#15803d;border-color:#15803d;color:#1d4ed8;}.roadmap-label{font-size:11px;font-weight:700;color:#475569;display:block;}.roadmap-node.active .roadmap-label{color:#0f172a;font-weight:800;}.tool-card{background:#ffffff;border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;justify-content:space-between;transition:all 0.2s ease;box-shadow:0 1px 3px rgba(15,23,42,0.05);}.tool-card:hover{border-color:var(--border-strong);transform:translateY(-2px);box-shadow:0 10px 25px -5px rgba(15,23,42,0.08);}.docket-card{background:#f8fafc;border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:18px;position:relative;transition:all 0.2s ease;}.docket-card:hover{background:#ffffff;border-color:var(--accent-primary);transform:translateY(-2px);box-shadow:0 8px 20px rgba(15,23,42,0.08);}.docket-card-featured{background:#ffffff;border:2px solid #1d4ed8;border-radius:var(--radius-md);padding:18px;position:relative;transition:all 0.2s ease;box-shadow:0 4px 14px rgba(29,78,216,0.1);}.docket-card-featured:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(29,78,216,0.2);}.docket-card a.stretched-link::after,.docket-card-featured a.stretched-link::after{content:"";position:absolute;inset:0;z-index:1;}.badge-clean{background:#f1f5f9;border:1px solid #cbd5e1;color:#334155;font-size:12px;font-weight:700;padding:3px 10px;border-radius:9999px;text-transform:uppercase;letter-spacing:0.04em;}.badge-amber{background:var(--accent-amber-bg);border:1px solid var(--accent-amber-border);color:var(--accent-amber);font-size:12px;font-weight:700;padding:3px 10px;border-radius:9999px;text-transform:uppercase;letter-spacing:0.04em;}.badge-sage{background:var(--accent-sage-bg);border:1px solid var(--accent-sage-border);color:var(--accent-sage);font-size:12px;font-weight:700;padding:3px 10px;border-radius:9999px;text-transform:uppercase;letter-spacing:0.04em;}.badge-featured{background:#1d4ed8;color:#1d4ed8;font-size:11px;font-weight:800;padding:3px 8px;border-radius:9999px;text-transform:uppercase;letter-spacing:0.05em;}h1,h2,h3,h4{color:var(--text-main);letter-spacing:-0.02em;font-weight:800;}</style>
   <meta name="theme-color" content="#f8f9fa">
 
   <!-- SCHEMA THEORY: WEBAPPLICATION & FAQPAGE SCHEMA -->
@@ -471,387 +90,7 @@ h1, h2, h3, h4 {
   <!-- CACHE FLUSHER -->
   
 
-  <style>
-/* ==========================================================================
-   KINSLOW CONSUMER DEFENSE & REGULATORY ARCHIVE
-   The 60-30-10 Cognitive Trust & Clarity Design System (Fintech Standard)
-   Audited & Perfected Across 9 Cognitive & Behavioral Psychology Frameworks
-   ========================================================================== */
-
-:root {
-  /* 60% DOMINANT CANVAS: Anti-Glare Crisp Off-White */
-  --bg-canvas: #f8f9fa;
-  --bg-surface: #ffffff;
-  --bg-surface-subtle: #f1f5f9;
-  
-  /* 30% SECONDARY STRUCTURE & TYPOGRAPHY: Deep Slate & Navy */
-  --text-main: #0f172a;        /* High-contrast headline navy (16.94:1 AAA) */
-  --text-body: #334155;        /* Crisp slate body text (9.82:1 AAA) */
-  --text-muted: #475569;       /* Secondary metadata slate */
-  --border-subtle: #e2e8f0;    /* 1px structural container border */
-  --border-strong: #cbd5e1;
-
-  /* 10% ACCENT VECTORS: Isolated Primary Action & Trust Markers */
-  --accent-primary: #1d4ed8;    /* Trust Cobalt (Reserved for Primary CTA) */
-  --accent-primary-hover: #1e40af;
-  --accent-primary-bg: #eff6ff;
-  
-  --accent-amber: #b45309;      /* Warm Amber (Credit Countdown & Intel) */
-  --accent-amber-bg: #fffbeb;
-  --accent-amber-border: #fde68a;
-
-  --accent-sage: #15803d;       /* Calming Sage (Proof & Safety Cues) */
-  --accent-sage-bg: #f0fdf4;
-  --accent-sage-border: #bbf7d0;
-
-  /* Layout Geometry */
-  --radius-lg: 12px;
-  --radius-md: 8px;
-  --radius-sm: 6px;
-  --maxw: 1200px;
-}
-
-*,
-*::before,
-*::after { box-sizing: border-box; }
-
-html { 
-  -webkit-text-size-adjust: 100%; 
-  scroll-behavior: smooth;
-  background-color: var(--bg-canvas);
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Outfit", Helvetica, Arial, sans-serif;
-  background-color: var(--bg-canvas);
-  color: var(--text-body);
-  line-height: 1.75;
-  font-size: 17px;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-}
-
-a { 
-  color: var(--accent-primary); 
-  text-decoration: none; 
-  transition: all 0.2s ease;
-}
-
-a:hover { 
-  color: var(--accent-primary-hover); 
-  text-decoration: underline; 
-}
-
-img { max-width: 100%; height: auto; }
-
-.container {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Theory 1: Processing Fluency Asymmetric Golden Ratio Grid */
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 36px;
-  align-items: start;
-}
-
-@media (min-width: 992px) {
-  .hero-grid {
-    grid-template-columns: 1.18fr 0.95fr;
-    gap: 40px;
-    align-items: center;
-  }
-}
-
-/* Top Reality Banner */
-.top-legal-bar {
-  background: #0f172a !important;
-  color: #f8fafc !important;
-  border-bottom: 1px solid #1e293b !important;
-  padding: 10px 0 !important;
-  font-size: 14px !important;
-}
-
-/* Theory 3: Quick Primacy Bar (Crisp Light Gray Box - Eliminates Amber Competition) */
-.primacy-phone-bar {
-  background: #f1f5f9;
-  border-bottom: 1px solid #cbd5e1;
-  padding: 10px 0;
-  font-size: 14px;
-}
-
-/* Hero Viewport */
-.hero-section {
-  background: #ffffff !important;
-  border-bottom: 1px solid var(--border-subtle) !important;
-  padding: 40px 0 36px;
-}
-
-/* Theory 7: Visual Salience - Isolated Primary CTA */
-.btn-primary-isolated {
-  display: block;
-  width: 100%;
-  background: var(--accent-primary);
-  color: #ffffff !important;
-  font-weight: 800;
-  font-size: 16px;
-  padding: 15px 22px;
-  border-radius: var(--radius-sm);
-  text-decoration: none !important;
-  text-align: center;
-  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
-  transition: all 0.2s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.btn-primary-isolated:hover {
-  background: var(--accent-primary-hover);
-  box-shadow: 0 6px 20px rgba(29, 78, 216, 0.4);
-  transform: translateY(-1px);
-}
-
-/* Theory 8: Affordance-Accurate Interactive Option Cards */
-.status-option-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
-  border: 1.5px solid #cbd5e1;
-  border-radius: var(--radius-md);
-  background: #f8fafc;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-bottom: 10px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #0f172a;
-}
-
-.status-option-card:hover {
-  border-color: var(--accent-primary);
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
-}
-
-.status-option-card.selected {
-  border-color: var(--accent-primary);
-  background: #eff6ff;
-  color: #1d4ed8;
-  font-weight: 700;
-}
-
-.radio-indicator {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 2px solid #94a3b8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: all 0.2s ease;
-}
-
-.status-option-card.selected .radio-indicator {
-  border-color: #1d4ed8;
-  background: #1d4ed8;
-}
-
-.status-option-card.selected .radio-indicator::after {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ffffff;
-}
-
-/* Theory 4: Goal-Gradient Dynamic Timeline Roadmap */
-.timeline-roadmap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  margin: 14px 0 18px;
-}
-
-.timeline-roadmap::before {
-  content: "";
-  position: absolute;
-  top: 14px;
-  left: 20px;
-  right: 20px;
-  height: 2px;
-  background: #e2e8f0;
-  z-index: 1;
-}
-
-.roadmap-node {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  flex: 1;
-}
-
-.roadmap-circle {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #ffffff;
-  border: 2px solid #cbd5e1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 800;
-  color: #334155;
-  margin-bottom: 4px;
-  transition: all 0.3s ease;
-}
-
-.roadmap-node.active .roadmap-circle {
-  background: #1d4ed8;
-  border-color: #1d4ed8;
-  color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2);
-}
-
-.roadmap-node.completed .roadmap-circle {
-  background: #15803d;
-  border-color: #15803d;
-  color: #ffffff;
-}
-
-.roadmap-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: #334155;
-  display: block;
-}
-
-.roadmap-node.active .roadmap-label {
-  color: #0f172a;
-  font-weight: 800;
-}
-
-/* Cards & Layout */
-.tool-card {
-  background: #ffffff;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
-}
-
-.tool-card:hover {
-  border-color: var(--border-strong);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
-}
-
-/* Theory 7: Isolated Primary Docket Card vs Standard Cards */
-.docket-card {
-  background: #f8fafc;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 18px;
-  position: relative;
-  transition: all 0.2s ease;
-}
-
-.docket-card:hover {
-  background: #ffffff;
-  border-color: var(--accent-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-}
-
-.docket-card-featured {
-  background: #ffffff;
-  border: 2px solid #1d4ed8;
-  border-radius: var(--radius-md);
-  padding: 18px;
-  position: relative;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.1);
-}
-
-.docket-card-featured:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(29, 78, 216, 0.2);
-}
-
-.docket-card a.stretched-link::after,
-.docket-card-featured a.stretched-link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-/* Badges */
-.badge-clean {
-  background: #f1f5f9;
-  border: 1px solid #cbd5e1;
-  color: #334155;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.badge-amber {
-  background: var(--accent-amber-bg);
-  border: 1px solid var(--accent-amber-border);
-  color: var(--accent-amber);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.badge-sage {
-  background: var(--accent-sage-bg);
-  border: 1px solid var(--accent-sage-border);
-  color: var(--accent-sage);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.badge-featured {
-  background: #1d4ed8;
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 800;
-  padding: 3px 8px;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-h1, h2, h3, h4 {
-  color: var(--text-main);
-  letter-spacing: -0.02em;
-  font-weight: 800;
-}
-
-  </style>
+  <style>:root{--bg-canvas:#f8f9fa;--bg-surface:#ffffff;--bg-surface-subtle:#f1f5f9;--text-main:#0f172a;--text-body:#334155;--text-muted:#475569;--border-subtle:#e2e8f0;--border-strong:#cbd5e1;--accent-primary:#1d4ed8;--accent-primary-hover:#1e40af;--accent-primary-bg:#eff6ff;--accent-amber:#b45309;--accent-amber-bg:#fffbeb;--accent-amber-border:#fde68a;--accent-sage:#15803d;--accent-sage-bg:#f0fdf4;--accent-sage-border:#bbf7d0;--radius-lg:12px;--radius-md:8px;--radius-sm:6px;--maxw:1200px;}*,*::before,*::after{box-sizing:border-box;}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background-color:var(--bg-canvas);}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Inter","Outfit",Helvetica,Arial,sans-serif;background-color:var(--bg-canvas);color:var(--text-body);line-height:1.75;font-size:17px;font-weight:400;-webkit-font-smoothing:antialiased;}a{color:var(--accent-primary);text-decoration:none;transition:all 0.2s ease;}a:hover{color:var(--accent-primary-hover);text-decoration:underline;}img{max-width:100%;height:auto;}.container{max-width:var(--maxw);margin:0 auto;padding:0 20px;}.hero-grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:start;}@media(min-width:992px){.hero-grid{grid-template-columns:1.18fr 0.95fr;gap:40px;align-items:center;}}.top-legal-bar{background:#0f172a !important;color:#f8fafc !important;border-bottom:1px solid #1e293b !important;padding:10px 0 !important;font-size:14px !important;}.primacy-phone-bar{background:#f1f5f9;border-bottom:1px solid #cbd5e1;padding:10px 0;font-size:14px;}.hero-section{background:#ffffff !important;border-bottom:1px solid var(--border-subtle)!important;padding:40px 0 36px;}.btn-primary-isolated{display:block;width:100%;background:var(--accent-primary);color:#1d4ed8;font-weight:800;font-size:16px;padding:15px 22px;border-radius:var(--radius-sm);text-decoration:none !important;text-align:center;box-shadow:0 4px 14px rgba(29,78,216,0.3);transition:all 0.2s ease;cursor:pointer;border:none;}.btn-primary-isolated:hover{background:var(--accent-primary-hover);box-shadow:0 6px 20px rgba(29,78,216,0.4);transform:translateY(-1px);}.status-option-card{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1.5px solid #cbd5e1;border-radius:var(--radius-md);background:#f8fafc;cursor:pointer;transition:all 0.2s ease;margin-bottom:10px;font-size:14px;font-weight:600;color:#0f172a;}.status-option-card:hover{border-color:var(--accent-primary);background:#ffffff;box-shadow:0 2px 8px rgba(15,23,42,0.06);}.status-option-card.selected{border-color:var(--accent-primary);background:#eff6ff;color:#1d4ed8;font-weight:700;}.radio-indicator{width:18px;height:18px;border-radius:50%;border:2px solid #94a3b8;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s ease;}.status-option-card.selected .radio-indicator{border-color:#1d4ed8;background:#1d4ed8;}.status-option-card.selected .radio-indicator::after{content:"";width:6px;height:6px;border-radius:50%;background:#ffffff;}.timeline-roadmap{display:flex;align-items:center;justify-content:space-between;position:relative;margin:14px 0 18px;}.timeline-roadmap::before{content:"";position:absolute;top:14px;left:20px;right:20px;height:2px;background:#e2e8f0;z-index:1;}.roadmap-node{position:relative;z-index:2;text-align:center;flex:1;}.roadmap-circle{width:28px;height:28px;border-radius:50%;background:#ffffff;border:2px solid #cbd5e1;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#334155;margin-bottom:4px;transition:all 0.3s ease;}.roadmap-node.active .roadmap-circle{background:#1d4ed8;border-color:#1d4ed8;color:#1d4ed8;box-shadow:0 0 0 3px rgba(29,78,216,0.2);}.roadmap-node.completed .roadmap-circle{background:#15803d;border-color:#15803d;color:#1d4ed8;}.roadmap-label{font-size:11px;font-weight:700;color:#334155;display:block;}.roadmap-node.active .roadmap-label{color:#0f172a;font-weight:800;}.tool-card{background:#ffffff;border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;justify-content:space-between;transition:all 0.2s ease;box-shadow:0 1px 3px rgba(15,23,42,0.05);}.tool-card:hover{border-color:var(--border-strong);transform:translateY(-2px);box-shadow:0 10px 25px -5px rgba(15,23,42,0.08);}.docket-card{background:#f8fafc;border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:18px;position:relative;transition:all 0.2s ease;}.docket-card:hover{background:#ffffff;border-color:var(--accent-primary);transform:translateY(-2px);box-shadow:0 8px 20px rgba(15,23,42,0.08);}.docket-card-featured{background:#ffffff;border:2px solid #1d4ed8;border-radius:var(--radius-md);padding:18px;position:relative;transition:all 0.2s ease;box-shadow:0 4px 14px rgba(29,78,216,0.1);}.docket-card-featured:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(29,78,216,0.2);}.docket-card a.stretched-link::after,.docket-card-featured a.stretched-link::after{content:"";position:absolute;inset:0;z-index:1;}.badge-clean{background:#f1f5f9;border:1px solid #cbd5e1;color:#334155;font-size:12px;font-weight:700;padding:3px 10px;border-radius:9999px;text-transform:uppercase;letter-spacing:0.04em;}.badge-amber{background:var(--accent-amber-bg);border:1px solid var(--accent-amber-border);color:var(--accent-amber);font-size:12px;font-weight:700;padding:3px 10px;border-radius:9999px;text-transform:uppercase;letter-spacing:0.04em;}.badge-sage{background:var(--accent-sage-bg);border:1px solid var(--accent-sage-border);color:var(--accent-sage);font-size:12px;font-weight:700;padding:3px 10px;border-radius:9999px;text-transform:uppercase;letter-spacing:0.04em;}.badge-featured{background:#1d4ed8;color:#1d4ed8;font-size:11px;font-weight:800;padding:3px 8px;border-radius:9999px;text-transform:uppercase;letter-spacing:0.05em;}h1,h2,h3,h4{color:var(--text-main);letter-spacing:-0.02em;font-weight:800;}</style>
 </head>
 <body class="guide-page">
 
@@ -859,7 +98,7 @@ h1, h2, h3, h4 {
   <aside class="top-legal-bar" role="complementary" aria-label="Consumer alert">
     <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
       <span>🛒 <strong>Splitting essentials or retail purchases with 'Pay in 4'?</strong> Don't let an automated bot overdraft your bank account.</span>
-      <a href="tools/bnpl-refund-delay-diagnostic.html" style="color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 600; font-weight: 700; text-decoration: underline;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">Protect Your Account Now &rarr;</a>
+      <a href="tools/bnpl-refund-delay-diagnostic.html" style="color: #38bdf8 !important; font-weight: 700; text-decoration: underline; font-weight: 600; font-weight: 700; text-decoration: underline;; color: #1d4ed8; font-weight: 700; text-decoration: underline; font-weight: 700;">Protect Your Account Now &rarr;</a>
     </div>
   </aside>
 
@@ -867,12 +106,12 @@ h1, h2, h3, h4 {
   <div class="primacy-phone-bar">
     <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
       <span style="color: #0f172a; font-weight: 700;">📞 Need to talk to a human at Affirm right now?</span>
-      <span style="color: #334155; font-weight: 600;">Dial <strong>(855) 423-3729</strong> &rarr; Press <strong>1</strong> &rarr; Press <strong>0#0#</strong> <a href="tools/affirm-bot-bypass-cheat-sheet.html" style="color: #1d4ed8; font-weight: 700; margin-left: 8px; text-decoration: underline;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">View Phone Bypass Directory (Opens Instantly) &rarr;</a></span>
+      <span style="color: #334155; font-weight: 600;">Dial <strong>(855) 423-3729</strong> &rarr; Press <strong>1</strong> &rarr; Press <strong>0#0#</strong> <a href="tools/affirm-bot-bypass-cheat-sheet.html" style="color: #1d4ed8; font-weight: 700; margin-left: 8px; text-decoration: underline;; color: #1d4ed8; font-weight: 700; text-decoration: underline; font-weight: 700;">View Phone Bypass Directory (Opens Instantly) &rarr;</a></span>
     </div>
   </div>
 
   <!-- HERO SECTION: ASYMMETRIC GOLDEN RATIO (THEORY 1, 2, 4, 5, 7, 8) -->
-  <header class="hero-section" style="color: #cbd5e1;" style="color: #cbd5e1;" role="banner">
+  <header class="hero-section" style="color: #f8fafc;" style="color: #cbd5e1;" style="color: #cbd5e1;" role="banner">
     <div class="container">
       
       <div style="display: inline-flex; align-items: center; gap: 8px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; padding: 5px 12px; border-radius: 9999px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 16px;">
@@ -916,7 +155,7 @@ h1, h2, h3, h4 {
         <div style="background: #ffffff; border: 2.5px solid #1d4ed8; border-radius: 12px; padding: 24px; box-shadow: 0 10px 25px -5px rgba(29, 78, 216, 0.12);">
           
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-            <span style="background: #1d4ed8; color: #ffffff; font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;">Interactive Diagnostic</span>
+            <span style="background: #1d4ed8; color: #1d4ed8; font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;">Interactive Diagnostic</span>
             <span style="font-size: 12px; font-weight: 700; color: #15803d;">⏱️ 60-Second Resolution</span>
           </div>
 
@@ -1010,7 +249,7 @@ h1, h2, h3, h4 {
               Direct phone tree bypass codes (skip automated SMS hang-ups), chatbot loop-killer phrases, and verified executive legal escalation email addresses.
             </p>
           </div>
-          <a href="tools/affirm-bot-bypass-cheat-sheet.html" style="font-weight: 700; font-size: 14px;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">View Phone Bypass Directory (Opens Instantly) &rarr;</a>
+          <a href="tools/affirm-bot-bypass-cheat-sheet.html" style="font-weight: 700; font-size: 14px;; color: #1d4ed8; font-weight: 700; text-decoration: underline; font-weight: 700;">View Phone Bypass Directory (Opens Instantly) &rarr;</a>
         </div>
 
         <!-- CARD 2 (ELEVATED CONCURRENT TOOL): 120-DAY CREDIT RISK COUNTDOWN (THEORY 3) -->
@@ -1025,7 +264,7 @@ h1, h2, h3, h4 {
               Calculate debt-to-income spikes, compounding interest fees, and the exact countdown to collection network escalation to protect your credit score.
             </p>
           </div>
-          <a href="tools/underwriting-credit-impact-calculator.html" style="font-weight: 700; font-size: 14px; color: #b45309;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">Launch 120-Day Credit Risk Calculator (Interactive) &rarr;</a>
+          <a href="tools/underwriting-credit-impact-calculator.html" style="font-weight: 700; font-size: 14px; color: #b45309;; color: #1d4ed8; font-weight: 700; text-decoration: underline; font-weight: 700;">Launch 120-Day Credit Risk Calculator (Interactive) &rarr;</a>
         </div>
 
         <!-- CARD 3: BANK BILLPAY WORKAROUND -->
@@ -1040,7 +279,7 @@ h1, h2, h3, h4 {
               Step-by-step instructions to pay undisputed loan principal via external bank BillPay (ACH) if your mobile app access is locked during an active dispute.
             </p>
           </div>
-          <a href="guides/affirm-bank-billpay-workaround.html" style="font-weight: 700; font-size: 14px;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">Read BillPay Workaround (Step-by-Step Guide) &rarr;</a>
+          <a href="guides/affirm-bank-billpay-workaround.html" style="font-weight: 700; font-size: 14px;; color: #1d4ed8; font-weight: 700; text-decoration: underline; font-weight: 700;">Read BillPay Workaround (Step-by-Step Guide) &rarr;</a>
         </div>
 
         <!-- CARD 4: REDDIT & FORUM TEMPLATES -->
@@ -1055,7 +294,7 @@ h1, h2, h3, h4 {
               Copy-paste helpful markdown reply snippets to drop into Reddit (r/Affirm, r/povertyfinance, r/CreditCards) to help other shoppers beat bot loops.
             </p>
           </div>
-          <a href="tools/reddit-community-response-toolkit.html" style="font-weight: 700; font-size: 14px;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">Open Reddit Response Templates (Copy-Paste) &rarr;</a>
+          <a href="tools/reddit-community-response-toolkit.html" style="font-weight: 700; font-size: 14px;; color: #1d4ed8; font-weight: 700; text-decoration: underline; font-weight: 700;">Open Reddit Response Templates (Copy-Paste) &rarr;</a>
         </div>
 
       </div>
@@ -1087,7 +326,7 @@ h1, h2, h3, h4 {
           <p style="color: #334155; font-size: 14px; line-height: 1.6; margin: 0 0 12px;">
             A mathematical breakdown of BNPL unit economics: why low merchant discount take-rates force platforms to automate customer service into low-cost bot loops ($0.15) against live human calls ($14.00).
           </p>
-          <a href="topics/bnpl-unit-economics-customer-service-containment.html" style="font-weight: 700; font-size: 14px;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">See $0.15 Bot Cost Analysis &rarr;</a>
+          <a href="topics/bnpl-unit-economics-customer-service-containment.html" style="font-weight: 700; font-size: 14px;; color: #1d4ed8; font-weight: 700; text-decoration: underline; font-weight: 700;">See $0.15 Bot Cost Analysis &rarr;</a>
         </article>
 
         <!-- EXPOSÉ 2 -->
@@ -1096,7 +335,7 @@ h1, h2, h3, h4 {
           <p style="color: #334155; font-size: 14px; line-height: 1.6; margin: 0 0 12px;">
             How asset-backed securitization bank warehouse facility covenants incentivize fintech lenders to park disputed loans in artificial investigation loops, postponing loss recognition.
           </p>
-          <a href="topics/affirm-short-seller-thesis-warehouse-covenants.html" style="font-weight: 700; font-size: 14px;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">Inspect Warehouse Facility Covenants &rarr;</a>
+          <a href="topics/affirm-short-seller-thesis-warehouse-covenants.html" style="font-weight: 700; font-size: 14px;; color: #1d4ed8; font-weight: 700; text-decoration: underline; font-weight: 700;">Inspect Warehouse Facility Covenants &rarr;</a>
         </article>
 
       </div>
@@ -1118,25 +357,25 @@ h1, h2, h3, h4 {
             <span class="badge-featured">⭐ Primary Exhibit</span>
           </div>
           <span style="font-size: 13px; color: #334155; display: block; margin-bottom: 8px;">Case #260716-1553638 &amp; Affirm responses</span>
-          <a href="documents/cfpb-complaint-and-affirm-false-response.pdf" class="stretched-link" style="font-weight: 700; font-size: 13px;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">Download CFPB Record (PDF) &rarr;</a>
+          <a href="documents/cfpb-complaint-and-affirm-false-response.pdf" class="stretched-link" style="font-weight: 700; font-size: 13px;; color: #1d4ed8; font-weight: 700; text-decoration: underline; font-weight: 700;">Download CFPB Record (PDF) &rarr;</a>
         </div>
 
         <div class="docket-card">
           <strong style="display: block; font-size: 15px; color: #0f172a; margin-bottom: 4px;">📁 SEC Form TCR Submission</strong>
           <span style="font-size: 13px; color: #334155; display: block; margin-bottom: 8px;">Whistleblower filing: TCR 17867-223-108-883</span>
-          <a href="documents/sec-form-tcr-submission-confirmation-17867-223-108-883.pdf" class="stretched-link" style="font-weight: 700; font-size: 13px;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">Download SEC Confirmation (PDF) &rarr;</a>
+          <a href="documents/sec-form-tcr-submission-confirmation-17867-223-108-883.pdf" class="stretched-link" style="font-weight: 700; font-size: 13px;; color: #1d4ed8; font-weight: 700; text-decoration: underline; font-weight: 700;">Download SEC Confirmation (PDF) &rarr;</a>
         </div>
 
         <div class="docket-card">
           <strong style="display: block; font-size: 15px; color: #0f172a; margin-bottom: 4px;">📁 Police &amp; Carrier Receipts</strong>
           <span style="font-size: 13px; color: #334155; display: block; margin-bottom: 8px;">Monroe Police #26-29572 &amp; DHL logs</span>
-          <a href="documents/monroe-police-report-26-29572.pdf" class="stretched-link" style="font-weight: 700; font-size: 13px;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">Inspect Police Report (PDF) &rarr;</a>
+          <a href="documents/monroe-police-report-26-29572.pdf" class="stretched-link" style="font-weight: 700; font-size: 13px;; color: #1d4ed8; font-weight: 700; text-decoration: underline; font-weight: 700;">Inspect Police Report (PDF) &rarr;</a>
         </div>
 
         <div class="docket-card">
           <strong style="display: block; font-size: 15px; color: #0f172a; margin-bottom: 4px;">📁 State Attorney General Notices</strong>
           <span style="font-size: 13px; color: #334155; display: block; margin-bottom: 8px;">CA AG #1553638 &amp; LA AG filings</span>
-          <a href="documents/california-ag-dispute-notice.pdf" class="stretched-link" style="font-weight: 700; font-size: 13px;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">Download AG Notices (PDF) &rarr;</a>
+          <a href="documents/california-ag-dispute-notice.pdf" class="stretched-link" style="font-weight: 700; font-size: 13px;; color: #1d4ed8; font-weight: 700; text-decoration: underline; font-weight: 700;">Download AG Notices (PDF) &rarr;</a>
         </div>
 
       </div>
@@ -1152,10 +391,10 @@ h1, h2, h3, h4 {
         Federal law (12 C.F.R. § 1026.13) gives you explicit statutory protections when returned goods are not credited. Generate your formal billing error notice in under 60 seconds.
       </p>
       <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-        <a href="tools/bnpl-refund-delay-diagnostic.html" class="btn-primary-isolated" style="display: inline-block; width: auto; font-size: 16px; padding: 14px 32px;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">
+        <a href="tools/bnpl-refund-delay-diagnostic.html" class="btn-primary-isolated" style="display: inline-block; width: auto; font-size: 16px; padding: 14px 32px;; color: #1d4ed8; font-weight: 700; text-decoration: underline; font-weight: 700;">
           Start Your 60-Second Refund Dispute Now &rarr;
         </a>
-        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="display: inline-block; background: #f1f5f9; border: 1.5px solid #cbd5e1; color: #0f172a; font-weight: 700; font-size: 14px; padding: 14px 20px; border-radius: 6px; text-decoration: none;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="display: inline-block; background: #f1f5f9; border: 1.5px solid #cbd5e1; color: #0f172a; font-weight: 700; font-size: 14px; padding: 14px 20px; border-radius: 6px; text-decoration: none;; color: #1d4ed8; font-weight: 700; text-decoration: underline; font-weight: 700;">
           ⬆️ Back to Top Dispute Tools
         </a>
       </div>
@@ -1164,195 +403,24 @@ h1, h2, h3, h4 {
   </main>
 
   <!-- THEORY 6: AUTHOR SIGNATURE BLOCK & MINIMIZED FOOTER LAYER -->
-  <footer style="color: #cbd5e1;" style="background: #0f172a; color: #334155; padding: 36px 0; border-top: 1px solid #1e293b; font-size: 13px;">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+  <footer style="background: #030712; color: #ffffff; padding: 40px 20px; text-align: center;"  >
+    <div class="container" >
       <div>
-        <strong style="color: #f8fafc; font-size: 15px; display: block; margin-bottom: 4px;">Kinslow Consumer Defense &amp; Regulatory Archive</strong>
-        <span style="color: #334155; display: block; margin-bottom: 4px;">An open public interest initiative by Charles W. Kinslow IV, J.D., C.P.A.</span>
-        <span style="color: #334155; font-size: 12px;">"Built for everyday consumers who shouldn't have to hire a lawyer to get their own money back."</span>
+        <strong >Kinslow Consumer Defense &amp; Regulatory Archive</strong>
+        <span >An open public interest initiative by Charles W. Kinslow IV, J.D., C.P.A.</span>
+        <span >"Built for everyday consumers who shouldn't have to hire a lawyer to get their own money back."</span>
       </div>
-      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
-        <a href="https://orcid.org/0009-0004-9464-679X" style="color: #ffffff !important; font-weight: 700; text-decoration: underline;" style="color: #ffffff !important; font-weight: 700; text-decoration: underline;" style="color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;" style="color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 600;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;" target="_blank" rel="noopener">ORCID: 0009-0004-9464-679X</a>
-        <a href="sitemap.xml" style="color: #ffffff !important; font-weight: 700; text-decoration: underline;" style="color: #ffffff !important; font-weight: 700; text-decoration: underline;" style="color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;" style="color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 600;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">Sitemap Feed</a>
-        <a href="llms.txt" style="color: #ffffff !important; font-weight: 700; text-decoration: underline;" style="color: #ffffff !important; font-weight: 700; text-decoration: underline;" style="color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;" style="color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 600;; color: #ffffff; font-weight: 700; text-decoration: underline; font-weight: 700;">llms.txt</a>
+      <div >
+        <a style="color: #60a5fa !important; font-weight: bold; text-decoration: underline; margin: 0 10px;" href="https://orcid.org/0009-0004-9464-679X"     target="_blank" rel="noopener">ORCID: 0009-0004-9464-679X</a>
+        <a style="color: #60a5fa !important; font-weight: bold; text-decoration: underline; margin: 0 10px;" href="sitemap.xml"    >Sitemap Feed</a>
+        <a style="color: #60a5fa !important; font-weight: bold; text-decoration: underline; margin: 0 10px;" href="llms.txt"    >llms.txt</a>
       </div>
     </div>
   </footer>
 
 
 <!-- Cloudflare AI Search & Chat Assistant Widget -->
-<style>
-  .cf-ai-fab {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 9999;
-    background: linear-gradient(135deg, #0ea5e9, #3b82f6);
-    color: #ffffff;
-    border: none;
-    border-radius: 50px;
-    padding: 12px 20px;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .cf-ai-fab:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 12px 30px rgba(14, 165, 233, 0.6);
-  }
-  .cf-ai-fab .hotkey {
-    background: rgba(0, 0, 0, 0.25);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-family: monospace;
-  }
-  .cf-ai-modal-backdrop {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(5, 8, 15, 0.82);
-    backdrop-filter: blur(8px);
-    z-index: 10000;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-  }
-  .cf-ai-modal-backdrop.active {
-    display: flex;
-    opacity: 1;
-  }
-  .cf-ai-modal {
-    background: #090d16;
-    border: 1px solid #1e293b;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 680px;
-    max-height: 85vh;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(56, 189, 248, 0.2);
-    overflow: hidden;
-  }
-  .cf-ai-header {
-    padding: 16px 20px;
-    border-bottom: 1px solid #1e293b;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #0d1322;
-  }
-  .cf-ai-header h3 {
-    margin: 0;
-    font-size: 15px;
-    color: #f1f5f9;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .cf-ai-header .badge {
-    background: rgba(56, 189, 248, 0.15);
-    color: #ffffff; font-weight: 700; text-decoration: underline;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: 600;
-    border: 1px solid rgba(56, 189, 248, 0.3);
-  }
-  .cf-ai-close {
-    background: transparent;
-    border: none;
-    color: #334155;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 4px 8px;
-    line-height: 1;
-  }
-  .cf-ai-close:hover { color: #fff; }
-  .cf-ai-body {
-    padding: 20px;
-    overflow-y: auto;
-    flex: 1;
-  }
-  .cf-ai-input-group {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 16px;
-  }
-  .cf-ai-input {
-    flex: 1;
-    background: #0f172a;
-    border: 1px solid #334155;
-    border-radius: 10px;
-    padding: 12px 16px;
-    color: #f8fafc;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .cf-ai-input:focus {
-    border-color: #ffffff; font-weight: 700; text-decoration: underline;
-    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
-  }
-  .cf-ai-btn {
-    background: #0ea5e9;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    padding: 0 18px;
-    font-weight: 600;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  .cf-ai-btn:hover { background: #0284c7; }
-  .cf-ai-suggestions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 16px;
-  }
-  .cf-ai-chip {
-    background: rgba(30, 41, 59, 0.8);
-    border: 1px solid #334155;
-    color: #334155;
-    padding: 4px 10px;
-    border-radius: 14px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .cf-ai-chip:hover {
-    background: rgba(56, 189, 248, 0.15);
-    color: #ffffff; font-weight: 700; text-decoration: underline;
-    border-color: #ffffff; font-weight: 700; text-decoration: underline;
-  }
-  .cf-ai-result-box {
-    background: #0d1322;
-    border: 1px solid #1e293b;
-    border-radius: 10px;
-    padding: 16px;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #e2e8f0;
-    min-height: 120px;
-    white-space: pre-wrap;
-  }
-  .cf-ai-result-box.empty {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #334155;
-    font-style: italic;
-  }
-</style>
+<style>.cf-ai-fab{position:fixed;bottom:24px;right:24px;z-index:9999;background:linear-gradient(135deg,#0ea5e9,#3b82f6);color:#ffffff;border:none;border-radius:50px;padding:12px 20px;font-size:14px;font-weight:700;letter-spacing:0.02em;display:flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(14,165,233,0.45),0 0 0 1px rgba(255,255,255,0.2);cursor:pointer;transition:all 0.25s cubic-bezier(0.16,1,0.3,1);}.cf-ai-fab:hover{transform:translateY(-3px)scale(1.03);box-shadow:0 12px 30px rgba(14,165,233,0.6);}.cf-ai-fab .hotkey{background:rgba(0,0,0,0.25);padding:2px 6px;border-radius:4px;font-size:11px;font-family:monospace;}.cf-ai-modal-backdrop{display:none;position:fixed;inset:0;background:rgba(5,8,15,0.82);backdrop-filter:blur(8px);z-index:10000;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity 0.2s ease;}.cf-ai-modal-backdrop.active{display:flex;opacity:1;}.cf-ai-modal{background:#090d16;border:1px solid #1e293b;border-radius:16px;width:100%;max-width:680px;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,0.7),0 0 0 1px rgba(56,189,248,0.2);overflow:hidden;}.cf-ai-header{padding:16px 20px;border-bottom:1px solid #1e293b;display:flex;align-items:center;justify-content:space-between;background:#0d1322;}.cf-ai-header h3{margin:0;font-size:15px;color:#f1f5f9;display:flex;align-items:center;gap:8px;}.cf-ai-header .badge{background:rgba(56,189,248,0.15);color:#ffffff;font-weight:700;text-decoration:underline;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600;border:1px solid rgba(56,189,248,0.3);}.cf-ai-close{background:transparent;border:none;color:#334155;font-size:20px;cursor:pointer;padding:4px 8px;line-height:1;}.cf-ai-close:hover{color:#fff;}.cf-ai-body{padding:20px;overflow-y:auto;flex:1;}.cf-ai-input-group{display:flex;gap:8px;margin-bottom:16px;}.cf-ai-input{flex:1;background:#0f172a;border:1px solid #334155;border-radius:10px;padding:12px 16px;color:#f8fafc;font-size:14px;outline:none;transition:border-color 0.2s;}.cf-ai-input:focus{border-color:#ffffff;font-weight:700;text-decoration:underline;box-shadow:0 0 0 2px rgba(56,189,248,0.2);}.cf-ai-btn{background:#0ea5e9;color:#fff;border:none;border-radius:10px;padding:0 18px;font-weight:600;font-size:14px;cursor:pointer;}.cf-ai-btn:hover{background:#0284c7;}.cf-ai-suggestions{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}.cf-ai-chip{background:rgba(30,41,59,0.8);border:1px solid #334155;color:#334155;padding:4px 10px;border-radius:14px;font-size:12px;cursor:pointer;transition:all 0.2s;}.cf-ai-chip:hover{background:rgba(56,189,248,0.15);color:#ffffff;font-weight:700;text-decoration:underline;border-color:#ffffff;font-weight:700;text-decoration:underline;}.cf-ai-result-box{background:#0d1322;border:1px solid #1e293b;border-radius:10px;padding:16px;font-size:14px;line-height:1.6;color:#e2e8f0;min-height:120px;white-space:pre-wrap;}.cf-ai-result-box.empty{display:flex;align-items:center;justify-content:center;color:#334155;font-style:italic;}</style>
 
 <button class="cf-ai-fab" id="cfAiTrigger" onclick="openCfAiModal()" aria-label="Ask Archive AI (Ctrl+K)">
   <span>⚡ Ask Archive AI</span>
@@ -1390,7 +458,7 @@ h1, h2, h3, h4 {
 function closeCfAiModal(){document.getElementById('cfAiModalBackdrop').classList.remove('active');}
 document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();const m=document.getElementById('cfAiModalBackdrop');m.classList.contains('active')?closeCfAiModal():openCfAiModal();}else if(e.key==='Escape'){closeCfAiModal();}});
 function runSuggestedQuery(q){document.getElementById('cfAiQueryInput').value=q;executeCfAiSearch();}
-async function executeCfAiSearch(){const i=document.getElementById('cfAiQueryInput'),b=document.getElementById('cfAiResultBox'),btn=document.getElementById('cfAiSubmitBtn'),q=i.value.trim();if(!q)return;b.classList.remove('empty');b.innerHTML='<span style="color: #ffffff; font-weight: 700; text-decoration: underline;">⚡ Searching 1,024-D vector index and synthesizing response with Llama 3.3...</span>';btn.disabled=true;try{const r=await fetch('https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com/chat/completions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:[{role:'system',content:'You are the Charles W. Kinslow IV Regulatory Archive AI Assistant. Answer authoritatively with direct citations to the archive.'},{role:'user',content:q}]})});if(!r.ok)throw new Error('HTTP '+r.status);const d=await r.json();b.innerHTML=d.choices&&d.choices[0]&&d.choices[0].message?d.choices[0].message.content:(d.response||JSON.stringify(d));}catch(err){try{const sr=await fetch('https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com/search',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:q})}),sd=await sr.json();if(sd.results&&sd.results.length>0){let h='<strong>Top Matching Excerpts from Archive:</strong><br><br>';sd.results.slice(0,3).forEach((x,n)=>{h+=`<div style="margin-bottom:12px;padding:10px;background:#090d16;border-radius:6px;border-left:3px solid #38bdf8;"><div style="font-weight:bold;color: #ffffff; font-weight: 700; text-decoration: underline;font-size:12px;">${x.title||x.url||'Doc #'+(n+1)}</div><div style="margin-top:4px;">${x.content||x.text||x.excerpt||JSON.stringify(x)}</div></div>`;});b.innerHTML=h;}else{b.innerHTML='<span style="color:#f59e0b;">No exact semantic matches found.</span>';}}catch(se){b.innerHTML='<span style="color:#ef4444;">Unable to connect to AI Search: '+se.message+'</span>';}}finally{btn.disabled=false;}}</script>
+async function executeCfAiSearch(){const i=document.getElementById('cfAiQueryInput'),b=document.getElementById('cfAiResultBox'),btn=document.getElementById('cfAiSubmitBtn'),q=i.value.trim();if(!q)return;b.classList.remove('empty');b.innerHTML='<span >⚡ Searching 1,024-D vector index and synthesizing response with Llama 3.3...</span>';btn.disabled=true;try{const r=await fetch('https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com/chat/completions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:[{role:'system',content:'You are the Charles W. Kinslow IV Regulatory Archive AI Assistant. Answer authoritatively with direct citations to the archive.'},{role:'user',content:q}]})});if(!r.ok)throw new Error('HTTP '+r.status);const d=await r.json();b.innerHTML=d.choices&&d.choices[0]&&d.choices[0].message?d.choices[0].message.content:(d.response||JSON.stringify(d));}catch(err){try{const sr=await fetch('https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com/search',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:q})}),sd=await sr.json();if(sd.results&&sd.results.length>0){let h='<strong>Top Matching Excerpts from Archive:</strong><br><br>';sd.results.slice(0,3).forEach((x,n)=>{h+=`<div ><div >${x.title||x.url||'Doc #'+(n+1)}</div><div >${x.content||x.text||x.excerpt||JSON.stringify(x)}</div></div>`;});b.innerHTML=h;}else{b.innerHTML='<span >No exact semantic matches found.</span>';}}catch(se){b.innerHTML='<span >Unable to connect to AI Search: '+se.message+'</span>';}}finally{btn.disabled=false;}}</script>
 <!-- End Cloudflare AI Search Widget -->
 
 </body>
