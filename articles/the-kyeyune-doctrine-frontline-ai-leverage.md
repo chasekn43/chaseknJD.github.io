@@ -5,6 +5,8 @@
 
 ---
 
+![The Kyeyune Doctrine: Frontline AI Leverage](https://kinslow-regulatory-archive.org/kyeyune_doctrine_hero.jpg)
+
 When tech commentators covered Anthropic’s recent Claude Code hackathon, they predictably celebrated the two most elite, credentialed white-collar winners: the California attorney (Mike Brown) and the Brussels cardiologist (Dr. Michal Nedoszytko).
 
 The tech industry breathed a collective sigh of relief. The narrative was comforting to the managerial class: your law degree and medical board certifications are safe. You don't need software engineers anymore; you can simply build AI tools around your existing professional moats:
