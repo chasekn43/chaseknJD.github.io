@@ -5,7 +5,7 @@
 
 ---
 
-![The Kyeyune Doctrine: Frontline AI Leverage](https://kinslow-regulatory-archive.org/kyeyune_doctrine_hero.jpg)
+![The Kyeyune Doctrine: Frontline AI Leverage](https://kinslow-regulatory-archive.org/kyeyune_doctrine_split_hero.jpg)
 
 When tech commentators covered Anthropic’s recent Claude Code hackathon, they predictably celebrated the two most elite, credentialed white-collar winners: the California attorney (Mike Brown) and the Brussels cardiologist (Dr. Michal Nedoszytko).
 
