@@ -2,3 +2,7 @@
 boto3
 tldextract
 tzlocal
+
+# Perplexity Search API
+perplexityai
+httpx
