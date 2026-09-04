@@ -13,12 +13,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kinslow-regulatory-archive.org/emoji_test.html</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://kinslow-regulatory-archive.org/google169507de43bc15cc.html</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -26,18 +20,6 @@
   </url>
   <url>
     <loc>https://kinslow-regulatory-archive.org/index.html</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kinslow-regulatory-archive.org/interview_scene_emoji_test.html</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kinslow-regulatory-archive.org/interview_scene_test.html</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
