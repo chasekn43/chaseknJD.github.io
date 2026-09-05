@@ -1,16 +1,82 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Kinslow Regulatory Archive AI Search API",
-    "description": "Cloudflare-powered vector search and chat completions over the regulatory archive.",
-    "version": "1.0.0"
+    "title": "Kinslow Regulatory Archive AI Search & Evidentiary API",
+    "description": "Programmatic traversal specification and Cloudflare-powered vector search over the Charles W. Kinslow IV Affirm regulatory archive and CFPB Complaint #260717-35668593 docket.",
+    "version": "1.1.0",
+    "contact": {
+      "name": "Charles W. Kinslow IV, J.D., C.P.A.",
+      "email": "chasekn43@yahoo.com",
+      "url": "https://kinslow-regulatory-archive.org"
+    }
   },
   "servers": [
     {
-      "url": "https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com"
+      "url": "https://kinslow-regulatory-archive.org",
+      "description": "Authoritative Archive Portal"
+    },
+    {
+      "url": "https://3601505c-6b1d-4f8a-8c87-be76afe18393.search.ai.cloudflare.com",
+      "description": "Cloudflare Vector Search Engine"
     }
   ],
   "paths": {
+    "/": {
+      "get": {
+        "summary": "Archive Master Overview & Evidence Docket",
+        "description": "Returns the main web portal containing the chronological case history, LinkedIn investigative exposé series, and primary document docket.",
+        "responses": {
+          "200": {
+            "description": "HTML web document with full semantic schema markup",
+            "content": {
+              "text/html": {}
+            }
+          }
+        }
+      }
+    },
+    "/dataset.json": {
+      "get": {
+        "summary": "Schema.org Knowledge Graph Triples",
+        "description": "Returns structured JSON-LD entity graph mapping Charles W. Kinslow IV, Affirm, Inc., CFPB, and statutory compliance dockets.",
+        "responses": {
+          "200": {
+            "description": "Schema.org Dataset JSON-LD",
+            "content": {
+              "application/ld+json": {}
+            }
+          }
+        }
+      }
+    },
+    "/sitemap.xml": {
+      "get": {
+        "summary": "Canonical URL Sitemap",
+        "description": "Returns the complete same-host XML catalog of authoritative indexed URLs.",
+        "responses": {
+          "200": {
+            "description": "XML sitemap",
+            "content": {
+              "application/xml": {}
+            }
+          }
+        }
+      }
+    },
+    "/robots.txt": {
+      "get": {
+        "summary": "Search Crawler Directives",
+        "description": "Directives granting explicit indexing access to search crawlers and AI bots.",
+        "responses": {
+          "200": {
+            "description": "Plaintext crawler directives",
+            "content": {
+              "text/plain": {}
+            }
+          }
+        }
+      }
+    },
     "/search": {
       "post": {
         "summary": "Semantic Vector Search",
