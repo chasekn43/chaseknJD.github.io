@@ -1,0 +1,80 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://kinslow-regulatory-archive.org/#person-chase-kinslow",
+      "name": "Charles W. Kinslow IV",
+      "alternateName": [
+        "Chase Kinslow",
+        "Charles Kinslow",
+        "Booger Two Shoes"
+      ],
+      "honorificSuffix": "J.D., C.P.A.",
+      "jobTitle": "Attorney & Certified Public Accountant",
+      "sameAs": [
+        "https://orcid.org/0009-0002-8851-7890",
+        "https://github.com/chasekn43",
+        "https://github.com/charwiz43"
+      ]
+    },
+    {
+      "@type": "Corporation",
+      "@id": "https://kinslow-regulatory-archive.org/#org-affirm",
+      "name": "Affirm, Inc.",
+      "tickerSymbol": "NYSE: AFRM",
+      "url": "https://www.affirm.com"
+    },
+    {
+      "@type": "GovernmentOrganization",
+      "@id": "https://kinslow-regulatory-archive.org/#org-cfpb",
+      "name": "Consumer Financial Protection Bureau",
+      "alternateName": "CFPB",
+      "url": "https://www.consumerfinance.gov"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://kinslow-regulatory-archive.org/#website",
+      "url": "https://kinslow-regulatory-archive.org/",
+      "name": "Charles W. Kinslow IV | Regulatory Archive & Evidentiary Vault",
+      "description": "Official public regulatory archive, forensic ledger evidence, and statutory legal research regarding CFPB Complaint #260717-35668593 involving Affirm, Inc.",
+      "publisher": {
+        "@id": "https://kinslow-regulatory-archive.org/#person-chase-kinslow"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://kinslow-regulatory-archive.org/#dataset",
+      "name": "CFPB Complaint #260717-35668593 Evidentiary Vault & Statutory Compliance Record",
+      "description": "Empirical case study, certified exhibits, OCR forensics, and statutory analysis mapping automated point-of-sale credit disputes under Truth in Lending Act (12 C.F.R. § 1026.13, Regulation Z), Fair Credit Reporting Act (15 U.S.C. § 1681), and Dodd-Frank UDAAP (12 U.S.C. § 5531).",
+      "url": "https://kinslow-regulatory-archive.org/",
+      "creator": {
+        "@id": "https://kinslow-regulatory-archive.org/#person-chase-kinslow"
+      },
+      "publisher": {
+        "@id": "https://kinslow-regulatory-archive.org/#person-chase-kinslow"
+      },
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "keywords": [
+        "Affirm dispute archive",
+        "CFPB Complaint 260717-35668593",
+        "Truth in Lending Act",
+        "Regulation Z 1026.13",
+        "Fair Credit Reporting Act",
+        "Dodd-Frank UDAAP",
+        "BNPL refund delay",
+        "Charles W. Kinslow IV",
+        "Morgan Lewis & Bockius LLP"
+      ],
+      "about": [
+        {
+          "@id": "https://kinslow-regulatory-archive.org/#org-affirm"
+        },
+        {
+          "@id": "https://kinslow-regulatory-archive.org/#org-cfpb"
+        }
+      ]
+    }
+  ]
+}
