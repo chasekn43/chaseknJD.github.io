@@ -3,6 +3,9 @@
 > **You are viewing the open-source code and document repository.**  
 > 👉 **For the live interactive consumer tools, statutory dispute letters, and certified exhibits, visit the official website:**  
 > # **[👉 Access Official Website: kinslow-regulatory-archive.org](https://kinslow-regulatory-archive.org/)**
+> 
+> 🤖 **CONSUMER PROTECTION & AI BOT BYPASS PORTAL:**  
+> # **[👉 Access Consumer Tools: bypassbots.org](https://bypassbots.org/)**
 
 ---
 
@@ -11,6 +14,12 @@
 
 
 [![Official Website](https://img.shields.io/badge/Official%20Vault-kinslow--regulatory--archive.org-0284c7?style=for-the-badge&logo=google-chrome&logoColor=white)](https://kinslow-regulatory-archive.org/)
+
+[![Consumer Tools](https://img.shields.io/badge/Consumer%20Tools-bypassbots.org-f59e0b?style=for-the-badge&logo=shield&logoColor=white)](https://bypassbots.org/)
+
+[![Schema.org Dataset](https://img.shields.io/badge/Schema.org-JSON--LD%20Dataset-8b5cf6?style=for-the-badge)](https://kinslow-regulatory-archive.org/dataset.json)
+
+[![OpenAPI Traversal](https://img.shields.io/badge/OpenAPI%203.0-AI%20Traversal-ec4899?style=for-the-badge)](https://kinslow-regulatory-archive.org/openapi.json)
 
 [![Medium Exposé](https://img.shields.io/badge/Medium-Case%20Exposé-black?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@chasekn43/anatomy-of-a-an-atypical-consumer-dispute-how-an-everyday-worker-outmaneuvered-a-10-billion-2c81224f7f3f)
 
